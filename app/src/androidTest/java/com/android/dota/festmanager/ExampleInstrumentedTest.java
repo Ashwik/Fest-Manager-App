@@ -1,4 +1,4 @@
-package com.android.kartheek.festmanager;
+package com.android.dota.festmanager;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.android.kartheek.festmanager", appContext.getPackageName());
+        assertEquals("com.android.dota.festmanager", appContext.getPackageName());
     }
 }

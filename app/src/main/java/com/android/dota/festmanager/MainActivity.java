@@ -1,4 +1,4 @@
-package com.android.kartheek.festmanager;
+package com.android.dota.festmanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
