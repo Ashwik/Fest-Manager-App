@@ -39,9 +39,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.addDrawerListener(mToggle);
         mNavigationView.setNavigationItemSelectedListener(this);
 
+
         if(savedInstanceState==null){
             mNavigationView.getMenu().performIdentifierAction(R.id.home,0);
         }
+        mNavigationView.setCheckedItem(R.id.home);
     }
 
     @Override
