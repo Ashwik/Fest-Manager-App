@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/item1"
-            android:title="Item1" />
+            android:id="@+id/home"
+            android:title="Home" />
         <item
-            android:id="@+id/item2"
-            android:title="Item2" />
+            android:id="@+id/about"
+            android:title="About Us" />
         <item
             android:id="@+id/item3"
             android:title="Item3" />
