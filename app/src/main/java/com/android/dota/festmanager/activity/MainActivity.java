@@ -18,6 +18,9 @@ import android.view.MenuItem;
 
 import com.android.dota.festmanager.R;
 import com.android.dota.festmanager.fragment.AboutFragment;
+import com.android.dota.festmanager.fragment.ContactsFragment;
+import com.android.dota.festmanager.fragment.CreditsFragment;
+import com.android.dota.festmanager.fragment.GuideFragment;
 import com.android.dota.festmanager.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -82,6 +85,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                       .replace(R.id.nav_fragment_container,new AboutFragment())
                       .commit();
               break;
+            case R.id.contact:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new ContactsFragment())
+                        .commit();
+                break;
+            case R.id.guide:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new GuideFragment())
+                        .commit();
+                break;
+            case R.id.credits:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new CreditsFragment())
+                        .commit();
+                break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;

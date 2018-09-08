@@ -8,10 +8,13 @@
             android:id="@+id/about"
             android:title="About Us" />
         <item
-            android:id="@+id/item3"
-            android:title="Item3" />
+            android:id="@+id/contact"
+            android:title="Contact Us" />
         <item
-            android:id="@+id/item4"
-            android:title="Item4" />
+            android:id="@+id/guide"
+            android:title="Guide" />
+        <item
+            android:id="@+id/credits"
+            android:title="App Credits" />
     </group>
 </menu>
