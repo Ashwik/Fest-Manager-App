@@ -19,4 +19,5 @@ public class ContactsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_contacts,container,false);
     }
+
 }
