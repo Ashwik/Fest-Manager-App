@@ -2,14 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/feed"
-            android:title="Feed" />
-        <item
-            android:id="@+id/events"
-            android:title="Events" />
-        <item
-            android:id="@+id/schedule"
-            android:title="Schedule" />
+            android:id="@+id/home"
+            android:title="Home" />
         <item
             android:id="@+id/about"
             android:title="About Us" />
@@ -18,16 +12,12 @@
             android:title="Contact Us" />
         <item
             android:id="@+id/guide"
-            android:title="Maps" />
+            android:title="Guide" />
         <item
             android:id="@+id/credits"
             android:title="App Credits" />
         <item
             android:id="@+id/reach"
-            android:title="Reach Us "/>
-
-        <item
-            android:id="@+id/settings"
-            android:title="Settings"/>
+            android:title="REACHUS"/>
     </group>
 </menu>

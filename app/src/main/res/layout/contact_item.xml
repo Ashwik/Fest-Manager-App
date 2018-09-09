@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/name"
-            tools:text="Anshik Thareja"
+            tools:text="Ajith"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -51,7 +51,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_baseline_call_24px"
+            app:srcCompat="@drawable/ic_call_black_24dp"
             android:background="#fff"/>
 
 
