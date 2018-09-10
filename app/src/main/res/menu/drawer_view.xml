@@ -12,7 +12,7 @@
             android:title="Contact Us" />
         <item
             android:id="@+id/guide"
-            android:title="Guide" />
+            android:title="Maps" />
         <item
             android:id="@+id/credits"
             android:title="App Credits" />
