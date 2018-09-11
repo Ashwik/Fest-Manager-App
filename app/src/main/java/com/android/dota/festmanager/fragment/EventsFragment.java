@@ -54,7 +54,7 @@ public class EventsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        realm.init(context);
+        Realm.init(context);
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         callApi();
@@ -112,16 +112,14 @@ public class EventsFragment extends Fragment {
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).findAll();
 
             if(results.size()==0){
-                Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT);
+                Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
             }
             else {
-                if(isnetwork==false){
-                    Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT);
+                if(!isnetwork){
+                    Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
                 }
 
-                for (int i = 0; i < results.size(); i++) {
-                    realmList.add(results.get(i));
-                }
+                realmList.addAll(results);
                 Log.e(TAG,String.valueOf(realmList.size())+" "+String.valueOf(results.size()));
             }
             setAdapter(realmList);
