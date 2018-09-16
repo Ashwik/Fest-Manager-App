@@ -3,6 +3,28 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="placeName">
+        <item>Main Gate</item>
+        <item>Bus Stop</item>
+        <item>Cafetaria</item>
+        <item>Auditorium</item>
+        <item>Stage 1</item>
+        <item>Stage 2</item>
+        <item>Connaught Place</item>
+        <item>SBI</item>
+        <item>Euro Cafe</item>
+        <item>More Shopping mall</item>
+        <item>Mess 1</item>
+        <item>Mess 2</item>
+        <item>Rock Garden</item>
+        <item>F-Block</item>
+        <item>Student Activity Center</item>
+        <item>G-Block</item>
+        <item>B-Block</item>
+        <item>D-Block</item>
+        <item>Library</item>
+    </string-array>
     <string name="aboutus">AboutUs</string>
     <string name="directions">From Secunderabad Railway Station to BITS Pilani, Hyderabad Campus one has to travel 22 KM on Rajiv Rahadari/ Karim Nagar Highway, up to Dongala Mysamma Junction after Aalankrita Resorts in Thumkunta Village and then take a right turn towards Ghatkesar. After travelling 1.5 KMs on this road, there is again a diversion to the right leading to the Campus. BITS sign boards indicating the directions are available on the way.\n\n
 There is a direct Bus No. 212 from Secunderabad Railway Station (Gurudwara Point) to BITS Pilani Hyderabad Campus Main Gate.\n\n
