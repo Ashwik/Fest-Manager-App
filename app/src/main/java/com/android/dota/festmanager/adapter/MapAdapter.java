@@ -1,4 +1,4 @@
-package com.android.dota.festmanager.activity;
+package com.android.dota.festmanager.adapter;
 
 import android.content.Context;
 import android.content.Intent;

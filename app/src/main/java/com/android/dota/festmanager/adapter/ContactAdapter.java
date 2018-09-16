@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.android.dota.festmanager.R;
+import com.android.dota.festmanager.model.Contact;
 
 import java.util.ArrayList;
 

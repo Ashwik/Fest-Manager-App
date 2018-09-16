@@ -1,8 +1,6 @@
 package com.android.dota.festmanager.fragment;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.dota.festmanager.R;
-import com.android.dota.festmanager.adapter.Contact;
+import com.android.dota.festmanager.model.Contact;
 import com.android.dota.festmanager.adapter.ContactAdapter;
 
 import java.util.ArrayList;

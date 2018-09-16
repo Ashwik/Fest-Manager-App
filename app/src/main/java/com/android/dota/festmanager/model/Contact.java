@@ -1,4 +1,4 @@
-package com.android.dota.festmanager.adapter;
+package com.android.dota.festmanager.model;
 
 /**
  * Created by Vineeth on 2/13/2018.

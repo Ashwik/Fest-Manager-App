@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.dota.festmanager.R;
-import com.android.dota.festmanager.activity.MapAdapter;
+import com.android.dota.festmanager.adapter.MapAdapter;
 
 public class GuideFragment extends Fragment {
     private RecyclerView place_recycler;

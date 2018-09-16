@@ -51,7 +51,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_call_black_24dp"
+            android:src="@drawable/ic_baseline_call_24px"
             android:background="#fff"/>
 
 
