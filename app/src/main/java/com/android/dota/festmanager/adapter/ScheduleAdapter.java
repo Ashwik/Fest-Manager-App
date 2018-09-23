@@ -1,6 +1,7 @@
 package com.android.dota.festmanager.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.dota.festmanager.R;
+import com.android.dota.festmanager.activity.DetailsActivity;
 import com.android.dota.festmanager.model.EventDetails;
 
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Realm.init(context);
         realm = Realm.getDefaultInstance();
-        View v = LayoutInflater.from(context).inflate(R.layout.activity_schedule_item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_schedule_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -80,7 +82,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
             for (int i = 0; i < sets.size(); i++) {
                 final EventDetails set = sets.get(i);
-                final View v = LayoutInflater.from(context).inflate(R.layout.activity_schedule_sub_item, linearLayout, false);
+                final View v = LayoutInflater.from(context).inflate(R.layout.fragment_schedule_sub_item, linearLayout, false);
 
                 ((TextView) v.findViewById(R.id.event_name)).setText(set.getName());
                 if (set.getTagline()==null || set.getTagline().equals("")) {
@@ -91,7 +93,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
                 v.findViewById(R.id.schedule_item_cardview).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        Intent intent = new Intent(context, DetailsActivity.class);
+                        intent.putExtra("id",set.getId());
+                        v.getContext().startActivity(intent);
 
                     }
                 });
