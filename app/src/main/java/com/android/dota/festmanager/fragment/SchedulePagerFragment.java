@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.android.dota.festmanager.adapter.ScheduleAdapter;
 import com.android.dota.festmanager.api.ApiClient;
 import com.android.dota.festmanager.api.EventsInterface;
+import com.android.dota.festmanager.api.TestApiClient;
 import com.android.dota.festmanager.model.EventDetails;
 import com.android.dota.festmanager.R;
 
@@ -91,7 +92,7 @@ public class SchedulePagerFragment extends Fragment {
     }
 
     private void CallApi() {
-        EventsInterface apiservice = ApiClient.getClient().create(EventsInterface.class);
+        EventsInterface apiservice = TestApiClient.getClient().create(EventsInterface.class);
         Call<ArrayList<EventDetails>> call = apiservice.getEventSchedule();
         call.enqueue(new Callback<ArrayList<EventDetails>>() {
             @Override
@@ -125,11 +126,13 @@ public class SchedulePagerFragment extends Fragment {
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             event.setAbout(details.getAbout());
             event.setDate(getEventTime(details.getStartTime())[2]);
+            event.setTagline(details.getTagline());
         } else {
             model.setName(details.getName());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             model.setAbout(details.getAbout());
             model.setDate(getEventTime(details.getStartTime())[2]);
+            model.setTagline(details.getTagline());
         }
         realm.commitTransaction();
     }

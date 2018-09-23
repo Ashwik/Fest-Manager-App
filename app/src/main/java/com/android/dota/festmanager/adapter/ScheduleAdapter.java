@@ -73,7 +73,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
         public void bindRecycler(String time) {
 
-            RealmResults<EventDetails> results = realm.where(EventDetails.class).equalTo("date", day).equalTo("starttime", time).findAll();
+            RealmResults<EventDetails> results = realm.where(EventDetails.class).equalTo("date", day).equalTo("startTime", time).findAll();
             final List<EventDetails> sets = new ArrayList<>();
             sets.addAll(results);
             linearLayout.removeAllViews();
@@ -83,10 +83,10 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
                 final View v = LayoutInflater.from(context).inflate(R.layout.activity_schedule_sub_item, linearLayout, false);
 
                 ((TextView) v.findViewById(R.id.event_name)).setText(set.getName());
-                if (set.getAbout().equals("")) {
+                if (set.getTagline()==null || set.getTagline().equals("")) {
                     ((TextView) v.findViewById(R.id.event_tagline)).setHeight(0);
                 } else {
-                    ((TextView) v.findViewById(R.id.event_tagline)).setText("Venue : " + set.getAbout());
+                    ((TextView) v.findViewById(R.id.event_tagline)).setText(set.getTagline());
                 }
                 v.findViewById(R.id.schedule_item_cardview).setOnClickListener(new View.OnClickListener() {
                     @Override
