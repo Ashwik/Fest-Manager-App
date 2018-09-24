@@ -1,6 +1,11 @@
 package com.android.dota.festmanager.activity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.res.Configuration;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -54,6 +59,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mNavigationView.getMenu().performIdentifierAction(R.id.home,0);
         }
         mNavigationView.setCheckedItem(R.id.home);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            boolean flag = getSharedPreferences("Notifications", MODE_PRIVATE).getBoolean("ChannelCreated", false);
+            if (!flag) {
+                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                NotificationChannel notificationChannel = new NotificationChannel("EVENT_UPDATES",
+                        "ATMOS Updates", NotificationManager.IMPORTANCE_HIGH);
+                AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION_RINGTONE)
+                        .build();
+                notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttributes);
+                notificationChannel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
+                manager.createNotificationChannel(notificationChannel);
+                getSharedPreferences("Notifications", MODE_PRIVATE).edit().putBoolean("ChannelCreated",true).apply();
+            }
+        }
     }
 
     @Override
