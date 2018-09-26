@@ -38,6 +38,7 @@ public class RequestNotificationService extends FirebaseMessagingService {
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 .setContentTitle("ATMOS'18")
+                .setPriority(NotificationManager.IMPORTANCE_NONE)
                 .setContentText(s);
         manager.notify(0, mBuilder.build());
     }

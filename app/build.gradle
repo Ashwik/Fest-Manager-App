@@ -34,3 +34,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.3.0'
     implementation 'com.android.support:cardview-v7:27.1.1'
 }
+apply plugin: 'com.google.gms.google-services'
+

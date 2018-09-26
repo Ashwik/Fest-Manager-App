@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DetailsActivity"/>
+        <activity android:name=".activity.DetailsActivity" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -27,7 +27,7 @@
             android:resource="@color/colorPrimary" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="EVENT_UPDATES"/>
+            android:value="EVENT_UPDATES" />
 
         <service android:name=".services.RequestNotificationService">
             <intent-filter>
@@ -39,6 +39,11 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".activity.SettingsActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Settings"
+            android:parentActivityName=".activity.MainActivity"/>
     </application>
 
 </manifest>

@@ -3,6 +3,8 @@ package com.android.dota.festmanager.activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.media.AudioAttributes;
 import android.media.RingtoneManager;
@@ -28,10 +30,13 @@ import com.android.dota.festmanager.fragment.CreditsFragment;
 import com.android.dota.festmanager.fragment.GuideFragment;
 import com.android.dota.festmanager.fragment.HomeFragment;
 import com.android.dota.festmanager.fragment.ReachUs;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
-
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         mNavigationView.setCheckedItem(R.id.home);
 
+        final SharedPreferences preferences = getSharedPreferences("Notifications",MODE_PRIVATE);
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             boolean flag = getSharedPreferences("Notifications", MODE_PRIVATE).getBoolean("ChannelCreated", false);
             if (!flag) {
@@ -73,7 +80,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttributes);
                 notificationChannel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
                 manager.createNotificationChannel(notificationChannel);
-                getSharedPreferences("Notifications", MODE_PRIVATE).edit().putBoolean("ChannelCreated",true).apply();
+                preferences.edit().putBoolean("ChannelCreated",true).apply();
+            }
+        }
+
+        //todo: change it to actual event names
+        String events[]={"event1","event2","general"};
+        for(final String s:events){
+            if(!preferences.contains(s)){
+                FirebaseMessaging.getInstance().subscribeToTopic(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        preferences.edit().putBoolean(s,true).apply();
+                    }
+                });
             }
         }
     }
@@ -134,6 +154,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.nav_fragment_container,new ReachUs())
                         .commit();
                 break;
+            case R.id.settings:
+                startActivity(new Intent(this,SettingsActivity.class));
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
