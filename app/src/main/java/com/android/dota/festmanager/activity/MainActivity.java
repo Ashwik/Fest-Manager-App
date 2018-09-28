@@ -1,6 +1,13 @@
 package com.android.dota.festmanager.activity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -25,6 +32,11 @@ import com.android.dota.festmanager.fragment.FeedFragment;
 import com.android.dota.festmanager.fragment.GuideFragment;
 import com.android.dota.festmanager.fragment.HomeFragment;
 import com.android.dota.festmanager.fragment.ReachUs;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.android.dota.festmanager.fragment.ScheduleFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -57,6 +69,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mNavigationView.getMenu().performIdentifierAction(R.id.feed,0);
         }
         mNavigationView.setCheckedItem(R.id.home);
+
+        final SharedPreferences preferences = getSharedPreferences("Notifications",MODE_PRIVATE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            boolean flag = getSharedPreferences("Notifications", MODE_PRIVATE).getBoolean("ChannelCreated", false);
+            if (!flag) {
+                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                NotificationChannel notificationChannel = new NotificationChannel("EVENT_UPDATES",
+                        "ATMOS Updates", NotificationManager.IMPORTANCE_HIGH);
+                AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION_RINGTONE)
+                        .build();
+                notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttributes);
+                notificationChannel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
+                manager.createNotificationChannel(notificationChannel);
+                preferences.edit().putBoolean("ChannelCreated",true).apply();
+            }
+        }
+
+        //todo: change it to actual event names
+        String events[]={"event1","event2","general"};
+        for(final String s:events){
+            if(!preferences.contains(s)){
+                FirebaseMessaging.getInstance().subscribeToTopic(s).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        preferences.edit().putBoolean(s,true).apply();
+                    }
+                });
+            }
+        }
     }
 
     @Override
@@ -125,6 +169,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.nav_fragment_container,new ReachUs())
                         .commit();
                 break;
+            case R.id.settings:
+                startActivity(new Intent(this,SettingsActivity.class));
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
