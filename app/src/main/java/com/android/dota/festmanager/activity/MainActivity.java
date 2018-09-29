@@ -20,9 +20,12 @@ import com.android.dota.festmanager.R;
 import com.android.dota.festmanager.fragment.AboutFragment;
 import com.android.dota.festmanager.fragment.ContactsFragment;
 import com.android.dota.festmanager.fragment.CreditsFragment;
+import com.android.dota.festmanager.fragment.EventsFragment;
+import com.android.dota.festmanager.fragment.FeedFragment;
 import com.android.dota.festmanager.fragment.GuideFragment;
 import com.android.dota.festmanager.fragment.HomeFragment;
 import com.android.dota.festmanager.fragment.ReachUs;
+import com.android.dota.festmanager.fragment.ScheduleFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if(savedInstanceState==null){
-            mNavigationView.getMenu().performIdentifierAction(R.id.home,0);
+            mNavigationView.getMenu().performIdentifierAction(R.id.feed,0);
         }
         mNavigationView.setCheckedItem(R.id.home);
     }
@@ -82,11 +85,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.home :
-              getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new HomeFragment())
+            case R.id.feed:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new FeedFragment())
                         .commit();
-              break;
+                break;
+            case R.id.events:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new EventsFragment())
+                        .commit();
+                break;
+            case R.id.schedule:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new ScheduleFragment())
+                        .commit();
+                break;
             case R.id.about:
               getSupportFragmentManager().beginTransaction()
                       .replace(R.id.nav_fragment_container,new AboutFragment())
