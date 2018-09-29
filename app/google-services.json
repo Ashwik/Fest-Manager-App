@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "157978564117",
+    "firebase_url": "https://notiftester-a59df.firebaseio.com",
+    "project_id": "notiftester-a59df",
+    "storage_bucket": "notiftester-a59df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157978564117:android:33bf3f8765afea5d",
+        "android_client_info": {
+          "package_name": "b.android.untitled.com.notiftester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157978564117-edth86m8flk4s2gkobq9ec711m6tg4br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "b.android.untitled.com.notiftester",
+            "certificate_hash": "f1591adb43247037ddfec07f35fb01048122140f"
+          }
+        },
+        {
+          "client_id": "157978564117-hhn6sn8lecf7639m3v2gif8slt466hiu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "b.android.untitled.com.notiftester",
+            "certificate_hash": "31663427e40f4a02c970f77ef63f56afa034f1ac"
+          }
+        },
+        {
+          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157978564117:android:17b29d32bd87bea9",
+        "android_client_info": {
+          "package_name": "com.untitled.android.b.notiftester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
