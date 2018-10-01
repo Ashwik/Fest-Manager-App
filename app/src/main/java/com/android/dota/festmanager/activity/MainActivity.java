@@ -16,9 +16,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,12 +27,8 @@ import com.android.dota.festmanager.fragment.CreditsFragment;
 import com.android.dota.festmanager.fragment.EventsFragment;
 import com.android.dota.festmanager.fragment.FeedFragment;
 import com.android.dota.festmanager.fragment.GuideFragment;
-import com.android.dota.festmanager.fragment.HomeFragment;
-import com.android.dota.festmanager.fragment.ReachUs;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.android.dota.festmanager.fragment.ReachUsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.android.dota.festmanager.fragment.ScheduleFragment;
 
@@ -166,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.reach:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ReachUs())
+                        .replace(R.id.nav_fragment_container,new ReachUsFragment())
                         .commit();
                 break;
             case R.id.settings:

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.android.dota.festmanager.R;
 
+import org.w3c.dom.Text;
+
 public class AboutFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,11 +23,13 @@ public class AboutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_about,container,false);
+        return inflater.inflate(R.layout.fragment_text_display,container,false);
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        TextView about = getView().findViewById(R.id.textView);
-        about.setText(getString(R.string.aboutus));
+        TextView title = getActivity().findViewById(R.id.tv_title);
+        TextView display = getActivity().findViewById(R.id.tv_display);
+        title.setText(R.string.aboutus);
+        display.setText(R.string.aboutfest);
     }
 }

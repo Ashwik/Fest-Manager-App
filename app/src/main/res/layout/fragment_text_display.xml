@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="24sp"
+        tools:text="@string/reachus"
+        />
+
+    <ScrollView
+        android:layout_below="@id/tv_title"
+        android:background="@drawable/white_corners"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_display"
+            android:padding="8dp"
+            android:textColor="#000"
+            android:breakStrategy="simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            tools:text="@string/directions"
+            />
+
+    </ScrollView>
+
+</RelativeLayout>
