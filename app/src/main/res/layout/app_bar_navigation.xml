@@ -28,7 +28,6 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:visibility="gone"
         android:layout_gravity="center"
-
         />
 
     <include layout="@layout/navigation_content" />

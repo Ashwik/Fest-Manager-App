@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,10 +34,12 @@ public class DetailsFragment extends Fragment {
     public String id ;
     private EventDetails eventDetailsmodel;
     private TextView eventDetails,eventName,startTime;
+    private ProgressBar progressBar;
     private Realm realm;
     private Context context;
     private String time;
     private String TAG = "DetailsFragment";
+    private boolean isNetwork = false;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +61,11 @@ public class DetailsFragment extends Fragment {
         eventDetails = getActivity().findViewById(R.id.eventdetails);
         eventName = getActivity().findViewById(R.id.event_details_name);
         startTime = getActivity().findViewById(R.id.event_startTime);
+        progressBar = getActivity().findViewById(R.id.progress_bar_details);
         Bundle bundle= getActivity().getIntent().getExtras();
         id=bundle.getString("id");
+        eventName.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
         CallApi();
         }
 
@@ -72,12 +78,15 @@ public class DetailsFragment extends Fragment {
                 eventDetailsmodel = response.body();
                 addDatatoRealm(eventDetailsmodel);
                 getDatafromRealm(realm);
+                progressBar.setVisibility(View.GONE);
+                isNetwork = true;
             }
 
             @Override
             public void onFailure(Call<EventDetails> call, Throwable t) {
                 getDatafromRealm(realm);
                 Log.e(TAG,"No Internet");
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
@@ -112,25 +121,29 @@ public class DetailsFragment extends Fragment {
 
             if(result == null)
             {
-                Toast.makeText(context, "No Network...Get Connected", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "No Network...Get Connected", Toast.LENGTH_SHORT).show();
                 startTime.setText("Please connect to network .... the App needs internet to load data for the first time");
             }
 
             if(result != null)
             {
-                if( result.getStartTime() == null) {
-                    Toast.makeText(context, "No Network...Get Connected", Toast.LENGTH_SHORT).show();
-                    startTime.setText("Please connect to network .... the App needs internet to load data for the first time");
+                if(isNetwork == false){
+                    Toast.makeText(context,"No Network....Loading Offline Data",Toast.LENGTH_SHORT).show();
+
                 }
 
-                if(result.getAbout() == null)
-                {
-                    Toast.makeText(context, "No Network...Get Connected", Toast.LENGTH_SHORT).show();
+                if(result.getName()!=null) {
+                    ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
                 }
-                eventName.setVisibility(View.GONE);
-                ((DetailsActivity)getActivity()).setActionBarTitle(result.getName());
-                eventDetails.setText(result.getAbout());
-                if (result.getStartTime()!=null||result.getStartTime().equals("")) {
+
+
+                if(result.getAbout() != null) {
+                    eventDetails.setText(result.getAbout());
+                } else {
+                    eventDetails.setText("Please connect to network .... the App needs internet to load data for the first time");
+                }
+
+                if (result.getStartTime()==null||result.getStartTime().equals("")) {
                     startTime.setVisibility(View.GONE);
                 } else if(result.getStartTime()!=null){
                     time = getEventTime(result.getStartTime())[3] + ":" + getEventTime(result.getStartTime())[4] + " - " +
