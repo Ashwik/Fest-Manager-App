@@ -26,7 +26,7 @@ import com.android.dota.festmanager.fragment.ContactsFragment;
 import com.android.dota.festmanager.fragment.CreditsFragment;
 import com.android.dota.festmanager.fragment.EventsFragment;
 import com.android.dota.festmanager.fragment.FeedFragment;
-import com.android.dota.festmanager.fragment.GuideFragment;
+import com.android.dota.festmanager.fragment.MapsFragment;
 import com.android.dota.festmanager.fragment.ReachUsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.guide:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new GuideFragment())
+                        .replace(R.id.nav_fragment_container,new MapsFragment())
                         .commit();
                 break;
             case R.id.credits:

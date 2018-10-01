@@ -3,7 +3,6 @@ package com.android.dota.festmanager.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 
 import com.android.dota.festmanager.R;
 import com.android.dota.festmanager.activity.DetailsActivity;
-import com.android.dota.festmanager.fragment.DetailsFragment;
 import com.android.dota.festmanager.model.EventDetails;
 
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     @NonNull
     @Override
     public EventsAdapter.EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_events, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_events_item, parent, false);
         return new EventViewHolder(v);
     }
 

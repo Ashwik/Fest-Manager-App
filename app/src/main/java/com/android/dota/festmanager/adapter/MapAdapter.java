@@ -67,7 +67,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view=inflater.inflate(R.layout.place_recycler,parent,false);
+        View view=inflater.inflate(R.layout.fragment_maps_item,parent,false);
         return new MyViewHolder(view);
     }
 
