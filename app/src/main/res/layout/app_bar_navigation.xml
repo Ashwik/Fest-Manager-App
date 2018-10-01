@@ -21,6 +21,16 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:visibility="gone"
+        android:layout_gravity="center"
+
+        />
+
     <include layout="@layout/navigation_content" />
 
 </android.support.design.widget.CoordinatorLayout>

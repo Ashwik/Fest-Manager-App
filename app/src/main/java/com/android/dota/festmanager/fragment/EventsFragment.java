@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.dota.festmanager.R;
@@ -23,6 +24,7 @@ import com.android.dota.festmanager.model.EventDetails;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import io.realm.Progress;
 import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
@@ -39,6 +41,7 @@ public class EventsFragment extends Fragment {
     private Context context;
     private boolean isnetwork = false;
     private String TAG = "EventsFragment";
+    private ProgressBar progressBar;
 
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class EventsFragment extends Fragment {
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh);
+        progressBar = getActivity().findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
         callApi();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -84,6 +89,7 @@ public class EventsFragment extends Fragment {
                 isnetwork = true;
                 getDatafromRealm(realm);
                 swipeRefreshLayout.setRefreshing(false);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -91,6 +97,7 @@ public class EventsFragment extends Fragment {
                 Log.e(TAG,"No Internet");
                 getDatafromRealm(realm);
                 swipeRefreshLayout.setRefreshing(false);
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
