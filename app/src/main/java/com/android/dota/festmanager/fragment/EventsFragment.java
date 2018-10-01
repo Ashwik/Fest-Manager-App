@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -33,10 +34,10 @@ public class EventsFragment extends Fragment {
     private ArrayList<EventDetails> eventDetailsList ;
     private ArrayList<EventDetails> realmList ;
     private RecyclerView recyclerView;
-    private EventsAdapter eventsAdapter ;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private Realm realm;
-    private boolean isnetwork = false;
     private Context context;
+    private boolean isnetwork = false;
     private String TAG = "EventsFragment";
 
 
@@ -57,7 +58,15 @@ public class EventsFragment extends Fragment {
         Realm.init(context);
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
+        swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh);
         callApi();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                callApi();
+            }
+        });
 
 
     }
@@ -74,12 +83,14 @@ public class EventsFragment extends Fragment {
                 }
                 isnetwork = true;
                 getDatafromRealm(realm);
+                swipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onFailure(Call<ArrayList<EventDetails>> call, Throwable t) {
                 Log.e(TAG,"No Internet");
                 getDatafromRealm(realm);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
     }
