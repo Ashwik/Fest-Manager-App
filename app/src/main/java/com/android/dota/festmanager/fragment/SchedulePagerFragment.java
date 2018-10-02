@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -47,6 +48,7 @@ public class SchedulePagerFragment extends Fragment {
     private int i;
     private Context context;
     private boolean isNetwork = false;
+    private SwipeRefreshLayout swipeRefreshLayout;
     //private int start;
 
 
@@ -73,6 +75,7 @@ public class SchedulePagerFragment extends Fragment {
         //start = getArguments().getInt("start", 0);
         Log.d(TAG,"page"+String.valueOf(page));
         progressBar = getActivity().findViewById(R.id.progress_bar);
+        swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_schedule);
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
         adapter = new ScheduleAdapter(realmlist, context, day);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -98,6 +101,13 @@ public class SchedulePagerFragment extends Fragment {
         CallApi();
         progressBar.setVisibility(View.VISIBLE);
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                CallApi();
+            }
+        });
+
     }
 
     private void CallApi() {
@@ -114,6 +124,7 @@ public class SchedulePagerFragment extends Fragment {
 
                 getDatafromRealm(realm);
                 progressBar.setVisibility(View.GONE);
+                swipeRefreshLayout.setRefreshing(false);
 
             }
 
@@ -122,6 +133,7 @@ public class SchedulePagerFragment extends Fragment {
                 Log.e(TAG, "Error in Connectivity");
                 getDatafromRealm(realm);
                 progressBar.setVisibility(View.GONE);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
     }
