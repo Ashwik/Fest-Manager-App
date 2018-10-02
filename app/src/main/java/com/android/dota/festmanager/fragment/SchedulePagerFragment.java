@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.dota.festmanager.adapter.ScheduleAdapter;
@@ -25,6 +26,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import io.realm.Progress;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import retrofit2.Call;
@@ -38,6 +40,7 @@ public class SchedulePagerFragment extends Fragment {
     private List<EventDetails> list = new ArrayList<>();
     private List<String> realmlist = new ArrayList<>();
     public Realm realm;
+    private ProgressBar progressBar;
     private String TAG = "SchedulePagerFragment";
     private int page;
     private String day;
@@ -69,6 +72,7 @@ public class SchedulePagerFragment extends Fragment {
         page = bundle.getInt("page", 0);
         //start = getArguments().getInt("start", 0);
         Log.d(TAG,"page"+String.valueOf(page));
+        progressBar = getActivity().findViewById(R.id.progress_bar);
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
         adapter = new ScheduleAdapter(realmlist, context, day);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -92,6 +96,7 @@ public class SchedulePagerFragment extends Fragment {
 //        }
 
         CallApi();
+        progressBar.setVisibility(View.VISIBLE);
 
     }
 
@@ -108,6 +113,7 @@ public class SchedulePagerFragment extends Fragment {
                 }
 
                 getDatafromRealm(realm);
+                progressBar.setVisibility(View.GONE);
 
             }
 
@@ -115,6 +121,7 @@ public class SchedulePagerFragment extends Fragment {
             public void onFailure(Call<ArrayList<EventDetails>> call, Throwable t) {
                 Log.e(TAG, "Error in Connectivity");
                 getDatafromRealm(realm);
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
