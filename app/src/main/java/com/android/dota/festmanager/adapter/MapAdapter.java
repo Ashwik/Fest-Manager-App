@@ -19,7 +19,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
 
     Context context;
     String[] placeName;
-    double[] latitudes= {17.547152,
+    double[] latitudes = {17.547152,
             17.547400,
             17.544982,
             17.545510,
@@ -38,7 +38,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
             17.5453394,
             17.5443279,
             17.5456641};
-    double[] longitudes={78.572481,
+    double[] longitudes = {78.572481,
             78.572387,
             78.570834,
             78.570511,
@@ -66,8 +66,8 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view=inflater.inflate(R.layout.fragment_maps_item,parent,false);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.fragment_maps_item, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -75,10 +75,10 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.textView.setText(placeName[position]);
 
-       holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intent.ACTION_VIEW);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.getApplicationContext().startActivity(intent);
             }
@@ -92,34 +92,34 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
         return placeName.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView textView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView=itemView.findViewById(R.id.place_text);
+            textView = itemView.findViewById(R.id.place_text);
 
             textView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            int position=getAdapterPosition();
-            int i=position;
-            switch (v.getId()){
+            int position = getAdapterPosition();
+            int i = position;
+            switch (v.getId()) {
 
                 case R.id.place_text:
 
-                    Intent intent=new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("google.navigation:q="+latitudes[i]+","+longitudes[i]));
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("google.navigation:q=" + latitudes[i] + "," + longitudes[i]));
                     intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
                     context.getApplicationContext().startActivity(intent);
-                    Log.w("", "Selected"+position);
+                    Log.w("", "Selected" + position);
                     break;
             }
 
         }
-        }
     }
+}
 

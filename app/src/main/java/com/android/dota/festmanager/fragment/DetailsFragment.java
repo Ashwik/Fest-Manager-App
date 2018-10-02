@@ -76,10 +76,11 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onResponse(Call<EventDetails> call, Response<EventDetails> response) {
                 eventDetailsmodel = response.body();
+                isNetwork = true;
                 addDatatoRealm(eventDetailsmodel);
                 getDatafromRealm(realm);
                 progressBar.setVisibility(View.GONE);
-                isNetwork = true;
+
             }
 
             @Override

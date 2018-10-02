@@ -28,6 +28,7 @@ import com.android.dota.festmanager.fragment.EventsFragment;
 import com.android.dota.festmanager.fragment.FeedFragment;
 import com.android.dota.festmanager.fragment.MapsFragment;
 import com.android.dota.festmanager.fragment.ReachUsFragment;
+import com.android.dota.festmanager.fragment.ScheduleCardsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.android.dota.festmanager.fragment.ScheduleFragment;
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.schedule:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ScheduleFragment())
+                        .replace(R.id.nav_fragment_container,new ScheduleCardsFragment())
                         .commit();
                 break;
             case R.id.about:
