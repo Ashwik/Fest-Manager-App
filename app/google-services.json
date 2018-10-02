@@ -60,6 +60,50 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:157978564117:android:e6e9fc607099fe27",
+        "android_client_info": {
+          "package_name": "com.android.dota.festmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157978564117-h3a5q5okageebnh6jmb44hadcmk96kkh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.dota.festmanager",
+            "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
+          }
+        },
+        {
+          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:157978564117:android:17b29d32bd87bea9",
         "android_client_info": {
           "package_name": "com.untitled.android.b.notiftester"
