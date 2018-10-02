@@ -5,10 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 
 import com.android.dota.festmanager.R;
 
@@ -27,9 +29,11 @@ public class ReachUsFragment extends Fragment {
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        TextView title = getActivity().findViewById(R.id.tv_title);
+        //TextView title = getActivity().findViewById(R.id.tv_title);
         TextView display = getActivity().findViewById(R.id.tv_display);
-        title.setText(R.string.reachus);
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Reach Us");
+       // title.setText(R.string.reachus);
         display.setText(R.string.directions);
     }
 }

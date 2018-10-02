@@ -16,7 +16,9 @@
         android:gravity="center"
         android:textColor="#000"
         android:textSize="24sp"
-        tools:text="Event" />
+        tools:text="Event"
+
+        />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
