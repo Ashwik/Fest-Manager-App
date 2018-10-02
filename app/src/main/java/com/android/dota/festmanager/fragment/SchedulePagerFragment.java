@@ -44,7 +44,8 @@ public class SchedulePagerFragment extends Fragment {
     private int i;
     private Context context;
     private boolean isNetwork = false;
-    private int start;
+    //private int start;
+
 
 
     @Override
@@ -65,8 +66,8 @@ public class SchedulePagerFragment extends Fragment {
         Realm.init(context);
         realm = Realm.getDefaultInstance();
         page = getArguments().getInt("page", 0);
-        start = getArguments().getInt("start", 0);
-        Log.d(TAG,"start "+String.valueOf(start));
+        //start = getArguments().getInt("start", 0);
+        Log.d(TAG,"page"+String.valueOf(page));
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
         adapter = new ScheduleAdapter(realmlist, context, day);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -83,11 +84,13 @@ public class SchedulePagerFragment extends Fragment {
                 day = "28";
                 break;
         }
-        if (start == 0) {
-            CallApi();
-        } else {
-            getDatafromRealm(realm);
-        }
+//        if (start == 0) {
+//            CallApi();
+//        } else {
+//            getDatafromRealm(realm);
+//        }
+
+        CallApi();
 
     }
 
@@ -98,11 +101,11 @@ public class SchedulePagerFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<EventDetails>> call, Response<ArrayList<EventDetails>> response) {
                 list = response.body();
-
+                isNetwork = true;
                 for (i = 0; i < list.size(); i++) {
                     addDatatoRealm(list.get(i));
                 }
-                isNetwork = true;
+
                 getDatafromRealm(realm);
 
             }
@@ -142,12 +145,10 @@ public class SchedulePagerFragment extends Fragment {
             realmlist = new ArrayList<>();
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("date", day).findAll();
             if (results.size() == 0) {
-                if (!isNetwork) {
-                    Toast.makeText(context, "No Internet", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
             } else {
-                if (!isNetwork && start == 0) {
-                    Toast.makeText(context, "No Network....Loading Offline Data", Toast.LENGTH_SHORT).show();
+                if(!isNetwork){
+                    Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
                 }
             }
             for (int j = 0; j < results.size(); j++) {
@@ -188,4 +189,6 @@ public class SchedulePagerFragment extends Fragment {
         return parts;
 
     }
+
+    
 }

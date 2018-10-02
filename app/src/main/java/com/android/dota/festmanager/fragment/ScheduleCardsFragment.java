@@ -23,6 +23,7 @@ public class ScheduleCardsFragment extends Fragment{
     private ScheduleCardAdapter scheduleCardAdapter;
     private Context context ;
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
