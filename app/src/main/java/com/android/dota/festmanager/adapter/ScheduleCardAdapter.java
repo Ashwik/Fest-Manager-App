@@ -1,6 +1,7 @@
 package com.android.dota.festmanager.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.dota.festmanager.R;
+import com.android.dota.festmanager.activity.DetailsActivity;
 import com.android.dota.festmanager.activity.MainActivity;
+import com.android.dota.festmanager.activity.ScheduleActivity;
 import com.android.dota.festmanager.fragment.ScheduleCardsFragment;
 import com.android.dota.festmanager.fragment.SchedulePagerFragment;
 
@@ -45,15 +48,9 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
         holder.schedule_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SchedulePagerFragment schedulePagerFragment = new SchedulePagerFragment();
-                Bundle args = new Bundle();
-                args.putInt("page", pos);
-                Log.e("Bundle",String.valueOf(pos));
-                schedulePagerFragment.setArguments(args);
-                ((AppCompatActivity) context).getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.nav_fragment_container, schedulePagerFragment)
-                        .commit();
+                Intent intent = new Intent(context, ScheduleActivity.class);
+                intent.putExtra("page",pos);
+                v.getContext().startActivity(intent);
 
             }
 

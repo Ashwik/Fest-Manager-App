@@ -65,7 +65,8 @@ public class SchedulePagerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Realm.init(context);
         realm = Realm.getDefaultInstance();
-        page = getArguments().getInt("page", 0);
+        Bundle bundle= getActivity().getIntent().getExtras();
+        page = bundle.getInt("page", 0);
         //start = getArguments().getInt("start", 0);
         Log.d(TAG,"page"+String.valueOf(page));
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
@@ -113,7 +114,6 @@ public class SchedulePagerFragment extends Fragment {
             @Override
             public void onFailure(Call<ArrayList<EventDetails>> call, Throwable t) {
                 Log.e(TAG, "Error in Connectivity");
-                isNetwork = false;
                 getDatafromRealm(realm);
             }
         });
@@ -147,7 +147,7 @@ public class SchedulePagerFragment extends Fragment {
             if (results.size() == 0) {
                 Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
             } else {
-                if(!isNetwork){
+                if(isNetwork == false){
                     Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
                 }
             }
@@ -190,5 +190,5 @@ public class SchedulePagerFragment extends Fragment {
 
     }
 
-    
+
 }

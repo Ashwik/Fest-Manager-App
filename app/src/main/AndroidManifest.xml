@@ -40,10 +40,12 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.SettingsActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        <activity
+            android:name=".activity.SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".activity.ScheduleActivity"></activity>
     </application>
 
 </manifest>
