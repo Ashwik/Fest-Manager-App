@@ -72,15 +72,19 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.textView.setText(placeName[position]);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("google.navigation:q=" + latitudes[position] + "," + longitudes[position]));
                 intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                Log.e("", "Selected" + position);
                 context.getApplicationContext().startActivity(intent);
+
+
             }
         });
 
@@ -92,7 +96,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
         return placeName.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView;
 
@@ -100,26 +104,26 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
             super(itemView);
             textView = itemView.findViewById(R.id.place_text);
 
-            textView.setOnClickListener(this);
+//            textView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View v) {
-            int position = getAdapterPosition();
-            int i = position;
-            switch (v.getId()) {
-
-                case R.id.place_text:
-
-                    Intent intent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("google.navigation:q=" + latitudes[i] + "," + longitudes[i]));
-                    intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
-                    context.getApplicationContext().startActivity(intent);
-                    Log.w("", "Selected" + position);
-                    break;
-            }
-
-        }
+//        @Override
+//        public void onClick(View v) {
+//            int position = getAdapterPosition();
+//            int i = position;
+//            switch (v.getId()) {
+//
+//                case R.id.place_text:
+//
+//                    Intent intent = new Intent(Intent.ACTION_VIEW,
+//                            Uri.parse("google.navigation:q=" + latitudes[i] + "," + longitudes[i]));
+//                    intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+//                    context.getApplicationContext().startActivity(intent);
+//                    Log.w("", "Selected" + position);
+//                    break;
+//            }
+//
+//        }
     }
 }
 
