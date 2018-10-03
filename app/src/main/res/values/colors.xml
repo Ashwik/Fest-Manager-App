@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00BCD4</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#3F51B5</color>
+    <color name="colorPrimary">#33ffffff</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#FFF</color>
 
-    <color name="mainTextColor">#343d43</color>
-    <color name="contentDividerLine">#e0e0e0</color>
+    <color name="textColor">#FFF</color>
+    <color name="backgroundColor">#33ffffff</color>
 
     <color name="sky_color_animation">#e7eef6</color>
-
-    <color name="circle3">#7742A5F5</color>
-    <color name="circle4">#77AB47BC</color>
 </resources>

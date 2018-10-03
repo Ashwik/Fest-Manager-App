@@ -17,7 +17,7 @@ import com.android.dota.festmanager.adapter.ContactAdapter;
 import java.util.ArrayList;
 
 
-public class ViewPagerFragment extends Fragment {
+public class ContactsPagerFragment extends Fragment {
     public static final String CONTACTS_SWITCH = "ContactsSwitch";
 
     private ArrayList<Contact> data;
@@ -53,7 +53,7 @@ public class ViewPagerFragment extends Fragment {
 
 
 
-        return inflater.inflate(R.layout.fragment_view_pager, container, false);
+        return inflater.inflate(R.layout.fragment_contacts_pager, container, false);
     }
 
     @Override

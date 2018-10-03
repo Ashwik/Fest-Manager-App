@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,8 @@ public class ContactsFragment extends Fragment {
         //FragmentManager fragManager = myContext.getSupportFragmentManager();
         mPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Contact Us");
 
         TabLayout tabLayout = getView().findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mPager);
@@ -47,10 +50,10 @@ public class ContactsFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             Bundle args = new Bundle();
-            ViewPagerFragment viewPagerFragment = new ViewPagerFragment();
-            args.putInt(viewPagerFragment.CONTACTS_SWITCH, position);
-            viewPagerFragment.setArguments(args);
-            return viewPagerFragment;
+            ContactsPagerFragment contactsPagerFragment = new ContactsPagerFragment();
+            args.putInt(contactsPagerFragment.CONTACTS_SWITCH, position);
+            contactsPagerFragment.setArguments(args);
+            return contactsPagerFragment;
         }
 
         @Override

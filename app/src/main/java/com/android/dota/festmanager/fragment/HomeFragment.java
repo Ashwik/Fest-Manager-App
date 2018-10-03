@@ -49,11 +49,7 @@ public class HomeFragment extends Fragment  {
                                 .replace(R.id.bottom_nav_container, new EventsFragment())
                                 .commit();
                         break;
-                    case R.id.schedule:
-                        getChildFragmentManager().beginTransaction()
-                                .replace(R.id.bottom_nav_container,new ScheduleFragment())
-                                .commit();
-                        break;
+
                 }
                 return true;
             }

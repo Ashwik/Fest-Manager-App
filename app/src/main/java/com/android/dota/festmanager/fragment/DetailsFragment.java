@@ -56,6 +56,9 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ((DetailsActivity) getActivity()).setActionBarTitle("Events");
+
         Realm.init(context);
         realm = Realm.getDefaultInstance();
         eventDetails = getActivity().findViewById(R.id.eventdetails);
@@ -67,7 +70,7 @@ public class DetailsFragment extends Fragment {
         eventName.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         CallApi();
-        }
+    }
 
     private void CallApi(){
         EventsInterface apiservice = ApiClient.getClient().create(EventsInterface.class);

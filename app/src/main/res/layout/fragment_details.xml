@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:gravity="center"
-        android:textColor="#000"
+        android:textColor="@color/textColor"
         android:textSize="24sp"
         tools:text="Event"
 
@@ -54,7 +54,7 @@
                 android:paddingEnd="8dp"
                 android:paddingStart="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@android:color/white"
+                android:textColor="@color/textColor"
                 android:textSize="30sp" />
 
             <TextView
@@ -65,7 +65,7 @@
                 android:layout_marginRight="5dp"
                 android:lineSpacingExtra="2dp"
                 android:padding="8dp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/textColor"
                 android:textSize="18sp" />
 
         </LinearLayout>

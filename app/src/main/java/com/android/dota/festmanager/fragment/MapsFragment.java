@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,10 @@ public class MapsFragment extends Fragment {
     }
     public void onViewCreated(View view,@Nullable Bundle savedInstanceState)
     {
+
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Campus Map");
+
         placeName=getResources().getStringArray(R.array.placeName);
         place_recycler=getView().findViewById(R.id.place_recycler);
 
