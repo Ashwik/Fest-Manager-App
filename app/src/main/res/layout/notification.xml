@@ -8,15 +8,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time"
-        android:id="@+id/time"/>
+        android:id="@+id/time"
+        android:textColor="@android:color/white"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description"
-        android:id="@+id/desc"/>
+        android:id="@+id/desc"
+        android:textColor="@android:color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Department"
-        android:id="@+id/dept"/>
+        android:id="@+id/dept"
+        android:textColor="@android:color/white"
+        />
 </LinearLayout>
