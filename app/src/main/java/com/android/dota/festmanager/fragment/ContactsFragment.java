@@ -67,7 +67,7 @@ public class ContactsFragment extends Fragment {
                 case 0:
                     return "Organising Body";
                 case 1:
-                    return "Club Senate";
+                    return "Tech Senate Senate";
             }
             return null;
         }

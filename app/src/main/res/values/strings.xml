@@ -45,28 +45,26 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="organiser_names">
-        <item>Abhinav Ettireddy</item>
-        <item>Aditya Iyer</item>
-        <item>Chandan Kumar</item>
-        <item>K Vaishnavi Reddy</item>
-        <item>Manas Bansal</item>
-        <item>Uday Yalamanchili</item>
-        <item>Mayank</item>
-        <item>Pratik Vishwajit Bhavsar</item>
-        <item>Abhishek Yadav</item>
-        <item>Nunna Krishna Teja</item>
-        <item>Mohit Goyal</item>
-        <item>Nagaraju M.</item>
-        <item>Ananthula Pavan Kumar</item>
-        <item>Pradeep Reddy Sagili</item>
-        <item>Girish Nadiger</item>
+        <item>Aman Syed</item>
+        <item>Suraj Thotakura</item>
+        <item>Yash Chokhani</item>
+        <item>Ram Dheeraj Srigiri</item>
+        <item>Rohith Reddy Mandadi</item>
+        <item>Modit Goyal</item>
+        <item>Dharmesh Singhal</item>
+        <item>Zainul Belgaumwala</item>
+        <item>Manoj Kondisetti </item>
+        <item>Akshat Govil</item>
+        <item>Rajashekar Reddy</item>
+        <item>D Mukesh Reddy</item>
+        <item>Chetan Reddy</item>
+        <item>Richa Tiwari</item>
     </string-array>
 
     <string-array name="organisers_designations">
         <item>President</item>
         <item>General Secretary</item>
-        <item>Cultural Secretary(Boys)</item>
-        <item>Cultural Secretary(Girls)</item>
+        <item>Technical Secretary</item>
         <item>Sponsorship and Marketing</item>
         <item>Publicity</item>
         <item>Photography</item>
@@ -81,74 +79,98 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     </string-array>
 
     <string-array name="organisers_phone_numbers">
-        <item>9542929354</item>
-        <item>9705932532</item>
-        <item>7660002320</item>
-        <item>9885623355</item>
-        <item>9666131548</item>
-        <item>9603403456</item>
-        <item>9705940750</item>
-        <item>7997083706</item>
-        <item>7730011015</item>
+        <item>8790359970</item>
+        <item>9550578389</item>
+        <item>8187083476</item>
+        <item>7036067666</item>
+        <item>8897454710</item>
+        <item>7790802383</item>
+        <item>7036187007</item>
+        <item>7997083652</item>
+        <item>9550757507</item>
         <item>9505180047</item>
-        <item>9100589562</item>
-        <item>8297633120</item>
-        <item>7095979695</item>
-        <item>8019683351</item>
-        <item>7892642907</item>
+        <item>7997083807</item>
+        <item>9912834034</item>
+        <item>7674808114</item>
+        <item>8106622890</item>
+        <item>8184954266</item>
     </string-array>
 
     <string-array name="club_secretaries">
-        <item>Sai Sunil Parepall</item>
-        <item>Tusharkanth Karlapudi</item>
-        <item>Shardul Parab</item>
-        <item>Ankush Rawat</item>
-        <item>Suchit Kar</item>
-        <item>Monarch Moolchandani</item>
-        <item>Aryan Sahi</item>
-        <item>Nikita Mandapati</item>
-        <item>Ameen Tarik Shaikh</item>
-        <item>Lokvamsi Anumukonda</item>
-        <item>Krishna Mohan Sahay</item>
-        <item>Shaheer Azam</item>
-        <item>Geetanjali Dhakar</item>
-        <item>Harshith Thonupunoori</item>
-        <item>Anshik Thareja</item>
+        <item>Mahesh Kumar Moond</item>
+        <item>Mohit Muskan</item>
+        <item>Drishti Mamtani</item>
+        <item>Shubham Agarwal</item>
+        <item>A Venkata Shravan Bharadwaj</item>
+        <item>Basu Dubey</item>
+        <item>Akhil Raj Baranwal</item>
+        <item>Ayush Bagdiya</item>
+        <item>Shristy Kapoor</item>
+        <item>Aakriti</item>
+        <item>Konark Joshi</item>
+        <item>Mayank Gupta</item>
+        <item>Pratijay Guha</item>
+        <item>Aayush Jain</item>
+        <item>Jomal Jochan</item>
+        <item>Prateek Dasgupta</item>
+        <item>Sasmit Mati</item>
+        <item>Aditya Lohana</item>
+        <item>Raahul Jagannathan</item>
+        <item>Pratyush Goel</item>
+        <item>Shubham Sharma</item>
+        <item>Shreyansh Jain</item>
+
     </string-array>
 
     <string-array name="club_names">
-        <item>Cooking</item>
-        <item>Designers Anonymous</item>
-        <item>Dance</item>
-        <item>Dramatics</item>
-        <item>ELAS</item>
-        <item>Embryo</item>
-        <item>Hindi Tarang</item>
-        <item>Journal</item>
-        <item>Movie</item>
-        <item>Music</item>
-        <item>Photog</item>
-        <item>Quiz</item>
-        <item>Shades</item>
-        <item>VFx</item>
-        <item>Sanskrit and Foreign Languages</item>
+
+    <item>Phoenix Association</item>
+    <item>Panacea Association</item>
+    <item>Spectrum</item>
+    <item>Ad Astra</item>
+    <item>Economics Association</item>
+    <item>Crux</item>
+    <item>Automation and Robotics Club</item>
+    <item>Axiom Association</item>
+    <item>Alchemy Association</item>
+    <item>Secretary - BITS Embryo</item>
+    <item>Society of Automotive Engineers</item>
+    <item>Synapsis</item>
+    <item>MEA</item>
+    <item>CSA</item>
+    <item>CEA</item>
+    <item>ACE Association</item>
+    <item>Tech-Expo</item>
+    <item>Quiz Club</item>
+    <item>IEEE</item>
+    <item>CRC</item>
+    <item>BITSMUN</item>
+    <item>E-cell</item>
+
     </string-array>
 
     <string-array name="club_senate_phone_numbers">
-        <item>7660008279</item>
-        <item>9133234326</item>
-        <item>9133312963</item>
-        <item>9705942655</item>
-        <item>7286823259</item>
-        <item>8104101188</item>
-        <item>9705943042</item>
-        <item>9177545277</item>
-        <item>9975578320</item>
-        <item>9177155488</item>
-        <item>9100592750</item>
-        <item>9133235070</item>
-        <item>8096350389</item>
-        <item>9000456353</item>
-        <item>8209589297</item>
+        <item>7997083856</item>
+        <item>7989205393</item>
+        <item>9131668193</item>
+        <item>7997083955</item>
+        <item>9133347585</item>
+        <item>8813920061</item>
+        <item>7997083908</item>
+        <item>7674924049</item>
+        <item>7997084386</item>
+        <item>7997083737</item>
+        <item>8465927104</item>
+        <item>7997083691</item>
+        <item>9553469400</item>
+        <item>7997083675</item>
+        <item>8187083684</item>
+        <item>0000000000</item>
+        <item>9133347622</item>
+        <item>9833883757</item>
+        <item>9600006725</item>
+        <item>9594183162</item>
+        <item>9603028007</item>
+        <item>7997000160</item>
     </string-array>
 </resources>
