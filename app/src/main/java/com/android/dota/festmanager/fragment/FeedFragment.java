@@ -11,6 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
 import com.android.dota.festmanager.R;
 import com.android.dota.festmanager.adapter.FeedAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -40,11 +43,16 @@ public class FeedFragment extends Fragment {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Feed");
+        final ProgressBar progressBar = getActivity().findViewById(R.id.progress_bar);
 
         mRecyclerView = view.findViewById(R.id.feed1);
-        final ProgressDialog mDialog = new ProgressDialog(getActivity());
-        mDialog.setMessage("Loading...");
-        mDialog.show();
+
+//        final ProgressDialog mDialog = new ProgressDialog(getActivity());
+//        mDialog.setMessage("Loading...");
+//        mDialog.show();
+        progressBar.setVisibility(View.VISIBLE);
+
+        Toast.makeText(getContext(),"Feed Updated!",Toast.LENGTH_LONG).show();
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference notification = database.child("notifications");
         Log.v("Feed Adapter","timeArray is created..!!!!");
@@ -67,7 +75,7 @@ public class FeedFragment extends Fragment {
                 Log.v("Fest Fragment","\n\n\n\n\n\n\n\nsetting adapter...........................................................\n\n\n\n\n\n");
                 //mFeedAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(mFeedAdapter);
-                mDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

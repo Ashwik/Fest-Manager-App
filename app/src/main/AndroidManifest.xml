@@ -10,14 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".activity.DetailsActivity" />
+        <activity android:name=".activity.DetailsActivity"
+            android:screenOrientation="portrait"
+            />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -44,8 +49,12 @@
             android:name=".activity.SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".activity.ScheduleActivity"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ScheduleActivity"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>

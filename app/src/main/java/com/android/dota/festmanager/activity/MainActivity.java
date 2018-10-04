@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if(savedInstanceState==null){
-            mNavigationView.getMenu().performIdentifierAction(R.id.feed,0);
+            mNavigationView.getMenu().performIdentifierAction(R.id.events,0);
         }
         mNavigationView.setCheckedItem(R.id.home);
 
@@ -77,13 +77,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .build();
                 notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttributes);
                 notificationChannel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
+
+                assert manager != null;
                 manager.createNotificationChannel(notificationChannel);
+
                 preferences.edit().putBoolean("ChannelCreated",true).apply();
             }
         }
 
         //todo: change it to actual event names
-        String events[]={"event1","event2","general"};
+        String events[]={"event1","event2","general","pushNotifications"};
         for(final String s:events){
             if(!preferences.contains(s)){
                 FirebaseMessaging.getInstance().subscribeToTopic(s).addOnSuccessListener(new OnSuccessListener<Void>() {
