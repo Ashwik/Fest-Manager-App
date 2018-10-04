@@ -17,8 +17,8 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        String eventnames[] = {"Event 1","Event 2","General"};
-        String topics[]={"event1","event2","general"};
+        String eventnames[] = {"Event 1","Event 2","General","pushNotifications"};
+        String topics[]={"event1","event2","general","pushNotifications"};
 
         recyclerView = findViewById(R.id.notifMenu);
         adapter=new SettingsNotificationAdapter(eventnames,topics,SettingsActivity.this);
