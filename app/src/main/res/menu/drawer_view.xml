@@ -7,25 +7,25 @@
         <item
             android:id="@+id/events"
             android:title="Events" />
-        <item
-            android:id="@+id/schedule"
-            android:title="Schedule" />
+        <!--<item-->
+            <!--android:id="@+id/schedule"-->
+            <!--android:title="Schedule" />-->
         <item
             android:id="@+id/about"
             android:title="About Us" />
         <item
             android:id="@+id/contact"
             android:title="Contact Us" />
-        <item
-            android:id="@+id/guide"
-            android:title="Maps" />
-        <item
-            android:id="@+id/credits"
-            android:title="App Credits" />
+
+        <!--<item-->
+            <!--android:id="@+id/credits"-->
+            <!--android:title="App Credits" />-->
         <item
             android:id="@+id/reach"
             android:title="Reach Us "/>
-
+        <item
+            android:id="@+id/guide"
+            android:title="Directions" />
         <item
             android:id="@+id/settings"
             android:title="Settings"/>
