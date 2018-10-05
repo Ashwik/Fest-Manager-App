@@ -75,6 +75,14 @@
           }
         },
         {
+          "client_id": "157978564117-j3cb0ds6gpa1o7hsluf8hrtnrkil5447.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.dota.festmanager",
+            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
+          }
+        },
+        {
           "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
           "client_type": 3
         }
