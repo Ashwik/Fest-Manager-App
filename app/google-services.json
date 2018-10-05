@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:157978564117:android:33bf3f8765afea5d",
         "android_client_info": {
-          "package_name": "com.android.dota.festmanager"
+          "package_name": "b.android.untitled.com.notiftester"
         }
       },
       "oauth_client": [
@@ -67,11 +67,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "157978564117-h3a5q5okageebnh6jmb44hadcmk96kkh.apps.googleusercontent.com",
+          "client_id": "157978564117-764linp6lh4luo7a16jnp3b54a3tstj3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.android.dota.festmanager",
-            "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
+            "certificate_hash": "46fecd57eb5568666af9a0d5a9aae765d6322e1c"
           }
         },
         {

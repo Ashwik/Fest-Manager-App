@@ -124,28 +124,28 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
 
     <string-array name="club_names">
 
-    <item>Phoenix Association</item>
-    <item>Panacea Association</item>
-    <item>Spectrum</item>
-    <item>Ad Astra</item>
-    <item>Economics Association</item>
-    <item>Crux</item>
-    <item>Automation and Robotics Club</item>
-    <item>Axiom Association</item>
-    <item>Alchemy Association</item>
-    <item>Secretary - BITS Embryo</item>
-    <item>Society of Automotive Engineers</item>
-    <item>Synapsis</item>
-    <item>MEA</item>
-    <item>CSA</item>
-    <item>CEA</item>
-    <item>ACE Association</item>
-    <item>Tech-Expo</item>
-    <item>Quiz Club</item>
-    <item>IEEE</item>
-    <item>CRC</item>
-    <item>BITSMUN</item>
-    <item>E-cell</item>
+        <item>Phoenix Association</item>
+        <item>Panacea Association</item>
+        <item>Spectrum</item>
+        <item>Ad Astra</item>
+        <item>Economics Association</item>
+        <item>Crux</item>
+        <item>Automation and Robotics Club</item>
+        <item>Axiom Association</item>
+        <item>Alchemy Association</item>
+        <item>Secretary - BITS Embryo</item>
+        <item>Society of Automotive Engineers</item>
+        <item>Synapsis</item>
+        <item>MEA</item>
+        <item>CSA</item>
+        <item>CEA</item>
+        <item>ACE Association</item>
+        <item>Tech-Expo</item>
+        <item>Quiz Club</item>
+        <item>IEEE</item>
+        <item>CRC</item>
+        <item>BITSMUN</item>
+        <item>E-cell</item>
 
     </string-array>
 
@@ -173,4 +173,21 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>9603028007</item>
         <item>7997000160</item>
     </string-array>
+
+
+    <!--Firebase strings-->
+
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Sign in to get ATMOS Promo Code</string>
+
+    <string name="promo_code">Promo Code: %s</string>
+
+    <string name="google_status_fmt">ATMOS User: %s</string>
+    <string name="google_title_text">ATMOS Sign In</string>
+
+
 </resources>

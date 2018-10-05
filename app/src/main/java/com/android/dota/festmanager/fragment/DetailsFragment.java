@@ -24,6 +24,8 @@ import com.android.dota.festmanager.api.ApiClient;
 import com.android.dota.festmanager.api.EventsInterface;
 import com.android.dota.festmanager.model.EventDetails;
 
+import java.util.Objects;
+
 import io.realm.Realm;
 import retrofit2.Call;
 import retrofit2.Callback;

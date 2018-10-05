@@ -27,6 +27,7 @@ import com.android.dota.festmanager.fragment.CreditsFragment;
 import com.android.dota.festmanager.fragment.EventsFragment;
 import com.android.dota.festmanager.fragment.FeedFragment;
 import com.android.dota.festmanager.fragment.MapsFragment;
+import com.android.dota.festmanager.fragment.PromoCodeFragment;
 import com.android.dota.festmanager.fragment.ReachUsFragment;
 import com.android.dota.festmanager.fragment.ScheduleCardsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -163,6 +164,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.reach:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container,new ReachUsFragment())
+                        .commit();
+                break;
+            case R.id.promo_code:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
                         .commit();
                 break;
             case R.id.settings:
