@@ -26,12 +26,14 @@
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
             android:text="@string/signed_out"
+
             android:textColor="@color/textColor"/>
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
             tools:text="Firebase User ID: 123456789abc"
+            android:textSize="20sp"
             android:textColor="@color/textColor"/>
 
     </LinearLayout>

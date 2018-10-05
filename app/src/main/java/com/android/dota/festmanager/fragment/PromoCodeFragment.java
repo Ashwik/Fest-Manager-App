@@ -1,7 +1,9 @@
 package com.android.dota.festmanager.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,6 +28,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static android.content.ContentValues.TAG;
 
@@ -49,7 +56,11 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
-
+    private DatabaseReference database;
+    private DatabaseReference promo_code;
+    private DatabaseReference unique;
+    private String promoCodeString;
+    private int uniqueid;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +99,9 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
         super.onViewCreated(view, savedInstanceState);
         mStatusTextView = view.findViewById(R.id.status);
         mDetailTextView = view.findViewById(R.id.detail);
+        database = FirebaseDatabase.getInstance().getReference();
+        promo_code = database.child("promo_codes");
+        unique = database.child("unique");
 
         // Button listeners
         view.findViewById(R.id.signInButton).setOnClickListener(this);
@@ -140,8 +154,44 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseUser user = mAuth.getCurrentUser();
+
+                            //Log.e("PROMO CODE FRAG",database.child("current_id").toString());
+
+                            database.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String uid = user.getUid();
+                                    if(dataSnapshot.child("users").child(uid).child("promo_code").getValue(String.class)==null){
+                                        int current_id = Integer.parseInt(dataSnapshot.child("current_id").getValue(String.class));
+                                        String promo_code = dataSnapshot.child("promo_codes").child(String.valueOf(current_id)).getValue(String.class);
+
+
+                                        Log.e("PROMO CODE FRAG",promo_code);
+                                        Log.e("PROMO CODE FRAG",String.valueOf(current_id));
+
+                                        database.child("users").child(uid).child("ref").setValue(user.getEmail());
+                                        database.child("users").child(uid).child("promo_code").setValue(promo_code);
+                                        current_id++;
+                                        database.child("current_id").setValue(String.valueOf(current_id));
+                                        promoCodeString=promo_code;
+                                    }else{
+                                        promoCodeString = dataSnapshot.child("users").child(uid).child("promo_code").getValue(String.class);
+                                    }
+
+                                    savePromoCode(promoCodeString);
+                                    updateUI(user);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    promoCodeString = "dr54tr";
+                                    savePromoCode(promoCodeString);
+                                    updateUI(user);
+                                }
+                            });
                             updateUI(user);
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -155,6 +205,19 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
                 });
     }
     // [END auth_with_google]
+
+    private void savePromoCode(String promoCodeString) {
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(getString(R.string.promo_code_key), promoCodeString);
+        editor.commit();
+    }
+
+    private String getPromoCode() {
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        String promoCode = sharedPref.getString(getString(R.string.promo_code_key), "Fetching Code....");
+        return promoCode;
+    }
 
 
 // [START signin]
@@ -174,6 +237,7 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         updateUI(null);
+                        savePromoCode("Fetching code...");
                     }
                 });
     }
@@ -195,10 +259,28 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
         //TODO Update promocodes for different users
-        String promoCode = "IntoSixthDimension1907";
+
+
+//        promo_code.addValueEventListener(new ValueEventListener() {
+//
+//
+//            int i = (int) Math.random();
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                promoCodeString =  dataSnapshot.child(String.valueOf(0)).getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                promoCodeString = "not available";
+//            }
+//        });
+
+
+
         if (user != null) {
             mStatusTextView.setText(getString(R.string.google_status_fmt, user.getEmail()));
-            mDetailTextView.setText(getString(R.string.promo_code, promoCode));
+            mDetailTextView.setText(getString(R.string.promo_code, getPromoCode()));
 
             getView().findViewById(R.id.signInButton).setVisibility(View.GONE);
             getView().findViewById(R.id.signOutAndDisconnect).setVisibility(View.VISIBLE);

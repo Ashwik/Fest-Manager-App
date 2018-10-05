@@ -139,7 +139,7 @@ public class DetailsFragment extends Fragment {
                 }
 
                 if(result.getName()!=null) {
-                    ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+                    //((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
                 }
 
 

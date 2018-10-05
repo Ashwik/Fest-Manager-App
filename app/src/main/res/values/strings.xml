@@ -185,9 +185,10 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <string name="signed_out">Sign in to get ATMOS Promo Code</string>
 
     <string name="promo_code">Promo Code: %s</string>
+    <string name="promo_code_key">Promo Code Key</string>
 
-    <string name="google_status_fmt">ATMOS User: %s</string>
-    <string name="google_title_text">ATMOS Sign In</string>
+    <string name="google_status_fmt">User: %s</string>
+    <string name="google_title_text">Sign In</string>
 
 
 </resources>
