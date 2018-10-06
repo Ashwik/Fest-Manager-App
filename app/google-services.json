@@ -60,26 +60,42 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:e6e9fc607099fe27",
+        "mobilesdk_app_id": "1:157978564117:android:c0e299d243699fa4",
         "android_client_info": {
-          "package_name": "com.android.dota.festmanager"
+          "package_name": "com.dota.festmanager"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157978564117-764linp6lh4luo7a16jnp3b54a3tstj3.apps.googleusercontent.com",
+          "client_id": "157978564117-ojmfpjit1ua85cu0j1r3t69ajj42fuc2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.android.dota.festmanager",
+            "package_name": "com.dota.festmanager",
+            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
+          }
+        },
+        {
+          "client_id": "157978564117-i1s31kle46soj3not382dqhjurmdcvkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.festmanager",
             "certificate_hash": "46fecd57eb5568666af9a0d5a9aae765d6322e1c"
           }
         },
         {
-          "client_id": "157978564117-j3cb0ds6gpa1o7hsluf8hrtnrkil5447.apps.googleusercontent.com",
+          "client_id": "157978564117-2jmbtbt1ah1jl92rqrkboor04990cct7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.android.dota.festmanager",
-            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
+            "package_name": "com.dota.festmanager",
+            "certificate_hash": "e5978c7a5287e5997d59d56f94791b7874f537ca"
+          }
+        },
+        {
+          "client_id": "157978564117-v2jagn477m91oupiv9drs47130rj5jas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.festmanager",
+            "certificate_hash": "b6d41f506a18402c95bde4eea86e15beb09349a2"
           }
         },
         {

@@ -1,4 +1,4 @@
-package com.android.dota.festmanager;
+package com.dota.festmanager;
 
 import org.junit.Test;
 
