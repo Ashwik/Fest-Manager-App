@@ -26,7 +26,11 @@
             android:paddingRight="16dp"
             android:text="Description"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            />
 
         <TextView
             android:id="@+id/dept"
@@ -37,6 +41,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textColor="@color/textColor"
+            android:textIsSelectable="true"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -47,6 +52,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textColor="@color/textColor"
+            android:textIsSelectable="true"
             android:textSize="15sp"
             android:visibility="gone"
             />

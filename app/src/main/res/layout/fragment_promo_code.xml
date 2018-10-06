@@ -20,19 +20,22 @@
             android:layout_marginBottom="@dimen/title_bottom_margin"
             android:text="@string/google_title_text"
             android:textColor="@color/textColor"
-            android:theme="@style/ThemeOverlay.MyTitleText" />
+            android:theme="@style/ThemeOverlay.MyTitleText"
+            android:textIsSelectable="true"
+            />
 
         <TextView
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
             android:text="@string/signed_out"
-
+            android:textIsSelectable="true"
             android:textColor="@color/textColor"/>
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
             tools:text="Firebase User ID: 123456789abc"
+            android:textIsSelectable="true"
             android:textSize="20sp"
             android:textColor="@color/textColor"/>
 

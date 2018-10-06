@@ -17,7 +17,7 @@
         android:textColor="@color/textColor"
         android:textSize="24sp"
         tools:text="Event"
-
+        android:textIsSelectable="true"
         />
 
     <android.support.v4.widget.NestedScrollView
@@ -55,7 +55,9 @@
                 android:paddingStart="8dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/textColor"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textIsSelectable="true"
+                />
 
             <TextView
                 android:id="@+id/eventdetails"
@@ -66,7 +68,11 @@
                 android:lineSpacingExtra="2dp"
                 android:padding="8dp"
                 android:textColor="@color/textColor"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textIsSelectable="true"
+                android:linksClickable="true"
+                android:autoLink="web"
+                />
 
         </LinearLayout>
 
