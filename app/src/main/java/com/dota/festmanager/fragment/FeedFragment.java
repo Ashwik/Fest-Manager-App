@@ -29,6 +29,7 @@ public class FeedFragment extends Fragment {
     ArrayList<String> deptArray =new ArrayList<>();
     ArrayList<String> descArray =new ArrayList<>();
     int i=0;
+    private ProgressBar progressBar;
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -43,7 +44,7 @@ public class FeedFragment extends Fragment {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Feed");
-        final ProgressBar progressBar = getActivity().findViewById(R.id.progress_bar);
+        progressBar = getActivity().findViewById(R.id.progress_bar);
 
         mRecyclerView = view.findViewById(R.id.feed1);
 
@@ -82,5 +83,11 @@ public class FeedFragment extends Fragment {
             }
         });
         System.out.println(descArray.size());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        progressBar.setVisibility(View.GONE);
     }
 }

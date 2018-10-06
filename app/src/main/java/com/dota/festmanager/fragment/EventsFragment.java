@@ -156,4 +156,9 @@ public class EventsFragment extends Fragment {
         recyclerView.setAdapter(new EventsAdapter(eventList,context));
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        progressBar.setVisibility(View.GONE);
+    }
 }

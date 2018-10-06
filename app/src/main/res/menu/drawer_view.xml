@@ -30,8 +30,8 @@
         <item
             android:id="@+id/promo_code"
             android:title="Promo code"/>
-        <item
-            android:id="@+id/settings"
-            android:title="Settings"/>
+        <!--<item-->
+            <!--android:id="@+id/settings"-->
+            <!--android:title="Settings"/>-->
     </group>
 </menu>

@@ -178,7 +178,7 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <!--Firebase strings-->
 
     <string name="sign_out">Sign Out</string>
-    <string name="disconnect">Disconnect</string>
+    <string name="disconnect">Register</string>
     <string name="loading">Loading…</string>
 
     <string name="signed_in">Signed In</string>
