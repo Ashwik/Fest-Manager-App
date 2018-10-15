@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.festmanager.R;
@@ -24,11 +25,11 @@ import java.util.ArrayList;
 
 public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapter.ScheduleViewHolder> {
 
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<Integer> list = new ArrayList<>();
     private Context context;
 
 
-    public ScheduleCardAdapter(ArrayList<String> list, Context context) {
+    public ScheduleCardAdapter(ArrayList<Integer> list, Context context) {
         this.list = list;
         this.context = context;
 
@@ -43,7 +44,7 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
-        holder.schedule_text.setText(list.get(position));
+        holder.schedule_image.setImageResource(list.get(position));
         final int pos = position;
         holder.schedule_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +70,11 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
     public class ScheduleViewHolder extends RecyclerView.ViewHolder {
         TextView schedule_text;
         CardView schedule_cardView;
+        ImageView schedule_image;
 
         public ScheduleViewHolder(View itemView) {
             super(itemView);
-            schedule_text = itemView.findViewById(R.id.schedule_day);
+            schedule_image = itemView.findViewById(R.id.schedule_image);
             schedule_cardView = itemView.findViewById(R.id.schedule_item_cards);
         }
     }

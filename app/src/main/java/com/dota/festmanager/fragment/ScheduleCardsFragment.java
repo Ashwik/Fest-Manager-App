@@ -12,14 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.azoft.carousellayoutmanager.CarouselLayoutManager;
+import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.dota.festmanager.R;
 import com.dota.festmanager.adapter.ScheduleCardAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ScheduleCardsFragment extends Fragment{
 
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<Integer> list = new ArrayList<>();
     private RecyclerView recyclerView;
     private ScheduleCardAdapter scheduleCardAdapter;
     private Context context ;
@@ -45,17 +48,24 @@ public class ScheduleCardsFragment extends Fragment{
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Schedule");
 
+        final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL, false);
+        layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
+
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
-        list.add("Day 1");
-        list.add("Day 2");
-        list.add("Day 3");
-        setAdapter(list);
+        list.add(R.drawable.day1);
+        list.add(R.drawable.day2);
+        list.add(R.drawable.day3);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new ScheduleCardAdapter(list,context));
+        
 
 
     }
 
-    private void setAdapter(ArrayList<String> List){
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new ScheduleCardAdapter(List,context));
-    }
+//    private void setAdapter(ArrayList<Integer> List){
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerView.setAdapter(new ScheduleCardAdapter(List,context));
+//    }
 }

@@ -8,9 +8,9 @@
         <item
             android:id="@+id/feed"
             android:title="Feed" />
-        <!--<item-->
-            <!--android:id="@+id/schedule"-->
-            <!--android:title="Schedule" />-->
+        <item
+            android:id="@+id/schedule"
+            android:title="Schedule" />
         <item
             android:id="@+id/about"
             android:title="About Us" />
