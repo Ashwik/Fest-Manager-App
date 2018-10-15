@@ -5,7 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    >
 
     <include
         layout="@layout/app_bar_navigation"
@@ -18,8 +19,13 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:background="@android:color/white"
+        android:background="@color/navigation_background"
         app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/drawer_view" />
+        app:menu="@menu/drawer_view"
+        app:itemBackground="@color/navigation_background"
+        app:itemTextColor="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+
+        />
 
 </android.support.v4.widget.DrawerLayout>

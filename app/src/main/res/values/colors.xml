@@ -8,6 +8,7 @@
     <color name="backgroundColor">#33ffffff</color>
 
     <color name="sky_color_animation">#202021</color>
+    <color name="navigation_background">#212121</color>
 
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>

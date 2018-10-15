@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <group android:checkableBehavior="single">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <group android:checkableBehavior="single"
+        >
 
         <item
             android:id="@+id/events"
-            android:title="Events" />
+            android:icon="@drawable/ic_events_24px"
+            android:title="Events"
+            />
         <item
             android:id="@+id/feed"
-            android:title="Feed" />
+            android:icon="@drawable/ic_feed"
+            android:title="Feed"
+            />
         <item
             android:id="@+id/schedule"
-            android:title="Schedule" />
+            android:title="Schedule"
+            android:icon="@drawable/ic_outline_schedule_24px"
+            />
         <item
             android:id="@+id/about"
             android:title="About Us" />

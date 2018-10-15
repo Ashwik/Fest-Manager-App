@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(mToggle);
         mNavigationView.setNavigationItemSelectedListener(this);
+        mDrawerLayout.setScrimColor(getResources().getColor(android.R.color.transparent));
 
 
         if(savedInstanceState==null){
