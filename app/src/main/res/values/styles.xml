@@ -51,9 +51,5 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="navigation_drawer_theme" parent="AppTheme">
-        <item name="android:textSize">16sp</item>
-        <item name="android:padding">0dp</item>
-    </style>
 
 </resources>

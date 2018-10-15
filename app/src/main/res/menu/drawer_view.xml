@@ -4,16 +4,15 @@
     >
     <group android:checkableBehavior="single"
         >
-
-        <item
-            android:id="@+id/events"
-            android:icon="@drawable/ic_events_24px"
-            android:title="Events"
-            />
         <item
             android:id="@+id/feed"
             android:icon="@drawable/ic_feed"
             android:title="Feed"
+            />
+        <item
+            android:id="@+id/events"
+            android:icon="@drawable/ic_events_24px"
+            android:title="Events"
             />
         <item
             android:id="@+id/schedule"
@@ -22,23 +21,33 @@
             />
         <item
             android:id="@+id/about"
-            android:title="About Us" />
+            android:title="About Us"
+            android:icon="@drawable/ic_about"
+            />
         <item
             android:id="@+id/contact"
-            android:title="Contact Us" />
-
-        <!--<item-->
-            <!--android:id="@+id/credits"-->
-            <!--android:title="App Credits" />-->
+            android:title="Contact Us"
+            android:icon="@drawable/ic_baseline_call_24px"
+            />
+        <item
+            android:id="@+id/credits"
+            android:title="App Credits"
+            android:icon="@drawable/ic_credits"
+            />
         <item
             android:id="@+id/reach"
-            android:title="Reach Us "/>
+            android:title="Reach Us "
+            android:icon="@drawable/ic_bus_24px"
+            />
         <item
             android:id="@+id/guide"
-            android:title="Directions" />
+            android:title="Directions"
+            android:icon="@drawable/ic_directions_24px"
+            />
         <item
             android:id="@+id/promo_code"
-            android:title="Promo code"/>
+            android:title="Promo code"
+            />
         <!--<item-->
             <!--android:id="@+id/settings"-->
             <!--android:title="Settings"/>-->

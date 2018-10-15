@@ -9,5 +9,7 @@
     <dimen name="title_bottom_margin">16dp</dimen>
     <dimen name="field_width_standard">160dp</dimen>
 
-    <dimen tools:override="true" name="material_drawer_item_primary_icon_padding_right">-2dp</dimen>
+    <!--<dimen tools:override="true" name="material_drawer_item_primary_icon_padding_right">-2dp</dimen>-->
+
+    <dimen name="design_navigation_icon_padding">7dp</dimen>
 </resources>
