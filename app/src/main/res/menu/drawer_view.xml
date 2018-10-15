@@ -44,12 +44,12 @@
             android:title="Directions"
             android:icon="@drawable/ic_directions_24px"
             />
-        <item
-            android:id="@+id/promo_code"
-            android:title="Promo code"
-            />
         <!--<item-->
-            <!--android:id="@+id/settings"-->
-            <!--android:title="Settings"/>-->
+            <!--android:id="@+id/promo_code"-->
+            <!--android:title="Promo code"-->
+            <!--/>-->
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"/>
     </group>
 </menu>

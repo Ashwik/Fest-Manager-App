@@ -167,13 +167,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.nav_fragment_container,new ReachUsFragment())
                         .commit();
                 break;
-            case R.id.promo_code:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
-                        .commit();
-                break;
-//            case R.id.settings:
-//                startActivity(new Intent(this,SettingsActivity.class));
+//            case R.id.promo_code:
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
+//                        .commit();
+//                break;
+            case R.id.settings:
+                startActivity(new Intent(this,SettingsActivity.class));
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
