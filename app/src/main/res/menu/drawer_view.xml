@@ -50,6 +50,8 @@
             <!--/>-->
         <item
             android:id="@+id/settings"
-            android:title="Settings"/>
+            android:title="Settings"
+            android:icon="@drawable/ic_baseline_settings_20px"
+            />
     </group>
 </menu>
