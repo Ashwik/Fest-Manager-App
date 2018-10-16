@@ -45,13 +45,6 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".activity.SettingsActivity"
-            android:label="Settings"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-            android:screenOrientation="portrait"
-            />
         <activity android:name=".activity.ScheduleActivity"
             android:screenOrientation="portrait"
             ></activity>
