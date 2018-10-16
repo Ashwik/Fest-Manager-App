@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.events:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container, new EventsFragment())
+                        .replace(R.id.nav_fragment_container, new EventCardsFragment())
                         .commit();
                 break;
             case R.id.schedule:

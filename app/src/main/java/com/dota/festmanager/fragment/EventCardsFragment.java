@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.dota.festmanager.R;
+import com.dota.festmanager.adapter.EventCardsAdapter;
 import com.dota.festmanager.adapter.ScheduleCardAdapter;
 
 import java.util.ArrayList;
@@ -42,18 +43,19 @@ public class EventCardsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Schedule");
+        toolbar.setTitle("Events");
 
         final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL, false);
         layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
 
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
         list.add(R.drawable.competitions);
-        list.add(R.drawable.competitions);
-        list.add(R.drawable.competitions);
+        list.add(R.drawable.workshops);
+        list.add(R.drawable.talks);
+        list.add(R.drawable.proshow);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new ScheduleCardAdapter(list,context));;
+        recyclerView.setAdapter(new EventCardsAdapter(list,context));;
     }
 }

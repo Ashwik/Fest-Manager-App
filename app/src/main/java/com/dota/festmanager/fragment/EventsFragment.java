@@ -43,6 +43,8 @@ public class EventsFragment extends Fragment {
     private boolean isnetwork = false;
     private String TAG = "EventsFragment";
     private ProgressBar progressBar;
+    private String event_category ;
+    private Integer event_category_id;
 
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +64,18 @@ public class EventsFragment extends Fragment {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Events");
+
+        Bundle bundle= getActivity().getIntent().getExtras();
+        event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
+        Log.e("Events",String.valueOf(event_category_id));
+        switch(event_category_id){
+            case R.drawable.workshops : event_category = "Workshop";break;
+            case R.drawable.competitions: event_category = "Competition";break;
+            case R.drawable.talks: event_category ="Talk";break;
+            default:event_category="Workshop";break;
+
+        }
+        Log.e("eventscategory",event_category);
 
         Realm.init(context);
         realm = Realm.getDefaultInstance();
@@ -117,6 +131,7 @@ public class EventsFragment extends Fragment {
             event.setTagline(details.getTagline());
             event.setPrize(details.getPrize());
             event.setVenue(details.getVenue());
+            event.setType(details.getType());
         }
         else{
             model.setName(details.getName());
@@ -124,6 +139,7 @@ public class EventsFragment extends Fragment {
             model.setTagline(details.getTagline());
             model.setPrize(details.getPrize());
             model.setVenue(details.getVenue());
+            model.setType(details.getType());
         }
         realm.commitTransaction();
     }
@@ -132,7 +148,7 @@ public class EventsFragment extends Fragment {
         if (realm1 != null) {
             realmList = new ArrayList<>();
 
-            RealmResults<EventDetails> results = realm1.where(EventDetails.class).findAll();
+            RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("type",event_category).findAll();
 
             if(results.size()==0){
                 Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
