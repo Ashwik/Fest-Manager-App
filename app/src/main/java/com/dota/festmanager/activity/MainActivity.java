@@ -24,6 +24,7 @@ import com.dota.festmanager.R;
 import com.dota.festmanager.fragment.AboutFragment;
 import com.dota.festmanager.fragment.ContactsFragment;
 import com.dota.festmanager.fragment.CreditsFragment;
+import com.dota.festmanager.fragment.EventCardsFragment;
 import com.dota.festmanager.fragment.EventsFragment;
 import com.dota.festmanager.fragment.FeedFragment;
 import com.dota.festmanager.fragment.MapsFragment;
