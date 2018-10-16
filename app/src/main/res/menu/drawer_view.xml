@@ -14,11 +14,11 @@
             android:icon="@drawable/ic_events_24px"
             android:title="Events"
             />
-        <item
-            android:id="@+id/schedule"
-            android:title="Schedule"
-            android:icon="@drawable/ic_outline_schedule_24px"
-            />
+        <!--<item-->
+            <!--android:id="@+id/schedule"-->
+            <!--android:title="Schedule"-->
+            <!--android:icon="@drawable/ic_outline_schedule_24px"-->
+            <!--/>-->
         <item
             android:id="@+id/about"
             android:title="About Us"
@@ -29,11 +29,11 @@
             android:title="Contact Us"
             android:icon="@drawable/ic_baseline_call_24px"
             />
-        <item
-            android:id="@+id/credits"
-            android:title="App Credits"
-            android:icon="@drawable/ic_credits"
-            />
+        <!--<item-->
+            <!--android:id="@+id/credits"-->
+            <!--android:title="App Credits"-->
+            <!--android:icon="@drawable/ic_credits"-->
+            <!--/>-->
         <item
             android:id="@+id/reach"
             android:title="Reach Us "
@@ -48,10 +48,10 @@
             <!--android:id="@+id/promo_code"-->
             <!--android:title="Promo code"-->
             <!--/>-->
-        <item
-            android:id="@+id/settings"
-            android:title="Settings"
-            android:icon="@drawable/ic_baseline_settings_20px"
-            />
+        <!--<item-->
+            <!--android:id="@+id/settings"-->
+            <!--android:title="Settings"-->
+            <!--android:icon="@drawable/ic_baseline_settings_20px"-->
+            <!--/>-->
     </group>
 </menu>

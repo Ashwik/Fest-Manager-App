@@ -52,7 +52,6 @@ public class EventCardsFragment extends Fragment {
         list.add(R.drawable.competitions);
         list.add(R.drawable.workshops);
         list.add(R.drawable.talks);
-        list.add(R.drawable.proshow);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
