@@ -8,6 +8,7 @@
     tools:context=".activity.MainActivity"
     >
 
+
     <include
         layout="@layout/app_bar_navigation"
         android:layout_width="match_parent"
