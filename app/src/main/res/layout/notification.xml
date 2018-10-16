@@ -5,17 +5,21 @@
     android:id="@+id/event_item_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/backgroundColor"
+    app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="1dp"
-    app:cardElevation="5dp"
-    android:layout_marginBottom="1dp"
+    app:cardElevation="8dp"
+    android:layout_marginBottom="8dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:layout_marginTop="1dp">
+    android:layout_marginTop="1dp"
+
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/feed_card_background"
+        >
 
         <TextView
             android:id="@+id/desc"

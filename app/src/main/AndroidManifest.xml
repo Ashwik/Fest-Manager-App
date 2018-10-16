@@ -53,7 +53,9 @@
         <activity
             android:name=".activity.ScheduleActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.EventsActivity"></activity>
+        <activity android:name=".activity.EventsActivity"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>
