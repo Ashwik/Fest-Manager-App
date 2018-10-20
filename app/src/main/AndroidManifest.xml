@@ -44,7 +44,6 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <activity android:name=".activity.ScheduleActivity"
             android:screenOrientation="portrait"
             ></activity>
