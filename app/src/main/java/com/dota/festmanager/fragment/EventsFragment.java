@@ -127,6 +127,7 @@ public class EventsFragment extends Fragment {
         if(model==null){
             EventDetails event = realm.createObject(EventDetails.class);
             event.setId(details.getId());
+            event.setName(details.getName());
             event.setAbout(details.getAbout());
             event.setTagline(details.getTagline());
             event.setPrize(details.getPrize());

@@ -114,7 +114,7 @@ public class SchedulePagerFragment extends Fragment {
     }
 
     private void CallApi() {
-        EventsInterface apiservice = TestApiClient.getClient().create(EventsInterface.class);
+        EventsInterface apiservice = ApiClient.getClient().create(EventsInterface.class);
         Call<ArrayList<EventDetails>> call = apiservice.getEventSchedule();
         call.enqueue(new Callback<ArrayList<EventDetails>>() {
             @Override

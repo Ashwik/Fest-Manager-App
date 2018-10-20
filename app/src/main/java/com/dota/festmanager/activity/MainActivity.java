@@ -138,11 +138,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.nav_fragment_container, new EventCardsFragment())
                         .commit();
                 break;
-//            case R.id.schedule:
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.nav_fragment_container,new ScheduleCardsFragment())
-//                        .commit();
-//                break;
+            case R.id.schedule:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new ScheduleCardsFragment())
+                        .commit();
+                break;
             case R.id.about:
               getSupportFragmentManager().beginTransaction()
                       .replace(R.id.nav_fragment_container,new AboutFragment())

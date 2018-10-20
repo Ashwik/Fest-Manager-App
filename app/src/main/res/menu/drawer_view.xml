@@ -14,11 +14,11 @@
             android:icon="@drawable/ic_events_24px"
             android:title="Events"
             />
-        <!--<item-->
-            <!--android:id="@+id/schedule"-->
-            <!--android:title="Schedule"-->
-            <!--android:icon="@drawable/ic_outline_schedule_24px"-->
-            <!--/>-->
+        <item
+            android:id="@+id/schedule"
+            android:title="Schedule"
+            android:icon="@drawable/ic_outline_schedule_24px"
+            />
         <item
             android:id="@+id/about"
             android:title="About Us"

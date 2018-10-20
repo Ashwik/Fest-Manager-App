@@ -8,13 +8,15 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="2dp"
-    app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="@color/backgroundColor">
+
+    app:cardBackgroundColor="@android:color/transparent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/cardview_background"
+        >
 
         <TextView
             android:id="@+id/event_name"
