@@ -70,20 +70,23 @@ public class CreditsFragment extends Fragment {
     private ArrayList<DeveloperDetails> getAndroidDevs2(){
         ArrayList<DeveloperDetails> details = new ArrayList<>();
         details.add(new DeveloperDetails("Prateek Agarwal", R.drawable.dev_prateek, new String[]{"https://www.facebook.com/prateek.agarwal.94801","https://github.com/prat-bphc52",null,null}));
+        details.add(new DeveloperDetails("Ajith kanduri", R.drawable.dev_ajith, new String[]{"https://www.facebook.com/kanduri.ajith","https://github.com/ajithkanduri",null,null}));
+        details.add(new DeveloperDetails("Raghav Gagrani", R.drawable.dev_raghav, new String[]{"https://www.facebook.com/raghav.gagrani","https://github.com/raghav32",null,null}));
         return details;
     }
 
     private ArrayList<DeveloperDetails> getWebDevs(){
         ArrayList<DeveloperDetails> details = new ArrayList<>();
         details.add(new DeveloperDetails("Sohail Rajdev", R.drawable.dev_sohail, new String[]{"https://www.facebook.com/srajdev97","https://github.com/sohailrajdev97",null, null}));
+        details.add(new DeveloperDetails("Kailash Bhalaki", R.drawable.dev_kailash, new String[]{"https://www.facebook.com/Kailash.311.Bhalaki","https://github.com/Kailash0311",null, null}));
         return details;
     }
 
     private ArrayList<DeveloperDetails> getDesigners(){
         ArrayList<DeveloperDetails> details = new ArrayList<>();
 
-//        details.add(new DeveloperDetails("Suraj Thotakura", R.drawable.des_suraj, new String[]{"https://www.facebook.com/satya.suraj.7", null, null, "https://www.behance.net/surajsatyaa29d"}));
-//        details.add(new DeveloperDetails("Govind Savio", R.drawable.des_savio, new String[]{"https://www.facebook.com/savio.sunny.79", null, null, null}));
+        details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.des_maitreyee,new String[]{"https://www.facebook.com/maitreyee.talnikar", null, null, "https://www.behance.net/maitreyeet0781"}));
+        details.add(new DeveloperDetails("Vishal Prabu", R.drawable.des_vishal, new String[]{"https://www.facebook.com/vishalprabu99", null, null, null}));
 //        details.add(new DeveloperDetails("Abishek Yadav", R.drawable.des_yadav, new String[]{"https://www.facebook.com/profile.php?id=100000513640766",null,null,null}));
           return details;
     }
