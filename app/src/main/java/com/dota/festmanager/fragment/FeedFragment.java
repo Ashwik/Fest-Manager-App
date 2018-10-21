@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class FeedFragment extends Fragment {
     RecyclerView mRecyclerView;
     FeedAdapter mFeedAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
     ArrayList<Long> timeArray =new ArrayList<>();
     ArrayList<String> deptArray =new ArrayList<>();
     ArrayList<String> descArray =new ArrayList<>();
@@ -50,12 +52,22 @@ public class FeedFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Feed");
         progressBar = getActivity().findViewById(R.id.progress_bar);
+        swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_feed);
 
         mRecyclerView = view.findViewById(R.id.feed1);
 
         progressBar.setVisibility(View.VISIBLE);
+        callFireBase();
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                callFireBase();
+            }
+        });
+    }
 
+    private void callFireBase() {
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference notification = database.child("notifications");
         Log.v("Feed Adapter","timeArray is created..!!!!");
@@ -79,21 +91,25 @@ public class FeedFragment extends Fragment {
                 //mFeedAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(mFeedAdapter);
                 progressBar.setVisibility(View.GONE);
+                swipeRefreshLayout.setRefreshing(false);
 
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                swipeRefreshLayout.setRefreshing(false);
+                progressBar.setVisibility(View.GONE);
             }
         });
-        System.out.println(descArray.size());
+
         if(!isOnline()){
             progressBar.setVisibility(View.GONE);
-            Toast.makeText(context,"No Network",Toast.LENGTH_SHORT).show();
+            swipeRefreshLayout.setRefreshing(false);
+            Toast.makeText(context,"No Network....Get connected & Swipe to Refresh",Toast.LENGTH_SHORT).show();
         }else{
-                Toast.makeText(context, "Feed Updated!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Feed Updated!", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     @Override
     public void onStop() {
