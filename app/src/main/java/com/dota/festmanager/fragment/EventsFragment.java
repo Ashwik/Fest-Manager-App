@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.dota.festmanager.R;
+import com.dota.festmanager.activity.EventsActivity;
 import com.dota.festmanager.adapter.EventsAdapter;
 import com.dota.festmanager.api.ApiClient;
 import com.dota.festmanager.api.EventsInterface;
@@ -62,7 +63,6 @@ public class EventsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
 
 
         Bundle bundle= getActivity().getIntent().getExtras();
@@ -76,6 +76,7 @@ public class EventsFragment extends Fragment {
 
         }
         Log.e("eventscategory",event_category);
+        ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
 
         Realm.init(context);
         realm = Realm.getDefaultInstance();

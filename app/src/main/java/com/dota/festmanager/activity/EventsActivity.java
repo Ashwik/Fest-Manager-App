@@ -34,4 +34,7 @@ public class EventsActivity extends AppCompatActivity {
         finish();
         return true;
     }
+    public void setActionBarTitle(String Title){
+        getSupportActionBar().setTitle(Title);
+    }
 }

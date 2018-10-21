@@ -59,7 +59,7 @@ public class DetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ((DetailsActivity) getActivity()).setActionBarTitle("Events");
+        ((DetailsActivity) getActivity()).setActionBarTitle("");
 
         Realm.init(context);
         realm = Realm.getDefaultInstance();
@@ -139,7 +139,9 @@ public class DetailsFragment extends Fragment {
                 }
 
                 if(result.getName()!=null) {
-                    //((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+                    ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+                }else {
+                    ((DetailsActivity) getActivity()).setActionBarTitle("");
                 }
 
 

@@ -9,11 +9,14 @@ import com.dota.festmanager.fragment.SchedulePagerFragment;
 
 public class ScheduleActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+    private String day;
+    private int page;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_navigation);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -22,6 +25,8 @@ public class ScheduleActivity extends AppCompatActivity {
                     replace(R.id.nav_fragment_container,new SchedulePagerFragment()).
                     commit();
         }
+       setActionBarTitle();
+
     }
 
     @Override
@@ -33,6 +38,22 @@ public class ScheduleActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+    public void setActionBarTitle(){
+        Bundle bundle= getIntent().getExtras();
+        int page = bundle.getInt("page", 0);
+        switch (page) {
+            case 0:
+                day = "26";
+                break;
+            case 1:
+                day = "27";
+                break;
+            case 2:
+                day = "28";
+                break;
+        }
+        getSupportActionBar().setTitle(day+" OCT 2018");
     }
 
 }

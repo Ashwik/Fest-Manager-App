@@ -2,6 +2,8 @@ package com.dota.festmanager.fragment;
 
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.dota.festmanager.activity.ScheduleActivity;
 import com.dota.festmanager.adapter.ScheduleAdapter;
 import com.dota.festmanager.api.ApiClient;
 import com.dota.festmanager.api.EventsInterface;
@@ -69,8 +72,6 @@ public class SchedulePagerFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Schedule");
         Realm.init(context);
         realm = Realm.getDefaultInstance();
         Bundle bundle= getActivity().getIntent().getExtras();
@@ -95,12 +96,6 @@ public class SchedulePagerFragment extends Fragment {
                 day = "28";
                 break;
         }
-//        if (start == 0) {
-//            CallApi();
-//        } else {
-//            getDatafromRealm(realm);
-//        }
-
         CallApi();
         progressBar.setVisibility(View.VISIBLE);
 
@@ -167,7 +162,11 @@ public class SchedulePagerFragment extends Fragment {
             realmlist = new ArrayList<>();
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("date", day).findAll();
             if (results.size() == 0) {
-                Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
+                if(isOnline()){
+                    Toast.makeText(context,"Schedule will be updated soon",Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(context, "No Internet...Get connected & swipe to refresh schedule", Toast.LENGTH_SHORT).show();
+                }
             } else {
                 if(isNetwork == false){
                     Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
@@ -211,6 +210,11 @@ public class SchedulePagerFragment extends Fragment {
         return parts;
 
     }
-
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getActivity().getSystemService(context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 
 }
