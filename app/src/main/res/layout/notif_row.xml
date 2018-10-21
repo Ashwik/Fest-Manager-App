@@ -4,7 +4,10 @@
     android:layout_height="48dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="1dp"
-    android:background="#efefef">
+    android:background="@drawable/feed_card_background"
+    android:layout_margin="5dp"
+    >
+
     <ImageView
         android:id="@+id/notifIcon"
         android:layout_width="48dp"
@@ -19,17 +22,20 @@
         android:layout_height="wrap_content"
         android:text="Category 1"
         android:textSize="16sp"
+        android:textColor="@android:color/white"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/notifIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/notifCheck"
         app:layout_constraintHorizontal_bias="0"/>
+
     <CheckBox
         android:id="@+id/notifCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

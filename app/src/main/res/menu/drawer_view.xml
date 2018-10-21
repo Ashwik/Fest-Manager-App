@@ -48,10 +48,10 @@
             <!--android:id="@+id/promo_code"-->
             <!--android:title="Promo code"-->
             <!--/>-->
-        <!--<item-->
-            <!--android:id="@+id/settings"-->
-            <!--android:title="Settings"-->
-            <!--android:icon="@drawable/ic_baseline_settings_20px"-->
-            <!--/>-->
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@drawable/ic_baseline_settings_20px"
+            />
     </group>
 </menu>

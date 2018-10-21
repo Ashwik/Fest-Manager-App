@@ -49,7 +49,13 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
             adapter = new SettingsNotificationAdapter(event_list,topics,getActivity());
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
-            toggle(view);
+//            tv.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    toggle(recyclerView);
+//                }
+//            });
+
         }
         public void toggle (View view){
             if (recyclerView.getVisibility() == View.GONE) recyclerView.setVisibility(View.VISIBLE);

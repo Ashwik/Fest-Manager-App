@@ -106,7 +106,7 @@ public class SettingsNotificationAdapter extends RecyclerView.Adapter<SettingsNo
             super(view);
             tv = view.findViewById(R.id.notifName);
             checkBox = view.findViewById(R.id.notifCheck);
-            icon = view.findViewById(R.id.notifIcon);
+
         }
     }
 }

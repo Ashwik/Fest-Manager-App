@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.SettingsFragment">
 
     <TextView
         android:id="@+id/showNotifMenu"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#efefef"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:gravity="center_vertical"
-        android:onClick="toggle"
         android:padding="8dp"
         android:text="Notifications"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -23,7 +24,6 @@
         android:id="@+id/notifMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/showNotifMenu" />
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
