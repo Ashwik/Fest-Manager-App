@@ -19,15 +19,16 @@
             android:title="Schedule"
             android:icon="@drawable/ic_outline_schedule_24px"
             />
-        <item
-            android:id="@+id/about"
-            android:title="About Us"
-            android:icon="@drawable/ic_about"
-            />
+
         <item
             android:id="@+id/contact"
             android:title="Contact Us"
             android:icon="@drawable/ic_baseline_call_24px"
+            />
+        <item
+            android:id="@+id/about"
+            android:title="About Us"
+            android:icon="@drawable/ic_baseline_info_24px"
             />
         <!--<item-->
             <!--android:id="@+id/credits"-->

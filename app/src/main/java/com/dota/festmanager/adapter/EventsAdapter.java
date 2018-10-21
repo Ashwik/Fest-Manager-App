@@ -36,6 +36,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     @Override
     public void onBindViewHolder(@NonNull EventsAdapter.EventViewHolder holder, final int position) {
         holder.eventName.setText(list.get(position).getName());
+        holder.eventTagLine.setVisibility(View.VISIBLE);
         if(list.get(position).getTagline()==null||list.get(position).getTagline().equals("")){
             holder.eventTagLine.setVisibility(View.GONE);
         }else {

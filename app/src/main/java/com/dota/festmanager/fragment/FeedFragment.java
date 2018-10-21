@@ -1,5 +1,8 @@
 package com.dota.festmanager.fragment;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,8 +33,10 @@ public class FeedFragment extends Fragment {
     ArrayList<String> descArray =new ArrayList<>();
     int i=0;
     private ProgressBar progressBar;
+    private  Context context;
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = getContext();
     }
     @Nullable
     @Override
@@ -48,46 +53,58 @@ public class FeedFragment extends Fragment {
 
         mRecyclerView = view.findViewById(R.id.feed1);
 
-//        final ProgressDialog mDialog = new ProgressDialog(getActivity());
-//        mDialog.setMessage("Loading...");
-//        mDialog.show();
         progressBar.setVisibility(View.VISIBLE);
 
-        Toast.makeText(getContext(),"Feed Updated!",Toast.LENGTH_LONG).show();
+
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference notification = database.child("notifications");
         Log.v("Feed Adapter","timeArray is created..!!!!");
         notification.addValueEventListener(new ValueEventListener() {
-            //Log.v("Feed Adapter","fjsdsjfo..!!!!");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                timeArray = new ArrayList<>();
+                descArray = new ArrayList<>();
+                deptArray = new ArrayList<>();
+                i=0;
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
                     timeArray.add(ds.child("timestamp").getValue(Long.class));
                     descArray.add(ds.child("content").getValue(String.class));
                     deptArray.add(ds.child("title").getValue(String.class));
-                    //    System.out.println(ds.child("title").getValue().toString());
-                    //    System.out.println(deptArray.get(i)+"JaiBalayaa"+i);
                     i++;
                 }
-                Log.v("FEED FRAGMENT",Integer.toString(deptArray.size()));
+                Log.e("FEED FRAGMENT",Integer.toString(deptArray.size()));
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 mFeedAdapter = new FeedAdapter(getActivity(),timeArray,deptArray,descArray,i);
-                Log.v("Fest Fragment","\n\n\n\n\n\n\n\nsetting adapter...........................................................\n\n\n\n\n\n");
                 //mFeedAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(mFeedAdapter);
                 progressBar.setVisibility(View.GONE);
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
         System.out.println(descArray.size());
+        if(!isOnline()){
+            progressBar.setVisibility(View.GONE);
+            Toast.makeText(context,"No Network",Toast.LENGTH_SHORT).show();
+        }else{
+                Toast.makeText(context, "Feed Updated!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
         progressBar.setVisibility(View.GONE);
+    }
+
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getActivity().getSystemService(context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 }

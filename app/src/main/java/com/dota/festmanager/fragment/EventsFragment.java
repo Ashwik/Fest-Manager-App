@@ -63,7 +63,7 @@ public class EventsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Events");
+
 
         Bundle bundle= getActivity().getIntent().getExtras();
         event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
