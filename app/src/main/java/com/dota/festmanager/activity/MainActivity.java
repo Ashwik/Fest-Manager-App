@@ -159,11 +159,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.nav_fragment_container,new MapsFragment())
                         .commit();
                 break;
-//            case R.id.credits:
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.nav_fragment_container,new CreditsFragment())
-//                        .commit();
-//                break;
+            case R.id.credits:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new CreditsFragment())
+                        .commit();
+                break;
             case R.id.reach:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container,new ReachUsFragment())

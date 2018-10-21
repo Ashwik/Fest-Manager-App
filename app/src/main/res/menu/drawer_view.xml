@@ -30,11 +30,11 @@
             android:title="About Us"
             android:icon="@drawable/ic_baseline_info_24px"
             />
-        <!--<item-->
-            <!--android:id="@+id/credits"-->
-            <!--android:title="App Credits"-->
-            <!--android:icon="@drawable/ic_credits"-->
-            <!--/>-->
+        <item
+            android:id="@+id/credits"
+            android:title="App Credits"
+            android:icon="@drawable/ic_credits"
+            />
         <item
             android:id="@+id/reach"
             android:title="Reach Us "

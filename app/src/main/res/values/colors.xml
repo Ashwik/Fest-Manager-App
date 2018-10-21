@@ -13,5 +13,8 @@
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
     <color name="grey_500">#9E9E9E</color>
+
+    <color name="circle3">#7742A5F5</color>
+    <color name="circle4">#77AB47BC</color>
 </resources>
 
