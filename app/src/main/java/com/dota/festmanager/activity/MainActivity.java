@@ -31,6 +31,7 @@ import com.dota.festmanager.fragment.MapsFragment;
 import com.dota.festmanager.fragment.PromoCodeFragment;
 import com.dota.festmanager.fragment.ReachUsFragment;
 import com.dota.festmanager.fragment.ScheduleCardsFragment;
+import com.dota.festmanager.fragment.SettingsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -173,8 +174,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
 //                        .commit();
 //                break;
-//            case R.id.settings:
-//                startActivity(new Intent(this,SettingsActivity.class));
+            case R.id.settings:
+                  getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new SettingsFragment())
+                        .commit();
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
