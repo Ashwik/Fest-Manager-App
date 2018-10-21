@@ -38,8 +38,8 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
             Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
             toolbar.setTitle("Settings");
 
-            String event_list[] = {"Event 1", "Event 2", "General", "pushNotifications"};
-            String topics[] = {"event1", "event2", "general", "pushNotifications"};
+            String event_list[] = { "General", "pushNotifications"};
+            String topics[] = {"general", "pushNotifications"};
 
             recyclerView=getView().findViewById(R.id.notifMenu);
             tv=getView().findViewById(R.id.showNotifMenu);
