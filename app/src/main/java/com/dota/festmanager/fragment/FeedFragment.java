@@ -67,7 +67,7 @@ public class FeedFragment extends Fragment {
                     descArray.add(ds.child("content").getValue(String.class));
                     deptArray.add(ds.child("title").getValue(String.class));
                     //    System.out.println(ds.child("title").getValue().toString());
-                    //   System.out.println(deptArray.get(i)+"JaiBalayaa"+i);
+                    //    System.out.println(deptArray.get(i)+"JaiBalayaa"+i);
                     i++;
                 }
                 Log.v("FEED FRAGMENT",Integer.toString(deptArray.size()));
