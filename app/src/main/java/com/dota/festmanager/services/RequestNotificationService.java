@@ -48,7 +48,7 @@ public class RequestNotificationService extends FirebaseMessagingService {
                 .setSmallIcon(R.drawable.googleg_disabled_color_18)
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 //TODO: Change the title to Event Name
-                .setContentTitle("ATMOS 2018")
+                .setContentTitle(remoteMessage.getData().get("title"))
                 .setContentIntent(pendingIntent)
                 .setContentText(s);
 
