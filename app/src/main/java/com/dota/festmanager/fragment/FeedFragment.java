@@ -30,7 +30,7 @@ public class FeedFragment extends Fragment {
     RecyclerView mRecyclerView;
     FeedAdapter mFeedAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    ArrayList<Long> timeArray =new ArrayList<>();
+    ArrayList<String> timeArray =new ArrayList<>();
     ArrayList<String> deptArray =new ArrayList<>();
     ArrayList<String> descArray =new ArrayList<>();
     int i=0;
@@ -80,7 +80,7 @@ public class FeedFragment extends Fragment {
                 i=0;
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
-                    timeArray.add(ds.child("timestamp").getValue(Long.class));
+                    timeArray.add(ds.child("timestamp").getValue(String.class));
                     descArray.add(ds.child("content").getValue(String.class));
                     deptArray.add(ds.child("title").getValue(String.class));
                     i++;
