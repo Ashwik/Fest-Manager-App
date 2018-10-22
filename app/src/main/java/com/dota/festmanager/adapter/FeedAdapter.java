@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder> {
     Context context;
     LayoutInflater mInflater;
-    ArrayList<Long> timeArray =new ArrayList<>();
+    ArrayList<String> timeArray =new ArrayList<>();
     ArrayList<String> deptArray =new ArrayList<>();
     ArrayList<String> descArray =new ArrayList<>();
     int i;
@@ -22,7 +22,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         Log.v("Feed Adapter","timeArray is created..!!!!");
         System.out.print(i);
     }
-    public FeedAdapter(Context context, ArrayList<Long> timeArray, ArrayList<String> deptArray, ArrayList<String> descArray,int i) {
+    public FeedAdapter(Context context, ArrayList<String> timeArray, ArrayList<String> deptArray, ArrayList<String> descArray,int i) {
         this.context = context;
         this.timeArray = timeArray;
         this.deptArray = deptArray;

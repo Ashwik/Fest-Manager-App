@@ -26,11 +26,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.Collections;
+
+import static java.util.Collections.reverse;
+
 public class FeedFragment extends Fragment {
     RecyclerView mRecyclerView;
     FeedAdapter mFeedAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    ArrayList<Long> timeArray =new ArrayList<>();
+    ArrayList<String> timeArray =new ArrayList<>();
     ArrayList<String> deptArray =new ArrayList<>();
     ArrayList<String> descArray =new ArrayList<>();
     int i=0;
@@ -74,17 +78,22 @@ public class FeedFragment extends Fragment {
         notification.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                timeArray = new ArrayList<>();
-                descArray = new ArrayList<>();
-                deptArray = new ArrayList<>();
+                timeArray = new ArrayList<String>();
+                descArray = new ArrayList<String>();
+                deptArray = new ArrayList<String>();
                 i=0;
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
-                    timeArray.add(ds.child("timestamp").getValue(Long.class));
+                    timeArray.add(ds.child("timestamp").getValue(String.class));
                     descArray.add(ds.child("content").getValue(String.class));
                     deptArray.add(ds.child("title").getValue(String.class));
                     i++;
                 }
+
+                reverse(timeArray);
+                reverse(descArray);
+                reverse(deptArray);
+
                 Log.e("FEED FRAGMENT",Integer.toString(deptArray.size()));
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 mFeedAdapter = new FeedAdapter(getActivity(),timeArray,deptArray,descArray,i);
