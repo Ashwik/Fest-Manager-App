@@ -105,14 +105,15 @@ public class DetailsFragment extends Fragment {
             EventDetails eventDetails = realm.createObject(EventDetails.class);
             eventDetails.setId(details.getId());
             eventDetails.setName(details.getName());
-            eventDetails.setStartTime(details.getStartTime());
+            eventDetails.setAbout(details.getAbout());
+            eventDetails.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             eventDetails.setEndTime(details.getEndTime());
         }
         else
         {
-            model.setAbout(details.getAbout());
             model.setName(details.getName());
-            model.setStartTime(details.getStartTime());
+            model.setAbout(details.getAbout());
+            model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             model.setEndTime(details.getEndTime());
         }
         realm.commitTransaction();
@@ -139,7 +140,11 @@ public class DetailsFragment extends Fragment {
                 }
 
                 if(result.getName()!=null) {
-                    ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+                    try {
+                        ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+                    } catch (Exception e) {
+                        ((DetailsActivity) getActivity()).setActionBarTitle("");
+                    }
                 }else {
                     ((DetailsActivity) getActivity()).setActionBarTitle("");
                 }
@@ -151,10 +156,11 @@ public class DetailsFragment extends Fragment {
                     eventDetails.setText("Please connect to network .... the App needs internet to load data for the first time");
                 }
 
-                if (result.getStartTime()==null||result.getStartTime().equals("")) {
+                if (result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
-                } else if(result.getStartTime()!=null){
-                    time = getEventTime(result.getStartTime())[3] + ":" + getEventTime(result.getStartTime())[4] + " - " +
+                } else if(result.getEndTime()!=null){
+                    Log.e(TAG,result.getEndTime());
+                    time = result.getStartTime() + " - " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
                 }

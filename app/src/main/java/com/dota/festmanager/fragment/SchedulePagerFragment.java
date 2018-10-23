@@ -162,9 +162,14 @@ public class SchedulePagerFragment extends Fragment {
             realmlist = new ArrayList<>();
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("date", day).findAll();
             if (results.size() == 0) {
-                if(isOnline()){
-                    Toast.makeText(context,"Schedule will be updated soon",Toast.LENGTH_SHORT).show();
-                }else {
+                try {
+                    if(isOnline()){
+                        Toast.makeText(context,"Schedule will be updated soon",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(context, "No Internet...Get connected & swipe to refresh schedule", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                     Toast.makeText(context, "No Internet...Get connected & swipe to refresh schedule", Toast.LENGTH_SHORT).show();
                 }
             } else {

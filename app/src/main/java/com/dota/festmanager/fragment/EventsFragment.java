@@ -35,8 +35,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EventsFragment extends Fragment {
-    private ArrayList<EventDetails> eventDetailsList ;
-    private ArrayList<EventDetails> realmList ;
+    private ArrayList<EventDetails> eventDetailsList = new ArrayList<>();
+    private ArrayList<EventDetails> realmList = new ArrayList<>() ;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Realm realm;

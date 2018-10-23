@@ -37,6 +37,8 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void setActionBarTitle(String Title){
-        getSupportActionBar().setTitle(Title);
+        if(Title!=null) {
+            getSupportActionBar().setTitle(Title);
+        }
     }
 }
