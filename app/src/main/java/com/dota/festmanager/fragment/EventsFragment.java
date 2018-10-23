@@ -103,10 +103,14 @@ public class EventsFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<EventDetails>> call, Response<ArrayList<EventDetails>> response) {
                  eventDetailsList = response.body();
-                 for(int i=0;i<eventDetailsList.size();i++){
-                     addDatatoRealm(eventDetailsList.get(i));
+                try {
+                    for(int i=0;i<eventDetailsList.size();i++){
+                        addDatatoRealm(eventDetailsList.get(i));
+                   }
+                    isnetwork = true;
+                } catch (Exception e) {
+                    Toast.makeText(context,"Network Problem",Toast.LENGTH_SHORT).show();
                 }
-                isnetwork = true;
                 getDatafromRealm(realm);
                 swipeRefreshLayout.setRefreshing(false);
                 progressBar.setVisibility(View.GONE);

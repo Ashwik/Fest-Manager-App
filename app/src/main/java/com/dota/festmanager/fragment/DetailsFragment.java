@@ -81,8 +81,12 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onResponse(Call<EventDetails> call, Response<EventDetails> response) {
                 eventDetailsmodel = response.body();
-                isNetwork = true;
-                addDatatoRealm(eventDetailsmodel);
+                try {
+                    isNetwork = true;
+                    addDatatoRealm(eventDetailsmodel);
+                } catch (Exception e) {
+                    Toast.makeText(context,"Network problem",Toast.LENGTH_SHORT).show();
+                }
                 getDatafromRealm(realm);
                 progressBar.setVisibility(View.GONE);
 

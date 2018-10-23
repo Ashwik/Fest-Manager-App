@@ -115,9 +115,13 @@ public class SchedulePagerFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<EventDetails>> call, Response<ArrayList<EventDetails>> response) {
                 list = response.body();
-                isNetwork = true;
-                for (i = 0; i < list.size(); i++) {
-                    addDatatoRealm(list.get(i));
+                try {
+                    isNetwork = true;
+                    for (i = 0; i < list.size(); i++) {
+                        addDatatoRealm(list.get(i));
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(context,"Network Problem",Toast.LENGTH_SHORT).show();
                 }
 
                 getDatafromRealm(realm);
