@@ -159,7 +159,6 @@ public class DetailsFragment extends Fragment {
                 if (result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
                 } else if(result.getEndTime()!=null){
-                    Log.e(TAG,result.getEndTime());
                     time = result.getStartTime() + " - " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
