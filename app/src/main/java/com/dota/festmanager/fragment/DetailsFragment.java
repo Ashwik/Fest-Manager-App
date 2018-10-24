@@ -59,7 +59,6 @@ public class DetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ((DetailsActivity) getActivity()).setActionBarTitle("");
 
         Realm.init(context);
         realm = Realm.getDefaultInstance();
@@ -69,7 +68,7 @@ public class DetailsFragment extends Fragment {
         progressBar = getActivity().findViewById(R.id.progress_bar_details);
         Bundle bundle= getActivity().getIntent().getExtras();
         id=bundle.getString("id");
-        eventName.setVisibility(View.GONE);
+//        eventName.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         CallApi();
     }
@@ -143,15 +142,15 @@ public class DetailsFragment extends Fragment {
 
                 }
 
-                if(result.getName()!=null) {
-                    try {
-                        ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
-                    } catch (Exception e) {
-                        ((DetailsActivity) getActivity()).setActionBarTitle("");
-                    }
-                }else {
-                    ((DetailsActivity) getActivity()).setActionBarTitle("");
-                }
+//                if(result.getName()!=null) {
+//                    try {
+//                        ((DetailsActivity) getActivity()).setActionBarTitle(result.getName());
+//                    } catch (Exception e) {
+//                        ((DetailsActivity) getActivity()).setActionBarTitle("");
+//                    }
+//                }else {
+//                    ((DetailsActivity) getActivity()).setActionBarTitle("");
+//                }
 
 
                 if(result.getAbout() != null) {
@@ -159,7 +158,11 @@ public class DetailsFragment extends Fragment {
                 } else {
                     eventDetails.setText("Please connect to network .... the App needs internet to load data for the first time");
                 }
-
+                if(result.getName()!=null){
+                    eventName.setText(result.getName());
+                }else{
+                    eventName.setVisibility(View.GONE);
+                }
                 if (result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
                 } else if(result.getEndTime()!=null){

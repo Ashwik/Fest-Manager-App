@@ -27,6 +27,7 @@ import com.dota.festmanager.model.EventDetails;
 import com.dota.festmanager.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -188,6 +189,8 @@ public class SchedulePagerFragment extends Fragment {
             Set<String> set = new LinkedHashSet<>(realmlist);
             realmlist.clear();
             realmlist.addAll(set);
+            Collections.sort(realmlist);
+            Log.e(TAG,String.valueOf(realmlist));
             recyclerView.setAdapter(new ScheduleAdapter(realmlist, getContext(), day));
         }
 
