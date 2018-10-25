@@ -1,5 +1,4 @@
 package com.dota.festmanager.fragment;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -27,12 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
 import java.util.Locale;
 
 import static java.util.Collections.reverse;
@@ -127,8 +122,6 @@ public class FeedFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
             swipeRefreshLayout.setRefreshing(false);
             Toast.makeText(context,"No Network....Get connected & Swipe to Refresh",Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Feed Updated!", Toast.LENGTH_SHORT).show();
         }
     }
 

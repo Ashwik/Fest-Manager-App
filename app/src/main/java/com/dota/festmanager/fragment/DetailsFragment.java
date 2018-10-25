@@ -2,6 +2,7 @@ package com.dota.festmanager.fragment;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,12 +31,14 @@ import io.realm.Realm;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import us.feras.mdv.MarkdownView;
 
 public class DetailsFragment extends Fragment {
 
     public String id ;
     private EventDetails eventDetailsmodel;
-    private TextView eventDetails,eventName,startTime;
+    private TextView eventName,startTime;
+    private MarkdownView eventDetails;
     private ProgressBar progressBar;
     private Realm realm;
     private Context context;
@@ -70,6 +73,7 @@ public class DetailsFragment extends Fragment {
         id=bundle.getString("id");
 //        eventName.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
+        eventDetails.setBackgroundColor(Color.TRANSPARENT);
         CallApi();
     }
 
@@ -116,7 +120,7 @@ public class DetailsFragment extends Fragment {
         {
             model.setName(details.getName());
             model.setAbout(details.getAbout());
-            model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
+            model.setStartTime(details.getStartTime());
             model.setEndTime(details.getEndTime());
         }
         realm.commitTransaction();
@@ -154,19 +158,22 @@ public class DetailsFragment extends Fragment {
 
 
                 if(result.getAbout() != null) {
-                    eventDetails.setText(result.getAbout());
+                    eventDetails.loadMarkdown(result.getAbout(), "file:///android_asset/alt.css");
+                    eventDetails.setBackgroundColor(Color.TRANSPARENT);
                 } else {
-                    eventDetails.setText("Please connect to network .... the App needs internet to load data for the first time");
+                    eventDetails.loadMarkdown("Please connect to network .... the App needs internet to load data for the first time");
                 }
                 if(result.getName()!=null){
                     eventName.setText(result.getName());
                 }else{
                     eventName.setVisibility(View.GONE);
                 }
-                if (result.getEndTime()==null||result.getEndTime().equals("")) {
+                if (result.getStartTime()==null || result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
-                } else if(result.getEndTime()!=null){
-                    time = result.getStartTime() + " - " +
+                } else if(result.getStartTime()!=null && result.getEndTime()!=null){
+                    //Since the fest is happening on 26th, 27th, 29th the suffix th is added.
+                    time = getEventTime(result.getStartTime())[2] + "th " + getEventTime(result.getStartTime())[3] + ":" +
+                            getEventTime(result.getStartTime())[4] + " - " + getEventTime(result.getEndTime())[2] + "th " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
                 }
