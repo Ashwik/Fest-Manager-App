@@ -15,6 +15,8 @@ import com.dota.festmanager.activity.MainActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import static com.dota.festmanager.R.drawable.atmos_logo;
+
 public class RequestNotificationService extends FirebaseMessagingService {
 
     private static final String TAG = "FIREBASE MESSAGING",CHANNEL_ID = "EVENT_UPDATES";
@@ -46,7 +48,7 @@ public class RequestNotificationService extends FirebaseMessagingService {
         }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder( this, CHANNEL_ID)
                 //TODO: Add Event logo or ATMOS logo instead of Google Logo
-                .setSmallIcon(R.drawable.googleg_disabled_color_18)
+                .setSmallIcon(R.drawable.notif_log)
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 .setContentTitle(remoteMessage.getData().get("title"))
                 .setContentIntent(pendingIntent)
