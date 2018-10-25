@@ -26,6 +26,7 @@ public class RequestNotificationService extends FirebaseMessagingService {
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("Destination", "FeedFragment");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationManager manager =(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
@@ -49,7 +50,8 @@ public class RequestNotificationService extends FirebaseMessagingService {
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 .setContentTitle(remoteMessage.getData().get("title"))
                 .setContentIntent(pendingIntent)
-                .setContentText(s);
+                .setContentText(s)
+                .setAutoCancel(true);
 
         Log.d(TAG,"Notification Builder is built");
 

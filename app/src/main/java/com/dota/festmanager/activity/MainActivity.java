@@ -67,6 +67,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         mNavigationView.setCheckedItem(R.id.home);
 
+        String type = getIntent().getStringExtra("Destination");
+        if (type != null) {
+            switch (type) {
+                case "FeedFragment":
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.nav_fragment_container, new FeedFragment())
+                            .commit();
+                    break;
+            }
+        }
+
         final SharedPreferences preferences = getSharedPreferences("Notifications",MODE_PRIVATE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
