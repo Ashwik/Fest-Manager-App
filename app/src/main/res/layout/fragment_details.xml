@@ -60,20 +60,20 @@
                 android:textIsSelectable="true"
                 />
 
-            <TextView
+            <us.feras.mdv.MarkdownView
                 android:id="@+id/eventdetails"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:autoLink="web"
                 android:lineSpacingExtra="2dp"
+                android:linksClickable="true"
                 android:padding="8dp"
                 android:textColor="@color/textColor"
-                android:textSize="18sp"
                 android:textIsSelectable="true"
-                android:linksClickable="true"
-                android:autoLink="web"
-                />
+                android:textSize="18sp"
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
 

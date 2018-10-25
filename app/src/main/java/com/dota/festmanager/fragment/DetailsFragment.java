@@ -2,6 +2,7 @@ package com.dota.festmanager.fragment;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,12 +31,14 @@ import io.realm.Realm;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import us.feras.mdv.MarkdownView;
 
 public class DetailsFragment extends Fragment {
 
     public String id ;
     private EventDetails eventDetailsmodel;
-    private TextView eventDetails,eventName,startTime;
+    private TextView eventName,startTime;
+    private MarkdownView eventDetails;
     private ProgressBar progressBar;
     private Realm realm;
     private Context context;
@@ -70,6 +73,7 @@ public class DetailsFragment extends Fragment {
         id=bundle.getString("id");
 //        eventName.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
+        eventDetails.setBackgroundColor(Color.TRANSPARENT);
         CallApi();
     }
 
@@ -154,9 +158,10 @@ public class DetailsFragment extends Fragment {
 
 
                 if(result.getAbout() != null) {
-                    eventDetails.setText(result.getAbout());
+                    eventDetails.loadMarkdown(result.getAbout(), "file:///android_asset/alt.css");
+                    eventDetails.setBackgroundColor(Color.TRANSPARENT);
                 } else {
-                    eventDetails.setText("Please connect to network .... the App needs internet to load data for the first time");
+                    eventDetails.loadMarkdown("Please connect to network .... the App needs internet to load data for the first time");
                 }
                 if(result.getName()!=null){
                     eventName.setText(result.getName());

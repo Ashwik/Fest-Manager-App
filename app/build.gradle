@@ -43,5 +43,6 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
     implementation 'com.azoft.carousellayoutmanager:carousel:1.2.4'
     implementation 'com.github.jaouan:compoundlayout:1.0.1'
+    implementation 'us.feras.mdv:markdownview:1.1.0'
 }
 apply plugin: 'com.google.gms.google-services'
