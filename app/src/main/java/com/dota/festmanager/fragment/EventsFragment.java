@@ -138,6 +138,8 @@ public class EventsFragment extends Fragment {
             event.setPrize(details.getPrize());
             event.setVenue(details.getVenue());
             event.setType(details.getType());
+            event.setStartTime(details.getStartTime());
+            event.setEndTime(details.getEndTime());
         }
         else{
             model.setName(details.getName());
@@ -146,6 +148,8 @@ public class EventsFragment extends Fragment {
             model.setPrize(details.getPrize());
             model.setVenue(details.getVenue());
             model.setType(details.getType());
+            model.setStartTime(details.getStartTime());
+            model.setEndTime(details.getEndTime());
         }
         realm.commitTransaction();
     }

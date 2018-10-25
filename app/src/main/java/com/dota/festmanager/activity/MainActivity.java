@@ -202,8 +202,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-        } else if (!(fragment instanceof FeedFragment)){
-            fragment = new FeedFragment();
+        } else if (!(fragment instanceof ScheduleCardsFragment)){
+            fragment = new ScheduleCardsFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, fragment)
                     .commit();

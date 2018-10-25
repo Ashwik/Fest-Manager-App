@@ -113,7 +113,7 @@ public class DetailsFragment extends Fragment {
             eventDetails.setId(details.getId());
             eventDetails.setName(details.getName());
             eventDetails.setAbout(details.getAbout());
-            eventDetails.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
+            eventDetails.setStartTime(details.getStartTime());
             eventDetails.setEndTime(details.getEndTime());
         }
         else
@@ -172,6 +172,7 @@ public class DetailsFragment extends Fragment {
                     startTime.setVisibility(View.GONE);
                 } else if(result.getStartTime()!=null && result.getEndTime()!=null){
                     //Since the fest is happening on 26th, 27th, 29th the suffix th is added.
+                    String start = result.getStartTime();
                     time = getEventTime(result.getStartTime())[2] + "th " + getEventTime(result.getStartTime())[3] + ":" +
                             getEventTime(result.getStartTime())[4] + " - " + getEventTime(result.getEndTime())[2] + "th " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
