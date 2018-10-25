@@ -161,7 +161,7 @@ public class DetailsFragment extends Fragment {
                     eventDetails.loadMarkdown(result.getAbout(), "file:///android_asset/alt.css");
                     eventDetails.setBackgroundColor(Color.TRANSPARENT);
                 } else {
-                    eventDetails.loadMarkdown("Please connect to network .... the App needs internet to load data for the first time");
+                    eventDetails.loadMarkdown("Please connect to network .... the App needs internet to load data for the first time", "file:///android_asset/alt.css");
                 }
                 if(result.getName()!=null){
                     eventName.setText(result.getName());
