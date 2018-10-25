@@ -23,7 +23,11 @@ public class DetailsActivity extends AppCompatActivity {
                     replace(R.id.nav_fragment_container,new DetailsFragment()).
                     commit();
         }
-        getSupportActionBar().setTitle("");
+        try {
+            getSupportActionBar().setTitle("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
