@@ -11,6 +11,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,8 +26,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
 
 import static java.util.Collections.reverse;
 
@@ -84,7 +91,13 @@ public class FeedFragment extends Fragment {
                 i=0;
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
-                    timeArray.add(ds.child("timestamp").getValue(String.class));
+                    Log.e("Feed Fragment",ds.getKey());
+                    Long timestamp = Long.parseLong(ds.getKey());
+                    Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+                    cal.setTimeInMillis(timestamp);
+                    String date = DateFormat.format("dd-MM hh:mm", cal).toString();
+
+                    timeArray.add(date);
                     descArray.add(ds.child("content").getValue(String.class));
                     deptArray.add(ds.child("title").getValue(String.class));
                     i++;

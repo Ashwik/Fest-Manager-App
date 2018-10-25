@@ -39,8 +39,14 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     @Override
     public void onBindViewHolder(@NonNull FeedViewHolder holder, final int position) {
         if(timeArray.get(position) !=null) {
-            holder.time.setText(timeArray.get(position).toString());
-        }else {
+            if(timeArray.get(position).equals("01-01 05:30")) {
+                holder.time.setVisibility(View.GONE);
+            }else {
+                holder.time.setVisibility(View.VISIBLE);
+                holder.time.setText(timeArray.get(position));
+
+            }
+        }else  {
             holder.time.setText("");
         }
         if(deptArray.get(position)!=null&&deptArray.get(position).toString()!="") {
