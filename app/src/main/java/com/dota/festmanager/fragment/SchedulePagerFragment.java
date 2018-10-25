@@ -149,14 +149,12 @@ public class SchedulePagerFragment extends Fragment {
             event.setId(details.getId());
             event.setName(details.getName());
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
-            event.setAbout(details.getAbout());
             event.setDate(getEventTime(details.getStartTime())[2]);
             event.setTagline(details.getTagline());
             event.setEndTime(details.getEndTime());
         } else {
             model.setName(details.getName());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
-            model.setAbout(details.getAbout());
             model.setDate(getEventTime(details.getStartTime())[2]);
             model.setTagline(details.getTagline());
             model.setEndTime(details.getEndTime());
