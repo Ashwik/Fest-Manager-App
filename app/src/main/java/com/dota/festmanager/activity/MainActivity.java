@@ -71,9 +71,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if(savedInstanceState==null){
-            mNavigationView.getMenu().performIdentifierAction(R.id.feed,0);
+            mNavigationView.getMenu().performIdentifierAction(R.id.schedule,0);
         }
-        mNavigationView.setCheckedItem(R.id.feed);
+        mNavigationView.setCheckedItem(R.id.schedule);
+        try {
+            getSupportActionBar().setTitle("Schedule");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         String type = getIntent().getStringExtra("Destination");
         if (type != null) {
