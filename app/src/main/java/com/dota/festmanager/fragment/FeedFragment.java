@@ -95,7 +95,7 @@ public class FeedFragment extends Fragment {
                     Long timestamp = Long.parseLong(ds.getKey());
                     Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                     cal.setTimeInMillis(timestamp);
-                    String date = DateFormat.format("dd-MM hh:mm", cal).toString();
+                    String date = DateFormat.format("dd-MM HH:mm", cal).toString();
 
                     timeArray.add(date);
                     descArray.add(ds.child("content").getValue(String.class));

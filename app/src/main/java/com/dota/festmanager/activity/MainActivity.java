@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if(savedInstanceState==null){
-            mNavigationView.getMenu().performIdentifierAction(R.id.events,0);
+            mNavigationView.getMenu().performIdentifierAction(R.id.feed,0);
         }
-        mNavigationView.setCheckedItem(R.id.home);
+        mNavigationView.setCheckedItem(R.id.feed);
 
         String type = getIntent().getStringExtra("Destination");
         if (type != null) {
