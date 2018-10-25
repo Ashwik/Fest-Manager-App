@@ -17,6 +17,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,6 +34,7 @@ import com.dota.festmanager.fragment.ReachUsFragment;
 import com.dota.festmanager.fragment.ScheduleCardsFragment;
 import com.dota.festmanager.fragment.SettingsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -53,6 +55,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Guide Recycler
 
+        Log.v("Firebase", "token "+ FirebaseInstanceId.getInstance().getToken());
+
+        Intent sourceIntent = getIntent();
+        if(sourceIntent!=null){
+
+        }
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mNavigationView = findViewById(R.id.nav_view);
         mToggle = new ActionBarDrawerToggle(
@@ -99,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 preferences.edit().putBoolean("ChannelCreated",true).apply();
             }
         }
+
 
         //todo: change it to actual event names
         String events[]={"event1","event2","general","pushNotifications"};
@@ -199,7 +208,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent i = new Intent(this,MainActivity.class);
+            i.putExtra("fragmentName","Feed");
+            startActivity(i);
         }
     }
 }
