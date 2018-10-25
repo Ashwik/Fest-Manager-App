@@ -12,7 +12,7 @@
         android:id="@+id/event_details_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
         android:textColor="@color/textColor"
         android:textSize="30sp"

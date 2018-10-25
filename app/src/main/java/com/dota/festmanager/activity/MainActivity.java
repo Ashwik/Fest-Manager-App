@@ -11,6 +11,8 @@ import android.media.RingtoneManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private NavigationView mNavigationView;
+    private Fragment fragment;
     public Toolbar toolbar;
 
     @Override
@@ -79,8 +82,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (type != null) {
             switch (type) {
                 case "FeedFragment":
+                    fragment = new FeedFragment();
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.nav_fragment_container, new FeedFragment())
+                            .replace(R.id.nav_fragment_container, fragment)
                             .commit();
                     break;
             }
@@ -150,44 +154,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.feed:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container, new FeedFragment())
-                        .commit();
+                fragment = new FeedFragment();
                 break;
             case R.id.events:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container, new EventCardsFragment())
-                        .commit();
+                fragment = new EventCardsFragment();
                 break;
             case R.id.schedule:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ScheduleCardsFragment())
-                        .commit();
+                fragment = new ScheduleCardsFragment();
                 break;
             case R.id.about:
-              getSupportFragmentManager().beginTransaction()
-                      .replace(R.id.nav_fragment_container,new AboutFragment())
-                      .commit();
-              break;
+                fragment = new AboutFragment();
+                break;
             case R.id.contact:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ContactsFragment())
-                        .commit();
+                fragment = new MapsFragment();
                 break;
             case R.id.guide:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new MapsFragment())
-                        .commit();
+                fragment = new MapsFragment();
                 break;
             case R.id.credits:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new CreditsFragment())
-                        .commit();
+                fragment = new CreditsFragment();
                 break;
             case R.id.reach:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ReachUsFragment())
-                        .commit();
+                fragment = new ReachUsFragment();
                 break;
 //            case R.id.promo_code:
 //                getSupportFragmentManager().beginTransaction()
@@ -195,10 +183,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                        .commit();
 //                break;
             case R.id.settings:
-                  getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container, new SettingsFragment())
-                        .commit();
+                  fragment = new SettingsFragment();
+                  break;
         }
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.nav_fragment_container, fragment)
+                .commit();
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -207,10 +197,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else if (!(fragment instanceof FeedFragment)){
+            fragment = new FeedFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_fragment_container, fragment)
+                    .commit();
         } else {
-            Intent i = new Intent(this,MainActivity.class);
-            i.putExtra("fragmentName","Feed");
-            startActivity(i);
+            super.onBackPressed();
         }
     }
 }

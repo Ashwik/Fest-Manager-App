@@ -122,8 +122,6 @@ public class FeedFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
             swipeRefreshLayout.setRefreshing(false);
             Toast.makeText(context,"No Network....Get connected & Swipe to Refresh",Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Feed Updated!", Toast.LENGTH_SHORT).show();
         }
     }
 
