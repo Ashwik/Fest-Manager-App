@@ -113,14 +113,14 @@ public class DetailsFragment extends Fragment {
             eventDetails.setId(details.getId());
             eventDetails.setName(details.getName());
             eventDetails.setAbout(details.getAbout());
-            eventDetails.setStartTime(details.getStartTime());
+            eventDetails.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             eventDetails.setEndTime(details.getEndTime());
         }
         else
         {
             model.setName(details.getName());
             model.setAbout(details.getAbout());
-            model.setStartTime(details.getStartTime());
+            model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             model.setEndTime(details.getEndTime());
         }
         realm.commitTransaction();
@@ -168,13 +168,12 @@ public class DetailsFragment extends Fragment {
                 }else{
                     eventName.setVisibility(View.GONE);
                 }
-                if (result.getStartTime()==null || result.getEndTime()==null||result.getEndTime().equals("")) {
+                if (result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
                 } else if(result.getStartTime()!=null && result.getEndTime()!=null){
                     //Since the fest is happening on 26th, 27th, 29th the suffix th is added.
-                    String start = result.getStartTime();
-                    time = getEventTime(result.getStartTime())[2] + "th " + getEventTime(result.getStartTime())[3] + ":" +
-                            getEventTime(result.getStartTime())[4] + " - " + getEventTime(result.getEndTime())[2] + "th " +
+                    Log.e(TAG,result.getStartTime());
+                    time = result.getStartTime() + " - " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
                 }
