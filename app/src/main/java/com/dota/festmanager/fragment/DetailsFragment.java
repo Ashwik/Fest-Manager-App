@@ -120,7 +120,7 @@ public class DetailsFragment extends Fragment {
         {
             model.setName(details.getName());
             model.setAbout(details.getAbout());
-            model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
+            model.setStartTime(details.getStartTime());
             model.setEndTime(details.getEndTime());
         }
         realm.commitTransaction();
@@ -168,10 +168,12 @@ public class DetailsFragment extends Fragment {
                 }else{
                     eventName.setVisibility(View.GONE);
                 }
-                if (result.getEndTime()==null||result.getEndTime().equals("")) {
+                if (result.getStartTime()==null || result.getEndTime()==null||result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
-                } else if(result.getEndTime()!=null){
-                    time = result.getStartTime() + " - " +
+                } else if(result.getStartTime()!=null && result.getEndTime()!=null){
+                    //Since the fest is happening on 26th, 27th, 29th the suffix th is added.
+                    time = getEventTime(result.getStartTime())[2] + "th " + getEventTime(result.getStartTime())[3] + ":" +
+                            getEventTime(result.getStartTime())[4] + " - " + getEventTime(result.getEndTime())[2] + "th " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
                 }
