@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     >
-
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/app_background"
-        android:scaleType="centerCrop"
-        />
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
