@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ public class EventCardsFragment extends Fragment {
 
     private Context context;
     private RecyclerView recyclerView;
-    private ArrayList<Integer> list = new ArrayList<>();
+    private ArrayList<String> list = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,11 +50,12 @@ public class EventCardsFragment extends Fragment {
         layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
 
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
-        list.add(R.drawable.competitions);
-        list.add(R.drawable.workshops);
-        list.add(R.drawable.talks);
+        list.add("Competition");
+        list.add("Workshop");
+        list.add("Talk");
+        list.add("proshows");
 
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new EventCardsAdapter(list,context));;
     }

@@ -37,7 +37,7 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
-        holder.schedule_image.setImageResource(list.get(position));
+        holder.schedule_text.setText(String.valueOf(list.get(position)));
         final int pos = position;
         holder.schedule_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
 
         public ScheduleViewHolder(View itemView) {
             super(itemView);
-            schedule_image = itemView.findViewById(R.id.carousel_card_image);
+            schedule_text = itemView.findViewById(R.id.event_card_text);
             schedule_cardView = itemView.findViewById(R.id.carousel_item_cardview);
         }
     }
