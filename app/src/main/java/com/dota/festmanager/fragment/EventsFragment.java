@@ -66,15 +66,18 @@ public class EventsFragment extends Fragment {
 
 
         Bundle bundle= getActivity().getIntent().getExtras();
-        event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
-        Log.e("Events",String.valueOf(event_category_id));
-        switch(event_category_id){
-            case R.drawable.workshops : event_category = "Workshop";break;
-            case R.drawable.competitions: event_category = "Competition";break;
-            case R.drawable.talks: event_category ="Talk";break;
-            default:event_category="Workshop";break;
+        event_category = bundle.getString(String.valueOf(R.string.event_type_id));
 
-        }
+//       event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
+//        Log.e("Events",String.valueOf(event_category_id));
+//        switch(event_category_id){
+//            case R.drawable.workshops : event_category = "Workshop";break;
+//            case R.drawable.competitions: event_category = "Competition";break;
+//            case R.drawable.talks: event_category ="Talk";break;
+//            default:event_category="Workshop";break;
+//
+//        }
+
         Log.e("eventscategory",event_category);
         ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
 

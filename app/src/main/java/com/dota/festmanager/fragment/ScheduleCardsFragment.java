@@ -48,15 +48,14 @@ public class ScheduleCardsFragment extends Fragment{
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Schedule");
 
-        final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL, false);
-        layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
+
 
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
-        list.add(R.drawable.day1);
-        list.add(R.drawable.day2);
-        list.add(R.drawable.day3);
+        list.add(1);
+        list.add(2);
+        list.add(3);
 
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new ScheduleCardAdapter(list,context));
         

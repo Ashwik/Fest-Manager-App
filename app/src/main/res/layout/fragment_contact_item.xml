@@ -19,17 +19,18 @@
 
         <TextView
             android:id="@+id/name"
-            tools:text="Anshik Thareja"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:text="Ashwik"
             android:textColor="@color/textColor"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/call_button"
-            android:layout_marginStart="24dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Anshik Thareja" />
 
         <TextView
             android:id="@+id/designation"
@@ -55,6 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/textColor"
             android:src="@drawable/ic_baseline_call_24px"
             android:background="@android:color/transparent"/>
 

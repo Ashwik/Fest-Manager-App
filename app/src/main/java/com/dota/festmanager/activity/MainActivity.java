@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new AboutFragment();
                 break;
             case R.id.contact:
-                fragment = new MapsFragment();
+                fragment = new ContactsFragment();
                 break;
             case R.id.guide:
                 fragment = new MapsFragment();

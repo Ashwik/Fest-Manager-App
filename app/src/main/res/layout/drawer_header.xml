@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ATMOS 2018"
+            android:text= "@string/fest_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/textColor"
             android:textSize="25sp" />
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Into the Sixth Dimension"
+            android:text="@string/fest_tagline"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/textColor"
             android:textSize="15sp" />

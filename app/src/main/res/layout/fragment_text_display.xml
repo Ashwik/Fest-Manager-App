@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/tv_display"
             android:padding="8dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/textColor"
             android:breakStrategy="simple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

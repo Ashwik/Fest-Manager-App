@@ -5,14 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/backgroundColor"
     >
-
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/app_background"
-        android:scaleType="centerCrop"
-        />
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            app:titleTextColor="@color/textColor"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/toolbar"
             >
@@ -39,6 +34,7 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:visibility="gone"
         android:layout_gravity="center"
+        android:indeterminateTint="@color/progressbar_color"
         />
 
     <include layout="@layout/navigation_content" />

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
+    android:background="@color/backgroundColor"
     >
 
 
@@ -24,8 +25,8 @@
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_view"
         app:itemBackground="@color/navigation_background"
-        app:itemTextColor="@color/colorPrimary"
-        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@color/textColor"
+        app:itemIconTint="@color/textColor"
 
         />
 

@@ -12,6 +12,12 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:fontFamily">@font/gothic</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/textColor</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
@@ -20,6 +26,7 @@
 
     <style name="toolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:fontFamily">@font/gothicbold</item>
+        <item name="colorControlNormal">@color/textColor</item>
     </style>
 
     <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -55,6 +62,8 @@
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
+
 
 
 </resources>
