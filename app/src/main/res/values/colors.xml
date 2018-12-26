@@ -4,11 +4,12 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#FFF</color>
 
-    <color name="textColor">#FFF</color>
-    <color name="backgroundColor">#33ffffff</color>
+    <color name="textColor">#202021</color>
+    <color name="backgroundColor">#FFF</color>
+    <color name="progressbar_color">#202021</color>
 
     <color name="sky_color_animation">#202021</color>
-    <color name="navigation_background">#212121</color>
+    <color name="navigation_background">#fdfbfb</color>
 
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
