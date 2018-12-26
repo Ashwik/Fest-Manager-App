@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.festmanager.R;
@@ -29,7 +28,7 @@ public class EventCardsAdapter extends RecyclerView.Adapter<EventCardsAdapter.Ev
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.fragment_carousel_cards_item,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_cards_item,parent,false);
         return new EventViewHolder(v);
     }
 

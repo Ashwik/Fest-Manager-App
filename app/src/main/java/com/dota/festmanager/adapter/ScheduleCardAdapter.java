@@ -31,7 +31,7 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
     @NonNull
     @Override
     public ScheduleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.fragment_carousel_cards_item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_cards_item, parent, false);
         return new ScheduleViewHolder(v);
     }
 

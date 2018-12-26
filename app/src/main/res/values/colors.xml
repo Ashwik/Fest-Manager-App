@@ -16,5 +16,7 @@
 
     <color name="circle3">#7742A5F5</color>
     <color name="circle4">#77AB47BC</color>
+
+    <color name="cardbackground_color">#000</color>
 </resources>
 

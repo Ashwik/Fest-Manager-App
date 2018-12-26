@@ -53,7 +53,7 @@ public class CreditsFragment extends Fragment {
         details.add(new DeveloperLayoutDetails("Android Developers", getAndroidDevs()));
         details.add(new DeveloperLayoutDetails(null, getAndroidDevs2()));
         details.add(new DeveloperLayoutDetails("Backend Web-Developers", getWebDevs()));
-        details.add(new DeveloperLayoutDetails("Designers", getDesigners()));
+//        details.add(new DeveloperLayoutDetails("Designers", getDesigners()));
 
         return details;
     }
@@ -62,8 +62,6 @@ public class CreditsFragment extends Fragment {
         ArrayList<DeveloperDetails> details = new ArrayList<>();
         details.add(new DeveloperDetails("Ashwik Reddy", R.drawable.dev_ashwik, new String[] {"https://www.facebook.com/ashwik.aileni","https://github.com/Ashwik",null,null}));
         details.add(new DeveloperDetails("Kartheek Akella", R.drawable.dev_kartheek, new String[]{"https://www.facebook.com/kartheek.asvs","https://github.com/ASVS-Kartheek",null,null} ));
-        details.add(new DeveloperDetails("Vineeth P", R.drawable.dev_vineeth, new String[]{"https://www.facebook.com/vineeth.vinny.007","https://github.com/vineeth07",null,null}));
-
         return details;
     }
 
@@ -71,8 +69,7 @@ public class CreditsFragment extends Fragment {
         ArrayList<DeveloperDetails> details = new ArrayList<>();
         details.add(new DeveloperDetails("Prateek Agarwal", R.drawable.dev_prateek, new String[]{"https://www.facebook.com/prateek.agarwal.94801","https://github.com/prat-bphc52",null,null}));
         details.add(new DeveloperDetails("Ajith kanduri", R.drawable.dev_ajith, new String[]{"https://www.facebook.com/kanduri.ajith","https://github.com/ajithkanduri",null,null}));
-        details.add(new DeveloperDetails("Raghav Gagrani", R.drawable.dev_raghav, new String[]{"https://www.facebook.com/raghav.gagrani","https://github.com/raghav32",null,null}));
-        return details;
+         return details;
     }
 
     private ArrayList<DeveloperDetails> getWebDevs(){
@@ -85,10 +82,8 @@ public class CreditsFragment extends Fragment {
     private ArrayList<DeveloperDetails> getDesigners(){
         ArrayList<DeveloperDetails> details = new ArrayList<>();
 
-        details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.des_maitreyee,new String[]{"https://www.facebook.com/maitreyee.talnikar", null, null, "https://www.behance.net/maitreyeet0781"}));
-        details.add(new DeveloperDetails("Vishal Prabu", R.drawable.des_vishal, new String[]{"https://www.facebook.com/vishalprabu99", null, null, null}));
-//        details.add(new DeveloperDetails("Abishek Yadav", R.drawable.des_yadav, new String[]{"https://www.facebook.com/profile.php?id=100000513640766",null,null,null}));
-          return details;
+//        details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.des_maitreyee,new String[]{"https://www.facebook.com/maitreyee.talnikar", null, null, "https://www.behance.net/maitreyeet0781"}));
+        return details;
     }
 
 }

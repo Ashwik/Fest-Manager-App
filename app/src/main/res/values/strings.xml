@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">ATMOS</string>
+    <string name="app_name">Fest-Manager</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="fest_name">FEST NAME</string>
+    <string name="fest_tagline">FEST TAGLINE</string>
 
     <string-array name="placeName">
         <item>Main Gate</item>
