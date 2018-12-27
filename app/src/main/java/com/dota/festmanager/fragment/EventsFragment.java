@@ -65,8 +65,8 @@ public class EventsFragment extends Fragment {
 
 
 
-        Bundle bundle= getActivity().getIntent().getExtras();
-        event_category = bundle.getString(String.valueOf(R.string.event_type_id));
+//        Bundle bundle= getActivity().getIntent().getExtras();
+//        event_category = bundle.getString(String.valueOf(R.string.event_type_id));
 
 //       event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
 //        Log.e("Events",String.valueOf(event_category_id));
@@ -78,8 +78,7 @@ public class EventsFragment extends Fragment {
 //
 //        }
 
-        Log.e("eventscategory",event_category);
-        ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
+//        ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
 
         Realm.init(context);
         realm = Realm.getDefaultInstance();
@@ -161,7 +160,7 @@ public class EventsFragment extends Fragment {
         if (realm1 != null) {
             realmList = new ArrayList<>();
 
-            RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("type",event_category).findAll();
+            RealmResults<EventDetails> results = realm1.where(EventDetails.class).findAll();
 
             if(results.size()==0){
                 Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
