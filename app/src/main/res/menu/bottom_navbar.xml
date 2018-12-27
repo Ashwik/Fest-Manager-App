@@ -3,12 +3,18 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/feed"
-            android:title="Feed" />
+            android:title="Feed"
+            android:icon="@drawable/ic_feed"
+            />
         <item
             android:id="@+id/events"
-            android:title="Events" />
+            android:title="Events"
+            android:icon="@drawable/ic_events_24px"
+            />
         <item
             android:id="@+id/schedule"
-            android:title="Schedule" />
+            android:title="Schedule"
+            android:icon="@drawable/ic_outline_schedule_24px"
+            />
     </group>
 </menu>

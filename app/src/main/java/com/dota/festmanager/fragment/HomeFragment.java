@@ -46,9 +46,13 @@ public class HomeFragment extends Fragment  {
                         break;
                     case R.id.events:
                         getChildFragmentManager().beginTransaction()
-                                .replace(R.id.bottom_nav_container, new EventsFragment())
+                                .replace(R.id.bottom_nav_container, new EventCardsFragment())
                                 .commit();
                         break;
+                    case R.id.schedule:
+                        getChildFragmentManager().beginTransaction()
+                                .replace(R.id.bottom_nav_container, new ScheduleCardsFragment())
+                                .commit();
 
                 }
                 return true;

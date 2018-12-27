@@ -30,6 +30,7 @@ import com.dota.festmanager.fragment.CreditsFragment;
 import com.dota.festmanager.fragment.EventCardsFragment;
 import com.dota.festmanager.fragment.EventsFragment;
 import com.dota.festmanager.fragment.FeedFragment;
+import com.dota.festmanager.fragment.HomeFragment;
 import com.dota.festmanager.fragment.MapsFragment;
 import com.dota.festmanager.fragment.PromoCodeFragment;
 import com.dota.festmanager.fragment.ReachUsFragment;
@@ -52,9 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.app_bar_navigation);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if(savedInstanceState==null){
+            getSupportFragmentManager().beginTransaction().
+                    replace(R.id.nav_fragment_container,new HomeFragment()).
+                    commit();
+        }
 
         //Guide Recycler
 
@@ -64,24 +70,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(sourceIntent!=null){
 
         }
-        mDrawerLayout = findViewById(R.id.drawer_layout);
-        mNavigationView = findViewById(R.id.nav_view);
-        mToggle = new ActionBarDrawerToggle(
-                this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        mDrawerLayout.addDrawerListener(mToggle);
-        mNavigationView.setNavigationItemSelectedListener(this);
-        mDrawerLayout.setScrimColor(getResources().getColor(android.R.color.transparent));
 
 
-        if(savedInstanceState==null){
-            mNavigationView.getMenu().performIdentifierAction(R.id.schedule,0);
-        }
-        mNavigationView.setCheckedItem(R.id.schedule);
-        try {
-            getSupportActionBar().setTitle("Schedule");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        mDrawerLayout = findViewById(R.id.drawer_layout);
+//        mNavigationView = findViewById(R.id.nav_view);
+//        mToggle = new ActionBarDrawerToggle(
+//                this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        mDrawerLayout.addDrawerListener(mToggle);
+//        mNavigationView.setNavigationItemSelectedListener(this);
+//        mDrawerLayout.setScrimColor(getResources().getColor(android.R.color.transparent));
+//
+//
+//        if(savedInstanceState==null){
+//            mNavigationView.getMenu().performIdentifierAction(R.id.schedule,0);
+//        }
+//        mNavigationView.setCheckedItem(R.id.schedule);
+//        try {
+//            getSupportActionBar().setTitle("Schedule");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         String type = getIntent().getStringExtra("Destination");
         if (type != null) {
@@ -132,17 +140,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        mToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mToggle.onConfigurationChanged(newConfig);
-    }
+//    @Override
+//    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+//        super.onPostCreate(savedInstanceState);
+//        mToggle.syncState();
+//    }
+//
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//        mToggle.onConfigurationChanged(newConfig);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -157,58 +165,60 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.feed:
-                fragment = new FeedFragment();
-                break;
-            case R.id.events:
-                fragment = new EventCardsFragment();
-                break;
-            case R.id.schedule:
-                fragment = new ScheduleCardsFragment();
-                break;
-            case R.id.about:
-                fragment = new AboutFragment();
-                break;
-            case R.id.contact:
-                fragment = new ContactsFragment();
-                break;
-            case R.id.guide:
-                fragment = new MapsFragment();
-                break;
-            case R.id.credits:
-                fragment = new CreditsFragment();
-                break;
-            case R.id.reach:
-                fragment = new ReachUsFragment();
-                break;
+//        switch (item.getItemId()){
+//            case R.id.feed:
+//                fragment = new FeedFragment();
+//                break;
+//            case R.id.events:
+//                fragment = new EventCardsFragment();
+//                break;
+//            case R.id.schedule:
+//                fragment = new ScheduleCardsFragment();
+//                break;
+//            case R.id.about:
+//                fragment = new AboutFragment();
+//                break;
+//            case R.id.contact:
+//                fragment = new ContactsFragment();
+//                break;
+//            case R.id.guide:
+//                fragment = new MapsFragment();
+//                break;
+//            case R.id.credits:
+//                fragment = new CreditsFragment();
+//                break;
+//            case R.id.reach:
+//                fragment = new ReachUsFragment();
+//                break;
 //            case R.id.promo_code:
 //                getSupportFragmentManager().beginTransaction()
 //                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
 //                        .commit();
 //                break;
-            case R.id.settings:
-                  fragment = new SettingsFragment();
-                  break;
-        }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.nav_fragment_container, fragment)
-                .commit();
-        mDrawerLayout.closeDrawer(GravityCompat.START);
+//            case R.id.settings:
+//                  fragment = new SettingsFragment();
+//                  break;
+//        }
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.nav_fragment_container, fragment)
+//                .commit();
+//        mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            mDrawerLayout.closeDrawer(GravityCompat.START);
-        } else if (!(fragment instanceof ScheduleCardsFragment)){
-            fragment = new ScheduleCardsFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, fragment)
-                    .commit();
-        } else {
-            super.onBackPressed();
-        }
+        super.onBackPressed();
+
+//        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+//            mDrawerLayout.closeDrawer(GravityCompat.START);
+//        } else if (!(fragment instanceof ScheduleCardsFragment)){
+//            fragment = new ScheduleCardsFragment();
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.nav_fragment_container, fragment)
+//                    .commit();
+//        } else {
+//            super.onBackPressed();
+//        }
     }
 }
