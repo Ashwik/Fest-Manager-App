@@ -7,7 +7,6 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="1dp"
-    app:cardElevation="8dp"
     android:layout_marginBottom="8dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
@@ -19,7 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="4dp"
-        android:background="@drawable/feed_card_background"
+        android:background="@drawable/cardview_background"
         >
 
         <TextView
