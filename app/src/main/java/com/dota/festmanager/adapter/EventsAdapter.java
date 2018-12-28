@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,21 +36,24 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
 
     @Override
     public void onBindViewHolder(@NonNull EventsAdapter.EventViewHolder holder, final int position) {
-        holder.eventName.setText(list.get(position).getName());
-        holder.eventTagLine.setVisibility(View.VISIBLE);
-        if(list.get(position).getTagline()==null||list.get(position).getTagline().equals("")){
-            holder.eventTagLine.setVisibility(View.GONE);
-        }else {
-            holder.eventTagLine.setText(list.get(position).getTagline());
-        }
-        holder.eventView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("id",list.get(position).getId());
-                v.getContext().startActivity(intent);
+
+            holder.eventView.setVisibility(View.VISIBLE);
+            holder.eventName.setText(list.get(position).getName());
+            holder.eventTagLine.setVisibility(View.VISIBLE);
+            if (list.get(position).getTagline() == null || list.get(position).getTagline().equals("")) {
+                holder.eventTagLine.setVisibility(View.GONE);
+            } else {
+                holder.eventTagLine.setText(list.get(position).getTagline());
             }
-        });
+            holder.eventView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, DetailsActivity.class);
+                    intent.putExtra("id", list.get(position).getId());
+                    v.getContext().startActivity(intent);
+                }
+            });
+
     }
 
     @Override

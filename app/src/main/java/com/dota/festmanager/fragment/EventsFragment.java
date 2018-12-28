@@ -142,6 +142,7 @@ public class EventsFragment extends Fragment {
             event.setType(details.getType());
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             event.setEndTime(details.getEndTime());
+            event.setRoute(details.getRoute());
         }
         else{
             model.setName(details.getName());
@@ -152,6 +153,7 @@ public class EventsFragment extends Fragment {
             model.setType(details.getType());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             model.setEndTime(details.getEndTime());
+            model.setRoute(details.getRoute());
         }
         realm.commitTransaction();
     }
@@ -170,7 +172,16 @@ public class EventsFragment extends Fragment {
                     Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
                 }
 
-                realmList.addAll(results);
+                for(int i=0;i<results.size();i++){
+                    if(results.get(i).getRoute()==null||results.get(i).getRoute()==""){
+                        Log.e(TAG,"No Route found");
+                    }
+                    else{
+                        realmList.add(results.get(i));
+                        Log.e(TAG,results.get(i).getRoute());
+                    }
+                }
+
                 Log.e(TAG,String.valueOf(realmList.size())+" "+String.valueOf(results.size()));
             }
             setAdapter(realmList);

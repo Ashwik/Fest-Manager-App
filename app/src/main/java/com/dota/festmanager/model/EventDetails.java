@@ -31,6 +31,8 @@ public class EventDetails extends RealmObject {
     String tagline;
     @SerializedName("venue")
     String venue;
+    @SerializedName("route")
+    String route;
 
     String date;
 
@@ -58,6 +60,9 @@ public class EventDetails extends RealmObject {
         this.venue = venue;
     }
     public void setDate(String date) { this.date = date; }
+    public void setRoute(String route) {
+        this.route = route;
+    }
 
     public String getName() {return name;}
     public String getBody() {return body;}
@@ -83,7 +88,8 @@ public class EventDetails extends RealmObject {
         return venue;
     }
     public String getDate() { return date; }
-
-
+    public String getRoute() {
+        return route;
+    }
 }
 
