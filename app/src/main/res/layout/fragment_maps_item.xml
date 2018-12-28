@@ -41,6 +41,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="8dp"
+            android:tint="@color/textColor"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_outline_keyboard_arrow_right_24px"
             app:layout_constraintBottom_toBottomOf="parent"

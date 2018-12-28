@@ -29,7 +29,7 @@ public class MapsFragment extends Fragment {
     {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Campus Map");
+//        toolbar.setTitle("Campus Map");
 
         placeName=getResources().getStringArray(R.array.placeName);
         place_recycler=getView().findViewById(R.id.place_recycler);

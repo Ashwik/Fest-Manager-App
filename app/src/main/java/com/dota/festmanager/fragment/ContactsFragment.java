@@ -37,7 +37,7 @@ public class ContactsFragment extends Fragment {
         mPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
         mPager.setAdapter(mPagerAdapter);
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Contact Us");
+//        toolbar.setTitle("Contact Us");
 
         TabLayout tabLayout = getView().findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mPager);

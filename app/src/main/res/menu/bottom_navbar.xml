@@ -12,14 +12,19 @@
             android:icon="@drawable/ic_events_24px"
             />
         <item
+            android:id="@+id/guide"
+            android:title="Directions"
+            android:icon="@drawable/ic_directions_24px"
+            />
+        <item
             android:id="@+id/contact"
             android:title="Contact Us"
             android:icon="@drawable/ic_baseline_call_24px"
             />
         <item
-            android:id="@+id/guide"
-            android:title="Directions"
-            android:icon="@drawable/ic_directions_24px"
+            android:id="@+id/more"
+            android:title="More"
+            android:icon="@drawable/ic_baseline_more_vert_24px"
             />
     </group>
 </menu>

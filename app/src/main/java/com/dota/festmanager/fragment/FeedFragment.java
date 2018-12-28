@@ -56,7 +56,7 @@ public class FeedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Feed");
+//        toolbar.setTitle("Feed");
         progressBar = getActivity().findViewById(R.id.progress_bar);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_feed);
 
