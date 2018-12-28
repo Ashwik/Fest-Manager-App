@@ -29,7 +29,6 @@
             android:text="Game of Drones"
             android:textColor="@color/textColor"
             android:textSize="22sp"
-            android:textAlignment="center"
             />
 
         <TextView
@@ -39,7 +38,24 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="random tagline"
-            android:textAlignment="center"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/events_fee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Fee:1000"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/events_prizemoney"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Prize:10000"
             android:textColor="@color/textColor"
             android:textSize="15sp" />
 

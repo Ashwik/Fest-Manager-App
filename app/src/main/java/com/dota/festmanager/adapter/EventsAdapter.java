@@ -40,11 +40,24 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             holder.eventView.setVisibility(View.VISIBLE);
             holder.eventName.setText(list.get(position).getName());
             holder.eventTagLine.setVisibility(View.VISIBLE);
+            holder.eventPrizemoney.setVisibility(View.VISIBLE);
+            holder.eventFee.setVisibility(View.VISIBLE);
             if (list.get(position).getTagline() == null || list.get(position).getTagline().equals("")) {
                 holder.eventTagLine.setVisibility(View.GONE);
             } else {
                 holder.eventTagLine.setText(list.get(position).getTagline());
             }
+            if (list.get(position).getPrice() == null || list.get(position).getPrice().equals("")) {
+                holder.eventFee.setVisibility(View.GONE);
+            } else {
+                holder.eventFee.setText("Fee: " + list.get(position).getPrice());
+            }
+            if (list.get(position).getPrize() == null || list.get(position).getPrize().equals("")) {
+                holder.eventPrizemoney.setVisibility(View.GONE);
+            } else {
+                holder.eventPrizemoney.setText("Prize: " + list.get(position).getPrize());
+            }
+
             holder.eventView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -62,14 +75,17 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
-        TextView eventName, eventTagLine;
+        TextView eventName,eventTagLine ,eventFee ,eventPrizemoney;
         CardView eventView ;
 
         public EventViewHolder(View itemView) {
             super(itemView);
             eventName = itemView.findViewById(R.id.events_name);
             eventTagLine = itemView.findViewById(R.id.events_tagline);
+            eventFee = itemView.findViewById(R.id.events_fee);
+            eventPrizemoney = itemView.findViewById(R.id.events_prizemoney);
             eventView = itemView.findViewById(R.id.event_item_cardview);
+
         }
 
     }

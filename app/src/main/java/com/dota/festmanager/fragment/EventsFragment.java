@@ -138,6 +138,7 @@ public class EventsFragment extends Fragment {
             event.setAbout(details.getAbout());
             event.setTagline(details.getTagline());
             event.setPrize(details.getPrize());
+            event.setPrice(details.getPrice());
             event.setVenue(details.getVenue());
             event.setType(details.getType());
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
@@ -149,6 +150,7 @@ public class EventsFragment extends Fragment {
             model.setAbout(details.getAbout());
             model.setTagline(details.getTagline());
             model.setPrize(details.getPrize());
+            model.setPrice(details.getPrice());
             model.setVenue(details.getVenue());
             model.setType(details.getType());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
