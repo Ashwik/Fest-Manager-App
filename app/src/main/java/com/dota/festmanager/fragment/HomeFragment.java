@@ -59,6 +59,11 @@ public class HomeFragment extends Fragment  {
                                 .replace(R.id.bottom_nav_container,new MapsFragment())
                                 .commit();
                         break;
+                    case R.id.more:
+                        getChildFragmentManager().beginTransaction()
+                                .replace(R.id.bottom_nav_container,new MoreFragment())
+                                .commit();
+                        break;
 
                 }
                 return true;
