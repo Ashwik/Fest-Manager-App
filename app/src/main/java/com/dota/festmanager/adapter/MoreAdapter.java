@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.festmanager.R;
@@ -47,6 +48,14 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
                 view.getContext().startActivity(intent);
             }
         });
+        switch(i){
+            case 0: holder.moreitemIcon.setImageResource(R.drawable.ic_baseline_info_24px);
+                    break;
+            case 1: holder.moreitemIcon.setImageResource(R.drawable.ic_credits);
+                break;
+            case 2: holder.moreitemIcon.setImageResource(R.drawable.ic_baseline_settings_20px);
+                break;
+        }
     }
 
     @Override
@@ -57,9 +66,11 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
 
     public class MoreViewHolder extends RecyclerView.ViewHolder{
         TextView moreitemText ;
+        ImageView moreitemIcon;
         public MoreViewHolder(@NonNull View itemView) {
             super(itemView);
             moreitemText = itemView.findViewById(R.id.more_item_text);
+            moreitemIcon = itemView.findViewById(R.id.more_item_icon);
         }
     }
 }

@@ -15,7 +15,7 @@
         android:paddingLeft="20dp"
         android:paddingStart="16dp"
         tools:text="Android Developers"
-        android:textColor="@android:color/white"
+        android:textColor="@color/textColor"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <HorizontalScrollView
@@ -93,7 +93,7 @@
             android:paddingTop="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Ashwik Reddy"
-            android:textColor="@android:color/white"
+            android:textColor="@color/textColor"
             />
 
         <LinearLayout
