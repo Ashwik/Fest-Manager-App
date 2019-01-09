@@ -8,6 +8,7 @@ import com.dota.festmanager.R;
 import com.dota.festmanager.fragment.AboutFragment;
 import com.dota.festmanager.fragment.CreditsFragment;
 import com.dota.festmanager.fragment.FeedFragment;
+import com.dota.festmanager.fragment.ReachUsFragment;
 import com.dota.festmanager.fragment.SchedulePagerFragment;
 import com.dota.festmanager.fragment.SettingsFragment;
 
@@ -34,11 +35,16 @@ public class MoreItemsActivity extends AppCompatActivity {
                     getSupportActionBar().setTitle("About Arena");
                 break;
             case 1: getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_fragment_container, new ReachUsFragment())
+                    .commit();
+                getSupportActionBar().setTitle("Reach Us");
+                break;
+            case 2: getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new CreditsFragment())
                     .commit();
                     getSupportActionBar().setTitle("App Credits");
                 break;
-            case 2: getSupportFragmentManager().beginTransaction()
+            case 3: getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new SettingsFragment())
                     .commit();
                     getSupportActionBar().setTitle("Settings");

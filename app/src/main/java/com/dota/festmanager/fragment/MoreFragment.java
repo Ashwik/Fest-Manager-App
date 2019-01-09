@@ -40,6 +40,7 @@ public class MoreFragment extends Fragment {
 //        toolbar.setTitle("Campus Map");
 
         moreitemsList.add("About");
+        moreitemsList.add("Reach Us");
         moreitemsList.add("App Credits");
         moreitemsList.add("Settings");
 
