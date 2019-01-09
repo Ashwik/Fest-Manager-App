@@ -1,7 +1,9 @@
 package com.dota.festmanager.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dota.festmanager.R;
+import com.dota.festmanager.activity.MainActivity;
+import com.dota.festmanager.activity.MoreItemsActivity;
+import com.dota.festmanager.fragment.AboutFragment;
+import com.dota.festmanager.fragment.FeedFragment;
 
 import java.util.ArrayList;
 
@@ -30,8 +36,17 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MoreAdapter.MoreViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull MoreAdapter.MoreViewHolder holder, final int i) {
         holder.moreitemText.setText(moreitemsList.get(i));
+        final MainActivity activity = (MainActivity)context;
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MoreItemsActivity.class);
+                intent.putExtra("position",i);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

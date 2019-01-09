@@ -40,8 +40,8 @@ public class MoreFragment extends Fragment {
 //        toolbar.setTitle("Campus Map");
 
         moreitemsList.add("About");
+        moreitemsList.add("App Credits");
         moreitemsList.add("Settings");
-        Log.e(TAG,"REACHED");
 
         more_recycler = getActivity().findViewById(R.id.more_recycler_view);
 
