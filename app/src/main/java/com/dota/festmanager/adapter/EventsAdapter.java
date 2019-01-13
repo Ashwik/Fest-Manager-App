@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,35 +36,35 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     @Override
     public void onBindViewHolder(@NonNull EventsAdapter.EventViewHolder holder, final int position) {
 
-            holder.eventView.setVisibility(View.VISIBLE);
-            holder.eventName.setText(list.get(position).getName());
-            holder.eventTagLine.setVisibility(View.VISIBLE);
-            holder.eventPrizemoney.setVisibility(View.VISIBLE);
-            holder.eventFee.setVisibility(View.VISIBLE);
-            if (list.get(position).getTagline() == null || list.get(position).getTagline().equals("")) {
-                holder.eventTagLine.setVisibility(View.GONE);
-            } else {
-                holder.eventTagLine.setText(list.get(position).getTagline());
-            }
-            if (list.get(position).getPrice() == null || list.get(position).getPrice().equals("")) {
-                holder.eventFee.setVisibility(View.GONE);
-            } else {
-                holder.eventFee.setText("Fee: " + list.get(position).getPrice());
-            }
-            if (list.get(position).getPrize() == null || list.get(position).getPrize().equals("")) {
-                holder.eventPrizemoney.setVisibility(View.GONE);
-            } else {
-                holder.eventPrizemoney.setText("Prize: " + list.get(position).getPrize());
-            }
+        holder.eventView.setVisibility(View.VISIBLE);
+        holder.eventName.setText(list.get(position).getName());
+        holder.eventTagLine.setVisibility(View.VISIBLE);
+        holder.eventPrizemoney.setVisibility(View.VISIBLE);
+        holder.eventFee.setVisibility(View.VISIBLE);
+        if (list.get(position).getTagline() == null || list.get(position).getTagline().equals("")) {
+            holder.eventTagLine.setVisibility(View.GONE);
+        } else {
+            holder.eventTagLine.setText(list.get(position).getTagline());
+        }
+        if (list.get(position).getPrice() == null || list.get(position).getPrice().equals("")) {
+            holder.eventFee.setVisibility(View.GONE);
+        } else {
+            holder.eventFee.setText("Fee: " + list.get(position).getPrice());
+        }
+        if (list.get(position).getPrize() == null || list.get(position).getPrize().equals("")) {
+            holder.eventPrizemoney.setVisibility(View.GONE);
+        } else {
+            holder.eventPrizemoney.setText("Prize: " + list.get(position).getPrize());
+        }
 
-            holder.eventView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, DetailsActivity.class);
-                    intent.putExtra("id", list.get(position).getId());
-                    v.getContext().startActivity(intent);
-                }
-            });
+        holder.eventView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("id", list.get(position).getId());
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 
@@ -75,8 +74,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
-        TextView eventName,eventTagLine ,eventFee ,eventPrizemoney;
-        CardView eventView ;
+        TextView eventName, eventTagLine, eventFee, eventPrizemoney;
+        CardView eventView;
 
         public EventViewHolder(View itemView) {
             super(itemView);

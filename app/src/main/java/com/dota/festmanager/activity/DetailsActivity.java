@@ -1,9 +1,8 @@
 package com.dota.festmanager.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 
 import com.dota.festmanager.R;
 import com.dota.festmanager.fragment.DetailsFragment;
@@ -18,9 +17,9 @@ public class DetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        if(savedInstanceState==null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().
-                    replace(R.id.nav_fragment_container,new DetailsFragment()).
+                    replace(R.id.nav_fragment_container, new DetailsFragment()).
                     commit();
         }
         try {
@@ -41,8 +40,8 @@ public class DetailsActivity extends AppCompatActivity {
         return true;
     }
 
-    public void setActionBarTitle(String Title){
-        if(Title!=null) {
+    public void setActionBarTitle(String Title) {
+        if (Title != null) {
             getSupportActionBar().setTitle(Title);
         }
     }

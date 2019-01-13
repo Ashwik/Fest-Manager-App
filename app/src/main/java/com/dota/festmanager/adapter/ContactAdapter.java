@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.dota.festmanager.R;
 import com.dota.festmanager.model.Contact;
 
@@ -25,7 +24,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     LayoutInflater mInflater;
     ArrayList<Contact> mArrayList;
 
-    public ContactAdapter(Context context){
+    public ContactAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
         mArrayList = new ArrayList<>();
     }
@@ -36,7 +35,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     @Override
     public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = mInflater.inflate(R.layout.fragment_contact_item,parent, false);
+        View v = mInflater.inflate(R.layout.fragment_contact_item, parent, false);
         return new ContactViewHolder(v);
     }
 
@@ -48,7 +47,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             @Override
             public void onClick(View view) {
                 String mobile = mArrayList.get(holder.getAdapterPosition()).getMobile();
-                if(mobile != null){
+                if (mobile != null) {
                     Uri number = Uri.parse("tel:" + mArrayList.get(holder.getAdapterPosition()).getMobile());
                     holder.itemView.getContext().startActivity(new Intent(Intent.ACTION_DIAL, number));
                 }
@@ -61,11 +60,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         return mArrayList.size();
     }
 
-    public class ContactViewHolder extends RecyclerView.ViewHolder{
+    public class ContactViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView designation;
         ImageView callButton;
-        public ContactViewHolder(View view){
+
+        public ContactViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
             designation = view.findViewById(R.id.designation);

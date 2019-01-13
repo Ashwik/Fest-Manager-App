@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dota.festmanager.R;
-import com.dota.festmanager.model.Contact;
 import com.dota.festmanager.adapter.ContactAdapter;
+import com.dota.festmanager.model.Contact;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,7 @@ public class ContactsPagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         switchContacts = getArguments().getInt(CONTACTS_SWITCH);
         Resources res = container.getResources();
-        switch(switchContacts){
+        switch (switchContacts) {
             case 0:
                 names = res.getStringArray(R.array.organiser_names);
                 designations = res.getStringArray(R.array.organisers_designations);
@@ -50,7 +50,6 @@ public class ContactsPagerFragment extends Fragment {
                 numbers = res.getStringArray(R.array.club_senate_phone_numbers);
                 break;
         }
-
 
 
         return inflater.inflate(R.layout.fragment_contacts_pager, container, false);
@@ -68,9 +67,9 @@ public class ContactsPagerFragment extends Fragment {
         mContactAdapter.setArrayList(data);
     }
 
-    public void feedData(){
-        for(int i = 0; i < names.length ; i++){
-            data.add(new Contact(names[i],designations[i],numbers[i]));
+    public void feedData() {
+        for (int i = 0; i < names.length; i++) {
+            data.add(new Contact(names[i], designations[i], numbers[i]));
         }
     }
 }

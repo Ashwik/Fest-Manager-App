@@ -16,7 +16,6 @@ import com.azoft.carousellayoutmanager.CarouselLayoutManager;
 import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.dota.festmanager.R;
 import com.dota.festmanager.adapter.EventCardsAdapter;
-import com.dota.festmanager.adapter.ScheduleCardAdapter;
 
 import java.util.ArrayList;
 
@@ -36,7 +35,7 @@ public class EventCardsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_schedule_cards,container,false);
+        return inflater.inflate(R.layout.fragment_schedule_cards, container, false);
     }
 
     @Override
@@ -57,6 +56,6 @@ public class EventCardsFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new EventCardsAdapter(list,context));;
+        recyclerView.setAdapter(new EventCardsAdapter(list, context));
     }
 }

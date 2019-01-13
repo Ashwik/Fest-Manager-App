@@ -12,20 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.azoft.carousellayoutmanager.CarouselLayoutManager;
-import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.dota.festmanager.R;
 import com.dota.festmanager.adapter.ScheduleCardAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class ScheduleCardsFragment extends Fragment{
+public class ScheduleCardsFragment extends Fragment {
 
     private ArrayList<Integer> list = new ArrayList<>();
     private RecyclerView recyclerView;
     private ScheduleCardAdapter scheduleCardAdapter;
-    private Context context ;
+    private Context context;
 
 
     @Override
@@ -38,7 +35,7 @@ public class ScheduleCardsFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_schedule_cards,container,false);
+        return inflater.inflate(R.layout.fragment_schedule_cards, container, false);
     }
 
     @Override
@@ -49,7 +46,6 @@ public class ScheduleCardsFragment extends Fragment{
         toolbar.setTitle("Schedule");
 
 
-
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
         list.add(1);
         list.add(2);
@@ -57,8 +53,7 @@ public class ScheduleCardsFragment extends Fragment{
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new ScheduleCardAdapter(list,context));
-        
+        recyclerView.setAdapter(new ScheduleCardAdapter(list, context));
 
 
     }

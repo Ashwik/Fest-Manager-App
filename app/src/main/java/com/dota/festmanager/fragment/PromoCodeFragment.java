@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.dota.festmanager.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -73,7 +72,6 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
 
 
         // [START config_signin]
@@ -168,20 +166,20 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     String uid = user.getUid();
-                                    if(dataSnapshot.child("users").child(uid).child("promo_code").getValue(String.class)==null){
+                                    if (dataSnapshot.child("users").child(uid).child("promo_code").getValue(String.class) == null) {
                                         int current_id = Integer.parseInt(dataSnapshot.child("current_id").getValue(String.class));
                                         String promo_code = dataSnapshot.child("promo_codes").child(String.valueOf(current_id)).getValue(String.class);
 
 
-                                        Log.e("PROMO CODE FRAG",promo_code);
-                                        Log.e("PROMO CODE FRAG",String.valueOf(current_id));
+                                        Log.e("PROMO CODE FRAG", promo_code);
+                                        Log.e("PROMO CODE FRAG", String.valueOf(current_id));
 
                                         database.child("users").child(uid).child("ref").setValue(user.getEmail());
                                         database.child("users").child(uid).child("promo_code").setValue(promo_code);
                                         current_id++;
                                         database.child("current_id").setValue(String.valueOf(current_id));
-                                        promoCodeString=promo_code;
-                                    }else{
+                                        promoCodeString = promo_code;
+                                    } else {
                                         promoCodeString = dataSnapshot.child("users").child(uid).child("promo_code").getValue(String.class);
                                     }
 
@@ -227,7 +225,7 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
     }
 
 
-// [START signin]
+    // [START signin]
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -287,7 +285,6 @@ public class PromoCodeFragment extends Fragment implements View.OnClickListener 
 //                promoCodeString = "not available";
 //            }
 //        });
-
 
 
         if (user != null) {

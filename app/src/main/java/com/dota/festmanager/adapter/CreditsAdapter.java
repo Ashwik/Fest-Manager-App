@@ -30,7 +30,7 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
     private ArrayList<DeveloperLayoutDetails> data;
     private Context mContext;
 
-    public CreditsAdapter(Context context, ArrayList<DeveloperLayoutDetails> data){
+    public CreditsAdapter(Context context, ArrayList<DeveloperLayoutDetails> data) {
         this.data = data;
         mContext = context;
     }
@@ -46,16 +46,16 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
         DeveloperLayoutDetails layoutDetails = data.get(position);
         final ArrayList<DeveloperDetails> devDetails = layoutDetails.getDevs();
 
-        if(layoutDetails.getTitle() == null) holder.mTitle.setVisibility(View.GONE);
+        if (layoutDetails.getTitle() == null) holder.mTitle.setVisibility(View.GONE);
         holder.mTitle.setText(layoutDetails.getTitle());
 
-        if(devDetails.size() < 3){
+        if (devDetails.size() < 3) {
             holder.mProfiles[2].setVisibility(View.GONE);
-        }else {
+        } else {
             holder.mProfiles[2].setVisibility(View.VISIBLE);
         }
 
-        for(int i = 0; i < devDetails.size(); i++){
+        for (int i = 0; i < devDetails.size(); i++) {
             final DeveloperDetails dev = devDetails.get(i);
             final String[] devLinks = dev.getLinks();
 
@@ -79,10 +79,10 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
                             holder.mDevName.setText(dev.getName());
 
                             //set Links
-                            for (int j = 0; j < 4; j++){
+                            for (int j = 0; j < 4; j++) {
                                 Button currentButton = holder.mSocialButtons[j];
                                 final String currentLink = devLinks[j];
-                                if (currentLink != null){
+                                if (currentLink != null) {
                                     currentButton.setVisibility(View.VISIBLE);
                                     currentButton.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -92,7 +92,7 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
                                             mContext.startActivity(intent);
                                         }
                                     });
-                                }else {
+                                } else {
                                     currentButton.setVisibility(View.GONE);
                                 }
                             }
@@ -118,10 +118,10 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
 
     @Override
     public int getItemCount() {
-        return data!=null ? data.size() : 0;
+        return data != null ? data.size() : 0;
     }
 
-    public class CreditsViewHolder extends RecyclerView.ViewHolder{
+    public class CreditsViewHolder extends RecyclerView.ViewHolder {
 
         TextView mTitle;
         CircleGradientRadioLayout[] mProfiles = new CircleGradientRadioLayout[3];
@@ -131,12 +131,12 @@ public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsV
 
         Button[] mSocialButtons = new Button[4];
 
-        public CreditsViewHolder(View v){
+        public CreditsViewHolder(View v) {
             super(v);
             mTitle = v.findViewById(R.id.credits_title);
 
             mProfiles[0] = itemView.findViewById(R.id.profile_1);
-            mProfiles[1]= itemView.findViewById(R.id.profile_2);
+            mProfiles[1] = itemView.findViewById(R.id.profile_2);
             mProfiles[2] = itemView.findViewById(R.id.profile_3);
 
             mDescriptionLayout = itemView.findViewById(R.id.description_layout);

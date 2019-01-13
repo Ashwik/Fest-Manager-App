@@ -11,13 +11,13 @@ public class DeveloperDetails {
     private int mProfileImage;
     private String[] mLinks = {null, null, null, null};
 
-    public DeveloperDetails(String name, @DrawableRes int profileImage, String[] links){
+    public DeveloperDetails(String name, @DrawableRes int profileImage, String[] links) {
         mName = name;
         mProfileImage = profileImage;
         mLinks = links;
     }
 
-    public DeveloperDetails(String name, String[] links){
+    public DeveloperDetails(String name, String[] links) {
         mName = name;
         mProfileImage = R.drawable.profile_icon;
         mLinks = links;

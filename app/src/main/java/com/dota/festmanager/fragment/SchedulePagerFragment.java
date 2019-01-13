@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +17,11 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.dota.festmanager.activity.ScheduleActivity;
+import com.dota.festmanager.R;
 import com.dota.festmanager.adapter.ScheduleAdapter;
 import com.dota.festmanager.api.ApiClient;
 import com.dota.festmanager.api.EventsInterface;
-import com.dota.festmanager.api.TestApiClient;
 import com.dota.festmanager.model.EventDetails;
-import com.dota.festmanager.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +29,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import io.realm.Progress;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import retrofit2.Call;
@@ -57,7 +53,6 @@ public class SchedulePagerFragment extends Fragment {
     //private int start;
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +70,10 @@ public class SchedulePagerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Realm.init(context);
         realm = Realm.getDefaultInstance();
-        Bundle bundle= getActivity().getIntent().getExtras();
+        Bundle bundle = getActivity().getIntent().getExtras();
         page = bundle.getInt("page", 0);
         //start = getArguments().getInt("start", 0);
-        Log.d(TAG,"page"+String.valueOf(page));
+        Log.d(TAG, "page" + String.valueOf(page));
         progressBar = getActivity().findViewById(R.id.progress_bar);
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_schedule);
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
@@ -122,7 +117,7 @@ public class SchedulePagerFragment extends Fragment {
                         addDatatoRealm(list.get(i));
                     }
                 } catch (Exception e) {
-                    Toast.makeText(context,"Network Problem",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Network Problem", Toast.LENGTH_SHORT).show();
                 }
 
                 getDatafromRealm(realm);
@@ -168,9 +163,9 @@ public class SchedulePagerFragment extends Fragment {
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).equalTo("date", day).findAll();
             if (results.size() == 0) {
                 try {
-                    if(isOnline()){
-                        Toast.makeText(context,"Schedule will be updated soon",Toast.LENGTH_SHORT).show();
-                    }else {
+                    if (isOnline()) {
+                        Toast.makeText(context, "Schedule will be updated soon", Toast.LENGTH_SHORT).show();
+                    } else {
                         Toast.makeText(context, "No Internet...Get connected & swipe to refresh schedule", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
@@ -178,8 +173,8 @@ public class SchedulePagerFragment extends Fragment {
                     Toast.makeText(context, "No Internet...Get connected & swipe to refresh schedule", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                if(isNetwork == false){
-                    Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
+                if (isNetwork == false) {
+                    Toast.makeText(context, "Loading....Offline Data", Toast.LENGTH_SHORT).show();
                 }
             }
             for (int j = 0; j < results.size(); j++) {
@@ -190,7 +185,7 @@ public class SchedulePagerFragment extends Fragment {
             realmlist.clear();
             realmlist.addAll(set);
             Collections.sort(realmlist);
-            Log.e(TAG,String.valueOf(realmlist));
+            Log.e(TAG, String.valueOf(realmlist));
             recyclerView.setAdapter(new ScheduleAdapter(realmlist, getContext(), day));
         }
 
@@ -222,9 +217,10 @@ public class SchedulePagerFragment extends Fragment {
         return parts;
 
     }
+
     public boolean isOnline() {
         ConnectivityManager cm =
-                (ConnectivityManager) getActivity().getSystemService(context.CONNECTIVITY_SERVICE);
+                (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }

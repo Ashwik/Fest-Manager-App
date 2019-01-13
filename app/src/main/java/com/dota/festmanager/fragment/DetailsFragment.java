@@ -1,14 +1,11 @@
 package com.dota.festmanager.fragment;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,15 +14,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.dota.festmanager.R;
-import com.dota.festmanager.activity.DetailsActivity;
-import com.dota.festmanager.activity.MainActivity;
 import com.dota.festmanager.api.ApiClient;
 import com.dota.festmanager.api.EventsInterface;
 import com.dota.festmanager.model.EventDetails;
-
-import java.util.Objects;
 
 import io.realm.Realm;
 import retrofit2.Call;
@@ -35,9 +27,9 @@ import us.feras.mdv.MarkdownView;
 
 public class DetailsFragment extends Fragment {
 
-    public String id ;
+    public String id;
     private EventDetails eventDetailsmodel;
-    private TextView eventName,startTime;
+    private TextView eventName, startTime;
     private MarkdownView eventDetails;
     private ProgressBar progressBar;
     private Realm realm;
@@ -45,6 +37,7 @@ public class DetailsFragment extends Fragment {
     private String time;
     private String TAG = "DetailsFragment";
     private boolean isNetwork = false;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +48,7 @@ public class DetailsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_details,container,false);
+        return inflater.inflate(R.layout.fragment_details, container, false);
     }
 
     @Override
@@ -69,15 +62,15 @@ public class DetailsFragment extends Fragment {
         eventName = getActivity().findViewById(R.id.event_details_name);
         startTime = getActivity().findViewById(R.id.event_startTime);
         progressBar = getActivity().findViewById(R.id.progress_bar_details);
-        Bundle bundle= getActivity().getIntent().getExtras();
-        id=bundle.getString("id");
+        Bundle bundle = getActivity().getIntent().getExtras();
+        id = bundle.getString("id");
 //        eventName.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         eventDetails.setBackgroundColor(Color.TRANSPARENT);
         CallApi();
     }
 
-    private void CallApi(){
+    private void CallApi() {
         EventsInterface apiservice = ApiClient.getClient().create(EventsInterface.class);
         Call<EventDetails> call = apiservice.getEventDetails(id);
         call.enqueue(new Callback<EventDetails>() {
@@ -88,7 +81,7 @@ public class DetailsFragment extends Fragment {
                     isNetwork = true;
                     addDatatoRealm(eventDetailsmodel);
                 } catch (Exception e) {
-                    Toast.makeText(context,"Network problem",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Network problem", Toast.LENGTH_SHORT).show();
                 }
                 getDatafromRealm(realm);
                 progressBar.setVisibility(View.GONE);
@@ -98,26 +91,23 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onFailure(Call<EventDetails> call, Throwable t) {
                 getDatafromRealm(realm);
-                Log.e(TAG,"No Internet");
+                Log.e(TAG, "No Internet");
                 progressBar.setVisibility(View.GONE);
             }
         });
     }
-    private void addDatatoRealm(EventDetails  details)
-    {
+
+    private void addDatatoRealm(EventDetails details) {
         realm.beginTransaction();
-        EventDetails model = realm.where(EventDetails.class).equalTo("id",id).findFirst();
-        if(model==null)
-        {
+        EventDetails model = realm.where(EventDetails.class).equalTo("id", id).findFirst();
+        if (model == null) {
             EventDetails eventDetails = realm.createObject(EventDetails.class);
             eventDetails.setId(details.getId());
             eventDetails.setName(details.getName());
             eventDetails.setAbout(details.getAbout());
             eventDetails.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             eventDetails.setEndTime(details.getEndTime());
-        }
-        else
-        {
+        } else {
             model.setName(details.getName());
             model.setAbout(details.getAbout());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
@@ -127,22 +117,18 @@ public class DetailsFragment extends Fragment {
 
     }
 
-    private void getDatafromRealm(Realm realm1)
-    {
-        if(realm1!=null)
-        {
-            EventDetails result = realm1.where(EventDetails.class).equalTo("id",id).findFirst();
+    private void getDatafromRealm(Realm realm1) {
+        if (realm1 != null) {
+            EventDetails result = realm1.where(EventDetails.class).equalTo("id", id).findFirst();
 
-            if(result == null)
-            {
+            if (result == null) {
                 //Toast.makeText(context, "No Network...Get Connected", Toast.LENGTH_SHORT).show();
                 startTime.setText("Please connect to network .... the App needs internet to load data for the first time");
             }
 
-            if(result != null)
-            {
-                if(isNetwork == false){
-                    Toast.makeText(context,"No Network....Loading Offline Data",Toast.LENGTH_SHORT).show();
+            if (result != null) {
+                if (isNetwork == false) {
+                    Toast.makeText(context, "No Network....Loading Offline Data", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -157,22 +143,22 @@ public class DetailsFragment extends Fragment {
 //                }
 
 
-                if(result.getAbout() != null) {
+                if (result.getAbout() != null) {
                     eventDetails.loadMarkdown(result.getAbout(), "file:///android_asset/alt.css");
                     eventDetails.setBackgroundColor(Color.TRANSPARENT);
                 } else {
                     eventDetails.loadMarkdown("Please connect to network .... the App needs internet to load data for the first time", "file:///android_asset/alt.css");
                 }
-                if(result.getName()!=null){
+                if (result.getName() != null) {
                     eventName.setText(result.getName());
-                }else{
+                } else {
                     eventName.setVisibility(View.GONE);
                 }
-                if (result.getEndTime()==null||result.getEndTime().equals("")) {
+                if (result.getEndTime() == null || result.getEndTime().equals("")) {
                     startTime.setVisibility(View.GONE);
-                } else if(result.getStartTime()!=null && result.getEndTime()!=null){
+                } else if (result.getStartTime() != null && result.getEndTime() != null) {
                     //Since the fest is happening on 26th, 27th, 29th the suffix th is added.
-                    Log.e(TAG,result.getStartTime());
+                    Log.e(TAG, result.getStartTime());
                     time = result.getStartTime() + " - " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
@@ -182,35 +168,34 @@ public class DetailsFragment extends Fragment {
 
     }
 
-    public String[] getEventTime(String time)
-    {
+    public String[] getEventTime(String time) {
 
         // The format of the startTime string is yyyy-MM-dd-HH-mm
         // HH-mm is the time in 24 hour format. Use this after conversion to 12 hour format.
 
-            String pattern = "\\d{4}(-\\d{2}){4}";
-            String[] parts = {"", "", "", "", ""};
-            // testdate corresponds to 10:05 AM (10:05 hours), 11th August 2018
-            String testdate = "2018-08-11-10-05"; // replace with details.getStartTime()
+        String pattern = "\\d{4}(-\\d{2}){4}";
+        String[] parts = {"", "", "", "", ""};
+        // testdate corresponds to 10:05 AM (10:05 hours), 11th August 2018
+        String testdate = "2018-08-11-10-05"; // replace with details.getStartTime()
 
-            // validation condition. If false, do not parse the time, and have a default fallback option
-            if (time != null && time.matches(pattern)) {
-                // Split the testdate String, to obtain the various parts of the time
-                parts = time.split("-");
-                // wrt to testdate
-                // parts[0] => yyyy => 2018
-                // parts[1] => MM => 08
-                // parts[2] => DD => 11
-                // parts[3] => HH => 10
-                // parts[4] => mm => 5
+        // validation condition. If false, do not parse the time, and have a default fallback option
+        if (time != null && time.matches(pattern)) {
+            // Split the testdate String, to obtain the various parts of the time
+            parts = time.split("-");
+            // wrt to testdate
+            // parts[0] => yyyy => 2018
+            // parts[1] => MM => 08
+            // parts[2] => DD => 11
+            // parts[3] => HH => 10
+            // parts[4] => mm => 5
 //            Log.e(TAG,parts[0]);
-                return parts;
-            }
-
-
             return parts;
-
         }
+
+
+        return parts;
+
+    }
 
 
 }

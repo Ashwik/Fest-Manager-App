@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,18 +16,14 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.dota.festmanager.R;
-import com.dota.festmanager.activity.EventsActivity;
 import com.dota.festmanager.adapter.EventsAdapter;
 import com.dota.festmanager.api.ApiClient;
 import com.dota.festmanager.api.EventsInterface;
 import com.dota.festmanager.model.EventDetails;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import io.realm.Progress;
 import io.realm.Realm;
-import io.realm.RealmObject;
 import io.realm.RealmResults;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,7 +31,7 @@ import retrofit2.Response;
 
 public class EventsFragment extends Fragment {
     private ArrayList<EventDetails> eventDetailsList = new ArrayList<>();
-    private ArrayList<EventDetails> realmList = new ArrayList<>() ;
+    private ArrayList<EventDetails> realmList = new ArrayList<>();
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Realm realm;
@@ -44,7 +39,7 @@ public class EventsFragment extends Fragment {
     private boolean isnetwork = false;
     private String TAG = "EventsFragment";
     private ProgressBar progressBar;
-    private String event_category ;
+    private String event_category;
     private Integer event_category_id;
 
 
@@ -56,13 +51,12 @@ public class EventsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_events,container,false);
+        return inflater.inflate(R.layout.fragment_events, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
 
 
 //        Bundle bundle= getActivity().getIntent().getExtras();
@@ -98,20 +92,20 @@ public class EventsFragment extends Fragment {
 
     }
 
-    private void callApi(){
+    private void callApi() {
         EventsInterface apiservice = ApiClient.getClient().create(EventsInterface.class);
         Call<ArrayList<EventDetails>> call = apiservice.getEvents();
         call.enqueue(new Callback<ArrayList<EventDetails>>() {
             @Override
             public void onResponse(Call<ArrayList<EventDetails>> call, Response<ArrayList<EventDetails>> response) {
-                 eventDetailsList = response.body();
+                eventDetailsList = response.body();
                 try {
-                    for(int i=0;i<eventDetailsList.size();i++){
+                    for (int i = 0; i < eventDetailsList.size(); i++) {
                         addDatatoRealm(eventDetailsList.get(i));
-                   }
+                    }
                     isnetwork = true;
                 } catch (Exception e) {
-                    Toast.makeText(context,"Network Problem",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Network Problem", Toast.LENGTH_SHORT).show();
                 }
                 getDatafromRealm(realm);
                 swipeRefreshLayout.setRefreshing(false);
@@ -120,7 +114,7 @@ public class EventsFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ArrayList<EventDetails>> call, Throwable t) {
-                Log.e(TAG,"No Internet");
+                Log.e(TAG, "No Internet");
                 getDatafromRealm(realm);
                 swipeRefreshLayout.setRefreshing(false);
                 progressBar.setVisibility(View.GONE);
@@ -128,10 +122,10 @@ public class EventsFragment extends Fragment {
         });
     }
 
-    private void addDatatoRealm(EventDetails details){
+    private void addDatatoRealm(EventDetails details) {
         realm.beginTransaction();
-        EventDetails model = realm.where(EventDetails.class).equalTo("id",details.getId()).findFirst();
-        if(model==null){
+        EventDetails model = realm.where(EventDetails.class).equalTo("id", details.getId()).findFirst();
+        if (model == null) {
             EventDetails event = realm.createObject(EventDetails.class);
             event.setId(details.getId());
             event.setName(details.getName());
@@ -144,8 +138,7 @@ public class EventsFragment extends Fragment {
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             event.setEndTime(details.getEndTime());
             event.setRoute(details.getRoute());
-        }
-        else{
+        } else {
             model.setName(details.getName());
             model.setAbout(details.getAbout());
             model.setTagline(details.getTagline());
@@ -166,35 +159,33 @@ public class EventsFragment extends Fragment {
 
             RealmResults<EventDetails> results = realm1.where(EventDetails.class).findAll();
 
-            if(results.size()==0){
-                Toast.makeText(context,"No Internet",Toast.LENGTH_SHORT).show();
-            }
-            else {
-                if(!isnetwork){
-                    Toast.makeText(context,"Loading....Offline Data",Toast.LENGTH_SHORT).show();
+            if (results.size() == 0) {
+                Toast.makeText(context, "No Internet", Toast.LENGTH_SHORT).show();
+            } else {
+                if (!isnetwork) {
+                    Toast.makeText(context, "Loading....Offline Data", Toast.LENGTH_SHORT).show();
                 }
 
-                for(int i=0;i<results.size();i++){
-                    if(results.get(i).getRoute()==null||results.get(i).getRoute()==""){
-                        Log.e(TAG,"No Route found");
-                    }
-                    else{
+                for (int i = 0; i < results.size(); i++) {
+                    if (results.get(i).getRoute() == null || results.get(i).getRoute() == "") {
+                        Log.e(TAG, "No Route found");
+                    } else {
                         realmList.add(results.get(i));
-                        Log.e(TAG,results.get(i).getRoute());
+                        Log.e(TAG, results.get(i).getRoute());
                     }
                 }
 
-                Log.e(TAG,String.valueOf(realmList.size())+" "+String.valueOf(results.size()));
+                Log.e(TAG, String.valueOf(realmList.size()) + " " + String.valueOf(results.size()));
             }
             setAdapter(realmList);
-        }
-        else {
-            Log.e(TAG,"realm is null");
+        } else {
+            Log.e(TAG, "realm is null");
         }
     }
-    private void setAdapter(ArrayList<EventDetails> eventList){
+
+    private void setAdapter(ArrayList<EventDetails> eventList) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new EventsAdapter(eventList,context));
+        recyclerView.setAdapter(new EventsAdapter(eventList, context));
     }
 
     @Override

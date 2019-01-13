@@ -16,6 +16,7 @@ import com.dota.festmanager.adapter.MapAdapter;
 public class MapsFragment extends Fragment {
     private RecyclerView place_recycler;
     String[] placeName;
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -23,19 +24,19 @@ public class MapsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_maps,container,false);
+        return inflater.inflate(R.layout.fragment_maps, container, false);
     }
-    public void onViewCreated(View view,@Nullable Bundle savedInstanceState)
-    {
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
 //        toolbar.setTitle("Campus Map");
 
-        placeName=getResources().getStringArray(R.array.placeName);
-        place_recycler=getView().findViewById(R.id.place_recycler);
+        placeName = getResources().getStringArray(R.array.placeName);
+        place_recycler = getView().findViewById(R.id.place_recycler);
 
         place_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MapAdapter adapter=new MapAdapter(getActivity(),placeName);
+        MapAdapter adapter = new MapAdapter(getActivity(), placeName);
         place_recycler.setAdapter(adapter);
     }
 }

@@ -20,7 +20,8 @@ import com.dota.festmanager.R;
 public class ContactsFragment extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
-    private  FragmentActivity myContext;
+    private FragmentActivity myContext;
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -28,8 +29,9 @@ public class ContactsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_contacts,container,false);
+        return inflater.inflate(R.layout.fragment_contacts, container, false);
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         mPager = getView().findViewById(R.id.container);
@@ -42,16 +44,18 @@ public class ContactsFragment extends Fragment {
         TabLayout tabLayout = getView().findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mPager);
     }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fragmentManager){
+        public SectionsPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }
+
         @Override
         public Fragment getItem(int position) {
             Bundle args = new Bundle();
             ContactsPagerFragment contactsPagerFragment = new ContactsPagerFragment();
-            args.putInt(contactsPagerFragment.CONTACTS_SWITCH, position);
+            args.putInt(ContactsPagerFragment.CONTACTS_SWITCH, position);
             contactsPagerFragment.setArguments(args);
             return contactsPagerFragment;
         }
@@ -63,7 +67,7 @@ public class ContactsFragment extends Fragment {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     return "Organising Body";
                 case 1:
@@ -73,9 +77,10 @@ public class ContactsFragment extends Fragment {
         }
 
     }
+
     @Override
     public void onAttach(Activity activity) {
-        myContext=(FragmentActivity) activity;
+        myContext = (FragmentActivity) activity;
         super.onAttach(activity);
     }
 }

@@ -4,16 +4,15 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.util.Log;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.app.Fragment;
 
 import com.dota.festmanager.R;
 
-public class HomeFragment extends Fragment  {
+public class HomeFragment extends Fragment {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
     private BottomNavigationView mBottomNavigationView;
@@ -26,7 +25,7 @@ public class HomeFragment extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home,container,false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
@@ -56,12 +55,12 @@ public class HomeFragment extends Fragment  {
                         break;
                     case R.id.guide:
                         getChildFragmentManager().beginTransaction()
-                                .replace(R.id.bottom_nav_container,new MapsFragment())
+                                .replace(R.id.bottom_nav_container, new MapsFragment())
                                 .commit();
                         break;
                     case R.id.more:
                         getChildFragmentManager().beginTransaction()
-                                .replace(R.id.bottom_nav_container,new MoreFragment())
+                                .replace(R.id.bottom_nav_container, new MoreFragment())
                                 .commit();
                         break;
 
@@ -70,8 +69,8 @@ public class HomeFragment extends Fragment  {
             }
         };
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        if(savedInstanceState==null) {
+        if (savedInstanceState == null) {
             mBottomNavigationView.setSelectedItemId(R.id.feed);
-        };
+        }
     }
 }

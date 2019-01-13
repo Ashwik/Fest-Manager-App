@@ -43,7 +43,7 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ScheduleActivity.class);
-                intent.putExtra("page",pos);
+                intent.putExtra("page", pos);
                 v.getContext().startActivity(intent);
 
             }

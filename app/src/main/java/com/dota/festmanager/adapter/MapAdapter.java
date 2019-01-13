@@ -96,7 +96,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
         return placeName.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
 

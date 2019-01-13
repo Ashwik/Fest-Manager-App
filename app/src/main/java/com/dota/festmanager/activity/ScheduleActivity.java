@@ -1,7 +1,7 @@
 package com.dota.festmanager.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.dota.festmanager.R;
@@ -12,6 +12,7 @@ public class ScheduleActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private String day;
     private int page;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,12 @@ public class ScheduleActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        if(savedInstanceState==null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().
-                    replace(R.id.nav_fragment_container,new SchedulePagerFragment()).
+                    replace(R.id.nav_fragment_container, new SchedulePagerFragment()).
                     commit();
         }
-       setActionBarTitle();
+        setActionBarTitle();
 
     }
 
@@ -39,8 +40,9 @@ public class ScheduleActivity extends AppCompatActivity {
         finish();
         return true;
     }
-    public void setActionBarTitle(){
-        Bundle bundle= getIntent().getExtras();
+
+    public void setActionBarTitle() {
+        Bundle bundle = getIntent().getExtras();
         int page = bundle.getInt("page", 0);
         switch (page) {
             case 0:
@@ -53,7 +55,7 @@ public class ScheduleActivity extends AppCompatActivity {
                 day = "28";
                 break;
         }
-        getSupportActionBar().setTitle(day+" OCT 2018");
+        getSupportActionBar().setTitle(day + " OCT 2018");
     }
 
 }

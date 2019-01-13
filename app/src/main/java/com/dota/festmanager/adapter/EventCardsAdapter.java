@@ -28,21 +28,21 @@ public class EventCardsAdapter extends RecyclerView.Adapter<EventCardsAdapter.Ev
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.fragment_cards_item,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_cards_item, parent, false);
         return new EventViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, final int position) {
-            holder.event_cardText.setText(list.get(position));
-            holder.event_cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context,EventsActivity.class);
-                    intent.putExtra(String.valueOf(R.string.event_type_id),list.get(position));
-                    v.getContext().startActivity(intent);
-                }
-            });
+        holder.event_cardText.setText(list.get(position));
+        holder.event_cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EventsActivity.class);
+                intent.putExtra(String.valueOf(R.string.event_type_id), list.get(position));
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -53,9 +53,10 @@ public class EventCardsAdapter extends RecyclerView.Adapter<EventCardsAdapter.Ev
         return 0;
     }
 
-    public class EventViewHolder extends RecyclerView.ViewHolder{
+    public class EventViewHolder extends RecyclerView.ViewHolder {
         CardView event_cardView;
         TextView event_cardText;
+
         public EventViewHolder(View itemView) {
             super(itemView);
             event_cardView = itemView.findViewById(R.id.carousel_item_cardview);

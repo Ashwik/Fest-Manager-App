@@ -1,4 +1,5 @@
 package com.dota.festmanager.fragment;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -36,23 +37,26 @@ public class FeedFragment extends Fragment {
     RecyclerView mRecyclerView;
     FeedAdapter mFeedAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
-    ArrayList<String> timeArray =new ArrayList<>();
-    ArrayList<String> deptArray =new ArrayList<>();
-    ArrayList<String> descArray =new ArrayList<>();
-    int i=0;
+    ArrayList<String> timeArray = new ArrayList<>();
+    ArrayList<String> deptArray = new ArrayList<>();
+    ArrayList<String> descArray = new ArrayList<>();
+    int i = 0;
     private ProgressBar progressBar;
-    private  Context context;
+    private Context context;
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_feed,container,false);
+        return inflater.inflate(R.layout.fragment_feed, container, false);
     }
+
     @Override
-    public void onViewCreated( View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
@@ -76,17 +80,16 @@ public class FeedFragment extends Fragment {
     private void callFireBase() {
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference notification = database.child("notifications");
-        Log.v("Feed Adapter","timeArray is created..!!!!");
+        Log.v("Feed Adapter", "timeArray is created..!!!!");
         notification.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 timeArray = new ArrayList<String>();
                 descArray = new ArrayList<String>();
                 deptArray = new ArrayList<String>();
-                i=0;
-                for (DataSnapshot ds:dataSnapshot.getChildren())
-                {
-                    Log.e("Feed Fragment",ds.getKey());
+                i = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Log.e("Feed Fragment", ds.getKey());
                     Long timestamp = Long.parseLong(ds.getKey());
                     Calendar cal = Calendar.getInstance(Locale.ENGLISH);
                     cal.setTimeInMillis(timestamp);
@@ -102,15 +105,16 @@ public class FeedFragment extends Fragment {
                 reverse(descArray);
                 reverse(deptArray);
 
-                Log.e("FEED FRAGMENT",Integer.toString(deptArray.size()));
+                Log.e("FEED FRAGMENT", Integer.toString(deptArray.size()));
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                mFeedAdapter = new FeedAdapter(getActivity(),timeArray,deptArray,descArray,i);
+                mFeedAdapter = new FeedAdapter(getActivity(), timeArray, deptArray, descArray, i);
                 //mFeedAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(mFeedAdapter);
                 progressBar.setVisibility(View.GONE);
                 swipeRefreshLayout.setRefreshing(false);
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 swipeRefreshLayout.setRefreshing(false);
@@ -118,10 +122,10 @@ public class FeedFragment extends Fragment {
             }
         });
 
-        if(!isOnline()){
+        if (!isOnline()) {
             progressBar.setVisibility(View.GONE);
             swipeRefreshLayout.setRefreshing(false);
-            Toast.makeText(context,"No Network....Get connected & Swipe to Refresh",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No Network....Get connected & Swipe to Refresh", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -134,7 +138,7 @@ public class FeedFragment extends Fragment {
 
     public boolean isOnline() {
         ConnectivityManager cm =
-                (ConnectivityManager) getActivity().getSystemService(context.CONNECTIVITY_SERVICE);
+                (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }

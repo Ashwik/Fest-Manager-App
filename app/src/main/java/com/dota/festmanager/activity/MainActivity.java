@@ -5,43 +5,28 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.media.AudioAttributes;
 import android.media.RingtoneManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dota.festmanager.R;
-import com.dota.festmanager.fragment.AboutFragment;
-import com.dota.festmanager.fragment.ContactsFragment;
-import com.dota.festmanager.fragment.CreditsFragment;
-import com.dota.festmanager.fragment.EventCardsFragment;
-import com.dota.festmanager.fragment.EventsFragment;
 import com.dota.festmanager.fragment.FeedFragment;
 import com.dota.festmanager.fragment.HomeFragment;
-import com.dota.festmanager.fragment.MapsFragment;
-import com.dota.festmanager.fragment.PromoCodeFragment;
-import com.dota.festmanager.fragment.ReachUsFragment;
-import com.dota.festmanager.fragment.ScheduleCardsFragment;
-import com.dota.festmanager.fragment.SettingsFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private DrawerLayout mDrawerLayout;
@@ -56,18 +41,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.app_bar_navigation);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(savedInstanceState==null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().
-                    replace(R.id.nav_fragment_container,new HomeFragment()).
+                    replace(R.id.nav_fragment_container, new HomeFragment()).
                     commit();
         }
 
         //Guide Recycler
 
-        Log.v("Firebase", "token "+ FirebaseInstanceId.getInstance().getToken());
+        Log.v("Firebase", "token " + FirebaseInstanceId.getInstance().getToken());
 
         Intent sourceIntent = getIntent();
-        if(sourceIntent!=null){
+        if (sourceIntent != null) {
 
         }
 
@@ -103,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-        final SharedPreferences preferences = getSharedPreferences("Notifications",MODE_PRIVATE);
+        final SharedPreferences preferences = getSharedPreferences("Notifications", MODE_PRIVATE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             boolean flag = getSharedPreferences("Notifications", MODE_PRIVATE).getBoolean("ChannelCreated", false);
@@ -121,19 +106,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 assert manager != null;
                 manager.createNotificationChannel(notificationChannel);
 
-                preferences.edit().putBoolean("ChannelCreated",true).apply();
+                preferences.edit().putBoolean("ChannelCreated", true).apply();
             }
         }
 
 
         //todo: change it to actual event names
-        String events[]={"event1","event2","general","pushNotifications"};
-        for(final String s:events){
-            if(!preferences.contains(s)){
+        String events[] = {"event1", "event2", "general", "pushNotifications"};
+        for (final String s : events) {
+            if (!preferences.contains(s)) {
                 FirebaseMessaging.getInstance().subscribeToTopic(s).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        preferences.edit().putBoolean(s,true).apply();
+                        preferences.edit().putBoolean(s, true).apply();
                     }
                 });
             }
@@ -154,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-      return true;
+        return true;
     }
 
     @Override

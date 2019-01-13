@@ -15,23 +15,22 @@ import com.dota.festmanager.activity.MainActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import static com.dota.festmanager.R.drawable.atmos_logo;
-
 public class RequestNotificationService extends FirebaseMessagingService {
 
-    private static final String TAG = "FIREBASE MESSAGING",CHANNEL_ID = "EVENT_UPDATES";
+    private static final String TAG = "FIREBASE MESSAGING", CHANNEL_ID = "EVENT_UPDATES";
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d(TAG,"Callback is successful Jai Mahishmathi");
+        Log.d(TAG, "Callback is successful Jai Mahishmathi");
         String s = remoteMessage.getData().get("body");
-        Log.d(TAG,s);
+        Log.d(TAG, s);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("Destination", "FeedFragment");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationManager manager =(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,
                     "ATMOS Updates", NotificationManager.IMPORTANCE_HIGH);
@@ -39,14 +38,14 @@ public class RequestNotificationService extends FirebaseMessagingService {
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION_RINGTONE)
                     .build();
-            notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION),audioAttributes);
+            notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttributes);
             notificationChannel.setLockscreenVisibility(android.app.Notification.VISIBILITY_PUBLIC);
 
-            assert manager!=null;
+            assert manager != null;
             manager.createNotificationChannel(notificationChannel);
 
         }
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder( this, CHANNEL_ID)
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 //TODO: Add Event logo or ATMOS logo instead of Google Logo
                 .setSmallIcon(R.drawable.notif_log)
                 .setColor(getResources().getColor(R.color.colorPrimary))
@@ -55,11 +54,11 @@ public class RequestNotificationService extends FirebaseMessagingService {
                 .setContentText(s)
                 .setAutoCancel(true);
 
-        Log.d(TAG,"Notification Builder is built");
+        Log.d(TAG, "Notification Builder is built");
 
-        assert manager!=null;
+        assert manager != null;
         manager.notify(0, mBuilder.build());
 
-        Log.d(TAG,"Notification sent");
+        Log.d(TAG, "Notification sent");
     }
 }
