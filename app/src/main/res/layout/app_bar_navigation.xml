@@ -4,14 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/backgroundColor"
-    >
+    android:fitsSystemWindows="true">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:scaleType="centerCrop"
+        />
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/gradient_color"
         app:elevation="0dp"
-        android:background="@android:color/transparent"
+        android:visibility="gone"
         >
 
         <android.support.v7.widget.Toolbar
@@ -19,10 +26,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:titleTextColor="@color/textColor"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/toolbar"
-            >
+            app:titleTextColor="@color/topbar_textcolor">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/topbar_textcolor"
+                android:textSize="20sp"
+                style="@style/toolbar"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                 />
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

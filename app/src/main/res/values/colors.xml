@@ -5,6 +5,8 @@
     <color name="colorAccent">#FFF</color>
 
     <color name="textColor">#202021</color>
+    <color name="lighttextcolor">#383839</color>
+    <color name="topbar_textcolor">#FFF</color>
     <color name="backgroundColor">#FFF</color>
     <color name="progressbar_color">#202021</color>
 
@@ -19,5 +21,7 @@
     <color name="circle4">#77AB47BC</color>
 
     <color name="cardbackground_color">#000</color>
+
+
 </resources>
 

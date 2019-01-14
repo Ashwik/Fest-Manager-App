@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/backgroundColor"
-        app:itemIconTint="@color/textColor"
-        app:itemTextColor="@color/textColor"
-        app:menu="@menu/bottom_navbar" />
+        app:itemIconTint="@color/btm_icon_color"
+        app:itemTextColor="@color/btm_icon_color"
+        app:menu="@menu/bottom_navbar"
+        />
 </android.support.design.widget.CoordinatorLayout>

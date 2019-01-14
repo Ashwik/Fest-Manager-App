@@ -5,61 +5,73 @@
     android:id="@+id/event_item_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@android:color/transparent"
+    app:cardBackgroundColor="@color/backgroundColor"
     app:cardCornerRadius="1dp"
     android:layout_marginBottom="8dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="1dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="2dp"
 
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="4dp"
-        android:background="@drawable/cardview_background"
         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            >
+
+            <TextView
+                android:id="@+id/dept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Department"
+                android:textColor="@color/lighttextcolor"
+                android:textIsSelectable="true"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+
+                android:text="Time"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/lighttextcolor"
+                android:textIsSelectable="true"
+                android:textSize="15sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="Description"
             android:textColor="@color/textColor"
             android:textIsSelectable="true"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:autoLink="web"
+            android:textColorLink="@color/textColor"
             android:linksClickable="true"
+            android:paddingBottom="4dp"
             />
 
-        <TextView
-            android:id="@+id/dept"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="Department"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@color/textColor"
-            android:textIsSelectable="true"
-            android:textSize="15sp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Time"
-            android:id="@+id/time"
-            android:layout_marginBottom="4dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="@color/textColor"
-            android:textIsSelectable="true"
-            android:textSize="15sp"
-            android:textAlignment="viewEnd"
-            />
     </LinearLayout>
 
 

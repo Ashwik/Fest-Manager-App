@@ -11,7 +11,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:fontFamily">@font/gothic</item>
+        <item name="android:fontFamily">@font/montserratmedium</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
@@ -25,7 +25,7 @@
     </style>
 
     <style name="toolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:fontFamily">@font/gothicbold</item>
+        <item name="android:fontFamily">@font/montserratbold</item>
         <item name="colorControlNormal">@color/textColor</item>
     </style>
 
