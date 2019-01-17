@@ -77,7 +77,7 @@ public class EventsFragment extends Fragment {
         Realm.init(context);
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
-        swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh);
+        swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         callApi();

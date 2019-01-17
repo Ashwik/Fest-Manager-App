@@ -22,6 +22,8 @@
 
     <color name="cardbackground_color">#000</color>
 
+    <color name="events_image_tint">#7c1e1e1e</color>
+
 
 </resources>
 
