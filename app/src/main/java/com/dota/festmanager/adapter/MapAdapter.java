@@ -18,49 +18,64 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MyViewHolder> {
 
     Context context;
-    String[] placeName;
-    double[] latitudes = {17.547152,
+    String[] placeName = {
+            "Main Gate",
+            "Bus Stop",
+            "Cafeteria",
+            "Auditorium",
+            "SBI & ATM",
+            "More Shopping mall",
+            "Mess 1",
+            "Mess 2",
+            "Student Activity Center",
+            "Cricket Ground",
+            "Football Ground",
+            "Volleyball Court",
+            "Basketball Court",
+            "Athletics Track",
+            "Kabaddi Arena",
+            "Tennis Court",
+            "Hockey Ground"};
+    public static double[] latitudes = {
+            17.547152,
             17.547400,
             17.544982,
             17.545510,
-            17.545019,
-            17.544013,
-            17.542024,
             17.542241,
-            17.541928,
             17.542021,
             17.542428,
             17.544771,
-            17.544141,
-            17.544772,
             17.540799,
-            17.545665,
-            17.5453394,
-            17.5443279,
-            17.5456641};
-    double[] longitudes = {78.572481,
+            17.539651,
+            17.543518,
+            17.543027,
+            17.541337,
+            17.554366,
+            17.543386,
+            17.541702,
+            17.543819};
+
+    public static double[] longitudes = {
+            78.572481,
             78.572387,
             78.570834,
             78.570511,
-            78.571561,
-            78.573877,
-            78.575848,
             78.575974,
-            78.575802,
             78.576085,
             78.574010,
             78.575194,
-            78.572706,
-            78.571040,
             78.575273,
-            78.571507,
-            78.5723279,
-            78.571846,
-            78.571647};
+            78.577416,
+            78.574854,
+            78.575390,
+            78.575361,
+            78.545626,
+            78.575632,
+            78.575606,
+            78.574045};
 
-    public MapAdapter(Context context, String[] placeName) {
+    public MapAdapter(Context context) {
         this.context = context;
-        this.placeName = placeName;
     }
 
     @NonNull

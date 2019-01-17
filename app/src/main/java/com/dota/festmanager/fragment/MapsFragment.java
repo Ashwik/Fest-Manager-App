@@ -15,7 +15,6 @@ import com.dota.festmanager.adapter.MapAdapter;
 
 public class MapsFragment extends Fragment {
     private RecyclerView place_recycler;
-    String[] placeName;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +31,11 @@ public class MapsFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
 //        toolbar.setTitle("Campus Map");
 
-        placeName = getResources().getStringArray(R.array.placeName);
+
         place_recycler = getView().findViewById(R.id.place_recycler);
 
         place_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MapAdapter adapter = new MapAdapter(getActivity(), placeName);
+        MapAdapter adapter = new MapAdapter(getActivity());
         place_recycler.setAdapter(adapter);
     }
 }
