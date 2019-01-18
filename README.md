@@ -3,7 +3,7 @@ The Android app for all the 3 fests of Bits Pilani Hyderabad.
 
 ### Useful Links (Previous Apps)
 
-ATMOS 18 Playstore link : https://play.google.com/store/apps/details?id=com.dota.festmanager&hl=en
+ATMOS 18 Playstore link : https://play.google.com/store/apps/details?id=arena2019&hl=en
 * Checkout the atmos-2018 branch 
 
 ### Major Libraries to be used

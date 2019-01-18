@@ -60,6 +60,74 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:157978564117:android:2a9dde58b9cc72df",
+        "android_client_info": {
+          "package_name": "com.dota.arena2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157978564117-vlm5110031a2bmgee7qr60msfprfihgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.arena2019",
+            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
+          }
+        },
+        {
+          "client_id": "157978564117-1pu2k147s8qt8iep0cnljphuv7f0rvsq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.arena2019",
+            "certificate_hash": "b6d41f506a18402c95bde4eea86e15beb09349a2"
+          }
+        },
+        {
+          "client_id": "157978564117-v2jsi95n529lkftr0qbk9ndmeh6l1ni5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.arena2019",
+            "certificate_hash": "46fecd57eb5568666af9a0d5a9aae765d6322e1c"
+          }
+        },
+        {
+          "client_id": "157978564117-m6mv2f3i3j759ijbtnvreq3ccbo0km0e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.arena2019",
+            "certificate_hash": "e5978c7a5287e5997d59d56f94791b7874f537ca"
+          }
+        },
+        {
+          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:157978564117:android:c0e299d243699fa4",
         "android_client_info": {
           "package_name": "com.dota.festmanager"
@@ -128,12 +196,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:17b29d32bd87bea9",
+        "mobilesdk_app_id": "1:157978564117:android:d8857f37c7112e39",
         "android_client_info": {
-          "package_name": "com.untitled.android.b.notiftester"
+          "package_name": "com.example.android.scores"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "157978564117-o7qk6pmbjugp73fj81pe5va0e3m5sg53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.scores",
+            "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
+          }
+        },
         {
           "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
           "client_type": 3
@@ -149,8 +225,57 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157978564117:android:06f965182075c0c3",
+        "android_client_info": {
+          "package_name": "com.example.kartheek.controlzreview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157978564117-fg4fk2fi0mkci8daivr3kubersoedhgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kartheek.controlzreview",
+            "certificate_hash": "cb8c253a2aaed4d4eaf20e917f2e8e08822ee03c"
+          }
+        },
+        {
+          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
