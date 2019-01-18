@@ -103,7 +103,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
                 resId = R.drawable.event_basketgirls;
             }
         }
-        else if (event.contains("body building")) {
+        else if (event.contains("body-building")) {
             resId = R.drawable.event_bodybuilding;
         }
         else if (event.contains("carrom")) {

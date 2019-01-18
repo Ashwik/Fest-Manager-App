@@ -25,5 +25,8 @@
     <color name="events_image_tint">#7c1e1e1e</color>
 
 
+    <color name="gradient_color_1">#2389da</color>
+    <color name="gradient_color_2">#1daeec</color>
+
 </resources>
 
