@@ -8,8 +8,6 @@
         android:id="@+id/club_senate_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
         android:clipToPadding="false" />
 
 </FrameLayout>

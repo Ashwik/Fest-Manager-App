@@ -8,27 +8,38 @@
     android:fitsSystemWindows="true"
     xmlns:tools="http://schemas.android.com/tools">
     <android.support.design.widget.AppBarLayout
-        android:background="@android:color/transparent"
+        android:background="@drawable/gradient_color_square"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/toolbar"
+            app:titleTextColor="@color/topbar_textcolor">
+        </android.support.v7.widget.Toolbar>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="@color/textColor"
-        app:tabSelectedTextColor="@color/textColor"
-        app:tabIndicatorColor="@color/textColor"
-
+        app:tabTextColor="@color/topbar_textcolor"
+        app:tabSelectedTextColor="@color/topbar_textcolor"
+        app:tabIndicatorColor="@color/backgroundColor"
+        android:background="@drawable/gradient_color"
         />
 </android.support.design.widget.AppBarLayout>
-<android.support.v4.view.ViewPager
-    android:id="@+id/container"
-    android:paddingTop="4dp"
-    android:paddingBottom="4dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>
