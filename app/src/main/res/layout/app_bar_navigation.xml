@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
     android:fitsSystemWindows="true">
-
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:scaleType="centerCrop"
-        />
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

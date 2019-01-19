@@ -43,6 +43,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         if(list.get(position).getName().toLowerCase().contains("pool")){
             holder.eventView.setVisibility(View.GONE);
         }
+
         holder.eventName.setText(list.get(position).getName());
         holder.eventView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +65,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
-        TextView eventName, eventTagLine, eventFee, eventPrizemoney;
+        TextView eventName, eventFee, eventPrizemoney;
         CardView eventView;
         ImageView eventImage;
 
@@ -72,8 +73,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             super(itemView);
             eventName = itemView.findViewById(R.id.events_name);
 //            eventTagLine = itemView.findViewById(R.id.events_tagline);
-//            eventFee = itemView.findViewById(R.id.events_fee);
-//            eventPrizemoney = itemView.findViewById(R.id.events_prizemoney);
             eventView = itemView.findViewById(R.id.event_item_cardview);
             eventImage = itemView.findViewById(R.id.event_image);
 

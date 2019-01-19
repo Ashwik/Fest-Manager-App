@@ -29,6 +29,8 @@ public class AboutFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         //TextView title = getActivity().findViewById(R.id.tv_title);
         TextView display = getActivity().findViewById(R.id.tv_display);
+        TextView title = getActivity().findViewById(R.id.morename);
+        title.setText("About ARENA");
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("About Us");
         //title.setText(R.string.aboutus);

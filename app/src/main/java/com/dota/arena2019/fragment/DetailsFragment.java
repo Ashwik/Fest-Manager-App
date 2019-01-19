@@ -29,7 +29,7 @@ public class DetailsFragment extends Fragment {
 
     public String id;
     private EventDetails eventDetailsmodel;
-    private TextView eventName, startTime;
+    private TextView eventName, startTime, eventFee, eventPrizemoney;
     private MarkdownView eventDetails;
     private ProgressBar progressBar;
     private Realm realm;
@@ -61,6 +61,8 @@ public class DetailsFragment extends Fragment {
         eventDetails = getActivity().findViewById(R.id.eventdetails);
         eventName = getActivity().findViewById(R.id.event_details_name);
         startTime = getActivity().findViewById(R.id.event_startTime);
+        eventFee = getActivity().findViewById(R.id.event_fee);
+        eventPrizemoney = getActivity().findViewById(R.id.event_prizemoney);
         progressBar = getActivity().findViewById(R.id.progress_bar_details);
         Bundle bundle = getActivity().getIntent().getExtras();
         id = bundle.getString("id");
@@ -163,6 +165,9 @@ public class DetailsFragment extends Fragment {
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
                 }
+
+                eventFee.setText("FEE "+result.getPrice());
+                eventPrizemoney.setText("PRIZE "+result.getPrize());
             }
         }
 

@@ -31,8 +31,10 @@ public class SettingsFragment extends android.support.v4.app.Fragment {
     }
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Settings");
+//        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+//        toolbar.setTitle("Settings");
+//        TextView title = getActivity().findViewById(R.id.morename);
+//        title.setText("Notifications");
 
         String event_list[] = {"General", "pushNotifications"};
         String topics[] = {"general", "pushNotifications"};

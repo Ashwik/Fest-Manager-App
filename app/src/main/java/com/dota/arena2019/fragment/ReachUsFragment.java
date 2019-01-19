@@ -27,11 +27,11 @@ public class ReachUsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        //TextView title = getActivity().findViewById(R.id.tv_title);
         TextView display = getActivity().findViewById(R.id.tv_display);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Reach Us");
-        // title.setText(R.string.reachus);
+//        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+//        toolbar.setTitle("Reach Us");
+        TextView title = getActivity().findViewById(R.id.morename);
+        title.setText("Reach Us");
         display.setText(R.string.directions);
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#000</color>
+    <color name="colorPrimaryDark">#7742A5F5</color>
     <color name="colorAccent">#FFF</color>
 
     <color name="textColor">#202021</color>
@@ -10,7 +10,7 @@
     <color name="backgroundColor">#FFF</color>
     <color name="progressbar_color">#202021</color>
 
-    <color name="sky_color_animation">#202021</color>
+    <color name="sky_color_animation">#e7eef6</color>
     <color name="navigation_background">#fdfbfb</color>
 
     <color name="grey_100">#F5F5F5</color>
@@ -27,6 +27,7 @@
 
     <color name="gradient_color_1">#2389da</color>
     <color name="gradient_color_2">#1daeec</color>
+
 
 </resources>
 

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dota.arena2019.R;
 import com.dota.arena2019.adapter.CreditsAdapter;
@@ -38,8 +39,8 @@ public class CreditsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("App Credits");
+//        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+//        toolbar.setTitle("App Credits");
         mRecyclerView = getActivity().findViewById(R.id.credits_recycler);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 

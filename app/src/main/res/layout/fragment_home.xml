@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/backgroundColor"
+        android:background="@color/sky_color_animation"
         app:itemIconTint="@color/btm_icon_color"
         app:itemTextColor="@color/btm_icon_color"
         app:menu="@menu/bottom_navbar"

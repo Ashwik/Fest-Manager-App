@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/gothicbold"
+            android:fontFamily="@font/montserratbold"
             android:gravity="center"
             android:textColor="@color/topbar_textcolor"
             android:textIsSelectable="true"
@@ -35,18 +35,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-60sp"
+        android:layout_marginTop="-70sp"
+        android:layout_marginBottom="5dp"
         android:elevation="4dp"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginBottom="20dp"
-        >
+        android:orientation="vertical"
+        android:weightSum="2">
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             app:cardElevation="4dp">
 
@@ -54,7 +53,7 @@
                 android:id="@+id/event_prizemoney"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:background="@color/backgroundColor"
                 android:text="PRIZE 30000"
                 android:textAlignment="center"
@@ -65,21 +64,24 @@
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
             app:cardElevation="4dp">
 
             <TextView
-                android:id="@+id/event_prizefee"
-                android:layout_width="wrap_content"
+                android:id="@+id/event_fee"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:background="@color/backgroundColor"
                 android:text="FEE 100"
                 android:textAlignment="center"
                 android:textColor="@color/gradient_color_2"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+
+                />
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
@@ -90,55 +92,61 @@
         android:background="@android:color/transparent"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         >
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            app:cardElevation="4dp"
+            android:background="@drawable/text_card_cornor_bg"
+            >
 
-            <ProgressBar
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/progress_bar_details"
-                style="@style/Widget.AppCompat.ProgressBar"
-                android:visibility="gone"
-                android:layout_gravity="center"
-                android:indeterminateTint="@color/progressbar_color"
-                />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/event_startTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:paddingEnd="8dp"
-                android:paddingStart="8dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@color/textColor"
-                android:textSize="24sp"
-                android:textIsSelectable="true"
-                />
+                <ProgressBar
+                    android:id="@+id/progress_bar_details"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/progressbar_color"
+                    android:visibility="gone" />
 
-            <us.feras.mdv.MarkdownView
-                android:id="@+id/eventdetails"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:autoLink="web"
-                android:lineSpacingExtra="2dp"
-                android:linksClickable="true"
-                android:padding="8dp"
-                android:textColor="@color/textColor"
-                android:textIsSelectable="true"
-                android:textSize="18sp"
-                android:background="@android:color/transparent"/>
+                <TextView
+                    android:id="@+id/event_startTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/textColor"
+                    android:textIsSelectable="true"
+                    android:textSize="24sp" />
 
-        </LinearLayout>
+                <us.feras.mdv.MarkdownView
+                    android:id="@+id/eventdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:autoLink="web"
+                    android:background="@color/backgroundColor"
+                    android:lineSpacingExtra="2dp"
+                    android:linksClickable="true"
+                    android:padding="8dp"
+                    android:textColor="@color/textColor"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
     </android.support.v4.widget.NestedScrollView>
 
