@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,10 +40,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     public void onBindViewHolder(@NonNull EventsAdapter.EventViewHolder holder, final int position) {
 
 
-        holder.itemView.setVisibility(View.VISIBLE);
-        if(list.get(position).getName().toLowerCase().contains("pool")){
-            holder.eventView.setVisibility(View.GONE);
-        }
 
         holder.eventName.setText(list.get(position).getName());
         holder.eventView.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +51,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             }
         });
         holder.eventImage.setImageResource(getFoldedImage(list.get(position).getName().toLowerCase()));
-        if(list.get(position).getName().toLowerCase().contains("pool")){
-           holder.itemView.setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -68,6 +62,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         TextView eventName, eventFee, eventPrizemoney;
         CardView eventView;
         ImageView eventImage;
+        FrameLayout frameLayout;
 
         public EventViewHolder(View itemView) {
             super(itemView);
@@ -75,7 +70,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
 //            eventTagLine = itemView.findViewById(R.id.events_tagline);
             eventView = itemView.findViewById(R.id.event_item_cardview);
             eventImage = itemView.findViewById(R.id.event_image);
-
+            frameLayout = itemView.findViewById(R.id.frame_layout_events);
         }
 
     }

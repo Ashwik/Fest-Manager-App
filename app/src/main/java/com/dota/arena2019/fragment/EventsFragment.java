@@ -22,6 +22,8 @@ import com.dota.arena2019.api.EventsInterface;
 import com.dota.arena2019.model.EventDetails;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -167,7 +169,7 @@ public class EventsFragment extends Fragment {
                 }
 
                 for (int i = 0; i < results.size(); i++) {
-                    if (results.get(i).getRoute() == null || results.get(i).getRoute() == "") {
+                    if (results.get(i).getRoute() == null || results.get(i).getRoute().equals("")) {
                         Log.e(TAG, "No Route found");
                     } else {
                         realmList.add(results.get(i));
