@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="150sp"
         app:srcCompat="@drawable/gradient_color"
-        tools:layout_editor_absoluteX="360dp" />
+        tools:layout_editor_absoluteX="360dp"
+        android:layout_marginBottom="10dp"
+        />
 
     <TextView
         android:id="@+id/festname"
@@ -53,13 +55,14 @@
         android:iconifiedByDefault="false"
         android:searchIcon="@null"
         android:queryBackground="@android:color/transparent"
+        android:visibility="gone"
         />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_feed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchView">
+        android:layout_below="@id/imageView">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/feed1"
             android:layout_width="match_parent"

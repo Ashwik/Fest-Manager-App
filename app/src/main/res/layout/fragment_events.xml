@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="120sp"
         app:srcCompat="@drawable/gradient_color"
-        tools:layout_editor_absoluteX="360dp" />
+        tools:layout_editor_absoluteX="360dp"
+        android:layout_marginBottom="10dp"
+        />
 
     <TextView
         android:id="@+id/eventname"
@@ -25,7 +27,7 @@
         android:textSize="30sp" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/events_searchView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/imageView"
@@ -41,13 +43,14 @@
         android:iconifiedByDefault="false"
         android:searchIcon="@null"
         android:queryBackground="@android:color/transparent"
+        android:visibility="gone"
         />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchView">
+        android:layout_below="@id/imageView">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/event_recycler_view"

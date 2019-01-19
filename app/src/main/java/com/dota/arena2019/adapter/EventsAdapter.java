@@ -6,9 +6,12 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,15 +21,19 @@ import com.dota.arena2019.activity.DetailsActivity;
 import com.dota.arena2019.model.EventDetails;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> {
+public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> implements Filterable {
 
     private ArrayList<EventDetails> list = new ArrayList<>();
     private Context context;
+    private List<EventDetails> filterlist = new ArrayList<>();
+    private RowFilter rowFilter;
 
     public EventsAdapter(ArrayList<EventDetails> list, Context context) {
         this.list = list;
         this.context = context;
+        this.filterlist = list;
     }
 
     @NonNull
@@ -41,21 +48,30 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
 
 
 
-        holder.eventName.setText(list.get(position).getName());
+        holder.eventName.setText(filterlist.get(position).getName());
         holder.eventView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("id", list.get(position).getId());
+                intent.putExtra("id", filterlist.get(position).getId());
                 v.getContext().startActivity(intent);
             }
         });
-        holder.eventImage.setImageResource(getFoldedImage(list.get(position).getName().toLowerCase()));
+        holder.eventImage.setImageResource(getFoldedImage(filterlist.get(position).getName().toLowerCase()));
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return filterlist.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        if(rowFilter==null)
+        {
+            rowFilter = new RowFilter();
+        }
+        return rowFilter;
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
@@ -175,5 +191,40 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         }
 
         return resId;
+    }
+
+    public class RowFilter extends Filter{
+
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            FilterResults filterResults = new FilterResults();
+            if(charSequence!=null&&charSequence.length()>0)
+            {
+                Log.d("EventsAdapter",charSequence.toString());
+                ArrayList<EventDetails> templist = new ArrayList<>();
+
+                for(EventDetails model:list)
+                {
+                    if(model.getName().toLowerCase().contains(charSequence.toString().toLowerCase()))
+                    {
+                        templist.add(model);
+                    }
+                }
+                filterResults.count = templist.size();
+                filterResults.values = templist;
+            }
+            else
+            {
+                filterResults.count = list.size();
+                filterResults.values = list;
+            }
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            filterlist = (ArrayList<EventDetails>)filterResults.values;
+            notifyDataSetChanged();
+        }
     }
 }
