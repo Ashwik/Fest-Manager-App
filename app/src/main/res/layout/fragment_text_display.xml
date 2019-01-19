@@ -27,7 +27,7 @@
         android:textSize="30sp" />
 
     <ScrollView
-        android:background="@drawable/text_card_cornor_bg"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="-80sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
