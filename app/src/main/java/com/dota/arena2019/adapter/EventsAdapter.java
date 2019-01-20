@@ -18,9 +18,11 @@ import android.widget.TextView;
 
 import com.dota.arena2019.R;
 import com.dota.arena2019.activity.DetailsActivity;
+import com.dota.arena2019.fragment.EventsFragment;
 import com.dota.arena2019.model.EventDetails;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewHolder> implements Filterable {
@@ -33,7 +35,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
     public EventsAdapter(ArrayList<EventDetails> list, Context context) {
         this.list = list;
         this.context = context;
-        this.filterlist = list;
+        filterlist = list;
+//        getFilter();
     }
 
     @NonNull
@@ -48,25 +51,26 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
 
 
 
-        holder.eventName.setText(filterlist.get(position).getName());
+        holder.eventName.setText(list.get(position).getName());
         holder.eventView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("id", filterlist.get(position).getId());
+                intent.putExtra("id", list.get(position).getId());
                 v.getContext().startActivity(intent);
             }
         });
-        holder.eventImage.setImageResource(getFoldedImage(filterlist.get(position).getName().toLowerCase()));
+        holder.eventImage.setImageResource(getFoldedImage(list.get(position).getName().toLowerCase()));
     }
 
     @Override
     public int getItemCount() {
-        return filterlist.size();
+        return list.size();
     }
 
     @Override
     public Filter getFilter() {
+        Log.e("Filter","received");
         if(rowFilter==null)
         {
             rowFilter = new RowFilter();
@@ -198,32 +202,42 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             FilterResults filterResults = new FilterResults();
-            if(charSequence!=null&&charSequence.length()>0)
-            {
-                Log.d("EventsAdapter",charSequence.toString());
-                ArrayList<EventDetails> templist = new ArrayList<>();
-
-                for(EventDetails model:list)
-                {
-                    if(model.getName().toLowerCase().contains(charSequence.toString().toLowerCase()))
-                    {
-                        templist.add(model);
-                    }
-                }
-                filterResults.count = templist.size();
-                filterResults.values = templist;
-            }
-            else
-            {
-                filterResults.count = list.size();
-                filterResults.values = list;
-            }
             return filterResults;
         }
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            filterlist = (ArrayList<EventDetails>)filterResults.values;
+            filterlist = new ArrayList<>();
+             if(charSequence!=null&&charSequence.length()>0)
+             {
+                Log.e("EventsAdapter",charSequence.toString().toLowerCase());
+                Log.e("EventsAdapter",String.valueOf(list.size()));
+                ArrayList<EventDetails> templist = new ArrayList<>();
+
+                for(int i=0;i<list.size();i++)
+                {
+                    EventDetails model = list.get(i);
+                    String text = charSequence.toString().toLowerCase();
+                    Log.e("events adapter1",model.getName().toLowerCase());
+                    if(model.getName().toLowerCase().contains(text))
+                    {
+                        Log.e("events adapter",model.getName().toLowerCase());
+                        templist.add(model);
+                    }
+                }
+                filterResults.count = templist.size();
+                filterResults.values = templist;
+//                filterlist.addAll(templist);
+            }
+            else
+            {
+                filterResults.count = list.size();
+                filterResults.values = list;
+//                filterlist.addAll(list);
+            }
+            filterlist.clear();
+            filterlist.addAll((ArrayList<EventDetails>)filterResults.values);
+            Log.e("eventsfilter",String.valueOf(filterlist.size()));
             notifyDataSetChanged();
         }
     }

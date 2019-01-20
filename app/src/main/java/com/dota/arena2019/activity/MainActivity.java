@@ -175,11 +175,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            case R.id.reach:
 //                fragment = new ReachUsFragment();
 //                break;
-//            case R.id.promo_code:
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.nav_fragment_container,new PromoCodeFragment())
-//                        .commit();
-//                break;
 //            case R.id.settings:
 //                  fragment = new SettingsFragment();
 //                  break;

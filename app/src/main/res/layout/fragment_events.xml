@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserratbold"
         android:text="Events"
         android:textAlignment="center"
@@ -50,7 +50,7 @@
         android:id="@+id/swipe_to_refresh_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/imageView">
+        android:layout_below="@id/events_searchView">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/event_recycler_view"

@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="150sp"
+            android:layout_height="120sp"
             app:srcCompat="@drawable/gradient_color_square"
             tools:layout_editor_absoluteX="360dp" />
 
@@ -28,49 +28,53 @@
             android:textIsSelectable="true"
             android:textSize="30sp"
             tools:text="Event"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-70sp"
+        android:layout_marginTop="-30sp"
         android:layout_marginBottom="5dp"
         android:elevation="4dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:weightSum="2">
 
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            app:cardElevation="4dp"
-            >
+            app:cardElevation="4dp">
 
             <TextView
                 android:id="@+id/event_prizemoney"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@color/backgroundColor"
-                android:text="PRIZE 30000"
+                android:text="PRIZE      "
                 android:textAlignment="center"
                 android:textColor="@color/gradient_color_2"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            app:cardElevation="4dp"
-            >
+            android:background="@drawable/cardview_background"
+            app:cardElevation="4dp">
 
             <TextView
                 android:id="@+id/event_fee"
@@ -78,10 +82,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@color/backgroundColor"
-                android:text="FEE 100"
+                android:text="FEE   "
                 android:textAlignment="center"
                 android:textColor="@color/gradient_color_2"
-                android:textSize="24sp"
+                android:textSize="22sp"
 
                 />
         </android.support.v7.widget.CardView>
@@ -128,7 +132,9 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/textColor"
                     android:textIsSelectable="true"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    />
 
                 <us.feras.mdv.MarkdownView
                     android:id="@+id/eventdetails"

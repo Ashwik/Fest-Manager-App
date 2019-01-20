@@ -47,6 +47,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
     private Integer event_category_id;
     private SearchView searchView;
     private EventsAdapter eventsAdapter;
+    private ArrayList<EventDetails> searchlist = new ArrayList<>();
 
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,6 +86,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
         searchView = getActivity().findViewById(R.id.events_searchView);
+        eventsAdapter = new EventsAdapter(realmList,context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         callApi();
@@ -233,11 +235,10 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
                 (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getActivity().getComponentName()));
-        searchView.setIconifiedByDefault(true);
-        searchView.setFocusable(true);
-        searchView.setIconified(false);
-        searchView.requestFocus();
-        searchView.setOnQueryTextListener(this);
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+            searchView.setOnQueryTextListener(this);
+        }
     }
 
     @Override
@@ -248,7 +249,9 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
     @Override
     public boolean onQueryTextChange(String s) {
-        (new EventsAdapter(realmList,context)).getFilter().filter(s);
+        Log.e(TAG,s);
+        EventsAdapter eventsAdapter = new EventsAdapter(realmList,context);
+        eventsAdapter.getFilter().filter(s);
         return true;
     }
 }
