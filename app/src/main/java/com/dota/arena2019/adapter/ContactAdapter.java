@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dota.arena2019.R;
 import com.dota.arena2019.model.Contact;
 
@@ -23,10 +25,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     LayoutInflater mInflater;
     ArrayList<Contact> mArrayList;
+    Context context;
 
     public ContactAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
         mArrayList = new ArrayList<>();
+        this.context = context;
     }
 
     public void setArrayList(ArrayList<Contact> arrayList) {
@@ -35,7 +39,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     @Override
     public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = mInflater.inflate(R.layout.fragment_contact_item, parent, false);
+        View v = mInflater.inflate(R.layout.fragment_contact_item_c, parent, false);
         return new ContactViewHolder(v);
     }
 
@@ -43,6 +47,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public void onBindViewHolder(final ContactViewHolder holder, int position) {
         holder.name.setText(mArrayList.get(position).getName());
         holder.designation.setText(mArrayList.get(position).getDesignation());
+        holder.callButton.setVisibility(View.VISIBLE);
         holder.callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +58,65 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
                 }
             }
         });
+        if(mArrayList.get(0).getDesignation().equals("President")&&position!= (mArrayList.size()-1)){
+            holder.contactimage.setVisibility(View.VISIBLE);
+            switch (position){
+                case 0: Glide.with(context).load(R.drawable.oc_one)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 1: Glide.with(context).load(R.drawable.oc_two)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 2: Glide.with(context).load(R.drawable.oc_three)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 3: Glide.with(context).load(R.drawable.oc_four)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 4: Glide.with(context).load(R.drawable.oc_five)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 5: Glide.with(context).load(R.drawable.oc_six)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 6: Glide.with(context).load(R.drawable.oc_sev)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 7: Glide.with(context).load(R.drawable.oc_eig)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 8: Glide.with(context).load(R.drawable.oc_ni)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 9: Glide.with(context).load(R.drawable.oc_ele)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 10: Glide.with(context).load(R.drawable.oc_ten)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 11: Glide.with(context).load(R.drawable.oc_fift)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 12: Glide.with(context).load(R.drawable.oc_fourt)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 13: Glide.with(context).load(R.drawable.oc_twe)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+                case 14: Glide.with(context).load(R.drawable.oc_thir)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(holder.contactimage);break;
+
+            }
+
+        }else{
+            holder.contactimage.setVisibility(View.GONE);
+
+        }
+        if(position==mArrayList.size()-1){
+            holder.callButton.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -63,13 +127,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public class ContactViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView designation;
-        ImageView callButton;
+        ImageView callButton, contactimage;
 
         public ContactViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
             designation = view.findViewById(R.id.designation);
             callButton = view.findViewById(R.id.call_button);
+            contactimage = view.findViewById(R.id.contact_image);
         }
     }
 }

@@ -32,11 +32,12 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>Suraj Thotakura</item>
         <item>Sohith Deva</item>
         <item>Kritika Kasliwal</item>
+        <item>Saurabh kaundinya</item>
         <item>Vutla Yashwanth</item>
         <item>Jayakanth Teegala</item>
-        <item>Abhishek Kumar</item>
         <item>Pavan Teja Macharla</item>
         <item>A Ashwik Reddy</item>
+        <item>Abhishek Kumar</item>
         <item>Revanth Tanneeru</item>
         <item>Aditya Singh Thakur</item>
         <item>Devalla Vasishta</item>
@@ -50,11 +51,12 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>General Secretary</item>
         <item>Sports Secretary</item>
         <item>Sports Secretary</item>
+        <item>Fest Co-ordinator</item>
         <item>Sponsorship and Marketing</item>
-        <item>Publicity</item>
-        <item>Photography</item>
+        <item>Publicity and Public Relatons</item>
         <item>Firewallz</item>
         <item>Technical Arts</item>
+        <item>Photography</item>
         <item>Visual Effects</item>
         <item>Lights and Sound</item>
         <item>Arts and Decoration</item>
@@ -68,11 +70,12 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>9550578389</item>
         <item>7997084524</item>
         <item>7997083711</item>
+        <item>8332904305</item>
         <item>9494943995</item>
         <item>9502637212</item>
-        <item>7731874942</item>
         <item>8187080393</item>
         <item>7036457411</item>
+        <item>7731874942</item>
         <item>9010457669</item>
         <item>7288860865</item>
         <item>7013351739</item>
@@ -82,7 +85,7 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     </string-array>
 
     <string-array name="club_secretaries">
-        <item>Katneni </item>
+        <item>Jhanav Katneni </item>
         <item>Gargic Mishra</item>
         <item>Sajal Jain</item>
         <item>Shakti Raj Singh</item>
@@ -112,21 +115,21 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
 
     <string-array name="club_names">
 
-        <item>Captain - Football</item>
+        <item>Captain - Football Boys</item>
         <item>Captain -Cricket</item>
-        <item>Captain -Football G</item>
+        <item>Captain -Football Girls</item>
         <item>Captain -Hockey</item>
-        <item>Captain - Basketball</item>
+        <item>Captain - Basketball Boys</item>
         <item>Captain - Ultimate Frisbee</item>
-        <item>Captain - Basketball G</item>
-        <item>Captain - Voleyball</item>
-        <item> Captain -Voleyball G</item>
-        <item>Captain -Badminton</item>
+        <item>Captain - Basketball Girls</item>
+        <item>Captain - Voleyball Boys</item>
+        <item> Captain -Voleyball Girls</item>
+        <item>Captain -Badminton Boys</item>
         <item>Captain -Badmintom G</item>
         <item>Captain - Tennis</item>
         <item> Captain - Squash</item>
-        <item> Captain - TT</item>
-        <item> Captain -TT G</item>
+        <item> Captain - TT Boys</item>
+        <item> Captain -TT Girls</item>
         <item>Captain - Chess</item>
         <item>Captain - Carrom</item>
         <item>Captain - Snooker</item>

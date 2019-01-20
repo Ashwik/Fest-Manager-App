@@ -120,7 +120,7 @@
                 android:id ="@+id/credit_button2"
                 android:layout_height="35dp"
                 android:layout_width="35dp"
-                android:background="@drawable/ic_github_white"
+                android:background="@drawable/ic_github_black"
                 android:padding="5dp"
                 android:layout_marginRight="12dp"
                 />
