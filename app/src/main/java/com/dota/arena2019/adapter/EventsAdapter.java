@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.dota.arena2019.R;
 import com.dota.arena2019.activity.DetailsActivity;
+import com.dota.arena2019.activity.MatchesActivity;
 import com.dota.arena2019.fragment.EventsFragment;
 import com.dota.arena2019.model.EventDetails;
 
@@ -54,10 +55,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         holder.eventName.setText(list.get(position).getName());
         holder.eventView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DetailsActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MatchesActivity.class);
                 intent.putExtra("id", list.get(position).getId());
-                v.getContext().startActivity(intent);
+                intent.putExtra("name",list.get(position).getName());
+                view.getContext().startActivity(intent);
             }
         });
         holder.eventImage.setImageResource(getFoldedImage(list.get(position).getName().toLowerCase()));

@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import com.dota.arena2019.R;
 import com.dota.arena2019.fragment.AboutFragment;
 import com.dota.arena2019.fragment.CreditsFragment;
+import com.dota.arena2019.fragment.MapsFragment;
 import com.dota.arena2019.fragment.ReachUsFragment;
 import com.dota.arena2019.fragment.SettingsFragment;
 
@@ -42,11 +43,17 @@ public class MoreItemsActivity extends AppCompatActivity {
                 break;
             case 2:
                 getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new MapsFragment())
+                        .commit();
+                getSupportActionBar().setTitle("Directions");
+                break;
+            case 3:
+                getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new CreditsFragment())
                         .commit();
                 getSupportActionBar().setTitle("App Credits");
                 break;
-            case 3:
+            case 4:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new SettingsFragment())
                         .commit();

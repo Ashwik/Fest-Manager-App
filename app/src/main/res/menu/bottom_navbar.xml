@@ -7,15 +7,14 @@
             android:icon="@drawable/ic_feed"
             />
         <item
-            android:id="@+id/events"
-            android:title="Events"
-            android:icon="@drawable/ic_events_24px"
-            />
+            android:id="@+id/live"
+            android:title="Live"
+            android:icon="@drawable/ic_live"/>
         <item
-            android:id="@+id/guide"
-            android:title="Directions"
-            android:icon="@drawable/ic_directions_24px"
-            />
+            android:id="@+id/events"
+            android:title="Match Center"
+            android:icon="@drawable/ic_match_center" />
+
         <item
             android:id="@+id/contact"
             android:title="Contact Us"
