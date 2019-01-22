@@ -38,6 +38,11 @@ public class HomeFragment extends Fragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.live:
+                        getChildFragmentManager().beginTransaction()
+                                .replace(R.id.bottom_nav_container, new LiveFragment())
+                                .commit();
+                        break;
                     case R.id.feed:
                         getChildFragmentManager().beginTransaction()
                                 .replace(R.id.bottom_nav_container, new FeedFragment())
@@ -53,11 +58,11 @@ public class HomeFragment extends Fragment {
                                 .replace(R.id.bottom_nav_container, new ContactsFragment())
                                 .commit();
                         break;
-                    case R.id.guide:
-                        getChildFragmentManager().beginTransaction()
-                                .replace(R.id.bottom_nav_container, new MapsFragment())
-                                .commit();
-                        break;
+//                    case R.id.guide:
+//                        getChildFragmentManager().beginTransaction()
+//                                .replace(R.id.bottom_nav_container, new MapsFragment())
+//                                .commit();
+//                        break;
                     case R.id.more:
                         getChildFragmentManager().beginTransaction()
                                 .replace(R.id.bottom_nav_container, new MoreFragment())

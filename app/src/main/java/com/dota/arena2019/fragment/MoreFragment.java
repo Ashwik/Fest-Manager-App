@@ -39,6 +39,7 @@ public class MoreFragment extends Fragment {
 
         moreitemsList.add("About");
         moreitemsList.add("Reach Us");
+        moreitemsList.add("Directions");
         moreitemsList.add("App Credits");
         moreitemsList.add("Settings");
 

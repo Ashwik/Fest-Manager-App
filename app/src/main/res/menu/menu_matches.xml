@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dota.arena2019.activity.MatchesActivity">
+    <item
+        android:id="@+id/eventInfo"
+        android:title="Info"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_info_24px"/>
+</menu>

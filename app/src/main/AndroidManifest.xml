@@ -60,6 +60,10 @@
             ></activity>
         <activity android:name="com.dota.arena2019.activity.MoreItemsActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MatchesActivity"
+            android:label="@string/title_activity_matches"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>
