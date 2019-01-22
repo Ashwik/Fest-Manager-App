@@ -28,19 +28,17 @@ public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHo
         holder.scoreA.setText(list.get(i).getTeamA()+" ("+list.get(i).getScoreA()+")");
         holder.scoreB.setText(list.get(i).getTeamB()+" ("+list.get(i).getScoreB()+")");
         holder.msg.setText(list.get(i).getMessage());
-        switch (list.get(i).getStatus()){
-            case 1:
-                holder.scoreA.setTextColor(Color.parseColor("#00ff00"));
-                holder.scoreB.setTextColor(Color.parseColor("#ff0000"));
-                break;
-            case 2:
-                holder.scoreB.setTextColor(Color.parseColor("#00ff00"));
-                holder.scoreA.setTextColor(Color.parseColor("#ff0000"));
-                break;
-            case 0:
-                holder.scoreA.setTextColor(Color.parseColor("#000000"));
-                holder.scoreB.setTextColor(Color.parseColor("#000000"));
-                break;
+        if(list.get(i).getStatus().equals("1")){
+            holder.scoreA.setTextColor(Color.parseColor("#00ff00"));
+            holder.scoreB.setTextColor(Color.parseColor("#ff0000"));
+        }
+        else if(list.get(i).getStatus().equals("2")){
+            holder.scoreB.setTextColor(Color.parseColor("#00ff00"));
+            holder.scoreA.setTextColor(Color.parseColor("#ff0000"));
+        }
+        else{
+            holder.scoreA.setTextColor(Color.parseColor("#000000"));
+            holder.scoreB.setTextColor(Color.parseColor("#000000"));
         }
     }
 

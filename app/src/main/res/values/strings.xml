@@ -195,5 +195,12 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
-
+    <string-array name="type1">
+        <item>5c172b9cdeb95b571eaffdca</item>
+        <item>5c172c41deb95b571eaffdcb</item>
+        <item>5c172e63deb95b571eaffdd1</item>
+        <item>5c172ed0deb95b571eaffdd2</item>
+        <item>5c172f05deb95b571eaffdd3</item>
+        <item>5c172f6ddeb95b571eaffdd4</item>
+    </string-array>
 </resources>

@@ -1,8 +1,7 @@
 package com.dota.arena2019.model;
 
 public class ResultType1 extends LiveMatchType1 {
-    String message;
-    int status;
+    String message,status;
 
     public String getMessage() {
         return message;
@@ -12,11 +11,11 @@ public class ResultType1 extends LiveMatchType1 {
         this.message = message;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 }
