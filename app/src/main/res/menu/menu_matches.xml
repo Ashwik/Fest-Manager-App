@@ -6,5 +6,6 @@
         android:id="@+id/eventInfo"
         android:title="Info"
         app:showAsAction="always"
-        android:icon="@drawable/ic_baseline_info_24px"/>
+        android:icon="@drawable/ic_icons8_info"
+        />
 </menu>

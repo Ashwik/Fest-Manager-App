@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swipe_to_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/events_live"
+        android:layout_height="120sp"
+        app:srcCompat="@drawable/gradient_color"
+        tools:layout_editor_absoluteX="360dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/eventname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="LIVE MATCHES"
+        android:textAlignment="center"
+        android:textColor="@color/topbar_textcolor"
+        android:textSize="30sp" />
+
+    <SearchView
+        android:id="@+id/events_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/bg_white_rounded"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:queryHint="Filter Events"
+        android:iconifiedByDefault="false"
+        android:searchIcon="@null"
+        android:queryBackground="@android:color/transparent"
+        android:visibility="gone"
+        />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_to_refresh_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/events_searchView">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/live_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No matches are live currently"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="#000"
-            android:layout_centerInParent="true"/>
-    </RelativeLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/events_live"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/live_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No matches are live currently"
+                android:fontFamily="@font/montserratmedium"
+                android:textSize="22sp"
+                android:textColor="#000"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>
