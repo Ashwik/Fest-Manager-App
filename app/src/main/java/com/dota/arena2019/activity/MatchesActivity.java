@@ -32,14 +32,11 @@ public class MatchesActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Arena'19 - "+getIntent().getStringExtra("name"));
-        toolbar.setTitleTextColor(Color.BLACK);
-        setTitleColor(Color.BLACK);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+        toolbar.setTitle(getIntent().getStringExtra("name").toUpperCase());
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
+
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
