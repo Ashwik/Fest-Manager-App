@@ -31,21 +31,27 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
         myViewHolder.title.setText(list.get(i).eventName);
-        myViewHolder.count.setText(list.get(i).count+" matches in progress");
-        myViewHolder.bg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, MatchesActivity.class);
-                intent.putExtra("id", list.get(i).eventID);
-                intent.putExtra("name",list.get(i).eventName);
-                view.getContext().startActivity(intent);
-            }
-        });
+
+        if(list.get(i).count <= 1)
+            myViewHolder.count.setText(list.get(i).count+" match in progress");
+        else
+            myViewHolder.count.setText(list.get(i).count+" matches in progress");
+
+        if(list.get(i).eventName!=null)
+            myViewHolder.bg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, MatchesActivity.class);
+                    intent.putExtra("id", list.get(i).eventID);
+                    intent.putExtra("name",list.get(i).eventName);
+                    view.getContext().startActivity(intent);
+                }
+            });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

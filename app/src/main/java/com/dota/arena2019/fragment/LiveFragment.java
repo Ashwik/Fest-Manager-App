@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.dota.arena2019.R;
 import com.dota.arena2019.adapter.LiveAdapter;
+import com.dota.arena2019.model.EventDetails;
 import com.dota.arena2019.model.LiveInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import io.realm.Realm;
+
 public class LiveFragment extends Fragment {
 
     private RecyclerView recyclerView;
@@ -32,6 +36,7 @@ public class LiveFragment extends Fragment {
     private TextView status;
     private ArrayList<LiveInfo> list;
     private LiveAdapter adapter;
+    private Realm realm;
     public LiveFragment() {
         // Required empty public constructor
     }
@@ -47,6 +52,8 @@ public class LiveFragment extends Fragment {
         status = v.findViewById(R.id.live_status);
 
         list = new ArrayList<>();
+
+        realm = Realm.getDefaultInstance();
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -68,11 +75,17 @@ public class LiveFragment extends Fragment {
         FirebaseDatabase.getInstance().getReference().child("Scores/Live Matches").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("testlive",dataSnapshot.getChildrenCount()+"");
                 list.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
+                    Log.d("testlive",ds.getKey());
                     LiveInfo info = new LiveInfo();
                     info.eventID = ds.getKey();
                     info.count = (int)ds.getChildrenCount();
+                    EventDetails details = realm.where(EventDetails.class).equalTo("id", info.eventID).findFirst();
+                    if(details!=null)
+                        info.eventName = details.getName();
+                    list.add(info);
                 }
                 if(list.size()==0) status.setVisibility(View.VISIBLE);
                 else status.setVisibility(View.GONE);
