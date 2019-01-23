@@ -15,11 +15,13 @@ import android.widget.TextView;
 import com.dota.arena2019.R;
 import com.dota.arena2019.adapter.CricketAdapter;
 import com.dota.arena2019.adapter.CricketResultAdapter;
+import com.dota.arena2019.adapter.IndividualEventAdapter;
 import com.dota.arena2019.adapter.MatchLiveAdapter1;
 import com.dota.arena2019.adapter.MatchLiveAdapter2;
 import com.dota.arena2019.adapter.MatchScheduleAdapter;
 import com.dota.arena2019.adapter.ResultAdapter1;
 import com.dota.arena2019.model.CricketResult;
+import com.dota.arena2019.model.IndividualEvent;
 import com.dota.arena2019.model.LiveCricket;
 import com.dota.arena2019.model.LiveMatchType1;
 import com.dota.arena2019.model.LiveMatchType2;
@@ -42,7 +44,7 @@ public class MatchesSectionFragment extends Fragment {
     private TextView status;
     private RecyclerView.Adapter adapter;
 
-    private List<String> type1,type2;
+    private List<String> type1,type2,type3;
     private String cricket_id = "5c172ddcdeb95b571eaffdcf";
     public MatchesSectionFragment(){}
 
@@ -62,6 +64,7 @@ public class MatchesSectionFragment extends Fragment {
         eventId = this.getArguments().getString("ID");
         type1 = Arrays.asList(getResources().getStringArray(R.array.type1));
         type2 = Arrays.asList(getResources().getStringArray(R.array.type2));
+        type3 = Arrays.asList(getResources().getStringArray(R.array.type3));
     }
 
     @Override
@@ -140,6 +143,33 @@ public class MatchesSectionFragment extends Fragment {
                             list2.clear();
                             for (DataSnapshot ds : dataSnapshot.getChildren())
                                 list2.add(ds.getValue(LiveMatchType2.class));
+                            Collections.reverse(list2);
+
+                            if (list2.size() == 0) {
+                                status.setText("Result not yet updated");
+                                status.setVisibility(View.VISIBLE);
+                            }
+                            else status.setVisibility(View.GONE);
+
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+                else if(type3.contains(eventId)){
+                    final ArrayList<IndividualEvent> list2 = new ArrayList<>();
+                    adapter = new IndividualEventAdapter(getActivity(), list2);
+                    rootView.setAdapter(adapter);
+                    FirebaseDatabase.getInstance().getReference().child("Scores").child("Results").child(eventId).orderByKey().addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            list2.clear();
+                            for (DataSnapshot ds : dataSnapshot.getChildren())
+                                list2.add(ds.getValue(IndividualEvent.class));
                             Collections.reverse(list2);
 
                             if (list2.size() == 0) {
@@ -248,6 +278,10 @@ public class MatchesSectionFragment extends Fragment {
                         }
                     });
                 }
+                else if(type3.contains(eventId)){
+                    status.setText("Results will be displayed directly");
+                    status.setVisibility(View.VISIBLE);
+                }
                 else{
                     status.setText("No matches are live currently");
                     status.setVisibility(View.VISIBLE);
@@ -256,32 +290,38 @@ public class MatchesSectionFragment extends Fragment {
 
 
             case 3:
-                final ArrayList<MatchDetails> list3 = new ArrayList<>();
-                adapter = new MatchScheduleAdapter(getActivity(),list3);
-                rootView.setAdapter(adapter);
-                status.setText("No match is scheduled currently");
-                status.setVisibility(View.VISIBLE);
-                FirebaseDatabase.getInstance().getReference().child("Scores").child("Upcoming Matches").child(eventId).orderByChild("date").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        list3.clear();
-                        for(DataSnapshot ds:dataSnapshot.getChildren())
-                            list3.add(ds.getValue(MatchDetails.class));
 
-                        if(list3.size()==0) {
-                            status.setText("No match is scheduled currently");
-                            status.setVisibility(View.VISIBLE);
+                if(type3.contains(eventId)){
+                    status.setText("Results will be displayed directly");
+                    status.setVisibility(View.VISIBLE);
+                }
+                else {
+                    final ArrayList<MatchDetails> list3 = new ArrayList<>();
+                    adapter = new MatchScheduleAdapter(getActivity(), list3);
+                    rootView.setAdapter(adapter);
+                    status.setText("No match is scheduled currently");
+                    status.setVisibility(View.VISIBLE);
+                    FirebaseDatabase.getInstance().getReference().child("Scores").child("Upcoming Matches").child(eventId).orderByChild("date").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            list3.clear();
+                            for (DataSnapshot ds : dataSnapshot.getChildren())
+                                list3.add(ds.getValue(MatchDetails.class));
+
+                            if (list3.size() == 0) {
+                                status.setText("No match is scheduled currently");
+                                status.setVisibility(View.VISIBLE);
+                            } else status.setVisibility(View.GONE);
+
+                            adapter.notifyDataSetChanged();
                         }
-                        else status.setVisibility(View.GONE);
 
-                        adapter.notifyDataSetChanged();
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
+                        }
+                    });
+                }
                 break;
         }
         return view;
