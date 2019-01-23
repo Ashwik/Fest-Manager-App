@@ -173,7 +173,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
                 Toast.makeText(context, "No Internet", Toast.LENGTH_SHORT).show();
             } else {
                 if (!isnetwork) {
-                    Toast.makeText(context, "Loading....Offline Data", Toast.LENGTH_SHORT).show();
+                    
                 }
 
                 for (int i = 0; i < results.size(); i++) {
