@@ -11,6 +11,5 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         FirebaseApp.initializeApp(getApplicationContext());
-        Realm.init(getApplicationContext());
     }
 }

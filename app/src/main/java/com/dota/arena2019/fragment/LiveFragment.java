@@ -53,6 +53,7 @@ public class LiveFragment extends Fragment {
 
         list = new ArrayList<>();
 
+        Realm.init(getContext());
         realm = Realm.getDefaultInstance();
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());

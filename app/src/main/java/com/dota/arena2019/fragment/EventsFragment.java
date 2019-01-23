@@ -81,6 +81,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
 //        ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
 
+        Realm.init(context);
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
