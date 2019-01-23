@@ -89,6 +89,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
         eventsAdapter = new EventsAdapter(realmList,context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
+        getDatafromRealm(realm);
         callApi();
 //        setSearchview();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

@@ -18,6 +18,7 @@ import com.dota.arena2019.model.MatchSubset;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class MatchLiveAdapter2 extends RecyclerView.Adapter<MatchLiveAdapter2.MyViewHolder> {
     private Context context;
@@ -39,19 +40,20 @@ public class MatchLiveAdapter2 extends RecyclerView.Adapter<MatchLiveAdapter2.My
         holder.title.setText(list.get(i).getTitle());
         holder.team1.setText(list.get(i).getTeamA());
         holder.team2.setText(list.get(i).getTeamB());
-        ArrayList<MatchSubset> set = new ArrayList<>();
+        ArrayList<HashMap<String,MatchSubset>> set = new ArrayList<>();
+        ArrayList<String> titles = new ArrayList<>();
         if(list.get(i).getMatches()!=null)
         {
             for(String key:list.get(i).getMatches().keySet()){
-                MatchSubset s = list.get(i).getMatches().get(key);
-                s.setTitle(key);
+                HashMap<String,MatchSubset> s = list.get(i).getMatches().get(key);
                 set.add(s);
+                titles.add(key);
             }
         }
         RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(context);
         holder.recycler.setLayoutManager(mLayoutManager2);
 
-        InnerLiveAdapter2 innerAdapter = new InnerLiveAdapter2(context,set,list.get(i).getTeamA(),list.get(i).getTeamB());
+        InnerLiveAdapter2 innerAdapter = new InnerLiveAdapter2(context,set,titles,list.get(i).getTeamA(),list.get(i).getTeamB());
         holder.recycler.setAdapter(innerAdapter);
         innerAdapter.notifyDataSetChanged();
 

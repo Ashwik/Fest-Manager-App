@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class LiveMatchType2 {
     String eventID,title,teamA,teamB,desc,status,message;
-    HashMap<String,MatchSubset> matches;
+    HashMap<String,HashMap<String,MatchSubset>> matches;
 
     public String getTeamB() {
         return teamB;
@@ -46,11 +46,11 @@ public class LiveMatchType2 {
         this.desc = desc;
     }
 
-    public HashMap<String, MatchSubset> getMatches() {
+    public HashMap<String, HashMap<String, MatchSubset>> getMatches() {
         return matches;
     }
 
-    public void setMatches(HashMap<String, MatchSubset> matches) {
+    public void setMatches(HashMap<String, HashMap<String, MatchSubset>> matches) {
         this.matches = matches;
     }
 

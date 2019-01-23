@@ -202,12 +202,29 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>5c172ed0deb95b571eaffdd2</item>
         <item>5c172f05deb95b571eaffdd3</item>
         <item>5c172f6ddeb95b571eaffdd4</item>
-        <item>5c172d33deb95b571eaffdcd</item>
-        <item>5c172d89deb95b571eaffdce</item>
     </string-array>
     <string-array name="type2">
         <item>5c172a48deb95b571eaffdc7</item>
         <item>5c172ac3deb95b571eaffdc8</item>
         <item>5c172b54deb95b571eaffdc9</item>
+        <item>5c1732b2deb95b571eaffdde</item>
+        <item>5c1732ecdeb95b571eaffddf</item>
+        <item>5c186e4ece7164656d119800</item>
+        <item>5c173113deb95b571eaffdd9</item>
+        <item>5c173145deb95b571eaffdda</item>
+        <item>5c173197deb95b571eaffddb</item>
+        <item>5c1731e3deb95b571eaffddc</item>
+        <item>5c17323edeb95b571eaffddd</item>
+        <item>5c185f87ce7164656d1197ff</item>
+    </string-array>
+    <string-array name="type3">
+        <item>5c1726f7deb95b571eaffdc6</item>
+        <item>5c172cb2deb95b571eaffdcc</item>
+        <item>5c172e21deb95b571eaffdd0</item>
+        <item>5c172f80deb95b571eaffdd5</item>
+        <item>5c172fe7deb95b571eaffdd6</item>
+        <item>5c173035deb95b571eaffdd7</item>
+        <item>5c172d33deb95b571eaffdcd</item>
+        <item>5c172d89deb95b571eaffdce</item>
     </string-array>
 </resources>
