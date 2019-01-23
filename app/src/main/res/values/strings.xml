@@ -202,5 +202,12 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>5c172ed0deb95b571eaffdd2</item>
         <item>5c172f05deb95b571eaffdd3</item>
         <item>5c172f6ddeb95b571eaffdd4</item>
+        <item>5c172d33deb95b571eaffdcd</item>
+        <item>5c172d89deb95b571eaffdce</item>
+    </string-array>
+    <string-array name="type2">
+        <item>5c172a48deb95b571eaffdc7</item>
+        <item>5c172ac3deb95b571eaffdc8</item>
+        <item>5c172b54deb95b571eaffdc9</item>
     </string-array>
 </resources>

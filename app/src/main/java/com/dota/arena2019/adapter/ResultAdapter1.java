@@ -29,16 +29,16 @@ public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHo
         holder.scoreB.setText(list.get(i).getTeamB()+" ("+list.get(i).getScoreB()+")");
         holder.msg.setText(list.get(i).getMessage());
         if(list.get(i).getStatus().equals("1")){
-            holder.scoreA.setTextColor(Color.parseColor("#00ff00"));
-            holder.scoreB.setTextColor(Color.parseColor("#ff0000"));
+            holder.scoreA.setTextColor(R.color.winner_text);
+            holder.scoreB.setTextColor(R.color.loser_text);
         }
         else if(list.get(i).getStatus().equals("2")){
-            holder.scoreB.setTextColor(Color.parseColor("#00ff00"));
-            holder.scoreA.setTextColor(Color.parseColor("#ff0000"));
+            holder.scoreB.setTextColor(R.color.winner_text);
+            holder.scoreA.setTextColor(R.color.loser_text);
         }
         else{
-            holder.scoreA.setTextColor(Color.parseColor("#000000"));
-            holder.scoreB.setTextColor(Color.parseColor("#000000"));
+            holder.scoreA.setTextColor(R.color.tie_text);
+            holder.scoreB.setTextColor(R.color.tie_text);
         }
     }
 

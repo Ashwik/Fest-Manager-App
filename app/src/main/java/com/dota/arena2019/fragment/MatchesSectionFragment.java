@@ -16,11 +16,13 @@ import com.dota.arena2019.R;
 import com.dota.arena2019.adapter.CricketAdapter;
 import com.dota.arena2019.adapter.CricketResultAdapter;
 import com.dota.arena2019.adapter.MatchLiveAdapter1;
+import com.dota.arena2019.adapter.MatchLiveAdapter2;
 import com.dota.arena2019.adapter.MatchScheduleAdapter;
 import com.dota.arena2019.adapter.ResultAdapter1;
 import com.dota.arena2019.model.CricketResult;
 import com.dota.arena2019.model.LiveCricket;
 import com.dota.arena2019.model.LiveMatchType1;
+import com.dota.arena2019.model.LiveMatchType2;
 import com.dota.arena2019.model.MatchDetails;
 import com.dota.arena2019.model.ResultType1;
 import com.google.firebase.database.DataSnapshot;
@@ -59,6 +61,7 @@ public class MatchesSectionFragment extends Fragment {
         section = this.getArguments().getInt("section",0);
         eventId = this.getArguments().getString("ID");
         type1 = Arrays.asList(getResources().getStringArray(R.array.type1));
+        type2 = Arrays.asList(getResources().getStringArray(R.array.type2));
     }
 
     @Override
@@ -73,6 +76,8 @@ public class MatchesSectionFragment extends Fragment {
 
         switch (section){
             case 1:
+                status.setText("Result not yet updated");
+                status.setVisibility(View.VISIBLE);
                 if(eventId.equals(cricket_id)){
                     final ArrayList<CricketResult> list1 = new ArrayList<>();
                     adapter = new CricketResultAdapter(getActivity(), list1);
@@ -125,6 +130,33 @@ public class MatchesSectionFragment extends Fragment {
                         }
                     });
                 }
+                else if(type2.contains(eventId)){
+                    final ArrayList<LiveMatchType2> list2 = new ArrayList<>();
+                    adapter = new MatchLiveAdapter2(getActivity(), list2,false);
+                    rootView.setAdapter(adapter);
+                    FirebaseDatabase.getInstance().getReference().child("Scores").child("Results").child(eventId).orderByKey().addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            list2.clear();
+                            for (DataSnapshot ds : dataSnapshot.getChildren())
+                                list2.add(ds.getValue(LiveMatchType2.class));
+                            Collections.reverse(list2);
+
+                            if (list2.size() == 0) {
+                                status.setText("Result not yet updated");
+                                status.setVisibility(View.VISIBLE);
+                            }
+                            else status.setVisibility(View.GONE);
+
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
                 else{
                     status.setText("Result not yet updated");
                     status.setVisibility(View.VISIBLE);
@@ -133,6 +165,8 @@ public class MatchesSectionFragment extends Fragment {
 
 
             case 2:
+                status.setText("No matches are live currently");
+                status.setVisibility(View.VISIBLE);
                 if(eventId.equals(cricket_id)){
                     final ArrayList<LiveCricket> list2 = new ArrayList<>();
                     adapter = new CricketAdapter(getActivity(), list2);
@@ -187,6 +221,33 @@ public class MatchesSectionFragment extends Fragment {
                         }
                     });
                 }
+                else if(type2.contains(eventId)){
+                    final ArrayList<LiveMatchType2> list2 = new ArrayList<>();
+                    adapter = new MatchLiveAdapter2(getActivity(), list2,true);
+                    rootView.setAdapter(adapter);
+                    FirebaseDatabase.getInstance().getReference().child("Scores").child("Live Matches").child(eventId).orderByKey().addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            list2.clear();
+                            for (DataSnapshot ds : dataSnapshot.getChildren())
+                                list2.add(ds.getValue(LiveMatchType2.class));
+                            Collections.reverse(list2);
+
+                            if (list2.size() == 0) {
+                                status.setText("No matches are live currently");
+                                status.setVisibility(View.VISIBLE);
+                            }
+                            else status.setVisibility(View.GONE);
+
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
                 else{
                     status.setText("No matches are live currently");
                     status.setVisibility(View.VISIBLE);
@@ -198,7 +259,9 @@ public class MatchesSectionFragment extends Fragment {
                 final ArrayList<MatchDetails> list3 = new ArrayList<>();
                 adapter = new MatchScheduleAdapter(getActivity(),list3);
                 rootView.setAdapter(adapter);
-                FirebaseDatabase.getInstance().getReference().child("Scores").child("Upcoming Matches").child(eventId).orderByChild("date").orderByChild("time").addValueEventListener(new ValueEventListener() {
+                status.setText("No match is scheduled currently");
+                status.setVisibility(View.VISIBLE);
+                FirebaseDatabase.getInstance().getReference().child("Scores").child("Upcoming Matches").child(eventId).orderByChild("date").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         list3.clear();

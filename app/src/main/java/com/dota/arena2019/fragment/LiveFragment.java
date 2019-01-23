@@ -5,16 +5,33 @@ package com.dota.arena2019.fragment;
  */
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dota.arena2019.R;
+import com.dota.arena2019.adapter.LiveAdapter;
+import com.dota.arena2019.model.LiveInfo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class LiveFragment extends Fragment {
 
-
+    private RecyclerView recyclerView;
+    private SwipeRefreshLayout swipe;
+    private TextView status;
+    private ArrayList<LiveInfo> list;
+    private LiveAdapter adapter;
     public LiveFragment() {
         // Required empty public constructor
     }
@@ -24,7 +41,50 @@ public class LiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_live, container, false);
+        View v = inflater.inflate(R.layout.fragment_live, container, false);
+        recyclerView = v.findViewById(R.id.events_live);
+        swipe = v.findViewById(R.id.swipe_to_refresh_events);
+        status = v.findViewById(R.id.live_status);
+
+        list = new ArrayList<>();
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        adapter = new LiveAdapter(getActivity(),list);
+        recyclerView.setAdapter(adapter);
+
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                update();
+            }
+        });
+
+        swipe.setRefreshing(true);
+        update();
+        return v;
+    }
+    public void update(){
+        FirebaseDatabase.getInstance().getReference().child("Scores/Live Matches").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
+                for(DataSnapshot ds:dataSnapshot.getChildren()){
+                    LiveInfo info = new LiveInfo();
+                    info.eventID = ds.getKey();
+                    info.count = (int)ds.getChildrenCount();
+                }
+                if(list.size()==0) status.setVisibility(View.VISIBLE);
+                else status.setVisibility(View.GONE);
+                adapter.notifyDataSetChanged();
+                swipe.setRefreshing(false);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 }
