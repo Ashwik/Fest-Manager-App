@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.dota.arena2019.R;
 import com.dota.arena2019.fragment.AboutFragment;
+import com.dota.arena2019.fragment.ArticlesFragment;
 import com.dota.arena2019.fragment.CreditsFragment;
 import com.dota.arena2019.fragment.MapsFragment;
 import com.dota.arena2019.fragment.ReachUsFragment;
@@ -31,34 +32,41 @@ public class MoreItemsActivity extends AppCompatActivity {
         switch (position) {
             case 0:
                 getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,new ArticlesFragment())
+                        .commit();
+                getSupportActionBar().setTitle("Articles");
+                break;
+            case 1:
+                getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new AboutFragment())
                         .commit();
                 getSupportActionBar().setTitle("About Arena");
                 break;
-            case 1:
+            case 2:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new ReachUsFragment())
                         .commit();
                 getSupportActionBar().setTitle("Reach Us");
                 break;
-            case 2:
+            case 3:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new MapsFragment())
                         .commit();
                 getSupportActionBar().setTitle("Directions");
                 break;
-            case 3:
+            case 4:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new CreditsFragment())
                         .commit();
                 getSupportActionBar().setTitle("App Credits");
                 break;
-            case 4:
+            case 5:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new SettingsFragment())
                         .commit();
                 getSupportActionBar().setTitle("Settings");
                 break;
+
         }
 
     }
