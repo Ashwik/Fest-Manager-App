@@ -42,23 +42,23 @@ public class CricketResultAdapter extends RecyclerView.Adapter<CricketResultAdap
             holder.scoreB.setText(list.get(i).getScoreA());
         }
         if(list.get(i).getStatus().equals("0")){
-            holder.team1.setTextColor(R.color.tie_text);
-            holder.scoreA.setTextColor(R.color.tie_text);
-            holder.team2.setTextColor(R.color.tie_text);
-            holder.scoreB.setTextColor(R.color.tie_text);
+            holder.team1.setTextColor(Color.parseColor("#000000"));
+            holder.scoreA.setTextColor(Color.parseColor("#000000"));
+            holder.team2.setTextColor(Color.parseColor("#000000"));
+            holder.scoreB.setTextColor(Color.parseColor("#000000"));
         }
         else if((list.get(i).getStatus().equals("1")&&list.get(i).getT1().equals("A"))||(list.get(i).getStatus().equals("2")&&list.get(i).getT1().equals("B")))
         {
-            holder.team1.setTextColor(R.color.winner_text);
-            holder.scoreA.setTextColor(R.color.winner_text);
-            holder.team2.setTextColor(R.color.loser_text);
-            holder.scoreB.setTextColor(R.color.loser_text);
+            holder.team1.setTextColor(Color.parseColor("#00ff00"));
+            holder.scoreA.setTextColor(Color.parseColor("#00ff00"));
+            holder.team2.setTextColor(Color.parseColor("#ff0000"));
+            holder.scoreB.setTextColor(Color.parseColor("#ff0000"));
         }
         else{
-            holder.team1.setTextColor(R.color.loser_text);
-            holder.scoreA.setTextColor(R.color.loser_text);
-            holder.team2.setTextColor(R.color.winner_text);
-            holder.scoreB.setTextColor(R.color.winner_text);
+            holder.team1.setTextColor(Color.parseColor("#ff0000"));
+            holder.scoreA.setTextColor(Color.parseColor("#ff0000"));
+            holder.team2.setTextColor(Color.parseColor("#00ff00"));
+            holder.scoreB.setTextColor(Color.parseColor("#00ff00"));
         }
     }
 

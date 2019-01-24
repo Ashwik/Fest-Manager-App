@@ -44,6 +44,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
                     Intent intent = new Intent(context, MatchesActivity.class);
                     intent.putExtra("id", list.get(i).eventID);
                     intent.putExtra("name",list.get(i).eventName);
+                    intent.putExtra("live",true);
                     view.getContext().startActivity(intent);
                 }
             });

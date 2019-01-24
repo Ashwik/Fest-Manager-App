@@ -81,16 +81,16 @@ public class MatchLiveAdapter2 extends RecyclerView.Adapter<MatchLiveAdapter2.My
             holder.result.setText(list.get(i).getMessage());
             if(list.get(i).getStatus()!=null){
                 if(list.get(i).getStatus().equals("1")){
-                    holder.team1.setTextColor(R.color.winner_text);
-                    holder.team2.setTextColor(R.color.loser_text);
+                    holder.team1.setTextColor(Color.parseColor("#00ff00"));
+                    holder.team2.setTextColor(Color.parseColor("#ff0000"));
                 }
                 else if(list.get(i).getStatus().equals("2")){
-                    holder.team2.setTextColor(R.color.winner_text);
-                    holder.team1.setTextColor(R.color.loser_text);
+                    holder.team2.setTextColor(Color.parseColor("#00ff00"));
+                    holder.team1.setTextColor(Color.parseColor("#ff0000"));
                 }
                 else {
-                    holder.team1.setTextColor(R.color.textColor);
-                    holder.team2.setTextColor(R.color.textColor);
+                    holder.team1.setTextColor(Color.parseColor("#000000"));
+                    holder.team2.setTextColor(Color.parseColor("#000000"));
                 }
             }
         }

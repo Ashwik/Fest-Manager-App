@@ -78,7 +78,7 @@ public class MatchesSectionFragment extends Fragment {
         rootView.setLayoutManager(mLayoutManager2);
 
         switch (section){
-            case 1:
+            case 3:
                 status.setText("Result not yet updated");
                 status.setVisibility(View.VISIBLE);
                 if(eventId.equals(cricket_id)){
@@ -289,7 +289,7 @@ public class MatchesSectionFragment extends Fragment {
                 break;
 
 
-            case 3:
+            case 1:
 
                 if(type3.contains(eventId)){
                     status.setText("Results will be displayed directly");

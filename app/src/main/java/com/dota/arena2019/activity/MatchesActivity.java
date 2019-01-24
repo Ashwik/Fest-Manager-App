@@ -44,6 +44,9 @@ public class MatchesActivity extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        if(getIntent().getBooleanExtra("live",false)){
+            mViewPager.setCurrentItem(1);
+        }
 
     }
 
