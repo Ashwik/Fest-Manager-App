@@ -50,7 +50,7 @@ public class ArticlesFragment extends Fragment{
         TextView title = getActivity().findViewById(R.id.articles_text);
         title.setText("Articles");
         articleitemsList.add("Competitive Gaming");
-        articleitemsList.add("Rising importance of sports culture in technical institutions (JC Arena 19)");
+        articleitemsList.add("Rising importance of sports culture in technical institutions");
         articleitemsList.add("The Sports secretary interview");
         articleitemsList.add("unconventional sports");
         articleitemsList.add("Zero To Hero ");
