@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dota.arena2019">
+    package="com.dota.pearl2019">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.dota.arena2019.activity.MainActivity"
+            android:name="com.dota.pearl2019.activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name="com.dota.arena2019.activity.DetailsActivity"
+            android:name="com.dota.pearl2019.activity.DetailsActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -42,28 +42,28 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="EVENT_UPDATES" />
 
-        <service android:name="com.dota.arena2019.services.RequestNotificationService">
+        <service android:name="com.dota.pearl2019.services.RequestNotificationService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.dota.arena2019.services.FirebaseInstanceIDService">
+        <service android:name="com.dota.pearl2019.services.FirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
         <activity
-            android:name="com.dota.arena2019.activity.ScheduleActivity"
+            android:name="com.dota.pearl2019.activity.ScheduleActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.dota.arena2019.activity.EventsActivity"
+        <activity android:name="com.dota.pearl2019.activity.EventsActivity"
             android:screenOrientation="portrait"
             ></activity>
-        <activity android:name="com.dota.arena2019.activity.MoreItemsActivity"
+        <activity android:name="com.dota.pearl2019.activity.MoreItemsActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.dota.arena2019.activity.ArticleDetailActivity"
+        <activity android:name="com.dota.pearl2019.activity.ArticleDetailActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.MatchesActivity"
+            android:name="com.dota.pearl2019.activity.MatchesActivity"
             android:label="@string/title_activity_matches"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>

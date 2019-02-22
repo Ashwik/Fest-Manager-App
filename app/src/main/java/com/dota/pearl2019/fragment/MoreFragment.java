@@ -1,0 +1,53 @@
+package com.dota.pearl2019.fragment;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.dota.pearl2019.R;
+import com.dota.pearl2019.adapter.MoreAdapter;
+
+import java.util.ArrayList;
+
+public class MoreFragment extends Fragment {
+    private RecyclerView more_recycler;
+    public ArrayList<String> moreitemsList = new ArrayList<>();
+    private Context context;
+    private String TAG = "MoreFragment";
+
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        context = getContext();
+        super.onCreate(savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_more, container, false);
+    }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+//        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+//        toolbar.setTitle("Campus Map");
+        moreitemsList.add("Articles");
+        moreitemsList.add("About");
+        moreitemsList.add("Reach Us");
+        moreitemsList.add("Directions");
+        moreitemsList.add("App Credits");
+        moreitemsList.add("Settings");
+
+
+        more_recycler = getActivity().findViewById(R.id.more_recycler_view);
+
+        more_recycler.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        MoreAdapter adapter = new MoreAdapter(context, moreitemsList);
+        more_recycler.setAdapter(adapter);
+    }
+}
