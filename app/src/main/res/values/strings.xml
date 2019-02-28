@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">ARENA 2019</string>
+    <string name="app_name">PEARL 2019</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="fest_name">ARENA 2019</string>
-    <string name="fest_tagline">WHERE LEGENDS ARE BORN</string>
+    <string name="fest_name">PEARL 2019</string>
+    <string name="fest_tagline"></string>
 
 
 
