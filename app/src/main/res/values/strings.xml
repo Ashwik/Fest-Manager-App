@@ -30,145 +30,134 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <string-array name="organiser_names">
         <item>Aman Syed</item>
         <item>Suraj Thotakura</item>
-        <item>Sohith Deva</item>
-        <item>Kritika Kasliwal</item>
-        <item>Saurabh kaundinya</item>
-        <item>Vutla Yashwanth</item>
-        <item>Jayakanth Teegala</item>
-        <item>Pavan Teja Macharla</item>
-        <item>A Ashwik Reddy</item>
-        <item>Abhishek Kumar</item>
-        <item>Revanth Tanneeru</item>
-        <item>Aditya Singh Thakur</item>
-        <item>Devalla Vasishta</item>
-        <item>Madhura Banerjee</item>
-        <item>Farooq Shanawaz</item>
+        <item>Bandari Shiva Sai Krishna</item>
+        <item>Yashasvi Chennawar</item>
+        <item>Anchit Agarwal</item>
+        <item>Akhil Mohith Panthula</item>
+        <item>Bhargav Reddy</item>
+        <item>Vikranth Sagar Reddy Gadi</item>
+        <item>Pranav Jhawer</item>
+        <item>Shubham Bogam</item>
+        <item>Yashwanth Seelam</item>
+        <item>Prateek Chandorikar</item>
+        <item>Navinchandra V Puppala</item>
+        <item>Darpan Thole</item>
+        <item>Manasvi Kataria</item>
         <item></item>
+
     </string-array>
 
     <string-array name="organisers_designations">
         <item>President</item>
         <item>General Secretary</item>
-        <item>Sports Secretary</item>
-        <item>Sports Secretary</item>
-        <item>Fest Co-ordinator</item>
+        <item>Cultural Secretary</item>
+        <item>Cultural Secretary</item>
         <item>Sponsorship and Marketing</item>
         <item>Publicity and Public Relations</item>
-        <item>Firewallz</item>
+        <item>Controlz</item>
         <item>Technical Arts</item>
         <item>Photography</item>
+        <item>Hospitality</item>
         <item>Visual Effects</item>
         <item>Lights and Sound</item>
         <item>Arts and Decoration</item>
         <item>Professional Events</item>
         <item>Recreational Activities</item>
         <item></item>
+
     </string-array>
 
     <string-array name="organisers_phone_numbers">
         <item>8790359970</item>
         <item>9550578389</item>
-        <item>7997084524</item>
-        <item>7997083711</item>
-        <item>8332904305</item>
-        <item>9494943995</item>
-        <item>9502637212</item>
-        <item>8187080393</item>
-        <item>7036457411</item>
-        <item>7731874942</item>
-        <item>9010457669</item>
-        <item>7288860865</item>
-        <item>7013351739</item>
-        <item>7661031721</item>
-        <item>9133347609</item>
+        <item>7729946232</item>
+        <item>9133598940</item>
+        <item>9553877007</item>
+        <item>9553566444</item>
+        <item>9347333111</item>
+        <item>9100962900</item>
+        <item>9163816622</item>
+        <item>7997083753</item>
+        <item>7995861264</item>
+        <item>7997083951</item>
+        <item>9133347599</item>
+        <item>9545686469</item>
+        <item>9766099321</item>
         <item></item>
+
     </string-array>
 
     <string-array name="club_secretaries">
-        <item>Jhanav Katneni </item>
-        <item>Gargic Mishra</item>
-        <item>Sajal Jain</item>
-        <item>Shakti Raj Singh</item>
-        <item> Sachin P</item>
-        <item> Aman Pratap Rao</item>
-        <item> Sistla Soumya</item>
-        <item> Abhishek Singh</item>
-        <item>Neha Sharma</item>
-        <item> Pratik Rathi</item>
-        <item>Deeksha Kartik</item>
-        <item>Skanda Vaidyanath</item>
-        <item> Craig Rocha</item>
-        <item>Tarun Pulugundla</item>
-        <item> Aishvarya Srivastava</item>
-        <item>Chetan Waingankar</item>
-        <item>Sakthi Saravanan</item>
-        <item>Bhuvan Chandra</item>
-        <item>Aditya Singh</item>
-        <item>Ayush Bagdiya</item>
-        <item>Lasya kora</item>
-        <item>Vishwak reddy</item>
-        <item>Nitin Yadav</item>
-        <item>Kanishka Ganesh</item>
+        <item>Jhawar Harsh</item>
+        <item>Srinayan Reddy</item>
+        <item>Nidhi Reddy</item>
+        <item>G. Jaya Aadityaa</item>
+        <item>Aditya R</item>
+        <item> Arushi Paliwal</item>
+        <item>Nikhila Kulukuru</item>
+        <item> Saksham Sharma</item>
+        <item>Aishwarya B. Rebelly</item>
+        <item>Priyash Barya</item>
+        <item>Dyuti Chakravarthy</item>
+        <item>Sandeep Chinnareddy</item>
+        <item>Harshvardhan Takawale</item>
+        <item> Pragyan Shukla</item>
+        <item>Rweetam Bhattacharya</item>
+        <item>Neha Rajagopalan</item>
+        <item>Sashank G</item>
+        <item> Ritika Sridharan</item>
         <item></item>
+
+
 
     </string-array>
 
     <string-array name="club_names">
 
-        <item>Captain - Football Boys</item>
-        <item>Captain -Cricket</item>
-        <item>Captain -Football Girls</item>
-        <item>Captain -Hockey</item>
-        <item>Captain - Basketball Boys</item>
-        <item>Captain - Ultimate Frisbee</item>
-        <item>Captain - Basketball Girls</item>
-        <item>Captain - Voleyball Boys</item>
-        <item> Captain -Voleyball Girls</item>
-        <item>Captain -Badminton Boys</item>
-        <item>Captain -Badmintom G</item>
-        <item>Captain - Tennis</item>
-        <item> Captain - Squash</item>
-        <item> Captain - TT Boys</item>
-        <item> Captain -TT Girls</item>
-        <item>Captain - Chess</item>
-        <item>Captain - Carrom</item>
-        <item>Captain - Snooker</item>
-        <item> Captain - Duathlon</item>
-        <item> Captain - Athletics</item>
-        <item>Captain - Throwball</item>
-        <item>Captain - Kabbadi</item>
-        <item> Captain - Bodybuilding</item>
-        <item>Captain - Powerlifting</item>
+        <item>Cooking</item>
+        <item>Designer Anonymous</item>
+        <item>Dance</item>
+        <item>Dramatics</item>
+        <item>ELAS</item>
+        <item>Embryo</item>
+        <item>Fashion Society</item>
+        <item>Hindi Tarang</item>
+        <item>Journal</item>
+        <item>Movie</item>
+        <item>Music</item>
+        <item>Photog</item>
+        <item>Quiz</item>
+        <item>Shades</item>
+        <item>Standup comedy society</item>
+        <item>Swaranjali</item>
+        <item>VFX</item>
+        <item>Sanskrit and Foreign Languages</item>
         <item></item>
+
 
     </string-array>
 
     <string-array name="club_senate_phone_numbers">
-        <item>9491256789</item>
-        <item>7997000169</item>
-        <item>9133235071</item>
-        <item>8435475802</item>
-        <item>9597456761</item>
-        <item>7989913784</item>
-        <item>9502804262</item>
-        <item>8187083500</item>
-        <item>7011761177</item>
-        <item>9552556230</item>
-        <item>9884365614</item>
-        <item>9841285367</item>
-        <item>7997083750</item>
-        <item>7997689669</item>
-        <item>9899011357</item>
-        <item>7674941396</item>
-        <item>7401090852</item>
-        <item>9133403140</item>
-        <item>7013663866</item>
-        <item>7674924049</item>
-        <item>8074835678</item>
-        <item>9505000967</item>
-        <item>7997083963</item>
-        <item>7997118326</item>
+        <item>9160953293</item>
+        <item>9989333644</item>
+        <item>7661040728</item>
+        <item>7997083980</item>
+        <item>8465927967</item>
+        <item>7997083933</item>
+        <item>9632619868</item>
+        <item>7997083793</item>
+        <item>9591325445</item>
+        <item>7997083751</item>
+        <item>9940480575</item>
+        <item>9959915906</item>
+        <item>9998219247</item>
+        <item>9452283307</item>
+        <item>9742915728</item>
+        <item>7095862310</item>
+        <item>8142008448</item>
+        <item>9542587755</item>
         <item></item>
+
     </string-array>
 
 
