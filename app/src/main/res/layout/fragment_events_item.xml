@@ -24,7 +24,7 @@
             android:scaleType="centerCrop"
             android:tint="@color/events_image_tint"
             tools:ignore="ContentDescription"
-            tools:src="@drawable/event_cricket" />
+            tools:src="@drawable/ev_squash_singles" />
 
         <TextView
             android:id="@+id/events_name"
