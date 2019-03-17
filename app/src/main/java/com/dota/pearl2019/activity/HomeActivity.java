@@ -7,10 +7,12 @@ import android.util.Log;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.fragment.ContactsFragment;
+import com.dota.pearl2019.fragment.CreditsFragment;
 import com.dota.pearl2019.fragment.EventsFragment;
 import com.dota.pearl2019.fragment.FeedFragment;
 import com.dota.pearl2019.fragment.HomeFragment;
 import com.dota.pearl2019.fragment.LiveFragment;
+import com.dota.pearl2019.fragment.MoreFragment;
 import com.dota.pearl2019.fragment.ScheduleCardsFragment;
 import com.dota.pearl2019.fragment.SchedulePagerFragment;
 
@@ -44,6 +46,14 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case "CONTACT": getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new ContactsFragment())
+                    .commit();
+                break;
+            case "GUIDE": getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_fragment_container, new MoreFragment())
+                    .commit();
+                break;
+            case "App Credits": getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_fragment_container, new CreditsFragment())
                     .commit();
                 break;
 
