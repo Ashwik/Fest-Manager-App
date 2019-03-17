@@ -188,6 +188,7 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
     <string name="google_title_text">Sign In</string>
 
     <string name="event_type_id">event_type_id</string>
+    <string name="home_type_id">home_type_id</string>
     <string name="title_activity_matches">MatchesActivity</string>
     <string name="tab_text_1">Schedule</string>
     <string name="tab_text_2">Live</string>
