@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#7742A5F5</color>
+    <color name="colorPrimaryDark">#fc8c3b</color>
     <color name="colorAccent">#FFF</color>
 
     <color name="textColor">#202021</color>
     <color name="lighttextcolor">#383839</color>
     <color name="topbar_textcolor">#FFF</color>
-    <color name="backgroundColor">#FFF</color>
+    <color name="backgroundColor">#fcf3ed</color>
     <color name="progressbar_color">#202021</color>
 
-    
-
-    <color name="sky_color_animation">#e7eef6</color>
+    <color name="bg_one">#fc8c3b</color>
+    <color name="bg_two">#fc8c3b</color>
+    <color name="sky_color_animation">#fcf3ed</color>
     <color name="navigation_background">#fdfbfb</color>
 
     <color name="grey_100">#F5F5F5</color>
