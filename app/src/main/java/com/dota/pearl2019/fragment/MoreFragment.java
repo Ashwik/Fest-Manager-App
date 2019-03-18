@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +45,7 @@ public class MoreFragment extends Fragment {
 
         more_recycler = getActivity().findViewById(R.id.more_recycler_view);
 
-        more_recycler.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        more_recycler.setLayoutManager(new LinearLayoutManager(context));
         MoreAdapter adapter = new MoreAdapter(context, moreitemsList);
         more_recycler.setAdapter(adapter);
     }

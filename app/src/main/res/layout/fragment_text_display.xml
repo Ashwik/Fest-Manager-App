@@ -7,12 +7,6 @@
     tools:context=".activity.MainActivity"
 
     >
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="150sp"
-        app:srcCompat="@drawable/gradient_color_square"
-        tools:layout_editor_absoluteX="360dp" />
 
     <TextView
         android:id="@+id/morename"
@@ -28,10 +22,10 @@
 
     <ScrollView
         android:background="@color/backgroundColor"
-        android:layout_marginTop="-80sp"
+        android:layout_marginTop="20sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/imageView"
+        android:layout_below="@id/morename"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         >
