@@ -83,13 +83,13 @@ public class SchedulePagerFragment extends Fragment {
 
         switch (page) {
             case 0:
-                day = "26";
+                day = "22";
                 break;
             case 1:
-                day = "27";
+                day = "23";
                 break;
             case 2:
-                day = "28";
+                day = "24";
                 break;
         }
         CallApi();

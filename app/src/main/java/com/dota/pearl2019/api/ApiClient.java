@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String baseurl = "https://bits-arena.com/api/";
+    public static final String baseurl = "https://bits-pearl.org/api/";
 
     public static Retrofit retrofit = null;
 

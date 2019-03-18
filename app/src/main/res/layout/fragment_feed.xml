@@ -5,14 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="120sp"
-        app:srcCompat="@drawable/gradient_color"
-        tools:layout_editor_absoluteX="360dp"
-        android:layout_marginBottom="10dp"
-        />
 
     <TextView
         android:id="@+id/festname"
@@ -23,6 +15,7 @@
         android:fontFamily="@font/montserratbold"
         android:text="@string/fest_name"
         android:textAlignment="center"
+        android:visibility="gone"
         android:textColor="@color/topbar_textcolor"
         android:textSize="30sp" />
     <TextView
@@ -38,25 +31,6 @@
         android:textColor="@color/topbar_textcolor"
         android:textSize="20sp" />
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-16dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/bg_white_rounded"
-        android:gravity="center"
-        android:elevation="5dp"
-        android:queryHint="Filter Sports"
-        android:iconifiedByDefault="false"
-        android:searchIcon="@null"
-        android:queryBackground="@android:color/transparent"
-        android:visibility="gone"
-        />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_feed"
