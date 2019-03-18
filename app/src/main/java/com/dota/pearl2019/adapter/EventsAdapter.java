@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
+import com.dota.pearl2019.activity.DetailsActivity;
 import com.dota.pearl2019.activity.MatchesActivity;
 import com.dota.pearl2019.model.EventDetails;
 
@@ -53,13 +54,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
         holder.eventView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, MatchesActivity.class);
-                intent.putExtra("id", list.get(position).getId());
-                intent.putExtra("name",list.get(position).getName());
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("id",list.get(position).getId());
                 view.getContext().startActivity(intent);
             }
         });
-        holder.eventImage.setImageResource(getFoldedImage(list.get(position).getName().toLowerCase()));
+        holder.eventImage.setImageResource(R.drawable.ev_squash_singles);
     }
 
     @Override
@@ -92,108 +92,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             frameLayout = itemView.findViewById(R.id.frame_layout_events);
         }
 
-    }
-    private @DrawableRes
-    int getFoldedImage(String event){
-        int resId = R.drawable.event_cricket; // default value
-
-        if (event.contains("athletics")) {
-            resId = R.drawable.event_athletics;
-        }
-        else if (event.contains("badminton")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.event_badminton_boys;
-            } else if (event.contains("girls")) {
-                resId = R.drawable.event_badminton_girls;
-            } else {
-                resId = R.drawable.event_badminton_mixe;
-            }
-        }
-        else if (event.contains("basketball")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.event_basketboys;
-            } else {
-                resId = R.drawable.event_basketgirls;
-            }
-        }
-        else if (event.contains("body-building")) {
-            resId = R.drawable.event_bodybuilding;
-        }
-        else if (event.contains("carrom")) {
-            resId = R.drawable.event_carrom;
-        }
-        else if (event.contains("chess")) {
-            resId = R.drawable.event_chess;
-        }
-        else if (event.contains("cricket")) {
-            resId = R.drawable.event_cricket;
-        }
-        else if (event.contains("duathlon")) {
-            resId = R.drawable.event_duathlon;
-        }
-        else if (event.contains("football")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.event_footballboys;
-            } else {
-                resId = R.drawable.event_footballgirls;
-            }
-        }
-        else if (event.contains("hockey")) {
-            resId = R.drawable.event_hockey;
-        }
-        else if (event.contains("kabaddi")) {
-            resId = R.drawable.event_kabaddi;
-        }
-        else if (event.contains("pool")) {
-            resId = R.drawable.event_cricket;
-        }
-        else if (event.contains("powerlifting")) {
-            resId = R.drawable.event_powerlifting;
-        }
-        else if (event.contains("snooker")) {
-            resId = R.drawable.event_snooker;
-        }
-        else if (event.contains("squash")) {
-            if (event.contains("squash singles")) {
-                resId = R.drawable.ev_squash_singles;
-            } else {
-                resId = R.drawable.event_squash_doubles;
-            }
-
-        }
-        else if (event.contains("skating")) {
-            resId = R.drawable.event_skating;
-        }
-        else if (event.contains("table tennis")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.event_tt_boys;
-            } else {
-                resId = R.drawable.event_tt_girls;
-            }
-
-        }
-        else if (event.contains("tennis")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.event_tennis_boys;
-            } else {
-                resId = R.drawable.event_tennis_girls;
-            }
-        }
-        else if (event.contains("thowball")) {
-            resId = R.drawable.event_throwball;
-        }
-        else if (event.contains("throwball")) {
-            resId = R.drawable.event_throwball;
-        }
-        else if (event.contains("volleyball")) {
-            if (event.contains("boys")) {
-                resId = R.drawable.ev_volleyball_boys;
-            } else {
-                resId = R.drawable.ev_volleyball_girls;
-            }
-        }
-
-        return resId;
     }
 
     public class RowFilter extends Filter{

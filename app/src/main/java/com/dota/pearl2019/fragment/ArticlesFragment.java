@@ -53,7 +53,7 @@ public class ArticlesFragment extends Fragment{
         articleitemsList.add("unconventional sports");
         articleitemsList.add("Zero To Hero ");
 
-        jc_link = getActivity().findViewById(R.id.journal_club_link);;
+        jc_link = getActivity().findViewById(R.id.journal_club_link);
 
         jc_link.setOnClickListener(new View.OnClickListener() {
             @Override

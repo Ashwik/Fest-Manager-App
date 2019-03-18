@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/event_athletics"
+            android:src="@drawable/profile_icon"
             android:id="@+id/contact_image"
             android:scaleType="centerCrop"
             android:layout_marginStart="24dp"

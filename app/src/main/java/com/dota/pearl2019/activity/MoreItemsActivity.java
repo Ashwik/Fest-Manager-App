@@ -32,35 +32,23 @@ public class MoreItemsActivity extends AppCompatActivity {
         switch (position) {
             case 0:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,new ArticlesFragment())
-                        .commit();
-                getSupportActionBar().setTitle("Articles");
-                break;
-            case 1:
-                getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new AboutFragment())
                         .commit();
-                getSupportActionBar().setTitle("About Arena");
+                getSupportActionBar().setTitle("About Pearl");
                 break;
-            case 2:
+            case 1:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new ReachUsFragment())
                         .commit();
                 getSupportActionBar().setTitle("Reach Us");
                 break;
-            case 3:
+            case 2:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new MapsFragment())
                         .commit();
                 getSupportActionBar().setTitle("Directions");
                 break;
-            case 4:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container, new CreditsFragment())
-                        .commit();
-                getSupportActionBar().setTitle("App Credits");
-                break;
-            case 5:
+            case 3:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.nav_fragment_container, new SettingsFragment())
                         .commit();
