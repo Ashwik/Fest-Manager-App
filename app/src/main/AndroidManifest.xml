@@ -53,6 +53,9 @@
             </intent-filter>
         </service>
         <activity
+            android:name="com.dota.pearl2019.activity.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.dota.pearl2019.activity.ScheduleActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.dota.pearl2019.activity.EventsActivity"

@@ -36,11 +36,9 @@ public class MoreFragment extends Fragment {
 
 //        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
 //        toolbar.setTitle("Campus Map");
-        moreitemsList.add("Articles");
         moreitemsList.add("About");
         moreitemsList.add("Reach Us");
         moreitemsList.add("Directions");
-        moreitemsList.add("App Credits");
         moreitemsList.add("Settings");
 
 

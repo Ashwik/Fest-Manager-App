@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.fragment.FeedFragment;
 import com.dota.pearl2019.fragment.HomeFragment;
+import com.dota.pearl2019.fragment.LandingFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().
-                    replace(R.id.nav_fragment_container, new HomeFragment()).
+                    replace(R.id.nav_fragment_container, new LandingFragment()).
                     commit();
         }
 

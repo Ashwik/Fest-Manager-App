@@ -58,61 +58,61 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
                 }
             }
         });
-        if(mArrayList.get(0).getDesignation().equals("President")&&position!= (mArrayList.size()-1)){
-            holder.contactimage.setVisibility(View.VISIBLE);
-            switch (position){
-                case 0: Glide.with(context).load(R.drawable.oc_one)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 1: Glide.with(context).load(R.drawable.oc_two)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 2: Glide.with(context).load(R.drawable.oc_three)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 3: Glide.with(context).load(R.drawable.oc_four)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 4: Glide.with(context).load(R.drawable.oc_five)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 5: Glide.with(context).load(R.drawable.oc_six)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 6: Glide.with(context).load(R.drawable.oc_sev)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 7: Glide.with(context).load(R.drawable.oc_eig)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 8: Glide.with(context).load(R.drawable.oc_ni)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 9: Glide.with(context).load(R.drawable.oc_ele)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 10: Glide.with(context).load(R.drawable.oc_ten)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 11: Glide.with(context).load(R.drawable.oc_fift)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 12: Glide.with(context).load(R.drawable.oc_fourt)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 13: Glide.with(context).load(R.drawable.oc_twe)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-                case 14: Glide.with(context).load(R.drawable.oc_thir)
-                        .apply(RequestOptions.circleCropTransform())
-                        .into(holder.contactimage);break;
-
-            }
-
-        }else{
+//        if(mArrayList.get(0).getDesignation().equals("President")&&position!= (mArrayList.size()-1)){
+//            holder.contactimage.setVisibility(View.VISIBLE);
+//            switch (position){
+//                case 0: Glide.with(context).load(R.drawable.oc_one)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 1: Glide.with(context).load(R.drawable.oc_two)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 2: Glide.with(context).load(R.drawable.oc_three)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 3: Glide.with(context).load(R.drawable.oc_four)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 4: Glide.with(context).load(R.drawable.oc_five)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 5: Glide.with(context).load(R.drawable.oc_six)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 6: Glide.with(context).load(R.drawable.oc_sev)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 7: Glide.with(context).load(R.drawable.oc_eig)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 8: Glide.with(context).load(R.drawable.oc_ni)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 9: Glide.with(context).load(R.drawable.oc_ele)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 10: Glide.with(context).load(R.drawable.oc_ten)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 11: Glide.with(context).load(R.drawable.oc_fift)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 12: Glide.with(context).load(R.drawable.oc_fourt)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 13: Glide.with(context).load(R.drawable.oc_twe)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 14: Glide.with(context).load(R.drawable.oc_thir)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//
+//            }
+//
+//        }
             holder.contactimage.setVisibility(View.GONE);
 
-        }
+
         if(position==mArrayList.size()-1){
             holder.callButton.setVisibility(View.GONE);
         }
