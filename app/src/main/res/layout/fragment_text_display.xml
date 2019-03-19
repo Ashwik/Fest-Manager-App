@@ -22,24 +22,26 @@
         android:textSize="30sp" />
 
     <ScrollView
-        android:background="@drawable/ic_aboutusmainbox"
-        android:layout_marginTop="20sp"
+        android:background="@drawable/ic_contactsmainbox"
+        android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/morename"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:padding="5dp"
         >
 
         <TextView
             android:id="@+id/tv_display"
-            android:padding="8dp"
+            android:padding="10dp"
             android:textColor="@color/textColor"
             android:breakStrategy="simple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textIsSelectable="true"
-            android:textSize="28.5dp"
+            android:textSize="18sp"
+            android:lineSpacingExtra="2dp"
+            android:linksClickable="true"
+
             tools:text="@string/directions"
 
             />

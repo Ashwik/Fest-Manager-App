@@ -30,7 +30,7 @@ public class AboutFragment extends Fragment {
         //TextView title = getActivity().findViewById(R.id.tv_title);
         TextView display = getActivity().findViewById(R.id.tv_display);
         TextView title = getActivity().findViewById(R.id.morename);
-        title.setText("About ARENA");
+        title.setText("About PEARL");
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("About Us");
         //title.setText(R.string.aboutus);
