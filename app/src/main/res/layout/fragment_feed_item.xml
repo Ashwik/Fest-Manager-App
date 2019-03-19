@@ -28,7 +28,6 @@
             android:layout_marginTop="4dp"
             android:paddingLeft="6dp"
             android:paddingRight="6dp"
-
             android:text="Time"
             android:textAlignment="viewEnd"
             android:textColor="@color/lighttextcolor"

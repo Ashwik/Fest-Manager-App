@@ -54,7 +54,7 @@ public class LandingFragment extends Fragment {
         list.add("TALKS");
         list.add("CONTACT");
         list.add("GUIDE");
-        list.add("APP CREDITS");
+        list.add("CREDITS");
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);

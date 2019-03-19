@@ -31,7 +31,7 @@
             android:layout_marginBottom="8dp"
             android:tint="@color/gradient_color_2"
             app:srcCompat="@drawable/ic_baseline_info_24px"
-            android:visibility="gone"
+
             />
         <TextView
             android:id="@+id/more_item_text"
