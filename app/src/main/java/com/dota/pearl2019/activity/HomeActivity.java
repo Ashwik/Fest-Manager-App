@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
                             .replace(R.id.nav_fragment_container,fragment)
                             .commit();
                     break;
-            case "PROSHOWS": Fragment fragment1 = new TalksFragment();
+            case "PROSHOW": Fragment fragment1 = new TalksFragment();
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt("from",1);
                 fragment1.setArguments(bundle2);

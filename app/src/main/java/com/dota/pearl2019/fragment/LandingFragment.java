@@ -50,7 +50,7 @@ public class LandingFragment extends Fragment {
         list.add("FEED");
         list.add("EVENTS");
         list.add("SCHEDULE");
-        list.add("PROSHOWS");
+        list.add("PROSHOW");
         list.add("TALKS");
         list.add("CONTACT");
         list.add("GUIDE");
