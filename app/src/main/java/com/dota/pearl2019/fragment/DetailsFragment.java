@@ -166,8 +166,21 @@ public class DetailsFragment extends Fragment {
                     startTime.setText(time);
                 }
 
-                eventFee.setText("FEE "+result.getPrice());
-                eventPrizemoney.setText("PRIZE "+result.getPrize());
+                if(eventFee.equals("")){
+                    eventFee.setVisibility(View.GONE);
+                }
+                else {
+                    eventFee.setVisibility(View.VISIBLE);
+                    eventFee.setText("FEE "+result.getPrice());
+                }
+                if(eventPrizemoney.equals("")){
+                    eventPrizemoney.setVisibility(View.GONE);
+                }else{
+                    eventPrizemoney.setVisibility(View.VISIBLE);
+                    eventPrizemoney.setText("PRIZE "+result.getPrize());
+                }
+
+
             }
         }
 
