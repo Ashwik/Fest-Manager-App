@@ -17,6 +17,7 @@ import com.yarolegovich.lovelydialog.LovelyInfoDialog;
 
 public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHolder> {
     private  Context context;
+    private  int root;
     String[] titles = new String[]{
             "Aron Chupa",
             "Tony Junior",
@@ -34,6 +35,18 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
                     R.drawable.sanjayabaru,
                     R.drawable.vickykaushal1
             };
+    int[] proShows = new int[]
+            {
+                    R.drawable.vishalshekhar,
+                    R.drawable.pineappleexpress,
+                    R.drawable.loststories,
+                    R.drawable.mashdnkutcher,
+                    R.drawable.sabysingh,
+                    R.drawable.samarmehdi,
+                    R.drawable.sitarmetal,
+                    R.drawable.standupcomedy,
+                    R.drawable.whenchaimettoast
+            };
     String[] descriptions = new String[]{
             "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>12:00PM",
             "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>12:00PM",
@@ -43,9 +56,10 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>3:00PM",
             "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium</b>Time:</b>12:00PM",
     };
-    public TalksAdapter(Context context)
+    public TalksAdapter(Context context,int root)
     {
         this.context = context;
+        this.root = root;
     }
     @NonNull
     @Override
@@ -56,7 +70,13 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TalksViewHolder holder, final int i) {
-        holder.talksImages.setImageResource(imagesTalks[i]);
+        if(root==0) {
+            holder.talksImages.setImageResource(imagesTalks[i]);
+        }
+        else
+        {
+            holder.talksImages.setImageResource(proShows[i]);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +95,13 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     }
     @Override
     public int getItemCount() {
-        return 7;
+        if(root ==0) {
+            return 7;
+        }
+        else
+        {
+            return 9;
+        }
     }
 
     public class TalksViewHolder extends RecyclerView.ViewHolder {
