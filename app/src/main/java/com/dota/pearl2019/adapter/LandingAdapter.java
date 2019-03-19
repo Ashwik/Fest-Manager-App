@@ -38,6 +38,7 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, final int position) {
         holder.event_cardText.setText(list.get(position));
+        holder.event_cardText_2.setText(list.get(position));
         holder.event_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,12 +59,13 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout event_cardView;
-        TextView event_cardText;
+        TextView event_cardText,event_cardText_2;
 
         public EventViewHolder(View itemView) {
             super(itemView);
             event_cardView = itemView.findViewById(R.id.landing_item_cardview);
             event_cardText = itemView.findViewById(R.id.landing_card_text);
+            event_cardText_2 = itemView.findViewById(R.id.landing_card_text_2);
         }
     }
 }
