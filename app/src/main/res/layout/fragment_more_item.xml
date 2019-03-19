@@ -30,11 +30,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:tint="@color/gradient_color_2"
-            app:srcCompat="@drawable/ic_baseline_info_24px" />
+            app:srcCompat="@drawable/ic_baseline_info_24px"
+            android:visibility="gone"
+            />
         <TextView
             android:id="@+id/more_item_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:textAlignment="center"
             android:textColor="@color/textColor"

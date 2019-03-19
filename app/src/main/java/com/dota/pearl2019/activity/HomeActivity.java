@@ -10,11 +10,9 @@ import com.dota.pearl2019.fragment.ContactsFragment;
 import com.dota.pearl2019.fragment.CreditsFragment;
 import com.dota.pearl2019.fragment.EventsFragment;
 import com.dota.pearl2019.fragment.FeedFragment;
-import com.dota.pearl2019.fragment.HomeFragment;
-import com.dota.pearl2019.fragment.LiveFragment;
 import com.dota.pearl2019.fragment.MoreFragment;
 import com.dota.pearl2019.fragment.ScheduleCardsFragment;
-import com.dota.pearl2019.fragment.SchedulePagerFragment;
+import com.dota.pearl2019.fragment.TalksFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -48,6 +46,10 @@ public class HomeActivity extends AppCompatActivity {
                     .replace(R.id.nav_fragment_container, new ContactsFragment())
                     .commit();
                 break;
+            case "TALKS":  getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.nav_fragment_container,new TalksFragment())
+                            .commit();
+                    break;
             case "GUIDE": getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new MoreFragment())
                     .commit();
