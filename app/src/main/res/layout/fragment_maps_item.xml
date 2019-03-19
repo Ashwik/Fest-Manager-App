@@ -4,18 +4,18 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
-    app:cardElevation="1dp"
-    app:cardBackgroundColor="@color/backgroundColor"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
+        android:background="@android:color/transparent"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         >
@@ -25,12 +25,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:textColor="@color/textColor"
-            android:textSize="18sp"
+            android:textSize="20sp"
             tools:text="Acad Block" />
 
 
@@ -39,9 +39,9 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:tint="@color/gradient_color_2"
+            android:tint="@color/bg_two"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_outline_keyboard_arrow_right_24px"
             android:layout_alignParentEnd="true"

@@ -5,20 +5,20 @@
     android:id="@+id/event_item_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/backgroundColor"
-    app:cardCornerRadius="1dp"
-    app:cardElevation="1dp"
-    android:layout_marginBottom="2dp"
-    android:layout_marginTop="2dp"
+    android:background="@android:color/transparent"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:layout_marginBottom="0dp"
+    android:layout_marginTop="4dp"
     android:layout_marginRight="20dp"
-    android:layout_marginLeft="20dp"
+    android:layout_marginLeft="6dp"
+    app:cardElevation="0dp"
     >
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="48dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="1dp"
-    android:background="@color/backgroundColor"
+    android:background="@android:color/transparent"
     >
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:padding="2dp"
-        android:tint="@color/textColor"
+        android:tint="@color/bg_two"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -35,9 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Category 1"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textColor="@color/textColor"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="2dp"
         app:layout_constraintStart_toEndOf="@+id/notifIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:buttonTint="@color/textColor"
+        android:buttonTint="@color/bg_two"
         />
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
