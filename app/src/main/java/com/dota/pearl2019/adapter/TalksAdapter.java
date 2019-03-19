@@ -17,6 +17,7 @@ import com.yarolegovich.lovelydialog.LovelyInfoDialog;
 
 public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHolder> {
     private  Context context;
+    private  int root;
     String[] titles = new String[]{
             "Aron Chupa",
             "Tony Junior",
@@ -34,6 +35,18 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
                     R.drawable.sanjayabaru,
                     R.drawable.vickykaushal1
             };
+    int[] proShows = new int[]
+            {
+                    R.drawable.vishalshekhar,
+                    R.drawable.pineappleexpress,
+                    R.drawable.loststories,
+                    R.drawable.mashdnkutcher,
+                    R.drawable.sabysingh,
+                    R.drawable.samarmehdi,
+                    R.drawable.sitarmetal,
+                    R.drawable.standupcomedy,
+                    R.drawable.whenchaimettoast
+            };
     String[] descriptions = new String[]{
             "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Heading the new breed of hitmakers, Aronchupa - Swedish rapper,singer, DJ and record producer.<br/><b>Venue:</b> Stage 1 Lawns",
             "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Tony Junior, a Dutch record producer and DJ.<br/><b>Venue:</b> Stage 1 Lawns",
@@ -41,9 +54,10 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Ashish Shakya from AIB is a stand-up comedian, humour columnist, writer, actor and TV writer.<br/><b>Venue:</b> Auditorium",
             "<b>Date:</b> 25/03/18<br/><b>Desc:</b> Raghu Dixit, giving Indian fusion music a new face and voice on a global scale.<br/><b>Venue:</b> Stage 1 Lawns"
     };
-    public TalksAdapter(Context context)
+    public TalksAdapter(Context context,int root)
     {
         this.context = context;
+        this.root = root;
     }
     @NonNull
     @Override
@@ -54,7 +68,13 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TalksViewHolder holder, final int i) {
-        holder.talksImages.setImageResource(imagesTalks[i]);
+        if(root==0) {
+            holder.talksImages.setImageResource(imagesTalks[i]);
+        }
+        else
+        {
+            holder.talksImages.setImageResource(proShows[i]);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +93,13 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     }
     @Override
     public int getItemCount() {
-        return 7;
+        if(root ==0) {
+            return 7;
+        }
+        else
+        {
+            return 9;
+        }
     }
 
     public class TalksViewHolder extends RecyclerView.ViewHolder {

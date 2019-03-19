@@ -1,6 +1,7 @@
 package com.dota.pearl2019.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -46,13 +47,22 @@ public class HomeActivity extends AppCompatActivity {
                     .replace(R.id.nav_fragment_container, new ContactsFragment())
                     .commit();
                 break;
-            case "TALKS":  getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.nav_fragment_container,new TalksFragment())
+            case "TALKS":
+                Fragment fragment = new TalksFragment();
+                Bundle bundle1 = new Bundle();
+                bundle1.putInt("from",0);
+                fragment.setArguments(bundle1);
+                getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.nav_fragment_container,fragment)
                             .commit();
                     break;
-            case "PROSHOWS":  getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container,new TalksFragment())
-                    .commit();
+            case "PROSHOWS": Fragment fragment1 = new TalksFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt("from",1);
+                fragment1.setArguments(bundle2);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container,fragment1)
+                        .commit();
                 break;
             case "GUIDE": getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new MoreFragment())
