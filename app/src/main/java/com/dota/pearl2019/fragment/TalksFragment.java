@@ -28,7 +28,7 @@ public class TalksFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_schedule_cards, container, false);
+        return inflater.inflate(R.layout.fragment_talks, container, false);
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -36,7 +36,7 @@ public class TalksFragment extends Fragment {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Talks");
         recyclerView = getActivity().findViewById(R.id.schedule_card_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,true));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
         TalksAdapter talksAdapter = new TalksAdapter(context);
         recyclerView.setAdapter(talksAdapter);
     }
