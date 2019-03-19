@@ -113,9 +113,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             holder.contactimage.setVisibility(View.GONE);
 
 
-        if(position==mArrayList.size()-1){
-            holder.callButton.setVisibility(View.GONE);
-        }
 
     }
 
