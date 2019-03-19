@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
 
 
     <TextView
@@ -18,29 +20,20 @@
         android:visibility="gone"
         android:textColor="@color/topbar_textcolor"
         android:textSize="30sp" />
-    <TextView
-        android:id="@+id/tagline"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="-2dp"
-        android:fontFamily="@font/montserratmedium"
-        android:layout_below="@id/festname"
-        android:text="@string/fest_tagline"
-        android:textAlignment="center"
-        android:textColor="@color/topbar_textcolor"
-        android:textSize="20sp" />
-
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_feed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/imageView">
+        android:layout_margin="30dp"
+        >
         <android.support.v7.widget.RecyclerView
             android:id="@+id/feed1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="8dp"
+            android:background="@drawable/ic_contactsmainbox"
+
             >
         </android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
