@@ -5,11 +5,16 @@
      android:id="@+id/swipe_refresh_schedule"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     tools:context=".fragment.SchedulePagerFragment">
+     tools:context=".fragment.SchedulePagerFragment"
+    android:layout_margin="25dp"
+    >
 
     <android.support.v7.widget.RecyclerView
      android:id="@+id/schedule_recyclerview"
      android:layout_width="match_parent"
-     android:layout_height="match_parent"/>
+     android:layout_height="match_parent"
+     android:background="@drawable/ic_contactsmainbox"
+     android:padding="8dp"
+        />
 
 </android.support.v4.widget.SwipeRefreshLayout>
