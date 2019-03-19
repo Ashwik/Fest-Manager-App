@@ -26,7 +26,7 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     };
     int[] imagesTalks = new int[]
             {
-                    R.drawable.catharsistalks,
+                    R.drawable.creatorspanel,
                     R.drawable.creatorspanel,
                     R.drawable.offbeat,
                     R.drawable.theminimalist,
@@ -35,11 +35,13 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
                     R.drawable.vickykaushal1
             };
     String[] descriptions = new String[]{
-            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Heading the new breed of hitmakers, Aronchupa - Swedish rapper,singer, DJ and record producer.<br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Tony Junior, a Dutch record producer and DJ.<br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Amit Trivedi is an Indian film composer, musician, singer and lyricist. Don't miss the Bollywood night of Pearl'18. <br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Ashish Shakya from AIB is a stand-up comedian, humour columnist, writer, actor and TV writer.<br/><b>Venue:</b> Auditorium",
-            "<b>Date:</b> 25/03/18<br/><b>Desc:</b> Raghu Dixit, giving Indian fusion music a new face and voice on a global scale.<br/><b>Venue:</b> Stage 1 Lawns"
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>12:00PM",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>12:00PM",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b> F102</b>Time:</b>3:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> F102</b>Time:</b>4:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> F102</b>Time:</b>3:00PM",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102</b>Time:</b>3:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium</b>Time:</b>12:00PM",
     };
     public TalksAdapter(Context context)
     {
