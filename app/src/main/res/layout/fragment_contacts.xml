@@ -6,6 +6,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/more_pager_relative"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/landing_linear_2"
+            android:background="@drawable/cardview_background_dark"
+            android:orientation="vertical"
+            android:layout_below="@id/landing_linear_1"
+            android:layout_marginTop="-74dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:padding="8dp"
+            >
+
+            <TextView
+                android:id="@+id/feed_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/landing_linear_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cardview_background"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/feed_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textAlignment="center"
+                android:textColor="@color/topbar_textcolor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -14,7 +73,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         android:theme="@style/AppTheme"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         app:elevation="0dp"
         >
 
