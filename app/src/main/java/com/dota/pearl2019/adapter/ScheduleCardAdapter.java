@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
@@ -37,7 +38,13 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
-        holder.schedule_text.setText(String.valueOf(list.get(position)));
+
+        switch (list.get(position)){
+            case 1:holder.schedule_text.setText("22 March");break;
+            case 2:holder.schedule_text.setText("23 March");break;
+            case 3:holder.schedule_text.setText("24 March");break;
+        }
+
         final int pos = position;
         holder.schedule_cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +69,13 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
 
     public class ScheduleViewHolder extends RecyclerView.ViewHolder {
         TextView schedule_text;
-        CardView schedule_cardView;
+        RelativeLayout schedule_cardView;
         ImageView schedule_image;
 
         public ScheduleViewHolder(View itemView) {
             super(itemView);
             schedule_text = itemView.findViewById(R.id.event_card_text);
-            schedule_cardView = itemView.findViewById(R.id.carousel_item_cardview);
+            schedule_cardView = itemView.findViewById(R.id.schedule_item_cardview);
         }
     }
 

@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_to_refresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/schedule_card_pager_relative"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/landing_linear_2"
+            android:background="@drawable/cardview_background_dark"
+            android:orientation="vertical"
+            android:layout_below="@id/landing_linear_1"
+            android:layout_marginTop="-74dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:padding="8dp"
+            >
+
+            <TextView
+                android:id="@+id/schedule_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Schedule"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/landing_linear_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cardview_background"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/schedule_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Schedule"
+                android:textAlignment="center"
+                android:textColor="@color/topbar_textcolor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/schedule_card_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</android.support.design.widget.CoordinatorLayout>
+        android:layout_below="@+id/schedule_card_pager_relative"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        />
+</RelativeLayout>
