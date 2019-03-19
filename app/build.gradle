@@ -4,7 +4,7 @@ apply plugin: 'realm-android'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.dota.arena2019"
+        applicationId "com.dota.pearl2019"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 7

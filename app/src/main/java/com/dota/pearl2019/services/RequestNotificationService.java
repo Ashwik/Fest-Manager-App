@@ -46,7 +46,6 @@ public class RequestNotificationService extends FirebaseMessagingService {
 
         }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                //TODO: Add Event logo or ATMOS logo instead of Google Logo
                 .setSmallIcon(R.drawable.notif_log)
                 .setColor(getResources().getColor(R.color.colorPrimary))
                 .setContentTitle(remoteMessage.getData().get("title"))

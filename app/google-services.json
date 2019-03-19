@@ -1,223 +1,35 @@
 {
   "project_info": {
-    "project_number": "157978564117",
-    "firebase_url": "https://notiftester-a59df.firebaseio.com",
-    "project_id": "notiftester-a59df",
-    "storage_bucket": "notiftester-a59df.appspot.com"
+    "project_number": "48569895794",
+    "firebase_url": "https://pearl2019-a4b59.firebaseio.com",
+    "project_id": "pearl2019-a4b59",
+    "storage_bucket": "pearl2019-a4b59.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:33bf3f8765afea5d",
+        "mobilesdk_app_id": "1:48569895794:android:33bf3f8765afea5d",
         "android_client_info": {
           "package_name": "b.android.untitled.com.notiftester"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157978564117-edth86m8flk4s2gkobq9ec711m6tg4br.apps.googleusercontent.com",
+          "client_id": "48569895794-7oq1oqdocb92oef4tore55rdvgudd402.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "b.android.untitled.com.notiftester",
-            "certificate_hash": "f1591adb43247037ddfec07f35fb01048122140f"
-          }
-        },
-        {
-          "client_id": "157978564117-hhn6sn8lecf7639m3v2gif8slt466hiu.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "b.android.untitled.com.notiftester",
-            "certificate_hash": "31663427e40f4a02c970f77ef63f56afa034f1ac"
-          }
-        },
-        {
-          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:2a9dde58b9cc72df",
-        "android_client_info": {
-          "package_name": "com.dota.arena2019"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "157978564117-vlm5110031a2bmgee7qr60msfprfihgg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.arena2019",
-            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
-          }
-        },
-        {
-          "client_id": "157978564117-1pu2k147s8qt8iep0cnljphuv7f0rvsq.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.arena2019",
-            "certificate_hash": "b6d41f506a18402c95bde4eea86e15beb09349a2"
-          }
-        },
-        {
-          "client_id": "157978564117-v2jsi95n529lkftr0qbk9ndmeh6l1ni5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.arena2019",
-            "certificate_hash": "46fecd57eb5568666af9a0d5a9aae765d6322e1c"
-          }
-        },
-        {
-          "client_id": "157978564117-m6mv2f3i3j759ijbtnvreq3ccbo0km0e.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.arena2019",
-            "certificate_hash": "e5978c7a5287e5997d59d56f94791b7874f537ca"
-          }
-        },
-        {
-          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:c0e299d243699fa4",
-        "android_client_info": {
-          "package_name": "com.dota.festmanager"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "157978564117-ojmfpjit1ua85cu0j1r3t69ajj42fuc2.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.festmanager",
-            "certificate_hash": "78cbf45c9379f75243ece85e32594cea3c00bdb3"
-          }
-        },
-        {
-          "client_id": "157978564117-i1s31kle46soj3not382dqhjurmdcvkf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.festmanager",
-            "certificate_hash": "46fecd57eb5568666af9a0d5a9aae765d6322e1c"
-          }
-        },
-        {
-          "client_id": "157978564117-2jmbtbt1ah1jl92rqrkboor04990cct7.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.festmanager",
-            "certificate_hash": "e5978c7a5287e5997d59d56f94791b7874f537ca"
-          }
-        },
-        {
-          "client_id": "157978564117-v2jagn477m91oupiv9drs47130rj5jas.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dota.festmanager",
-            "certificate_hash": "b6d41f506a18402c95bde4eea86e15beb09349a2"
-          }
-        },
-        {
-          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:d8857f37c7112e39",
-        "android_client_info": {
-          "package_name": "com.example.android.scores"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "157978564117-o7qk6pmbjugp73fj81pe5va0e3m5sg53.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.android.scores",
             "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
           }
         },
         {
-          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+          "current_key": "AIzaSyC7y688hrdL8PXPzhdN-6jWc9qEUtLkP3Q"
         }
       ],
       "services": {
@@ -228,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -240,28 +52,72 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157978564117:android:06f965182075c0c3",
+        "mobilesdk_app_id": "1:48569895794:android:7a1da4619008dbcb",
+        "android_client_info": {
+          "package_name": "com.dota.pearl2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48569895794-so2m9lc13grqsjgap6phvfsi5lftabpn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dota.pearl2019",
+            "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
+          }
+        },
+        {
+          "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7y688hrdL8PXPzhdN-6jWc9qEUtLkP3Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48569895794:android:06f965182075c0c3",
         "android_client_info": {
           "package_name": "com.example.kartheek.controlzreview"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157978564117-fg4fk2fi0mkci8daivr3kubersoedhgo.apps.googleusercontent.com",
+          "client_id": "48569895794-639rrf8ohou52cao4u4f25d6fmm9fr8s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.kartheek.controlzreview",
-            "certificate_hash": "cb8c253a2aaed4d4eaf20e917f2e8e08822ee03c"
+            "certificate_hash": "0f051b68d4ce8a5aca2c61438549d6e2e4465088"
           }
         },
         {
-          "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+          "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBbhVLhKyi2SVSovP1jPPvtnFkbMWTi4ew"
+          "current_key": "AIzaSyC7y688hrdL8PXPzhdN-6jWc9qEUtLkP3Q"
         }
       ],
       "services": {
@@ -272,7 +128,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "157978564117-p1t13v14h6q8krj4umpomnv9c0ulukk1.apps.googleusercontent.com",
+              "client_id": "48569895794-1dn149l4o0j2b4un7jh74u12kvr414kv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
