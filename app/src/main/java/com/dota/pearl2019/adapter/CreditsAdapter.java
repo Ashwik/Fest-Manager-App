@@ -3,150 +3,138 @@ package com.dota.pearl2019.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.model.DeveloperDetails;
-import com.dota.pearl2019.model.DeveloperLayoutDetails;
-import com.jaouan.compoundlayout.CircleGradientRadioLayout;
+import com.dota.pearl2019.model.Contact;
 
 import java.util.ArrayList;
 
 /**
- * Created by Vineeth on 2/14/2018.
+ * Created by Vineeth on 2/13/2018.
  */
 
-public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.CreditsViewHolder> {
+public class CreditsAdapter extends RecyclerView.Adapter<CreditsAdapter.ContactViewHolder> {
 
-    private ArrayList<DeveloperLayoutDetails> data;
-    private Context mContext;
+    LayoutInflater mInflater;
+    ArrayList<Contact> mArrayList;
+    Context context;
 
-    public CreditsAdapter(Context context, ArrayList<DeveloperLayoutDetails> data) {
-        this.data = data;
-        mContext = context;
+    public CreditsAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+        mArrayList = new ArrayList<>();
+        this.context = context;
+    }
+
+    public void setArrayList(ArrayList<Contact> arrayList) {
+        mArrayList = arrayList;
     }
 
     @Override
-    public CreditsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.fragment_credits_item, parent, false);
-        return new CreditsViewHolder(v);
+    public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = mInflater.inflate(R.layout.fragment_contact_item_c, parent, false);
+        return new ContactViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(final CreditsViewHolder holder, int position) {
-        DeveloperLayoutDetails layoutDetails = data.get(position);
-        final ArrayList<DeveloperDetails> devDetails = layoutDetails.getDevs();
-
-        if (layoutDetails.getTitle() == null) holder.mTitle.setVisibility(View.GONE);
-        holder.mTitle.setText(layoutDetails.getTitle());
-
-        if (devDetails.size() < 3) {
-            holder.mProfiles[2].setVisibility(View.GONE);
-        } else {
-            holder.mProfiles[2].setVisibility(View.VISIBLE);
-        }
-
-        for (int i = 0; i < devDetails.size(); i++) {
-            final DeveloperDetails dev = devDetails.get(i);
-            final String[] devLinks = dev.getLinks();
-
-            //set Image
-            final CircleGradientRadioLayout circleLayout = holder.mProfiles[i];
-            circleLayout.setBackgroundResource(dev.getProfileImage());
-
-            circleLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    final Animation fadeOutAnimation = AnimationUtils.loadAnimation(mContext, android.R.anim.fade_out);
-                    fadeOutAnimation.setAnimationListener(new Animation.AnimationListener() {
-                        @Override
-                        public void onAnimationStart(Animation animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animation animation) {
-                            //set Name
-                            holder.mDevName.setText(dev.getName());
-
-                            //set Links
-                            for (int j = 0; j < 4; j++) {
-                                Button currentButton = holder.mSocialButtons[j];
-                                final String currentLink = devLinks[j];
-                                if (currentLink != null) {
-                                    currentButton.setVisibility(View.VISIBLE);
-                                    currentButton.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Uri uri = Uri.parse(currentLink);
-                                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                                            mContext.startActivity(intent);
-                                        }
-                                    });
-                                } else {
-                                    currentButton.setVisibility(View.GONE);
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animation animation) {
-
-                        }
-                    });
-
-                    circleLayout.setColorA(ContextCompat.getColor(mContext, R.color.circle3));
-                    circleLayout.setColorB(ContextCompat.getColor(mContext, R.color.circle4));
-                    circleLayout.setAngle(45);
-
-                    holder.mDescriptionLayout.setVisibility(View.VISIBLE);
-                    holder.mDescriptionLayout.startAnimation(fadeOutAnimation);
+    public void onBindViewHolder(final ContactViewHolder holder, int position) {
+        holder.name.setText(mArrayList.get(position).getName());
+        holder.designation.setText(mArrayList.get(position).getDesignation());
+        holder.callButton.setVisibility(View.VISIBLE);
+        holder.callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String mobile = mArrayList.get(holder.getAdapterPosition()).getMobile();
+                if (mobile != null) {
+                    Uri number = Uri.parse("tel:" + mArrayList.get(holder.getAdapterPosition()).getMobile());
+                    holder.itemView.getContext().startActivity(new Intent(Intent.ACTION_DIAL, number));
                 }
-            });
+            }
+        });
+//        if(mArrayList.get(0).getDesignation().equals("President")&&position!= (mArrayList.size()-1)){
+//            holder.contactimage.setVisibility(View.VISIBLE);
+//            switch (position){
+//                case 0: Glide.with(context).load(R.drawable.oc_one)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 1: Glide.with(context).load(R.drawable.oc_two)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 2: Glide.with(context).load(R.drawable.oc_three)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 3: Glide.with(context).load(R.drawable.oc_four)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 4: Glide.with(context).load(R.drawable.oc_five)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 5: Glide.with(context).load(R.drawable.oc_six)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 6: Glide.with(context).load(R.drawable.oc_sev)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 7: Glide.with(context).load(R.drawable.oc_eig)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 8: Glide.with(context).load(R.drawable.oc_ni)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 9: Glide.with(context).load(R.drawable.oc_ele)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 10: Glide.with(context).load(R.drawable.oc_ten)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 11: Glide.with(context).load(R.drawable.oc_fift)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 12: Glide.with(context).load(R.drawable.oc_fourt)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 13: Glide.with(context).load(R.drawable.oc_twe)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//                case 14: Glide.with(context).load(R.drawable.oc_thir)
+//                        .apply(RequestOptions.circleCropTransform())
+//                        .into(holder.contactimage);break;
+//
+//            }
+//
+//        }
+        holder.contactimage.setVisibility(View.GONE);
+
+
+        if(position==mArrayList.size()-1){
+            holder.callButton.setVisibility(View.GONE);
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return data != null ? data.size() : 0;
+        return mArrayList.size();
     }
 
-    public class CreditsViewHolder extends RecyclerView.ViewHolder {
+    public class ContactViewHolder extends RecyclerView.ViewHolder {
+        TextView name;
+        TextView designation;
+        ImageView callButton, contactimage;
 
-        TextView mTitle;
-        CircleGradientRadioLayout[] mProfiles = new CircleGradientRadioLayout[3];
-
-        LinearLayout mDescriptionLayout;
-        TextView mDevName;
-
-        Button[] mSocialButtons = new Button[4];
-
-        public CreditsViewHolder(View v) {
-            super(v);
-            mTitle = v.findViewById(R.id.credits_title);
-
-            mProfiles[0] = itemView.findViewById(R.id.profile_1);
-            mProfiles[1] = itemView.findViewById(R.id.profile_2);
-            mProfiles[2] = itemView.findViewById(R.id.profile_3);
-
-            mDescriptionLayout = itemView.findViewById(R.id.description_layout);
-            mDevName = itemView.findViewById(R.id.credits_devname);
-
-            mSocialButtons[0] = itemView.findViewById(R.id.credit_button1);
-            mSocialButtons[1] = itemView.findViewById(R.id.credit_button2);
-            mSocialButtons[2] = itemView.findViewById(R.id.credit_button3);
-            mSocialButtons[3] = itemView.findViewById(R.id.credit_button4);
+        public ContactViewHolder(View view) {
+            super(view);
+            name = view.findViewById(R.id.name);
+            designation = view.findViewById(R.id.designation);
+            callButton = view.findViewById(R.id.call_button);
+            contactimage = view.findViewById(R.id.contact_image);
         }
-
     }
 }

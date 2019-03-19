@@ -1,152 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_marginBottom="16dp"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/credits_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingEnd="16dp"
-        android:paddingLeft="20dp"
-        android:paddingStart="16dp"
-        tools:text="Developers"
-        android:textColor="@color/textColor"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <HorizontalScrollView
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    app:cardCornerRadius="1dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@android:color/transparent">
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <com.jaouan.compoundlayout.RadioLayoutGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:orientation="horizontal">
-
-            <com.jaouan.compoundlayout.CircleGradientRadioLayout
-                android:id="@+id/profile_1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@drawable/profile_icon"
-                    tools:ignore="ContentDescription" />
-            </com.jaouan.compoundlayout.CircleGradientRadioLayout>
-
-            <com.jaouan.compoundlayout.CircleGradientRadioLayout
-                android:id="@+id/profile_2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#CCCCCC"
-                    tools:src="@drawable/profile_icon"
-                    tools:ignore="ContentDescription" />
-
-            </com.jaouan.compoundlayout.CircleGradientRadioLayout>
-
-            <com.jaouan.compoundlayout.CircleGradientRadioLayout
-                android:id="@+id/profile_3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@drawable/profile_icon"
-                    tools:ignore="ContentDescription" />
-            </com.jaouan.compoundlayout.CircleGradientRadioLayout>
-
-        </com.jaouan.compoundlayout.RadioLayoutGroup>
-
-    </HorizontalScrollView>
-
-    <LinearLayout
-        android:id="@+id/description_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="visible"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp">
+        android:background="@color/backgroundColor"
+        >
 
         <TextView
-            android:id="@+id/credits_devname"
-            android:layout_width="match_parent"
+            android:id="@+id/name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Ashwik Reddy"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Ashwik"
             android:textColor="@color/textColor"
-            />
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/call_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Anshik Thareja" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp">
+        <TextView
+            android:id="@+id/designation"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/call_button"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="Sanskrit and Foreign Languages" />
 
-            <Button
-                android:visibility="gone"
-                tools:visibility="visible"
-                android:id ="@+id/credit_button1"
-                android:layout_height="35dp"
-                android:layout_width="35dp"
-                android:background="@drawable/ic_facebook"
-                android:padding="5dp"
-                android:layout_marginRight="12dp"
-                />
+        <ImageView
+            android:id="@+id/call_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/gradient_color_2"
+            android:src="@drawable/ic_baseline_call_24px"
+            android:background="@android:color/transparent"/>
 
-            <Button
-                android:visibility="gone"
-                tools:visibility="visible"
-                android:id ="@+id/credit_button2"
-                android:layout_height="35dp"
-                android:layout_width="35dp"
-                android:background="@drawable/ic_github_black"
-                android:padding="5dp"
-                android:layout_marginRight="12dp"
-                />
 
-            <Button
-                android:visibility="gone"
-                tools:visibility="visible"
-                android:id ="@+id/credit_button3"
-                android:layout_height="35dp"
-                android:layout_width="35dp"
-                android:background="@drawable/ic_linkedin"
-                android:padding="5dp"
-                android:layout_marginRight="12dp"
-                />
+    </android.support.constraint.ConstraintLayout>
 
-            <Button
-                android:visibility="gone"
-                tools:visibility="visible"
-                android:id ="@+id/credit_button4"
-                android:layout_height="35dp"
-                android:layout_width="35dp"
-                android:background="@drawable/ic_behance"
-                android:padding="5dp"
-                android:layout_marginRight="12dp"
-                />
-        </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.v7.widget.CardView>
