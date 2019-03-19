@@ -19,21 +19,18 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     private  Context context;
     private  int root;
     String[] titles = new String[]{
-            "Aron Chupa",
-            "Tony Junior",
-            "Amit Trivedi",
-            "Ashish Shakya",
-            "Raghu Dixit"
+
     };
     int[] imagesTalks = new int[]
             {
+                    R.drawable.vickykaushal1,
                     R.drawable.catharsistalks,
                     R.drawable.creatorspanel,
                     R.drawable.offbeat,
                     R.drawable.theminimalist,
                     R.drawable.photogdudes,
                     R.drawable.sanjayabaru,
-                    R.drawable.vickykaushal1
+
             };
     int[] proShows = new int[]
             {
@@ -48,11 +45,25 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
                     R.drawable.whenchaimettoast
             };
     String[] descriptions = new String[]{
-            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Heading the new breed of hitmakers, Aronchupa - Swedish rapper,singer, DJ and record producer.<br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Tony Junior, a Dutch record producer and DJ.<br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Amit Trivedi is an Indian film composer, musician, singer and lyricist. Don't miss the Bollywood night of Pearl'18. <br/><b>Venue:</b> Stage 1 Lawns",
-            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Ashish Shakya from AIB is a stand-up comedian, humour columnist, writer, actor and TV writer.<br/><b>Venue:</b> Auditorium",
-            "<b>Date:</b> 25/03/18<br/><b>Desc:</b> Raghu Dixit, giving Indian fusion music a new face and voice on a global scale.<br/><b>Venue:</b> Stage 1 Lawns"
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium<br/>Time:</b>12:00PM",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>12:00PM",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>12:00PM",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> F102<br/>Time:</b>4:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
+
+    };
+    String[] descriptions_2 = new String[]{
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> <br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium<br/>",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b> Stage 1<br/>",
     };
     public TalksAdapter(Context context,int root)
     {
@@ -84,13 +95,20 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     }
     private void openDialog(int position)
     {
+        if(root==0){
         new LovelyInfoDialog(context)
                 .setTopColorRes(R.color.colorPrimary)
                 .setTopTitleColor(Color.WHITE)
-                .setTopTitle(titles[position])
                 .setMessage(formatContent(descriptions[position]))
-                .show();
-    }
+                .show();}
+                else{
+        new LovelyInfoDialog(context)
+                    .setTopColorRes(R.color.colorPrimary)
+                    .setTopTitleColor(Color.WHITE)
+                    .setMessage(formatContent(descriptions_2[position]))
+                    .show();}
+        }
+
     @Override
     public int getItemCount() {
         if(root ==0) {
@@ -109,7 +127,7 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             talksImages = itemView.findViewById(R.id.talksImage);
         }
     }
-    private Spanned formatContent(String content) {
+    public Spanned formatContent(String content) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return Html.fromHtml(content, Html.FROM_HTML_MODE_COMPACT);
         } else {
