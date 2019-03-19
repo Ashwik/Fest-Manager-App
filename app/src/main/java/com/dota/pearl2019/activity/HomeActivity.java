@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
                     .replace(R.id.nav_fragment_container, new MoreFragment())
                     .commit();
                 break;
-            case "App Credits": getSupportFragmentManager().beginTransaction()
+            case "APP CREDITS": getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new CreditsFragment())
                     .commit();
                 break;

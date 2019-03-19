@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,7 @@ import com.dota.pearl2019.R;
 public class ContactsFragment extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
-    private FragmentActivity myContext;
+    private FragmentActivity mycontext;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +34,9 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         mPager = getView().findViewById(R.id.container);
-        //FragmentManager fragManager = myContext.getSupportFragmentManager();
+
         mPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-//        toolbar.setTitle("Contact Us");
-
         TabLayout tabLayout = getView().findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mPager);
     }
@@ -80,7 +76,7 @@ public class ContactsFragment extends Fragment {
 
     @Override
     public void onAttach(Activity activity) {
-        myContext = (FragmentActivity) activity;
+        mycontext = (FragmentActivity) activity;
         super.onAttach(activity);
     }
 }
