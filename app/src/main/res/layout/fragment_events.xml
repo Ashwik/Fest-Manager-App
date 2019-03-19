@@ -5,16 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/event_pager_relative"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/landing_linear_2"
+            android:background="@drawable/cardview_background_dark"
+            android:orientation="vertical"
+            android:layout_below="@id/landing_linear_1"
+            android:layout_marginTop="-74dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:padding="8dp"
+            >
+
+            <TextView
+                android:id="@+id/feed_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Events"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/landing_linear_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/cardview_background"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/feed_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Events"
+                android:textAlignment="center"
+                android:textColor="@color/topbar_textcolor"
+                android:textSize="22sp"
+                android:fontFamily="@font/southastefree"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/events_searchView"
+        android:layout_below="@id/event_pager_relative"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         >
         <android.support.v7.widget.RecyclerView
             android:id="@+id/event_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:background="@drawable/ic_contactsmainbox"
+            />
     </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

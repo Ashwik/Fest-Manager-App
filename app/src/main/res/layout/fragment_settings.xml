@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/southastefree"
         android:text="Notifications"
+        android:fontFamily="@font/raleway_bold"
         android:textAlignment="center"
         android:textColor="@color/topbar_textcolor"
         android:textSize="30sp" />

@@ -65,17 +65,16 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
 
 //        Bundle bundle= getActivity().getIntent().getExtras();
-//        event_category = bundle.getString(String.valueOf(R.string.event_type_id));
+//       event_category = bundle.getString(String.valueOf(R.string.home_type_id));
 
-//       event_category_id  = bundle.getInt(String.valueOf(R.string.event_type_id));
-//        Log.e("Events",String.valueOf(event_category_id));
-//        switch(event_category_id){
-//            case R.drawable.workshops : event_category = "Workshop";break;
-//            case R.drawable.competitions: event_category = "Competition";break;
-//            case R.drawable.talks: event_category ="Talk";break;
-//            default:event_category="Workshop";break;
+//       event_category_id  = bundle.gett(String.valueOf(R.string.event_type_id));
+       Log.e("Events",String.valueOf(event_category_id));
+//        switch(event_category){
+//          case "TALKS": event_category ="Talk";break;
+//          case "PROSHOWS":event_category="Proshow";break;
+//          default:event_category="";break;
 //
-//        }
+//       }
 
 //        ((EventsActivity)getActivity()).setActionBarTitle(event_category+"s");
 
@@ -87,6 +86,8 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
         eventsAdapter = new EventsAdapter(realmList,context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
+
+
         getDatafromRealm(realm);
         callApi();
 //        setSearchview();

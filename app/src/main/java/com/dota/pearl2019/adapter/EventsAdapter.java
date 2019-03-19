@@ -59,7 +59,23 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
                 view.getContext().startActivity(intent);
             }
         });
-        holder.eventImage.setImageResource(R.drawable.ev_squash_singles);
+
+        if(list.get(position).getPrize()==null||list.get(position).getPrize().equals(""))
+        {
+          holder.eventPrizemoney.setVisibility(View.GONE);
+        }else{
+            holder.eventPrizemoney.setVisibility(View.VISIBLE);
+            holder.eventPrizemoney.setText("Prize: "+list.get(position).getPrize());
+        }
+        if(list.get(position).getPrice()==null||list.get(position).getPrice().equals(""))
+        {
+            holder.eventFee.setVisibility(View.GONE);
+        }else{
+            holder.eventFee.setVisibility(View.VISIBLE);
+            holder.eventFee.setText("Fee: "+list.get(position).getPrice());
+        }
+
+
     }
 
     @Override
@@ -88,8 +104,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             eventName = itemView.findViewById(R.id.events_name);
 //            eventTagLine = itemView.findViewById(R.id.events_tagline);
             eventView = itemView.findViewById(R.id.event_item_cardview);
-            eventImage = itemView.findViewById(R.id.event_image);
-            frameLayout = itemView.findViewById(R.id.frame_layout_events);
+
+            eventFee = itemView.findViewById(R.id.fee_events);
+            eventPrizemoney = itemView.findViewById(R.id.prize_money_events);
         }
 
     }
