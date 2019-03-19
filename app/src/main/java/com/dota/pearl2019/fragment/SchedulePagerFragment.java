@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dota.pearl2019.R;
@@ -46,6 +47,7 @@ public class SchedulePagerFragment extends Fragment {
     private String TAG = "SchedulePagerFragment";
     private int page;
     private String day;
+    private TextView st1,st2;
     private int i;
     private Context context;
     private boolean isNetwork = false;
@@ -76,9 +78,12 @@ public class SchedulePagerFragment extends Fragment {
         Log.d(TAG, "page" + String.valueOf(page));
         progressBar = getActivity().findViewById(R.id.progress_bar);
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_schedule);
+
         recyclerView = view.findViewById(R.id.schedule_recyclerview);
         adapter = new ScheduleAdapter(realmlist, context, day);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        st1 = view.findViewById(R.id.schedule_text_1);
+        st2 = view.findViewById(R.id.schedule_text_2);
         recyclerView.setAdapter(adapter);
 
         switch (page) {
@@ -92,6 +97,8 @@ public class SchedulePagerFragment extends Fragment {
                 day = "24";
                 break;
         }
+        st1.setText(day+" March");
+        st2.setText(day+" March");
         CallApi();
         progressBar.setVisibility(View.VISIBLE);
 

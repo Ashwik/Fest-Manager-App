@@ -29,13 +29,14 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
     @NonNull
     @Override
     public MoreAdapter.MoreViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View v = LayoutInflater.from(context).inflate(R.layout.fragment_more_item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.fragment_more_item_2, parent, false);
         return new MoreViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MoreAdapter.MoreViewHolder holder, final int i) {
         holder.moreitemText.setText(moreitemsList.get(i));
+        holder.moreitemText2.setText(moreitemsList.get(i));
         final MainActivity activity = (MainActivity) context;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,22 +48,20 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
         });
         switch (i) {
             case 1:
-                holder.moreitemIcon.setImageResource(R.drawable.ic_baseline_info_24px);
+                holder.moreitemIcon.setImageResource(R.drawable.reachus);
+                holder.moreitemIcon2.setImageResource(R.drawable.reachus);
                 break;
             case 2:
-                holder.moreitemIcon.setImageResource(R.drawable.ic_bus_24px);
+                holder.moreitemIcon.setImageResource(R.drawable.map);
+                holder.moreitemIcon2.setImageResource(R.drawable.map);
                 break;
             case 3:
-                holder.moreitemIcon.setImageResource(R.drawable.ic_directions_24px);
-                break;
-            case 4:
-                holder.moreitemIcon.setImageResource(R.drawable.ic_credits);
-                break;
-            case 5:
                 holder.moreitemIcon.setImageResource(R.drawable.ic_baseline_settings_20px);
+                holder.moreitemIcon2.setImageResource(R.drawable.ic_baseline_settings_20px);
                 break;
             case 0:
-                holder.moreitemIcon.setImageResource(R.drawable.ic_blogging);
+                holder.moreitemIcon.setImageResource(R.drawable.aboutus);
+                holder.moreitemIcon2.setImageResource(R.drawable.aboutus);
                 break;
         }
     }
@@ -74,13 +73,15 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
 
 
     public class MoreViewHolder extends RecyclerView.ViewHolder {
-        TextView moreitemText;
-        ImageView moreitemIcon;
+        TextView moreitemText,moreitemText2;
+        ImageView moreitemIcon,moreitemIcon2;
 
         public MoreViewHolder(@NonNull View itemView) {
             super(itemView);
-            moreitemText = itemView.findViewById(R.id.more_item_text);
-            moreitemIcon = itemView.findViewById(R.id.more_item_icon);
+            moreitemText = itemView.findViewById(R.id.more_item_text_1);
+            moreitemIcon = itemView.findViewById(R.id.more_item_icon_1);
+            moreitemText2 = itemView.findViewById(R.id.more_item_text_2);
+            moreitemIcon2 = itemView.findViewById(R.id.more_item_icon_2);
         }
     }
 }

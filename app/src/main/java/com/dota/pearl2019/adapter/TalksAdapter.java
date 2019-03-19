@@ -1,20 +1,63 @@
 package com.dota.pearl2019.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.dota.pearl2019.R;
+import com.yarolegovich.lovelydialog.LovelyInfoDialog;
 
 public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHolder> {
     private  Context context;
-    public TalksAdapter(Context context)
+    private  int root;
+    String[] titles = new String[]{
+            "Aron Chupa",
+            "Tony Junior",
+            "Amit Trivedi",
+            "Ashish Shakya",
+            "Raghu Dixit"
+    };
+    int[] imagesTalks = new int[]
+            {
+                    R.drawable.catharsistalks,
+                    R.drawable.creatorspanel,
+                    R.drawable.offbeat,
+                    R.drawable.theminimalist,
+                    R.drawable.photogdudes,
+                    R.drawable.sanjayabaru,
+                    R.drawable.vickykaushal1
+            };
+    int[] proShows = new int[]
+            {
+                    R.drawable.vishalshekhar,
+                    R.drawable.pineappleexpress,
+                    R.drawable.loststories,
+                    R.drawable.mashdnkutcher,
+                    R.drawable.sabysingh,
+                    R.drawable.samarmehdi,
+                    R.drawable.sitarmetal,
+                    R.drawable.standupcomedy,
+                    R.drawable.whenchaimettoast
+            };
+    String[] descriptions = new String[]{
+            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Heading the new breed of hitmakers, Aronchupa - Swedish rapper,singer, DJ and record producer.<br/><b>Venue:</b> Stage 1 Lawns",
+            "<b>Date:</b> 23/03/18<br/><b>Desc:</b> Tony Junior, a Dutch record producer and DJ.<br/><b>Venue:</b> Stage 1 Lawns",
+            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Amit Trivedi is an Indian film composer, musician, singer and lyricist. Don't miss the Bollywood night of Pearl'18. <br/><b>Venue:</b> Stage 1 Lawns",
+            "<b>Date:</b> 24/03/18<br/><b>Desc:</b> Ashish Shakya from AIB is a stand-up comedian, humour columnist, writer, actor and TV writer.<br/><b>Venue:</b> Auditorium",
+            "<b>Date:</b> 25/03/18<br/><b>Desc:</b> Raghu Dixit, giving Indian fusion music a new face and voice on a global scale.<br/><b>Venue:</b> Stage 1 Lawns"
+    };
+    public TalksAdapter(Context context,int root)
     {
         this.context = context;
+        this.root = root;
     }
     @NonNull
     @Override
@@ -24,13 +67,39 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TalksViewHolder talksViewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull TalksViewHolder holder, final int i) {
+        if(root==0) {
+            holder.talksImages.setImageResource(imagesTalks[i]);
+        }
+        else
+        {
+            holder.talksImages.setImageResource(proShows[i]);
+        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(i);
+            }
+        });
     }
-
+    private void openDialog(int position)
+    {
+        new LovelyInfoDialog(context)
+                .setTopColorRes(R.color.colorPrimary)
+                .setTopTitleColor(Color.WHITE)
+                .setTopTitle(titles[position])
+                .setMessage(formatContent(descriptions[position]))
+                .show();
+    }
     @Override
     public int getItemCount() {
-        return 3;
+        if(root ==0) {
+            return 7;
+        }
+        else
+        {
+            return 9;
+        }
     }
 
     public class TalksViewHolder extends RecyclerView.ViewHolder {
@@ -38,6 +107,14 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
         public TalksViewHolder(@NonNull View itemView) {
             super(itemView);
             talksImages = itemView.findViewById(R.id.talksImage);
+        }
+    }
+    private Spanned formatContent(String content) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(content, Html.FROM_HTML_MODE_COMPACT);
+        } else {
+            //noinspection deprecation
+            return Html.fromHtml(content);
         }
     }
 }

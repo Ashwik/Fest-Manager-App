@@ -5,36 +5,50 @@
     android:id="@+id/event_item_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="2dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="2dp"
-    app:cardBackgroundColor="@android:color/transparent">
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="3dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/backgroundColor">
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/frame_layout_events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/frame_layout_events"
-        >
 
-        <ImageView
-            android:id="@+id/event_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:tint="@color/events_image_tint"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/ev_squash_singles" />
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/events_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="35dp"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
+
+
+            android:textColor="@color/textColor"
             android:textSize="24sp"
+            android:layout_margin="2dp"
             tools:text="Cricket" />
-    </FrameLayout>
+
+        <TextView
+            android:id="@+id/prize_money_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/montserratmedium"
+            android:textSize="20sp"
+            android:layout_margin="2dp"
+            tools:text="Cricket" />
+
+        <TextView
+            android:id="@+id/fee_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/montserratmedium"
+            android:textSize="20sp"
+            android:layout_margin="2dp"
+            tools:text="Cricket" />
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

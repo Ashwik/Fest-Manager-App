@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
                                 .replace(R.id.bottom_nav_container, new ContactsFragment())
                                 .commit();
                         break;
+
 //                    case R.id.guide:
 //                        getChildFragmentManager().beginTransaction()
 //                                .replace(R.id.bottom_nav_container, new MapsFragment())

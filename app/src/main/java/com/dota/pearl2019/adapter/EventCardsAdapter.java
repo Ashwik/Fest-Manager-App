@@ -59,7 +59,7 @@ public class EventCardsAdapter extends RecyclerView.Adapter<EventCardsAdapter.Ev
 
         public EventViewHolder(View itemView) {
             super(itemView);
-            event_cardView = itemView.findViewById(R.id.carousel_item_cardview);
+            event_cardView = itemView.findViewById(R.id.schedule_item_cardview);
             event_cardText = itemView.findViewById(R.id.event_card_text);
         }
     }

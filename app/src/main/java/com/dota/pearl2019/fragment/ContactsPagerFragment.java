@@ -52,7 +52,7 @@ public class ContactsPagerFragment extends Fragment {
         }
 
 
-        return inflater.inflate(R.layout.fragment_contacts_pager, container, false);
+        return inflater.inflate(R.layout.fragment_contact_pager, container, false);
     }
 
     @Override
