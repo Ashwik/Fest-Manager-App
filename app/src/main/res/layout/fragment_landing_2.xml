@@ -9,6 +9,13 @@
     android:background="@drawable/bg_2"
     >
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/dota"
+        android:id="@+id/splash_image_gif"
+        android:scaleType="centerCrop"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/landing_recycler_view"
         android:layout_width="match_parent"

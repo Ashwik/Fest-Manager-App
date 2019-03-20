@@ -23,6 +23,8 @@ import com.dota.pearl2019.adapter.LandingAdapter;
 
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class LandingFragment extends Fragment {
     private Context context;
     private RecyclerView recyclerView;
@@ -38,7 +40,7 @@ public class LandingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_landing, container, false);
+        return inflater.inflate(R.layout.fragment_landing_2, container, false);
     }
 
     @Override
@@ -47,7 +49,7 @@ public class LandingFragment extends Fragment {
 
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle("Events");
-        final ImageView splash = view.findViewById(R.id.splash_image);
+        final GifImageView splash = view.findViewById(R.id.splash_image_gif);
 
         recyclerView = getActivity().findViewById(R.id.landing_recycler_view);
         list.add("FEED");
@@ -68,7 +70,7 @@ public class LandingFragment extends Fragment {
             @Override
             public void run() {
                 AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
-                anim.setDuration(500);
+                anim.setDuration(3800);
                 anim.setRepeatCount(0);
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -89,7 +91,7 @@ public class LandingFragment extends Fragment {
                 splash.startAnimation(anim);
 
                 AlphaAnimation anim2 = new AlphaAnimation(0.0f, 1.0f);
-                anim2.setDuration(500);
+                anim2.setDuration(3800);
                 anim2.setRepeatCount(0);
                 anim2.setAnimationListener(new Animation.AnimationListener() {
                     @Override

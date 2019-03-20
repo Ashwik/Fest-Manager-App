@@ -78,6 +78,8 @@ public class CreditsPagerFragment extends Fragment {
         }else{
             details.add(new DeveloperDetails("Nikita Gohel", R.drawable.nikitha, new String[]{"https://www.facebook.com/nikita.gohel.73",null, null, null}));
             details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.maitrayee, new String[]{"https://www.facebook.com/maitreyee.talnikar",null, null, null}));
+            details.add(new DeveloperDetails("Vikranth Sagar", R.drawable.profile_icon, new String[]{"https://www.facebook.com/VikranthSagar",null, null, null}));
+
         }
 
     }
