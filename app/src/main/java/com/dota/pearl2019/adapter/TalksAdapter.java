@@ -46,22 +46,22 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             };
     String[] descriptions = new String[]{
             "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium<br/>Time:</b>12:00PM",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b><br/>Time:</b>4:30PM",
             "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>12:00PM",
-            "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>12:00PM",
-            "<b>Date:</b> 23/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
-            "<b>Date:</b> 22/03/19<br/>Venue:</b> F102<br/>Time:</b>4:00PM",
+            "<b>Date:</b> 23/03/19<br/>Venue:</b> F105<br/>Time:</b>3:00PM",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> F101<br/>Time:</b>4:00PM",
             "<b>Date:</b> 22/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
             "<b>Date:</b> 24/03/19<br/>Venue:</b> F102<br/>Time:</b>3:00PM",
 
     };
     String[] descriptions_2 = new String[]{
             "<b>Date:</b> 24/03/19<br/>Venue:</b> Stage 1<br/>",
-            "<b>Date:</b> 24/03/19<br/>Venue:</b> Stage 1<br/>",
-            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
-            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
             "<b>Date:</b> 23/03/19<br/>Venue:</b> Stage 1<br/>",
             "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
             "<b>Date:</b> <br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 22/03/19<br/>Venue:</b> Stage 1<br/>",
+            "<b>Date:</b> 24/03/19<br/>Venue:</b> Stage 1<br/>",
             "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium<br/>",
             "<b>Date:</b> 23/03/19<br/>Venue:</b> Stage 1<br/>",
     };

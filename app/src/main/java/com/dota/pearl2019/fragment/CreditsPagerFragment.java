@@ -70,7 +70,7 @@ public class CreditsPagerFragment extends Fragment {
     public void feedData() {
         if(switchContacts==0){
             details.add(new DeveloperDetails("Ashwik Reddy", R.drawable.dev_ashwik, new String[]{"https://www.facebook.com/ashwik.aileni", "https://github.com/Ashwik", null, null}));
-            details.add(new DeveloperDetails("Kartheek Akella", R.drawable.dev_kartheek, new String[]{"https://www.facebook.com/kartheek.asvs", "https://github.com/ASVS-Kartheek", null, null}));
+            details.add(new DeveloperDetails("Kartheek Akella", R.drawable.dev_kartheek, new String[]{"https://www.facebook.com/asvs.kartheek", "https://github.com/ASVS-Kartheek", null, null}));
             details.add(new DeveloperDetails("Prateek Agarwal", R.drawable.dev_prateek, new String[]{"https://www.facebook.com/prateek.agarwal.94801", "https://github.com/prat-bphc52", null, null}));
             details.add(new DeveloperDetails("Ajith kanduri", R.drawable.dev_ajith, new String[]{"https://www.facebook.com/kanduri.ajith", "https://github.com/ajithkanduri", null, null}));
             details.add(new DeveloperDetails("Vineeth Kumar", R.drawable.vineeth, new String[]{"https://www.facebook.com/vineethkumarVK11", null, null, null}));
