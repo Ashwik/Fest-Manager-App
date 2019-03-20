@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -44,6 +45,44 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
                 v.getContext().startActivity(intent);
             }
         });
+
+        switch (list.get(position)){
+            case "FEED": holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                         holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                         break;
+
+            case "EVENTS": holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "SCHEDULE":holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "CONTACTS": holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "TALKS":holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "PROSHOWS":holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "GUIDE": holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            case "CREDITS":holder.landingicon1.setImageResource(R.drawable.ic_events_24px);
+                holder.landingicon2.setImageResource(R.drawable.ic_events_24px);
+                break;
+
+            default: holder.landingicon1.setImageResource(R.drawable.ic_menu);
+                holder.landingicon2.setImageResource(R.drawable.ic_menu);
+                break;
+        }
     }
 
     @Override
@@ -57,12 +96,15 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
     public class EventViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout event_cardView;
         TextView event_cardText,event_cardText_2;
+        ImageView landingicon1,landingicon2;
 
         public EventViewHolder(View itemView) {
             super(itemView);
             event_cardView = itemView.findViewById(R.id.landing_item_cardview);
             event_cardText = itemView.findViewById(R.id.landing_card_text);
             event_cardText_2 = itemView.findViewById(R.id.landing_card_text_2);
+            landingicon1 = itemView.findViewById(R.id.landing_item_icon_1);
+            landingicon2 = itemView.findViewById(R.id.landing_item_icon_2);
         }
     }
 }

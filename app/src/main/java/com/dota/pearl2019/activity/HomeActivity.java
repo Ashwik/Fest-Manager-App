@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
                     .replace(R.id.nav_fragment_container, new ScheduleCardsFragment())
                     .commit();
                 break;
-            case "CONTACT": getSupportFragmentManager().beginTransaction()
+            case "CONTACTS": getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_fragment_container, new ContactsFragment())
                     .commit();
                 break;
@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
                             .replace(R.id.nav_fragment_container,fragment)
                             .commit();
                     break;
-            case "PROSHOW": Fragment fragment1 = new TalksFragment();
+            case "PROSHOWS": Fragment fragment1 = new TalksFragment();
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt("from",1);
                 fragment1.setArguments(bundle2);
