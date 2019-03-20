@@ -80,10 +80,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (type != null) {
             switch (type) {
                 case "FeedFragment":
-                    fragment = new FeedFragment();
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.nav_fragment_container, fragment)
-                            .commit();
+                    Intent intent = new Intent(this, HomeActivity.class);
+                    intent.putExtra(String.valueOf(R.string.home_type_id), "FEED");
+                    startActivity(intent);
                     break;
             }
         }

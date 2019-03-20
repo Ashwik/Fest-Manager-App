@@ -70,7 +70,7 @@ public class LandingFragment extends Fragment {
             @Override
             public void run() {
                 AlphaAnimation anim = new AlphaAnimation(1.0f, 0.0f);
-                anim.setDuration(3800);
+                anim.setDuration(3600);
                 anim.setRepeatCount(0);
                 anim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -91,7 +91,7 @@ public class LandingFragment extends Fragment {
                 splash.startAnimation(anim);
 
                 AlphaAnimation anim2 = new AlphaAnimation(0.0f, 1.0f);
-                anim2.setDuration(3800);
+                anim2.setDuration(3600);
                 anim2.setRepeatCount(0);
                 anim2.setAnimationListener(new Animation.AnimationListener() {
                     @Override
