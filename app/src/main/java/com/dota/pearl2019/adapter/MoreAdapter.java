@@ -37,7 +37,7 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
     public void onBindViewHolder(@NonNull MoreAdapter.MoreViewHolder holder, final int i) {
         holder.moreitemText.setText(moreitemsList.get(i));
         holder.moreitemText2.setText(moreitemsList.get(i));
-        final MainActivity activity = (MainActivity) context;
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -152,14 +152,24 @@ public class SchedulePagerFragment extends Fragment {
             event.setName(details.getName());
             event.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             event.setDate(getEventTime(details.getStartTime())[2]);
+            event.setVenue(details.getVenue());
             event.setTagline(details.getTagline());
             event.setEndTime(details.getEndTime());
+            event.setPrize(details.getPrize());
+            event.setPrice(details.getPrice());
+            event.setType(details.getType());
+
         } else {
             model.setName(details.getName());
             model.setStartTime(getEventTime(details.getStartTime())[3] + ":" + getEventTime(details.getStartTime())[4]);
             model.setDate(getEventTime(details.getStartTime())[2]);
             model.setTagline(details.getTagline());
+            model.setVenue(details.getVenue());
             model.setEndTime(details.getEndTime());
+            model.setPrize(details.getPrize());
+            model.setPrice(details.getPrice());
+            model.setType(details.getType());
+
         }
         realm.commitTransaction();
     }

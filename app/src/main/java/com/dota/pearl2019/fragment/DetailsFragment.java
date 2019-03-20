@@ -164,16 +164,17 @@ public class DetailsFragment extends Fragment {
                     time = result.getStartTime() + " - " +
                             getEventTime(result.getEndTime())[3] + ":" + getEventTime(result.getEndTime())[4];
                     startTime.setText(time);
+                    startTime.setVisibility(View.VISIBLE);
                 }
 
-                if(eventFee==null||eventFee.equals("")){
+                if(result.getPrice()==null||result.getPrice().equals("")){
                     eventFee.setVisibility(View.GONE);
                 }
                 else {
                     eventFee.setVisibility(View.VISIBLE);
                     eventFee.setText("FEE "+result.getPrice());
                 }
-                if(eventPrizemoney==null||eventPrizemoney.equals("")){
+                if(result.getPrize()==null||result.getPrize().equals("")){
                     eventPrizemoney.setVisibility(View.GONE);
                 }else{
                     eventPrizemoney.setVisibility(View.VISIBLE);

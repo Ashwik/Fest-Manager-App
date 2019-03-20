@@ -55,20 +55,6 @@
                     android:visibility="gone" />
 
                 <TextView
-                    android:id="@+id/event_startTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/textColor"
-                    android:textIsSelectable="true"
-                    android:textSize="24sp"
-                    android:visibility="gone" />
-                <TextView
                     android:id="@+id/event_fee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,6 +78,22 @@
                     android:textAlignment="center"
                     android:textColor="@color/textColor"
                     android:textSize="22sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/event_startTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/textColor"
+                    android:textIsSelectable="true"
+                    android:textSize="24sp"
                     android:visibility="gone" />
 
                 <us.feras.mdv.MarkdownView

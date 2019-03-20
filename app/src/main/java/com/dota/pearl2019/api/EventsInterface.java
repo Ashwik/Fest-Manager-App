@@ -12,7 +12,7 @@ public interface EventsInterface {
     @GET("events")
     Call<ArrayList<EventDetails>> getEvents();
 
-    @GET("events?fields=name,startTime,endTime,tagline,venue")
+    @GET("events?fields=name,startTime,endTime,tagline,venue,price,prize")
     Call<ArrayList<EventDetails>> getEventSchedule();
 
     @GET("events/{id}")

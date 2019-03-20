@@ -85,10 +85,10 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
                 final View v = LayoutInflater.from(context).inflate(R.layout.fragment_schedule_sub_item, linearLayout, false);
 
                 ((TextView) v.findViewById(R.id.event_name)).setText(set.getName());
-                if (set.getTagline() == null || set.getTagline().equals("")) {
+                if (set.getVenue() == null) {
                     ((TextView) v.findViewById(R.id.event_tagline)).setHeight(0);
                 } else {
-                    ((TextView) v.findViewById(R.id.event_tagline)).setText(set.getTagline());
+                    ((TextView) v.findViewById(R.id.event_tagline)).setText("Venue: "+set.getVenue());
                 }
                 v.findViewById(R.id.schedule_item_cardview).setOnClickListener(new View.OnClickListener() {
                     @Override
