@@ -12,10 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.azoft.carousellayoutmanager.CarouselLayoutManager;
-import com.azoft.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.adapter.EventCardsAdapter;
 import com.dota.pearl2019.adapter.LandingAdapter;
 
 import java.util.ArrayList;

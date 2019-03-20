@@ -31,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EventsFragment extends Fragment implements SearchView.OnQueryTextListener {
+public class EventsFragment extends Fragment {
     private ArrayList<EventDetails> eventDetailsList = new ArrayList<>();
     private ArrayList<EventDetails> realmList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -43,7 +43,6 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
     private ProgressBar progressBar;
     private String event_category;
     private Integer event_category_id;
-    private SearchView searchView;
     private EventsAdapter eventsAdapter;
     private ArrayList<EventDetails> searchlist = new ArrayList<>();
 
@@ -82,7 +81,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
         realm = Realm.getDefaultInstance();
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
-        searchView = getActivity().findViewById(R.id.events_searchView);
+
         eventsAdapter = new EventsAdapter(realmList,context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
@@ -230,28 +229,4 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
     }
 
-    public void setSearchview(){
-        SearchManager searchManager =
-                (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getActivity().getComponentName()));
-        if (searchView != null) {
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
-            searchView.setOnQueryTextListener(this);
-        }
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        searchView.clearFocus();
-        return true;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        Log.e(TAG,s);
-        EventsAdapter eventsAdapter = new EventsAdapter(realmList,context);
-        eventsAdapter.getFilter().filter(s);
-        return true;
-    }
 }

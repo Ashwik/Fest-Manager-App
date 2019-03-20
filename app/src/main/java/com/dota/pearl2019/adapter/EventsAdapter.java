@@ -2,7 +2,6 @@ package com.dota.pearl2019.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.activity.DetailsActivity;
-import com.dota.pearl2019.activity.MatchesActivity;
 import com.dota.pearl2019.model.EventDetails;
 
 import java.util.ArrayList;

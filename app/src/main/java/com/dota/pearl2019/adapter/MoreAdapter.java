@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.activity.MainActivity;
 import com.dota.pearl2019.activity.MoreItemsActivity;
 
 import java.util.ArrayList;

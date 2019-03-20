@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.adapter.CreditsAdapternew;
-import com.dota.pearl2019.model.Contact;
 import com.dota.pearl2019.model.DeveloperDetails;
 
 import java.util.ArrayList;

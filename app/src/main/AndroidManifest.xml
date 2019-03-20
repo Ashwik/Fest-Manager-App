@@ -63,12 +63,7 @@
             ></activity>
         <activity android:name="com.dota.pearl2019.activity.MoreItemsActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.dota.pearl2019.activity.ArticleDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.dota.pearl2019.activity.MatchesActivity"
-            android:label="@string/title_activity_matches"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>

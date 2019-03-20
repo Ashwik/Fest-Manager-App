@@ -6,8 +6,6 @@ import android.support.v7.widget.Toolbar;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.fragment.AboutFragment;
-import com.dota.pearl2019.fragment.ArticlesFragment;
-import com.dota.pearl2019.fragment.CreditsFragment;
 import com.dota.pearl2019.fragment.MapsFragment;
 import com.dota.pearl2019.fragment.ReachUsFragment;
 import com.dota.pearl2019.fragment.SettingsFragment;
