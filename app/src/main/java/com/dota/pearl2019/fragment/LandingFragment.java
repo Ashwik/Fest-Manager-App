@@ -1,14 +1,12 @@
 package com.dota.pearl2019.fragment;
 
 import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -16,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.ImageView;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.adapter.LandingAdapter;
@@ -61,7 +58,7 @@ public class LandingFragment extends Fragment {
         list.add("GUIDE");
         list.add("CREDITS");
 
-        recyclerView.setLayoutManager(new GridLayoutManager(context,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new LandingAdapter(list, context));
 
@@ -101,7 +98,7 @@ public class LandingFragment extends Fragment {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                       recyclerView.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                     @Override

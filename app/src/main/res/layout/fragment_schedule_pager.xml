@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:tools="http://schemas.android.com/tools"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     tools:context=".fragment.SchedulePagerFragment"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SchedulePagerFragment">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,8 +12,7 @@
         android:layout_marginRight="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:id="@+id/schedule_pager_relative"
-        >
+        android:id="@+id/schedule_pager_relative">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,8 +24,7 @@
             android:layout_marginTop="-74dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="3dp"
-            android:padding="8dp"
-            >
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/schedule_text_2"
@@ -37,8 +34,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="22sp"
-                android:fontFamily="@font/southastefree"
-                />
+                android:fontFamily="@font/southastefree" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,26 +55,25 @@
                 android:textAlignment="center"
                 android:textColor="@color/topbar_textcolor"
                 android:textSize="22sp"
-                android:fontFamily="@font/southastefree"
-                />
+                android:fontFamily="@font/southastefree" />
         </LinearLayout>
 
 
     </RelativeLayout>
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_schedule"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="25dp"
-        android:layout_below="@+id/schedule_pager_relative"
-        >
-    <android.support.v7.widget.RecyclerView
-     android:id="@+id/schedule_recyclerview"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:background="@drawable/ic_contactsmainbox"
-     android:padding="8dp"
-        />
+        android:layout_below="@+id/schedule_pager_relative">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/schedule_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_contactsmainbox"
+            android:padding="8dp" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

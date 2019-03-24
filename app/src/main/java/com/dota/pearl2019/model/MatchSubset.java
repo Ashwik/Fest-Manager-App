@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class MatchSubset {
-    String a,b;
+    String a, b;
 
     public String getA() {
         return a;

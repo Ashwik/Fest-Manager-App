@@ -108,8 +108,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 //            }
 //
 //        }
-            holder.contactimage.setVisibility(View.GONE);
-
+        holder.contactimage.setVisibility(View.GONE);
 
 
     }

@@ -9,16 +9,14 @@
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="@android:color/transparent"
-    >
+    app:cardBackgroundColor="@android:color/transparent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
-        >
+        android:layout_marginBottom="2dp">
 
         <TextView
             android:id="@+id/place_text"
@@ -44,8 +42,7 @@
             android:tint="@color/bg_two"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_outline_keyboard_arrow_right_24px"
-            android:layout_alignParentEnd="true"
-            />
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

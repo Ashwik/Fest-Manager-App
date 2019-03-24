@@ -47,7 +47,7 @@ public class SchedulePagerFragment extends Fragment {
     private String TAG = "SchedulePagerFragment";
     private int page;
     private String day;
-    private TextView st1,st2;
+    private TextView st1, st2;
     private int i;
     private Context context;
     private boolean isNetwork = false;
@@ -97,8 +97,8 @@ public class SchedulePagerFragment extends Fragment {
                 day = "24";
                 break;
         }
-        st1.setText(day+" March");
-        st2.setText(day+" March");
+        st1.setText(day + " March");
+        st2.setText(day + " March");
         CallApi();
         progressBar.setVisibility(View.VISIBLE);
 

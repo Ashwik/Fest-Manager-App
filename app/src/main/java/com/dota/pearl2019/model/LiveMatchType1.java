@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class LiveMatchType1 {
-    String eventID,title,teamA,teamB,scoreA,scoreB,desc;
+    String eventID, title, teamA, teamB, scoreA, scoreB, desc;
 
     public String getTeamB() {
         return teamB;

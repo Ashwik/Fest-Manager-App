@@ -1,6 +1,5 @@
 package com.dota.pearl2019.fragment;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.dota.pearl2019.R;
@@ -67,7 +65,7 @@ public class EventsFragment extends Fragment {
 //       event_category = bundle.getString(String.valueOf(R.string.home_type_id));
 
 //       event_category_id  = bundle.gett(String.valueOf(R.string.event_type_id));
-       Log.e("Events",String.valueOf(event_category_id));
+        Log.e("Events", String.valueOf(event_category_id));
 //        switch(event_category){
 //          case "TALKS": event_category ="Talk";break;
 //          case "PROSHOWS":event_category="Proshow";break;
@@ -82,7 +80,7 @@ public class EventsFragment extends Fragment {
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
 
-        eventsAdapter = new EventsAdapter(realmList,context);
+        eventsAdapter = new EventsAdapter(realmList, context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -193,7 +191,7 @@ public class EventsFragment extends Fragment {
 
     private void setAdapter(ArrayList<EventDetails> eventList) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new EventsAdapter(realmList,context));
+        recyclerView.setAdapter(new EventsAdapter(realmList, context));
     }
 
     @Override

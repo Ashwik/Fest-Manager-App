@@ -72,8 +72,8 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
 
 
     public class MoreViewHolder extends RecyclerView.ViewHolder {
-        TextView moreitemText,moreitemText2;
-        ImageView moreitemIcon,moreitemIcon2;
+        TextView moreitemText, moreitemText2;
+        ImageView moreitemIcon, moreitemIcon2;
 
         public MoreViewHolder(@NonNull View itemView) {
             super(itemView);

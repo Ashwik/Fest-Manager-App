@@ -11,11 +11,11 @@
     app:cardCornerRadius="1dp"
     app:cardElevation="1dp"
     app:cardBackgroundColor="@android:color/transparent">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
-        >
+        android:background="@color/backgroundColor">
 
         <TextView
             android:id="@+id/name"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:tint="@color/gradient_color_2"
             android:src="@drawable/ic_baseline_call_24px"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
 
 
     </android.support.constraint.ConstraintLayout>

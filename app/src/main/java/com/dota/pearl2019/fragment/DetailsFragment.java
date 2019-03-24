@@ -167,18 +167,17 @@ public class DetailsFragment extends Fragment {
                     startTime.setVisibility(View.VISIBLE);
                 }
 
-                if(result.getPrice()==null||result.getPrice().equals("")){
+                if (result.getPrice() == null || result.getPrice().equals("")) {
                     eventFee.setVisibility(View.GONE);
-                }
-                else {
+                } else {
                     eventFee.setVisibility(View.VISIBLE);
-                    eventFee.setText("FEE "+result.getPrice());
+                    eventFee.setText("FEE " + result.getPrice());
                 }
-                if(result.getPrize()==null||result.getPrize().equals("")){
+                if (result.getPrize() == null || result.getPrize().equals("")) {
                     eventPrizemoney.setVisibility(View.GONE);
-                }else{
+                } else {
                     eventPrizemoney.setVisibility(View.VISIBLE);
-                    eventPrizemoney.setText("PRIZE "+result.getPrize());
+                    eventPrizemoney.setText("PRIZE " + result.getPrize());
                 }
 
 

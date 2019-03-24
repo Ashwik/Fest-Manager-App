@@ -109,7 +109,7 @@ public class CreditsAdapternew extends RecyclerView.Adapter<CreditsAdapternew.Co
 //            }
 //
 //        }
-            holder.contactimage.setVisibility(View.VISIBLE);
+        holder.contactimage.setVisibility(View.VISIBLE);
         holder.credits_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,7 +118,6 @@ public class CreditsAdapternew extends RecyclerView.Adapter<CreditsAdapternew.Co
                 view.getContext().startActivity(intent);
             }
         });
-
 
 
     }

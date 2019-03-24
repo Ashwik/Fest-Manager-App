@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class IndividualEvent {
-    String pos1,pos2,pos3,msg;
+    String pos1, pos2, pos3, msg;
 
     public String getPos1() {
         return pos1;

@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class MatchDetails {
-    String title,teamA,teamB,description,time,date;
+    String title, teamA, teamB, description, time, date;
 
     public String getTitle() {
         return title;

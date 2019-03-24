@@ -46,40 +46,49 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
             }
         });
 
-        switch (list.get(position)){
-            case "FEED": holder.landingicon1.setImageResource(R.drawable.feed);
-                         holder.landingicon2.setImageResource(R.drawable.feed);
-                         break;
+        switch (list.get(position)) {
+            case "FEED":
+                holder.landingicon1.setImageResource(R.drawable.feed);
+                holder.landingicon2.setImageResource(R.drawable.feed);
+                break;
 
-            case "EVENTS": holder.landingicon1.setImageResource(R.drawable.events);
+            case "EVENTS":
+                holder.landingicon1.setImageResource(R.drawable.events);
                 holder.landingicon2.setImageResource(R.drawable.events);
                 break;
 
-            case "SCHEDULE":holder.landingicon1.setImageResource(R.drawable.schedule);
+            case "SCHEDULE":
+                holder.landingicon1.setImageResource(R.drawable.schedule);
                 holder.landingicon2.setImageResource(R.drawable.schedule);
                 break;
 
-            case "CONTACTS": holder.landingicon1.setImageResource(R.drawable.contacts);
+            case "CONTACTS":
+                holder.landingicon1.setImageResource(R.drawable.contacts);
                 holder.landingicon2.setImageResource(R.drawable.contacts);
                 break;
 
-            case "TALKS":holder.landingicon1.setImageResource(R.drawable.talks);
+            case "TALKS":
+                holder.landingicon1.setImageResource(R.drawable.talks);
                 holder.landingicon2.setImageResource(R.drawable.talks);
                 break;
 
-            case "PROSHOWS":holder.landingicon1.setImageResource(R.drawable.proshows);
+            case "PROSHOWS":
+                holder.landingicon1.setImageResource(R.drawable.proshows);
                 holder.landingicon2.setImageResource(R.drawable.proshows);
                 break;
 
-            case "GUIDE": holder.landingicon1.setImageResource(R.drawable.guide);
+            case "GUIDE":
+                holder.landingicon1.setImageResource(R.drawable.guide);
                 holder.landingicon2.setImageResource(R.drawable.guide);
                 break;
 
-            case "CREDITS":holder.landingicon1.setImageResource(R.drawable.credits);
+            case "CREDITS":
+                holder.landingicon1.setImageResource(R.drawable.credits);
                 holder.landingicon2.setImageResource(R.drawable.credits);
                 break;
 
-            default: holder.landingicon1.setImageResource(R.drawable.ic_menu);
+            default:
+                holder.landingicon1.setImageResource(R.drawable.ic_menu);
                 holder.landingicon2.setImageResource(R.drawable.ic_menu);
                 break;
         }
@@ -95,8 +104,8 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout event_cardView;
-        TextView event_cardText,event_cardText_2;
-        ImageView landingicon1,landingicon2;
+        TextView event_cardText, event_cardText_2;
+        ImageView landingicon1, landingicon2;
 
         public EventViewHolder(View itemView) {
             super(itemView);

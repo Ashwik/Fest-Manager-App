@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,8 +10,7 @@
         android:layout_marginRight="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:id="@+id/feed_pager_relative"
-        >
+        android:id="@+id/feed_pager_relative">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,8 +22,7 @@
             android:layout_marginTop="-74dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="3dp"
-            android:padding="8dp"
-            >
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/feed_text_2"
@@ -36,8 +32,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="22sp"
-                android:fontFamily="@font/southastefree"
-                />
+                android:fontFamily="@font/southastefree" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,8 +53,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/topbar_textcolor"
                 android:textSize="22sp"
-                android:fontFamily="@font/southastefree"
-                />
+                android:fontFamily="@font/southastefree" />
         </LinearLayout>
 
 
@@ -74,8 +68,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_below="@id/feed_pager_relative"
-        >
+        android:layout_below="@id/feed_pager_relative">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/feed1"
             android:layout_width="match_parent"
@@ -83,11 +77,8 @@
             android:padding="8dp"
             android:background="@drawable/ic_contactsmainbox"
 
-            >
-        </android.support.v7.widget.RecyclerView>
+            ></android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
-
-
 
 
 </RelativeLayout>

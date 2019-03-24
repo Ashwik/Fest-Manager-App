@@ -38,10 +38,16 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
 
-        switch (list.get(position)){
-            case 1:holder.schedule_text.setText("22 March");break;
-            case 2:holder.schedule_text.setText("23 March");break;
-            case 3:holder.schedule_text.setText("24 March");break;
+        switch (list.get(position)) {
+            case 1:
+                holder.schedule_text.setText("22 March");
+                break;
+            case 2:
+                holder.schedule_text.setText("23 March");
+                break;
+            case 3:
+                holder.schedule_text.setText("24 March");
+                break;
         }
 
         final int pos = position;

@@ -20,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.fragment.FeedFragment;
 import com.dota.pearl2019.fragment.LandingFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
