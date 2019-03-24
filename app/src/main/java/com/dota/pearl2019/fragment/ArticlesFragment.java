@@ -21,7 +21,7 @@ import com.dota.pearl2019.adapter.ArticlesAdapter;
 
 import java.util.ArrayList;
 
-public class ArticlesFragment extends Fragment{
+public class ArticlesFragment extends Fragment {
 
     private RecyclerView article_recycler;
     public ArrayList<String> articleitemsList = new ArrayList<>();
@@ -62,7 +62,7 @@ public class ArticlesFragment extends Fragment{
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(download_link));
                     startActivity(myIntent);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(context,"Web Browser not found",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Web Browser not found", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
@@ -70,7 +70,7 @@ public class ArticlesFragment extends Fragment{
 
         article_recycler = getActivity().findViewById(R.id.articles_recycler);
         article_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ArticlesAdapter articlesAdapter = new ArticlesAdapter(context,articleitemsList);
+        ArticlesAdapter articlesAdapter = new ArticlesAdapter(context, articleitemsList);
         article_recycler.setAdapter(articlesAdapter);
 
     }

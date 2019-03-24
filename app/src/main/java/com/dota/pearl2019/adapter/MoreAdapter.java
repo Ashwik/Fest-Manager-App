@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.activity.MainActivity;
 import com.dota.pearl2019.activity.MoreItemsActivity;
 
 import java.util.ArrayList;
@@ -73,8 +72,8 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
 
 
     public class MoreViewHolder extends RecyclerView.ViewHolder {
-        TextView moreitemText,moreitemText2;
-        ImageView moreitemIcon,moreitemIcon2;
+        TextView moreitemText, moreitemText2;
+        ImageView moreitemIcon, moreitemIcon2;
 
         public MoreViewHolder(@NonNull View itemView) {
             super(itemView);

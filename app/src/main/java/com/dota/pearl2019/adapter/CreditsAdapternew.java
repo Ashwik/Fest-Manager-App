@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.model.Contact;
 import com.dota.pearl2019.model.DeveloperDetails;
 
 import java.util.ArrayList;
@@ -110,7 +109,7 @@ public class CreditsAdapternew extends RecyclerView.Adapter<CreditsAdapternew.Co
 //            }
 //
 //        }
-            holder.contactimage.setVisibility(View.VISIBLE);
+        holder.contactimage.setVisibility(View.VISIBLE);
         holder.credits_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,7 +118,6 @@ public class CreditsAdapternew extends RecyclerView.Adapter<CreditsAdapternew.Co
                 view.getContext().startActivity(intent);
             }
         });
-
 
 
     }

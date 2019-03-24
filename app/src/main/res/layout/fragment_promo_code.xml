@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/main_layout"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:weightSum="4">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,15 +21,14 @@
             android:text="@string/google_title_text"
             android:textColor="@color/textColor"
             android:theme="@style/ThemeOverlay.MyTitleText"
-            android:textIsSelectable="true"
-            />
+            android:textIsSelectable="true" />
 
         <TextView
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
             android:text="@string/signed_out"
             android:textIsSelectable="true"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor" />
 
         <TextView
             android:id="@+id/detail"
@@ -37,7 +36,7 @@
             tools:text="Firebase User ID: 123456789abc"
             android:textIsSelectable="true"
             android:textSize="20sp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor" />
 
     </LinearLayout>
 

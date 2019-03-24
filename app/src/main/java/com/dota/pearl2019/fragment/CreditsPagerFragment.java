@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.adapter.CreditsAdapternew;
-import com.dota.pearl2019.model.Contact;
 import com.dota.pearl2019.model.DeveloperDetails;
 
 import java.util.ArrayList;
@@ -68,7 +67,7 @@ public class CreditsPagerFragment extends Fragment {
     }
 
     public void feedData() {
-        if(switchContacts==0){
+        if (switchContacts == 0) {
             details.add(new DeveloperDetails("Ashwik Reddy", R.drawable.dev_ashwik, new String[]{"https://www.facebook.com/ashwik.aileni", "https://github.com/Ashwik", null, null}));
             details.add(new DeveloperDetails("Kartheek Akella", R.drawable.dev_kartheek, new String[]{"https://www.facebook.com/asvs.kartheek", "https://github.com/ASVS-Kartheek", null, null}));
             details.add(new DeveloperDetails("Prateek Agarwal", R.drawable.dev_prateek, new String[]{"https://www.facebook.com/prateek.agarwal.94801", "https://github.com/prat-bphc52", null, null}));
@@ -76,9 +75,9 @@ public class CreditsPagerFragment extends Fragment {
             details.add(new DeveloperDetails("Vineeth Kumar", R.drawable.vineeth, new String[]{"https://www.facebook.com/vineethkumarVK11", null, null, null}));
             details.add(new DeveloperDetails("Kailash Bhalaki", R.drawable.dev_kailash, new String[]{"https://www.facebook.com/Kailash.311.Bhalaki", "https://github.com/Kailash0311", null, null}));
 
-        }else{
-            details.add(new DeveloperDetails("Nikita Gohel", R.drawable.nikitha, new String[]{"https://www.facebook.com/nikita.gohel.73",null, null, null}));
-            details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.maitrayee, new String[]{"https://www.facebook.com/maitreyee.talnikar",null, null, null}));
+        } else {
+            details.add(new DeveloperDetails("Nikita Gohel", R.drawable.nikitha, new String[]{"https://www.facebook.com/nikita.gohel.73", null, null, null}));
+            details.add(new DeveloperDetails("Maitreyee Talnikar", R.drawable.maitrayee, new String[]{"https://www.facebook.com/maitreyee.talnikar", null, null, null}));
         }
 
     }

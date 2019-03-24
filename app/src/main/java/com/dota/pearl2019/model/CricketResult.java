@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class CricketResult extends LiveCricket {
-    private String status,message;
+    private String status, message;
 
     public String getStatus() {
         return status;

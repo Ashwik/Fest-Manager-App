@@ -3,17 +3,14 @@ package com.dota.pearl2019.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dota.pearl2019.R;
-import com.dota.pearl2019.activity.EventsActivity;
 import com.dota.pearl2019.activity.HomeActivity;
 
 import java.util.ArrayList;
@@ -59,7 +56,7 @@ public class LandingAdapter extends RecyclerView.Adapter<LandingAdapter.EventVie
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout event_cardView;
-        TextView event_cardText,event_cardText_2;
+        TextView event_cardText, event_cardText_2;
 
         public EventViewHolder(View itemView) {
             super(itemView);

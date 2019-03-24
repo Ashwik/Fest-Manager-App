@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class LiveCricket {
-    String eventID,title,teamA,teamB,scoreA,scoreB,desc,inning,t1;
+    String eventID, title, teamA, teamB, scoreA, scoreB, desc, inning, t1;
 
     public String getTeamB() {
         return teamB;

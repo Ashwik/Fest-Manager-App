@@ -43,15 +43,17 @@ public class MatchesSectionFragment extends Fragment {
     private TextView status;
     private RecyclerView.Adapter adapter;
 
-    private List<String> type1,type2,type3;
+    private List<String> type1, type2, type3;
     private String cricket_id = "5c172ddcdeb95b571eaffdcf";
-    public MatchesSectionFragment(){}
+
+    public MatchesSectionFragment() {
+    }
 
     public static MatchesSectionFragment newInstance(int sectionNumber, String eventId) {
         MatchesSectionFragment fragment = new MatchesSectionFragment();
         Bundle args = new Bundle();
         args.putInt("section", sectionNumber);
-        args.putString("ID",eventId);
+        args.putString("ID", eventId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,7 +61,7 @@ public class MatchesSectionFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        section = this.getArguments().getInt("section",0);
+        section = this.getArguments().getInt("section", 0);
         eventId = this.getArguments().getString("ID");
         type1 = Arrays.asList(getResources().getStringArray(R.array.type1));
         type2 = Arrays.asList(getResources().getStringArray(R.array.type2));
@@ -76,11 +78,11 @@ public class MatchesSectionFragment extends Fragment {
         RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(getContext());
         rootView.setLayoutManager(mLayoutManager2);
 
-        switch (section){
+        switch (section) {
             case 3:
                 status.setText("Result not yet updated");
                 status.setVisibility(View.VISIBLE);
-                if(eventId.equals(cricket_id)){
+                if (eventId.equals(cricket_id)) {
                     final ArrayList<CricketResult> list1 = new ArrayList<>();
                     adapter = new CricketResultAdapter(getActivity(), list1);
                     rootView.setAdapter(adapter);
@@ -105,8 +107,7 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type1.contains(eventId)) {
+                } else if (type1.contains(eventId)) {
                     final ArrayList<ResultType1> list1 = new ArrayList<>();
                     adapter = new ResultAdapter1(getActivity(), list1);
                     rootView.setAdapter(adapter);
@@ -131,10 +132,9 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type2.contains(eventId)){
+                } else if (type2.contains(eventId)) {
                     final ArrayList<LiveMatchType2> list2 = new ArrayList<>();
-                    adapter = new MatchLiveAdapter2(getActivity(), list2,false);
+                    adapter = new MatchLiveAdapter2(getActivity(), list2, false);
                     rootView.setAdapter(adapter);
                     FirebaseDatabase.getInstance().getReference().child("Scores").child("Results").child(eventId).orderByKey().addValueEventListener(new ValueEventListener() {
                         @Override
@@ -147,8 +147,7 @@ public class MatchesSectionFragment extends Fragment {
                             if (list2.size() == 0) {
                                 status.setText("Result not yet updated");
                                 status.setVisibility(View.VISIBLE);
-                            }
-                            else status.setVisibility(View.GONE);
+                            } else status.setVisibility(View.GONE);
 
                             adapter.notifyDataSetChanged();
                         }
@@ -158,8 +157,7 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type3.contains(eventId)){
+                } else if (type3.contains(eventId)) {
                     final ArrayList<IndividualEvent> list2 = new ArrayList<>();
                     adapter = new IndividualEventAdapter(getActivity(), list2);
                     rootView.setAdapter(adapter);
@@ -174,8 +172,7 @@ public class MatchesSectionFragment extends Fragment {
                             if (list2.size() == 0) {
                                 status.setText("Result not yet updated");
                                 status.setVisibility(View.VISIBLE);
-                            }
-                            else status.setVisibility(View.GONE);
+                            } else status.setVisibility(View.GONE);
 
                             adapter.notifyDataSetChanged();
                         }
@@ -185,8 +182,7 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else{
+                } else {
                     status.setText("Result not yet updated");
                     status.setVisibility(View.VISIBLE);
                 }
@@ -196,7 +192,7 @@ public class MatchesSectionFragment extends Fragment {
             case 2:
                 status.setText("No matches are live currently");
                 status.setVisibility(View.VISIBLE);
-                if(eventId.equals(cricket_id)){
+                if (eventId.equals(cricket_id)) {
                     final ArrayList<LiveCricket> list2 = new ArrayList<>();
                     adapter = new CricketAdapter(getActivity(), list2);
                     rootView.setAdapter(adapter);
@@ -211,8 +207,7 @@ public class MatchesSectionFragment extends Fragment {
                             if (list2.size() == 0) {
                                 status.setText("No matches are live currently");
                                 status.setVisibility(View.VISIBLE);
-                            }
-                            else status.setVisibility(View.GONE);
+                            } else status.setVisibility(View.GONE);
 
                             adapter.notifyDataSetChanged();
                         }
@@ -222,8 +217,7 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type1.contains(eventId)){
+                } else if (type1.contains(eventId)) {
                     final ArrayList<LiveMatchType1> list2 = new ArrayList<>();
                     adapter = new MatchLiveAdapter1(getActivity(), list2);
                     rootView.setAdapter(adapter);
@@ -238,8 +232,7 @@ public class MatchesSectionFragment extends Fragment {
                             if (list2.size() == 0) {
                                 status.setText("No matches are live currently");
                                 status.setVisibility(View.VISIBLE);
-                            }
-                            else status.setVisibility(View.GONE);
+                            } else status.setVisibility(View.GONE);
 
                             adapter.notifyDataSetChanged();
                         }
@@ -249,10 +242,9 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type2.contains(eventId)){
+                } else if (type2.contains(eventId)) {
                     final ArrayList<LiveMatchType2> list2 = new ArrayList<>();
-                    adapter = new MatchLiveAdapter2(getActivity(), list2,true);
+                    adapter = new MatchLiveAdapter2(getActivity(), list2, true);
                     rootView.setAdapter(adapter);
                     FirebaseDatabase.getInstance().getReference().child("Scores").child("Live Matches").child(eventId).orderByKey().addValueEventListener(new ValueEventListener() {
                         @Override
@@ -265,8 +257,7 @@ public class MatchesSectionFragment extends Fragment {
                             if (list2.size() == 0) {
                                 status.setText("No matches are live currently");
                                 status.setVisibility(View.VISIBLE);
-                            }
-                            else status.setVisibility(View.GONE);
+                            } else status.setVisibility(View.GONE);
 
                             adapter.notifyDataSetChanged();
                         }
@@ -276,12 +267,10 @@ public class MatchesSectionFragment extends Fragment {
 
                         }
                     });
-                }
-                else if(type3.contains(eventId)){
+                } else if (type3.contains(eventId)) {
                     status.setText("Results will be displayed directly");
                     status.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     status.setText("No matches are live currently");
                     status.setVisibility(View.VISIBLE);
                 }
@@ -290,11 +279,10 @@ public class MatchesSectionFragment extends Fragment {
 
             case 1:
 
-                if(type3.contains(eventId)){
+                if (type3.contains(eventId)) {
                     status.setText("Results will be displayed directly");
                     status.setVisibility(View.VISIBLE);
-                }
-                else {
+                } else {
                     final ArrayList<MatchDetails> list3 = new ArrayList<>();
                     adapter = new MatchScheduleAdapter(getActivity(), list3);
                     rootView.setAdapter(adapter);

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/linearSet"
+<LinearLayout android:id="@+id/linearSet"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="12dp">
+
     <TextView
         android:id="@+id/sName"
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:fontFamily="@font/montserratmedium"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
+
     <TextView
         android:id="@+id/sA"
         android:layout_width="match_parent"
@@ -27,7 +28,8 @@
         android:textSize="24sp"
         android:textColor="@color/textColor"
         android:fontFamily="@font/montserratmedium"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
+
     <TextView
         android:id="@+id/sB"
         android:layout_width="match_parent"
@@ -38,5 +40,5 @@
         android:textSize="24sp"
         android:textColor="@color/textColor"
         android:fontFamily="@font/montserratmedium"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 </LinearLayout>

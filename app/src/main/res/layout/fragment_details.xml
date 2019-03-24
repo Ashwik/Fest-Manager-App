@@ -26,9 +26,7 @@
         android:background="@drawable/ic_contactsmainbox"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="-8dp"
-        >
-
+        android:layout_marginBottom="-8dp">
 
 
         <android.support.v4.widget.NestedScrollView

@@ -13,10 +13,11 @@ import com.dota.pearl2019.model.MatchDetails;
 
 import java.util.ArrayList;
 
-public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdapter.MyViewHolder>{
+public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<MatchDetails> list;
-    public MatchScheduleAdapter(Context context, ArrayList<MatchDetails> list){
+
+    public MatchScheduleAdapter(Context context, ArrayList<MatchDetails> list) {
         this.context = context;
         this.list = list;
     }
@@ -26,13 +27,13 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
         holder.title.setText(list.get(i).getTitle());
         holder.team1.setText(list.get(i).getTeamA());
         holder.team2.setText(list.get(i).getTeamB());
-        holder.time.setText(list.get(i).getDate()+" || "+list.get(i).getTime());
+        holder.time.setText(list.get(i).getDate() + " || " + list.get(i).getTime());
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_match_schedule,viewGroup,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_match_schedule, viewGroup, false));
     }
 
     @Override
@@ -40,9 +41,10 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView title,team1,team2,time;
-        public MyViewHolder(View v){
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView title, team1, team2, time;
+
+        public MyViewHolder(View v) {
             super(v);
             title = v.findViewById(R.id.title);
             team1 = v.findViewById(R.id.team1);

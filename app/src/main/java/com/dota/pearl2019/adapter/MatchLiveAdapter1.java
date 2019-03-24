@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class MatchLiveAdapter1 extends RecyclerView.Adapter<MatchLiveAdapter1.MyViewHolder> {
     private Context context;
     private ArrayList<LiveMatchType1> list;
-    public MatchLiveAdapter1(Context context, ArrayList<LiveMatchType1> list){
+
+    public MatchLiveAdapter1(Context context, ArrayList<LiveMatchType1> list) {
         this.context = context;
         this.list = list;
     }
@@ -33,7 +34,7 @@ public class MatchLiveAdapter1 extends RecyclerView.Adapter<MatchLiveAdapter1.My
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_live_type1,viewGroup,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_live_type1, viewGroup, false));
     }
 
     @Override
@@ -41,9 +42,10 @@ public class MatchLiveAdapter1 extends RecyclerView.Adapter<MatchLiveAdapter1.My
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView title,team1,team2,scoreA,scoreB;
-        public MyViewHolder(View v){
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView title, team1, team2, scoreA, scoreB;
+
+        public MyViewHolder(View v) {
             super(v);
             title = v.findViewById(R.id.title);
             team1 = v.findViewById(R.id.teamA);

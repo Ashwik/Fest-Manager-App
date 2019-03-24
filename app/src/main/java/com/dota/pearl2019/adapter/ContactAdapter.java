@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.dota.pearl2019.R;
 import com.dota.pearl2019.model.Contact;
 
@@ -110,8 +108,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 //            }
 //
 //        }
-            holder.contactimage.setVisibility(View.GONE);
-
+        holder.contactimage.setVisibility(View.GONE);
 
 
     }

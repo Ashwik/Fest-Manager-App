@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class CricketAdapter extends RecyclerView.Adapter<CricketAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<LiveCricket> list;
-    public CricketAdapter(Context context, ArrayList<LiveCricket> list){
+
+    public CricketAdapter(Context context, ArrayList<LiveCricket> list) {
         this.context = context;
         this.list = list;
     }
@@ -26,30 +27,28 @@ public class CricketAdapter extends RecyclerView.Adapter<CricketAdapter.MyViewHo
         holder.title.setText(list.get(i).getTitle());
         holder.message.setText(list.get(i).getDesc());
 
-        if(list.get(i).getT1() == null){
+        if (list.get(i).getT1() == null) {
             holder.team1.setText("-");
             holder.team2.setText("-");
             holder.scoreA.setText("0/0 (0.0)");
             holder.scoreB.setText("-");
-        }
-        else if(list.get(i).getT1().equals("A")) {
+        } else if (list.get(i).getT1().equals("A")) {
             holder.team1.setText(list.get(i).getTeamA());
             holder.team2.setText(list.get(i).getTeamB());
             holder.scoreA.setText(list.get(i).getScoreA());
-        }
-        else if(list.get(i).getT1().equals("B")){
+        } else if (list.get(i).getT1().equals("B")) {
             holder.team1.setText(list.get(i).getTeamB());
             holder.team2.setText(list.get(i).getTeamA());
             holder.scoreA.setText(list.get(i).getScoreB());
         }
 
-        if(list.get(i).getInning()==null || list.get(i).getT1() == null)
+        if (list.get(i).getInning() == null || list.get(i).getT1() == null)
             return;
 
-        if(list.get(i).getInning().equals("1"))
+        if (list.get(i).getInning().equals("1"))
             holder.scoreB.setText("-");
         else {
-            if(list.get(i).getT1().equals("A"))
+            if (list.get(i).getT1().equals("A"))
                 holder.scoreB.setText(list.get(i).getScoreB());
             else
                 holder.scoreB.setText(list.get(i).getScoreA());
@@ -59,7 +58,7 @@ public class CricketAdapter extends RecyclerView.Adapter<CricketAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_cricket,viewGroup,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_cricket, viewGroup, false));
     }
 
     @Override
@@ -67,9 +66,10 @@ public class CricketAdapter extends RecyclerView.Adapter<CricketAdapter.MyViewHo
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView title,team1,team2,scoreA,scoreB,message;
-        public MyViewHolder(View v){
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView title, team1, team2, scoreA, scoreB, message;
+
+        public MyViewHolder(View v) {
             super(v);
             title = v.findViewById(R.id.title);
             team1 = v.findViewById(R.id.teamA);

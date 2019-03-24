@@ -34,15 +34,15 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ArticlesViewHolder holder,final int i) {
+    public void onBindViewHolder(@NonNull ArticlesViewHolder holder, final int i) {
         holder.title.setText(articlesitemsList.get(i));
 
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("Articles","Working");
+                Log.e("Articles", "Working");
                 Intent intent = new Intent(context, ArticleDetailActivity.class);
-                intent.putExtra("id1",i);
+                intent.putExtra("id1", i);
                 view.getContext().startActivity(intent);
             }
         });
@@ -53,9 +53,10 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         return articlesitemsList.size();
     }
 
-    public class ArticlesViewHolder extends RecyclerView.ViewHolder{
+    public class ArticlesViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         CardView cardView;
+
         public ArticlesViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.articletitle);

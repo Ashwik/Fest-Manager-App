@@ -1,7 +1,7 @@
 package com.dota.pearl2019.model;
 
 public class ResultType1 extends LiveMatchType1 {
-    String message,status;
+    String message, status;
 
     public String getMessage() {
         return message;

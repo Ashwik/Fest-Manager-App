@@ -8,7 +8,6 @@
     <string name="fest_tagline"></string>
 
 
-
     <string name="aboutus">AboutUs</string>
     <string name="aboutfest">
         Pearl is the annual national cultural fest of BITS Pilani, Hyderabad Campus. Incepted in 2009 as an intra-college festival, the fest grew into a national level college cultural fest with participation from more than 100 colleges across India. Pearl hosts a variety of cultural events and competitions which include music, dance, literary, photography and quizzing. This year’s Hyderabad theme is just one more reason to look forward to the annual cultural fest that we know and adore.
@@ -108,8 +107,6 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item> Ritika Sridharan</item>
 
 
-
-
     </string-array>
 
     <string-array name="club_names">
@@ -132,7 +129,6 @@ Besides that, there are City Buses having numbers 211S, 211A, 211C, 211D, 211E, 
         <item>Swaranjali</item>
         <item>VFX</item>
         <item>Sanskrit and Foreign Languages</item>
-
 
 
     </string-array>

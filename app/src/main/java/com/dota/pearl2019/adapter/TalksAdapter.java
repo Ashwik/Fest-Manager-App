@@ -16,8 +16,8 @@ import com.dota.pearl2019.R;
 import com.yarolegovich.lovelydialog.LovelyInfoDialog;
 
 public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHolder> {
-    private  Context context;
-    private  int root;
+    private Context context;
+    private int root;
     String[] titles = new String[]{
 
     };
@@ -65,11 +65,12 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             "<b>Date:</b> 22/03/19<br/>Venue:</b> Auditorium<br/>",
             "<b>Date:</b> 23/03/19<br/>Venue:</b> Stage 1<br/>",
     };
-    public TalksAdapter(Context context,int root)
-    {
+
+    public TalksAdapter(Context context, int root) {
         this.context = context;
         this.root = root;
     }
+
     @NonNull
     @Override
     public TalksViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -79,11 +80,9 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TalksViewHolder holder, final int i) {
-        if(root==0) {
+        if (root == 0) {
             holder.talksImages.setImageResource(imagesTalks[i]);
-        }
-        else
-        {
+        } else {
             holder.talksImages.setImageResource(proShows[i]);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -93,40 +92,41 @@ public class TalksAdapter extends RecyclerView.Adapter<TalksAdapter.TalksViewHol
             }
         });
     }
-    private void openDialog(int position)
-    {
-        if(root==0){
-        new LovelyInfoDialog(context)
-                .setTopColorRes(R.color.colorPrimary)
-                .setTopTitleColor(Color.WHITE)
-                .setMessage(formatContent(descriptions[position]))
-                .show();}
-                else{
-        new LovelyInfoDialog(context)
+
+    private void openDialog(int position) {
+        if (root == 0) {
+            new LovelyInfoDialog(context)
+                    .setTopColorRes(R.color.colorPrimary)
+                    .setTopTitleColor(Color.WHITE)
+                    .setMessage(formatContent(descriptions[position]))
+                    .show();
+        } else {
+            new LovelyInfoDialog(context)
                     .setTopColorRes(R.color.colorPrimary)
                     .setTopTitleColor(Color.WHITE)
                     .setMessage(formatContent(descriptions_2[position]))
-                    .show();}
+                    .show();
         }
+    }
 
     @Override
     public int getItemCount() {
-        if(root ==0) {
+        if (root == 0) {
             return 7;
-        }
-        else
-        {
+        } else {
             return 9;
         }
     }
 
     public class TalksViewHolder extends RecyclerView.ViewHolder {
         ImageView talksImages;
+
         public TalksViewHolder(@NonNull View itemView) {
             super(itemView);
             talksImages = itemView.findViewById(R.id.talksImage);
         }
     }
+
     public Spanned formatContent(String content) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return Html.fromHtml(content, Html.FROM_HTML_MODE_COMPACT);

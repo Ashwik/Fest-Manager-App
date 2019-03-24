@@ -18,33 +18,35 @@ import java.util.ArrayList;
 public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<LiveInfo> list;
-    public LiveAdapter(Context context, ArrayList<LiveInfo> list){
+
+    public LiveAdapter(Context context, ArrayList<LiveInfo> list) {
         this.context = context;
         this.list = list;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_live_info,viewGroup,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_live_info, viewGroup, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
         myViewHolder.title.setText(list.get(i).eventName);
 
-        if(list.get(i).count <= 1)
-            myViewHolder.count.setText(list.get(i).count+" match in progress");
+        if (list.get(i).count <= 1)
+            myViewHolder.count.setText(list.get(i).count + " match in progress");
         else
-            myViewHolder.count.setText(list.get(i).count+" matches in progress");
+            myViewHolder.count.setText(list.get(i).count + " matches in progress");
 
-        if(list.get(i).eventName!=null)
+        if (list.get(i).eventName != null)
             myViewHolder.bg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, MatchesActivity.class);
                     intent.putExtra("id", list.get(i).eventID);
-                    intent.putExtra("name",list.get(i).eventName);
-                    intent.putExtra("live",true);
+                    intent.putExtra("name", list.get(i).eventName);
+                    intent.putExtra("live", true);
                     view.getContext().startActivity(intent);
                 }
             });
@@ -55,10 +57,11 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView title,count;
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView title, count;
         View bg;
-        public MyViewHolder(View v){
+
+        public MyViewHolder(View v) {
             super(v);
             title = v.findViewById(R.id.title);
             count = v.findViewById(R.id.count);

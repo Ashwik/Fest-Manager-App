@@ -1,15 +1,14 @@
 package com.dota.pearl2019.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -43,7 +42,7 @@ public class MatchesActivity extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-        if(getIntent().getBooleanExtra("live",false)){
+        if (getIntent().getBooleanExtra("live", false)) {
             mViewPager.setCurrentItem(1);
         }
 
@@ -65,14 +64,15 @@ public class MatchesActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-         if(id == R.id.eventInfo){
+        if (id == R.id.eventInfo) {
             Intent intent = new Intent(this, DetailsActivity.class);
-            intent.putExtra("id",eventId);
+            intent.putExtra("id", eventId);
             startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
     }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -81,7 +81,7 @@ public class MatchesActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return MatchesSectionFragment.newInstance(position + 1,eventId);
+            return MatchesSectionFragment.newInstance(position + 1, eventId);
         }
 
         @Override

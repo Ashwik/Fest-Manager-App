@@ -11,8 +11,7 @@
         android:layout_height="120sp"
         app:srcCompat="@drawable/gradient_color"
         tools:layout_editor_absoluteX="360dp"
-        android:layout_marginBottom="10dp"
-        />
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/eventname"
@@ -43,8 +42,7 @@
         android:iconifiedByDefault="false"
         android:searchIcon="@null"
         android:queryBackground="@android:color/transparent"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_to_refresh_events"
@@ -55,13 +53,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/events_live"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                />
+                android:layout_marginRight="20dp" />
+
             <TextView
                 android:id="@+id/live_status"
                 android:layout_width="wrap_content"
@@ -70,7 +69,7 @@
                 android:fontFamily="@font/montserratmedium"
                 android:textSize="22sp"
                 android:textColor="#000"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
         </RelativeLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

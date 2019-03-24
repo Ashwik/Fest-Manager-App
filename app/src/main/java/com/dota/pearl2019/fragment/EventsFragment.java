@@ -68,7 +68,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 //       event_category = bundle.getString(String.valueOf(R.string.home_type_id));
 
 //       event_category_id  = bundle.gett(String.valueOf(R.string.event_type_id));
-       Log.e("Events",String.valueOf(event_category_id));
+        Log.e("Events", String.valueOf(event_category_id));
 //        switch(event_category){
 //          case "TALKS": event_category ="Talk";break;
 //          case "PROSHOWS":event_category="Proshow";break;
@@ -83,7 +83,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
         recyclerView = getActivity().findViewById(R.id.event_recycler_view);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe_to_refresh_events);
         searchView = getActivity().findViewById(R.id.events_searchView);
-        eventsAdapter = new EventsAdapter(realmList,context);
+        eventsAdapter = new EventsAdapter(realmList, context);
         progressBar = getActivity().findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -194,7 +194,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
     private void setAdapter(ArrayList<EventDetails> eventList) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new EventsAdapter(realmList,context));
+        recyclerView.setAdapter(new EventsAdapter(realmList, context));
     }
 
     @Override
@@ -230,7 +230,7 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
     }
 
-    public void setSearchview(){
+    public void setSearchview() {
         SearchManager searchManager =
                 (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(
@@ -249,8 +249,8 @@ public class EventsFragment extends Fragment implements SearchView.OnQueryTextLi
 
     @Override
     public boolean onQueryTextChange(String s) {
-        Log.e(TAG,s);
-        EventsAdapter eventsAdapter = new EventsAdapter(realmList,context);
+        Log.e(TAG, s);
+        EventsAdapter eventsAdapter = new EventsAdapter(realmList, context);
         eventsAdapter.getFilter().filter(s);
         return true;
     }

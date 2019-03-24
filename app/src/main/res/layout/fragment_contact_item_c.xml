@@ -24,8 +24,7 @@
             android:scaleType="centerCrop"
             android:layout_marginStart="24dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="8dp"
-            />
+            android:layout_marginBottom="8dp" />
 
 
         <TextView
@@ -38,8 +37,7 @@
             android:text="Ashwik"
             android:textColor="@color/textColor"
             android:textSize="18sp"
-            android:layout_toRightOf="@id/contact_image"
-            />
+            android:layout_toRightOf="@id/contact_image" />
 
         <TextView
             android:id="@+id/designation"
@@ -52,8 +50,7 @@
             tools:text="Sanskrit and Foreign Languages"
             android:textSize="18sp"
             android:layout_below="@id/name"
-            android:layout_toRightOf="@id/contact_image"
-            />
+            android:layout_toRightOf="@id/contact_image" />
 
         <ImageView
             android:id="@+id/call_button"
@@ -64,8 +61,7 @@
             android:layout_marginTop="8dp"
             android:tint="@color/bg_two"
             app:srcCompat="@drawable/ic_baseline_call_24px"
-            android:layout_alignParentEnd="true"
-            />
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

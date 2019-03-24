@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/landing_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_2"
     android:paddingRight="50dp"
-    android:paddingLeft="50dp"
-    >
+    android:paddingLeft="50dp">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/landing_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        />
+        android:layout_marginBottom="10dp" />
 </android.support.design.widget.CoordinatorLayout>

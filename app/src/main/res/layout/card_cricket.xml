@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="125dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="1dp"
-    android:layout_margin="4dp"
-    >
+    android:layout_margin="4dp">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/title"
@@ -24,7 +22,7 @@
             android:fontFamily="@font/montserratbold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textvs"
@@ -40,6 +38,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
         <TextView
             android:id="@+id/scoreA"
             android:layout_width="0dp"
@@ -53,8 +52,8 @@
             app:layout_constraintEnd_toStartOf="@+id/textvs"
             app:layout_constraintTop_toTopOf="@+id/textvs"
             app:layout_constraintBottom_toBottomOf="@+id/textvs"
-            android:fontFamily="@font/montserratmedium"
-            />
+            android:fontFamily="@font/montserratmedium" />
+
         <TextView
             android:id="@+id/scoreB"
             android:layout_width="0dp"
@@ -68,8 +67,8 @@
             app:layout_constraintStart_toEndOf="@+id/textvs"
             app:layout_constraintTop_toTopOf="@+id/textvs"
             app:layout_constraintBottom_toBottomOf="@+id/textvs"
-            android:fontFamily="@font/montserratmedium"
-            />
+            android:fontFamily="@font/montserratmedium" />
+
         <TextView
             android:id="@+id/teamA"
             android:layout_width="0dp"
@@ -81,8 +80,8 @@
             app:layout_constraintStart_toStartOf="@+id/scoreA"
             app:layout_constraintEnd_toEndOf="@+id/scoreA"
             app:layout_constraintTop_toBottomOf="@+id/scoreA"
-            android:fontFamily="@font/montserratmedium"
-            />
+            android:fontFamily="@font/montserratmedium" />
+
         <TextView
             android:id="@+id/teamB"
             android:layout_width="0dp"
@@ -94,8 +93,8 @@
             app:layout_constraintStart_toStartOf="@+id/scoreB"
             app:layout_constraintEnd_toEndOf="@+id/scoreB"
             app:layout_constraintTop_toBottomOf="@+id/scoreB"
-            android:fontFamily="@font/montserratmedium"
-            />
+            android:fontFamily="@font/montserratmedium" />
+
         <TextView
             android:id="@+id/status"
             android:layout_width="match_parent"
@@ -105,8 +104,7 @@
             android:text=" won the toss and chose to bat"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="2dp"
-            android:fontFamily="@font/montserratmedium"
-            />
+            android:fontFamily="@font/montserratmedium" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.design.card.MaterialCardView>

@@ -88,7 +88,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
                 if (set.getVenue() == null) {
                     ((TextView) v.findViewById(R.id.event_tagline)).setHeight(0);
                 } else {
-                    ((TextView) v.findViewById(R.id.event_tagline)).setText("Venue: "+set.getVenue());
+                    ((TextView) v.findViewById(R.id.event_tagline)).setText("Venue: " + set.getVenue());
                 }
                 v.findViewById(R.id.schedule_item_cardview).setOnClickListener(new View.OnClickListener() {
                     @Override

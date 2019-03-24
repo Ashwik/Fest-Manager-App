@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,8 +8,7 @@
     <include
         layout="@layout/bottom_nav_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav_view"
@@ -21,6 +18,5 @@
         android:background="@color/sky_color_animation"
         app:itemIconTint="@color/btm_icon_color"
         app:itemTextColor="@color/btm_icon_color"
-        app:menu="@menu/bottom_navbar"
-        />
+        app:menu="@menu/bottom_navbar" />
 </android.support.design.widget.CoordinatorLayout>

@@ -3,8 +3,8 @@ package com.dota.pearl2019.model;
 import java.util.HashMap;
 
 public class LiveMatchType2 {
-    String eventID,title,teamA,teamB,desc,status,message;
-    HashMap<String,HashMap<String,MatchSubset>> matches;
+    String eventID, title, teamA, teamB, desc, status, message;
+    HashMap<String, HashMap<String, MatchSubset>> matches;
 
     public String getTeamB() {
         return teamB;

@@ -3,7 +3,6 @@ package com.dota.pearl2019.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,10 +38,16 @@ public class ScheduleCardAdapter extends RecyclerView.Adapter<ScheduleCardAdapte
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
 
-        switch (list.get(position)){
-            case 1:holder.schedule_text.setText("22 March");break;
-            case 2:holder.schedule_text.setText("23 March");break;
-            case 3:holder.schedule_text.setText("24 March");break;
+        switch (list.get(position)) {
+            case 1:
+                holder.schedule_text.setText("22 March");
+                break;
+            case 2:
+                holder.schedule_text.setText("23 March");
+                break;
+            case 3:
+                holder.schedule_text.setText("24 March");
+                break;
         }
 
         final int pos = position;

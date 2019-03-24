@@ -37,6 +37,7 @@ public class LiveFragment extends Fragment {
     private ArrayList<LiveInfo> list;
     private LiveAdapter adapter;
     private Realm realm;
+
     public LiveFragment() {
         // Required empty public constructor
     }
@@ -58,7 +59,7 @@ public class LiveFragment extends Fragment {
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        adapter = new LiveAdapter(getActivity(),list);
+        adapter = new LiveAdapter(getActivity(), list);
         recyclerView.setAdapter(adapter);
 
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -72,23 +73,24 @@ public class LiveFragment extends Fragment {
         update();
         return v;
     }
-    public void update(){
+
+    public void update() {
         FirebaseDatabase.getInstance().getReference().child("Scores/Live Matches").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d("testlive",dataSnapshot.getChildrenCount()+"");
+                Log.d("testlive", dataSnapshot.getChildrenCount() + "");
                 list.clear();
-                for(DataSnapshot ds:dataSnapshot.getChildren()){
-                    Log.d("testlive",ds.getKey());
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Log.d("testlive", ds.getKey());
                     LiveInfo info = new LiveInfo();
                     info.eventID = ds.getKey();
-                    info.count = (int)ds.getChildrenCount();
+                    info.count = (int) ds.getChildrenCount();
                     EventDetails details = realm.where(EventDetails.class).equalTo("id", info.eventID).findFirst();
-                    if(details!=null)
+                    if (details != null)
                         info.eventName = details.getName();
                     list.add(info);
                 }
-                if(list.size()==0) status.setVisibility(View.VISIBLE);
+                if (list.size() == 0) status.setVisibility(View.VISIBLE);
                 else status.setVisibility(View.GONE);
                 adapter.notifyDataSetChanged();
                 swipe.setRefreshing(false);

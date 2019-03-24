@@ -14,10 +14,11 @@ import com.dota.pearl2019.model.ResultType1;
 
 import java.util.ArrayList;
 
-public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHolder>{
+public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHolder> {
     private Context context;
     private ArrayList<ResultType1> list;
-    public ResultAdapter1(Context context, ArrayList<ResultType1> list){
+
+    public ResultAdapter1(Context context, ArrayList<ResultType1> list) {
         this.context = context;
         this.list = list;
     }
@@ -25,18 +26,16 @@ public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
         holder.title.setText(list.get(i).getTitle());
-        holder.scoreA.setText(list.get(i).getTeamA()+" ("+list.get(i).getScoreA()+")");
-        holder.scoreB.setText(list.get(i).getTeamB()+" ("+list.get(i).getScoreB()+")");
+        holder.scoreA.setText(list.get(i).getTeamA() + " (" + list.get(i).getScoreA() + ")");
+        holder.scoreB.setText(list.get(i).getTeamB() + " (" + list.get(i).getScoreB() + ")");
         holder.msg.setText(list.get(i).getMessage());
-        if(list.get(i).getStatus().equals("1")){
+        if (list.get(i).getStatus().equals("1")) {
             holder.scoreA.setTextColor(Color.parseColor("#00ff00"));
             holder.scoreB.setTextColor(Color.parseColor("#ff0000"));
-        }
-        else if(list.get(i).getStatus().equals("2")){
+        } else if (list.get(i).getStatus().equals("2")) {
             holder.scoreB.setTextColor(Color.parseColor("#00ff00"));
             holder.scoreA.setTextColor(Color.parseColor("#ff0000"));
-        }
-        else{
+        } else {
             holder.scoreA.setTextColor(Color.parseColor("#000000"));
             holder.scoreB.setTextColor(Color.parseColor("#000000"));
         }
@@ -45,7 +44,7 @@ public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_result_type1,viewGroup,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.card_result_type1, viewGroup, false));
     }
 
     @Override
@@ -53,9 +52,10 @@ public class ResultAdapter1 extends RecyclerView.Adapter<ResultAdapter1.MyViewHo
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView title,scoreA,scoreB,msg;
-        public MyViewHolder(View v){
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView title, scoreA, scoreB, msg;
+
+        public MyViewHolder(View v) {
             super(v);
             title = v.findViewById(R.id.title);
             scoreA = v.findViewById(R.id.scoreA);

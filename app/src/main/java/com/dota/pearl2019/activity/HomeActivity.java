@@ -28,57 +28,65 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         Bundle bundle = getIntent().getExtras();
-        String card_category_id  = bundle.getString(String.valueOf(R.string.home_type_id));
-        Log.e("card",String.valueOf(card_category_id));
-        switch(card_category_id){
-            case "FEED": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new FeedFragment())
-                    .commit();
-                    break;
-            case "EVENTS": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new EventsFragment())
-                    .commit();
+        String card_category_id = bundle.getString(String.valueOf(R.string.home_type_id));
+        Log.e("card", String.valueOf(card_category_id));
+        switch (card_category_id) {
+            case "FEED":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new FeedFragment())
+                        .commit();
                 break;
-            case "SCHEDULE": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new ScheduleCardsFragment())
-                    .commit();
+            case "EVENTS":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new EventsFragment())
+                        .commit();
                 break;
-            case "CONTACT": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new ContactsFragment())
-                    .commit();
+            case "SCHEDULE":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new ScheduleCardsFragment())
+                        .commit();
+                break;
+            case "CONTACT":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new ContactsFragment())
+                        .commit();
                 break;
             case "TALKS":
                 Fragment fragment = new TalksFragment();
                 Bundle bundle1 = new Bundle();
-                bundle1.putInt("from",0);
+                bundle1.putInt("from", 0);
                 fragment.setArguments(bundle1);
                 getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.nav_fragment_container,fragment)
-                            .commit();
-                    break;
-            case "PROSHOW": Fragment fragment1 = new TalksFragment();
-                Bundle bundle2 = new Bundle();
-                bundle2.putInt("from",1);
-                fragment1.setArguments(bundle2);
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_fragment_container,fragment1)
+                        .replace(R.id.nav_fragment_container, fragment)
                         .commit();
                 break;
-            case "GUIDE": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new MoreFragment())
-                    .commit();
+            case "PROSHOW":
+                Fragment fragment1 = new TalksFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt("from", 1);
+                fragment1.setArguments(bundle2);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, fragment1)
+                        .commit();
                 break;
-            case "CREDITS": getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new CreditsFragmentnew())
-                    .commit();
+            case "GUIDE":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new MoreFragment())
+                        .commit();
+                break;
+            case "CREDITS":
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new CreditsFragmentnew())
+                        .commit();
                 break;
 
-            default: getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_fragment_container, new EventsFragment())
-                    .commit();
-                    break;
+            default:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_fragment_container, new EventsFragment())
+                        .commit();
+                break;
 
-       }
+        }
     }
 
     @Override
