@@ -65,13 +65,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventViewH
             holder.eventPrizemoney.setVisibility(View.VISIBLE);
             holder.eventPrizemoney.setText("Prize: "+list.get(position).getPrize());
         }
-        if(list.get(position).getPrice()==null||list.get(position).getPrice().equals(""))
-        {
-            holder.eventFee.setVisibility(View.GONE);
-        }else{
-            holder.eventFee.setVisibility(View.VISIBLE);
-            holder.eventFee.setText("Fee: "+list.get(position).getPrice());
-        }
+        holder.eventFee.setVisibility(View.GONE);
+
 
 
     }
